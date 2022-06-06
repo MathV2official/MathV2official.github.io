@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <style>
+      body {
+        font-family: sans-serif;
+        color: #fff;
+        background-color: #000;
+      }
+    </style>
+    <title>404 Error | 3kh0</title>
+  </head>
+  <body>
+    <h1>404 Error</h1>
+    <p>
+      That requested URL or file was not found.<br />
+      Here are some fixes you could try:
+    </p>
+    <p>
+      <ul>
+        <li>Hit the refresh button and try again.</li>
+        <li></li>
+      </ul>
+    </p>
+    <p>
+      <b>Not what you expected? <a href="https://github.com/3kh0/3kh0.github.io/issues">Open a issue</a>!</b>
+    </p>
+    <h2>Stats for nerds</h2>
+    Requested URL: <span id="full"></span><br />
+    User IP: <span id="ip"></span><br />
+    Error code: 404<br />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+      document.getElementById("full").innerHTML = window.location.href;
+
+      $.getJSON("https://ipgeolocation.abstractapi.com/v1/?api_key=a1ebbf04c6164dd98b527e26c57fc28c", function(data) {
+        document.getElementById("ip").innerHTML = data.ip_address;
+      });
+    </script>
+    <script src="/js/main.js"></script>
+  </body>
+</html>
