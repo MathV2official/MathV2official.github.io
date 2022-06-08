@@ -1,0 +1,15 @@
+body {
+  font-family: sans-serif;
+  color: #fff;
+  background-color: #000;
+}
+a {
+  color: #6079e6;
+}
+#sfn {
+  display: none;
+}
+* {
+  margin: auto;
+  text-align: center;
+}
