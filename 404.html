@@ -8,17 +8,16 @@
   </head>
   <body>
     <!-- <center> -->
-    <img src="svg/undraw_page_not_found_re_e9o6.svg" />
-    <h1>404 Error</h1>
-    <p>
+    <h1 id="header">404 Error</h1>
+    <p id="detail">
       That requested URL or file was not found.<br />
       Help us out and <a href="https://github.com/3kh0/3kh0.github.io/issues">open a issue</a> so we know this happened!
     </p>
-    <button onclick="statsForNerds()">Stats for nerds</button>
+    <button id="sfnButton" onclick="statsForNerds()">Stats for nerds</button>
     <p></p>
     <div id="sfn">
-      Requested URL: <span id="full"></span><br />
-      User IP: <span id="ip">insert ip here ig</span><br />
+      Requested URL: <span id="full">Fetching URL...</span><br />
+      User IP: <span id="ip">Fetching IP...</span><br />
       Error code: 404<br />
     </div>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5756835229788588" crossorigin="anonymous"></script>
@@ -42,7 +41,7 @@
       document.getElementById("full").innerHTML = window.location.href;
 
       $.getJSON("https://ipgeolocation.abstractapi.com/v1/?api_key=a1ebbf04c6164dd98b527e26c57fc28c", function (data) {
-        // document.getElementById("ip").innerHTML = data.ip_address;
+        document.getElementById("ip").innerHTML = data.ip_address;
       });
     </script>
     <script src="js/main.js"></script>

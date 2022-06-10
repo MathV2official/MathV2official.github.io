@@ -8,8 +8,19 @@ a {
 }
 #sfn {
   display: none;
+  padding: 10px;
+}
+#detail {
+  padding-bottom: 10px;
+}
+#sfnButton {
+  padding: 3px;
 }
 * {
   margin: auto;
   text-align: center;
+}
+#header {
+  padding-top:  25%;
+  padding-bottom: 20px;
 }
