@@ -50,9 +50,23 @@ body {
   width: 200px;
   height: 350px;
 }
+a {
+  text-decoration: none;
+  color: #0084ff;
+}
 .card-text {
   height: 175.6px;
   padding-bottom: 10px;
   padding-left: 5px;
   padding-right: 5px;
+}
+.text-center {
+  text-align: center;
+}
+#footer {
+  background-color: #1a1a1a;
+  height: 300px;
+  padding-left: 0px;
+  padding-bottom: 0px;
+  box-sizing: border-box;
 }
