@@ -78,6 +78,20 @@ say[73] = "Yooooooooooooooooooooo";
 say[74] = "Your ip is 69.420.69.420";
 say[75] = "he on x-games mode";
 say[76] = "Got to go fast!";
+say[77] = "GAS GAS GAS GOTTA STEP ON THE GAS!";
+say[78] = "3kh0.github.io would like to view your browser history";
+say[79] = "For legal reasons, that's a joke!";
+say[80] = "It has been 84 years...";
+say[81] = "Made by Gucci, selling for $69420";
+say[82] = "There is someone looking over your shoulder";
+say[83] = "Electric!";
+say[84] = "How many different ones are there?!?!";
+say[85] = "NERDDDDDDDDDDDDDDDDDD";
+say[86] = "My iPad passcode is 563543 btw";
+say[87] = "Get out of my room, I'm not going to let you in!";
+say[88] = "I'm not a robot!";
+say[89] = "I'm not a human!";
+say[90] = "Sponsered by RAID SHADOW LEGENDS!";
 
 // pick a random greeting
 var howmany = say.length;
