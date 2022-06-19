@@ -54,6 +54,10 @@ a {
   text-decoration: none;
   color: #0084ff;
 }
+a:hover {
+  text-decoration: underline;
+  color: #41a3ff
+}
 .card-text {
   height: 175.6px;
   padding-bottom: 10px;
@@ -69,4 +73,8 @@ a {
   padding-left: 0px;
   padding-bottom: 0px;
   box-sizing: border-box;
+}
+#list {
+  padding-left: 30px;
+  padding-top: 15px;
 }
