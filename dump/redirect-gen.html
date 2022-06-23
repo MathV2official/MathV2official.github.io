@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Redirect generator | 3kh0</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/css/redirect.css" />
+  </head>
+  <body>
+    <h1 class="text-center">Redirect generator</h1>
+    <p class="text-center" id="message">
+      Generator for the 3kh0 redirect page
+    </p>
+    <p class="text-center">URL to redirect to: <input id="userinput" type="url" pattern="https://.*" placeholder="Enter a URL" autocomplete="on" autofocus /><button id="generate" onclick="generate();">Generate!</button></p>
+    <p class="text-center" id="generated"></p>
+    <script>
+      document.getElementById("userinput").addEventListener("keyup", function(event) {
+        event.preventDefault();
+        if (event.keyCode === 13) {
+          generate();
+        }
+      });
+      function generate() {
+        const url = document.getElementById("userinput").value;
+        if (url.length > 0) {
+          var location = window.location.origin;
+          var encodedURL = encodeURIComponent(url);
+          const redirect = location + "/dump/redirect.html?to=" + encodedURL;
+          document.getElementById("generated").innerHTML = 'Generated link: <a href="' + redirect + '">' + redirect + '</a>';
+        }
+      }
+    </script>
+  </body>
+</html>

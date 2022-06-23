@@ -1,30 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Redirecting...</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../css/redirect.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/css/redirect.css" />
   </head>
   <body>
     <h1 class="text-center">Redirecting...</h1>
-    <p class="text-center">
-      In 5 seconds, you will be allowed to continue to your page.
+    <p class="text-center" id="message">
+      In <span id="count">5</span> seconds, you will be allowed to continue to your page.<br />
+      If you are not redirected, please refresh the page.
     </p>
-    <button id="button" onclick="go()">Continue</button>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5756835229788588" crossorigin="anonymous"></script>
-    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5756835229788588" data-ad-slot="6230603875" data-ad-format="auto" data-full-width-responsive="true"></ins>
-    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-    <script src="../js/main.js"></script>
+    <ins class="adsbygoogle" style="display: block;" data-ad-client="ca-pub-5756835229788588" data-ad-slot="6230603875" data-ad-format="auto" data-full-width-responsive="true"></ins>
     <script>
-      var redirectUrl;
-      function go() {
-        window.location.href = redirectUrl;
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+    <button id="button" onclick="go()">Continue</button>
+    <script src="/js/main.js"></script>
+    <script>
+      const keysValues = window.location.search;
+      const urlParams = new URLSearchParams(keysValues);
+      if (!urlParams.has('to')) {
+        document.getElementById("message").innerText = "Oh no! This page is not supposed to be accessed directly. Please make sure you are using the correct link.";
+        // show error message
+      } else {
+        const redirect = urlParams.get("to");
+        decodeURI(redirect);
+        console.log("Redirecting to: " + redirect);
+
+        var timeleft = 4;
+        var downloadTimer = setInterval(function () {
+          if (timeleft <= 0) {
+            clearInterval(downloadTimer);
+            document.getElementById("count").innerHTML = "0";
+            document.getElementById("button").style.display = "block";
+          } else {
+            document.getElementById("count").innerHTML = timeleft;
+          }
+          timeleft -= 1;
+        }, 1000);
+
+        function go() {
+          window.location.href = redirect;
+        }
       }
-      setTimeout(function() {
-        window.location.href = redirectUrl;
-        document.getElementById("button").style.display = "none";
-      }, 5000);
     </script>
   </body>
+</html>

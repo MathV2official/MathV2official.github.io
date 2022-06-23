@@ -31,6 +31,6 @@ script("Injected script 1/2");
 
 const tabCloak = document.createElement("script");
 tabCloak.setAttribute("async", "");
-tabCloak.setAttribute("src", "js/tab_cloak.js");
+tabCloak.setAttribute("src", "/js/tab_cloak.js");
 document.head.append(tabCloak);
 script("Injected script 2/2");
