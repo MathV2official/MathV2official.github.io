@@ -27,7 +27,7 @@ body {
   align-items: center;
 }
 #intro {
-  padding-top: 10%;
+  padding-top: 20%;
   text-align: center;
 }
 .text-center {
@@ -69,4 +69,15 @@ a {
   padding-left: 0px;
   padding-bottom: 0px;
   box-sizing: border-box;
+}
+#gs {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 20px;
 }

@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="/css/redirect.css" />
   </head>
   <body>
-    <h1 class="text-center">Redirecting...</h1>
+    <h1 id="title" class="text-center">Redirecting...</h1>
     <p class="text-center" id="message">
       In <span id="count">5</span> seconds, you will be allowed to continue to your page.<br />
       If you are not redirected, please refresh the page.
@@ -29,7 +29,7 @@
       } else {
         const redirect = urlParams.get("to");
         decodeURI(redirect);
-        console.log("Redirecting to: " + redirect);
+        console.log("Redirecting to: " + "REDACTED");
 
         var timeleft = 4;
         var downloadTimer = setInterval(function () {
