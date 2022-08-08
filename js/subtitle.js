@@ -199,6 +199,8 @@ say[195] = "Shoutout to 3kh0!";
 say[196] = "Woo! /g/";
 say[197] = "youtube.com/watch?v=dQw4w9WgXcQ";
 say[198] = "youtube.com/c/shadrYT";
+say[199] = "Help! I've fallen, and I can't get up!";
+say[200] = "me when the me the when me the the me when";
 
 // pick a random greeting
 var howmany = say.length;
