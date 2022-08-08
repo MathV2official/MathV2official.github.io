@@ -2,7 +2,7 @@
 // --- Config --- //
 var cookiePopupTitle = "Cookies";
 var cookiePopupDesc = "This site uses cookies!.";
-var cookiePopupLink = 'By using this website, you consent to the use of these cookies. <a href="cookieinfo.html" target="_blank">More info!</a>';
+var cookiePopupLink = 'By using this website, you consent to the use of these cookies. <a href="dump/cookieinfo.html" target="_blank">More info!</a>';
 var cookiePopupButton = "Got it!!";
 
 
