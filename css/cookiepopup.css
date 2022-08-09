@@ -47,7 +47,7 @@
 }
 .cookiePopupBoxContainer .cookieButton a:hover { 
 	cursor: pointer;
-	background: #66fcf1;
+	background: #1ac21f;
 }
 
 @media (max-width: 980px) {

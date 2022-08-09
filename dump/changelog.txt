@@ -13,13 +13,12 @@ Besure to also join the discord: https://discord.gg/wv6huJAwEv
 
 NOTE: Make sure you refresh the page! Sometimes you will not get the lastest update!
 
-🐱 | Changes by u4pak
-🐧 | Changes by Piplup7575
-   | Changes by Echo (unless specified)
-
 + Means something was added
 ^ Means something was upgraded or changed
 - Means something was removed
+------------------------------------------------------------
+Aug, 29
++ Updated site to v3
 ------------------------------------------------------------
 May, 23
 + Added Subway Surfers
@@ -39,8 +38,8 @@ May, 10
 + Added CircloO
 ------------------------------------------------------------
 May, 6
-+ Added Wolfenstein 3D 🐱
-+ Added Hextris 🐱
++ Added Wolfenstein 3D
++ Added Hextris
 ^ Fixed issue with Eaglercraft not working
 ------------------------------------------------------------
 May, 5
@@ -79,14 +78,14 @@ Apr, 25
 ^ Added more sounds to the soundboard
 ------------------------------------------------------------
 Apr, 23
-+ Added Smash Karts 🐧
++ Added Smash Karts 
 ------------------------------------------------------------
 Apr, 22
 + Added Moto X3M Winter
 ^ Update green text
 ------------------------------------------------------------
 Apr, 21
-+ Added more sounds to Soundboard 🐧
++ Added more sounds to Soundboard 
 + Added about:blank embed bookmarklet (Thanks fo-od!)
 + Added stopwatch bookmarklet (Thanks BluePotato!)
 ------------------------------------------------------------
@@ -111,37 +110,37 @@ Fun fact! Github.com was unblocked for me (Echo)!!! Lets gooooooo! Also on the D
 - Removed BitLife (the limit popup cant be fixed)
 ------------------------------------------------------------
 Apr, 4
-+ Added Mario 🐧
-+ Added CSGO Clicker 🐱
++ Added Mario 
++ Added CSGO Clicker 
 ------------------------------------------------------------
 Apr, 3
-+ Added Bloxors 🐧
++ Added Bloxors 
 ------------------------------------------------------------
 Mar, 30
 My mom did not notice :)
-+ Added Super Mario 64 🐧
++ Added Super Mario 64 
 ------------------------------------------------------------
 Mar, 26
 I brought my gaming laptop to school. AGAIN!
 + Added Getaway Shootout
 ------------------------------------------------------------
 Mar, 25
-+ Added Heroku website deployment method 🐧
++ Added Heroku website deployment method 
 ------------------------------------------------------------
 Mar, 23
-+ Added Factory Balls Forever 🐧
++ Added Factory Balls Forever 
 + Added Madalin Stunt Cars 3
 ------------------------------------------------------------
 Mar, 22
 + Added Duck Life 4
 + Added Paper.io 2
 + Added Rolly Vortex
-+ Added contributors to site under dump tab (contributors.md) 🐧
++ Added contributors to site under dump tab (contributors.md) 
 ^ Improved projects tab because it was starting to look bad (see if you can notice the changes in the projects tab)
 ------------------------------------------------------------
 Mar, 21
 + Added Deal or No Deal (flash game, thank ruffle!)
-+ Added ability to deploy using Glitch.com (Check main Readme.md file) 🐧
++ Added ability to deploy using Glitch.com (Check main Readme.md file) 
 ^ Fixed issue where when you opened a feature request it did not assign the label.
 ------------------------------------------------------------
 Mar, 18
@@ -150,8 +149,8 @@ Mar, 18
 ^ Fixed error with Tab Cloak icon not loading on the comments page.
 ------------------------------------------------------------
 Mar, 17
-+ Added The Lost Ball 🐧
-+ Added Geometry Dash 🐧
++ Added The Lost Ball 
++ Added Geometry Dash 
 ------------------------------------------------------------
 Mar, 15
 Just quick little note, I will be going to the beach tomarrow so expect updates to be delayed.
@@ -175,7 +174,7 @@ Mar, 12
 Long time no see! Here are some amazing updates!
 + Added Wordle
 + Added Madalin Stunt Cars 2
-+ Added Ducklife 🐧
++ Added Ducklife 
 ------------------------------------------------------------
 Mar, 8
 + Added TAB CLOAK!!! --> https://3kh0.github.io/dump/tab-cloak.html
@@ -189,7 +188,7 @@ Mar, 8
 ------------------------------------------------------------
 Mar, 2
 + Added Vex 6
-+ Added Edge not found 🐧
++ Added Edge not found 
 ------------------------------------------------------------
 Mar, 1
 + Added back comment box! (please do not abuse it)
@@ -214,12 +213,12 @@ Feb, 23
 ------------------------------------------------------------
 Feb, 22
 Happy TWOsday! Haha
-+ Added Vex 4 🐧
++ Added Vex 4 
 + Added Vex 3
 ^ Add back tetris icon for project menu (thx u4pak!)
 ------------------------------------------------------------
 Feb, 21
-+ Added Cut the rope 🐧
++ Added Cut the rope 
 + Added Cut the rope: Time Travel
 + Added Zombs Royale
 + Added Vex 5

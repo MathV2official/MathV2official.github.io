@@ -1,5 +1,10 @@
 // script to generate random greetings
-// array splashes
+
+function changeSub(num) {
+  document.getElementById("subtitle").innerText = say[num];
+}
+
+
 var say = [];
 say[0] = "Welcome.";
 say[1] = "Hello!";
@@ -199,8 +204,54 @@ say[195] = "Shoutout to 3kh0!";
 say[196] = "Woo! /g/";
 say[197] = "youtube.com/watch?v=dQw4w9WgXcQ";
 say[198] = "youtube.com/c/shadrYT";
-say[199] = "Help! I've fallen, and I can't get up!";
-say[200] = "me when the me the when me the the me when";
+say[199] = '"Pretend inferiority and encourage his arrogance." －Sun Tzu';
+say[200] = "Help im locked in a data center!";
+say[201] = "5261796D6F6E6420486F6C74";
+say[202] = "gif bezos";
+say[203] = "God i just hate reality";
+say[204] = "Please stop posting furry images.";
+say[205] = "i wanted free vbucks :(";
+say[206] = "i want to be a cat";
+say[207] = "i want to be a dog";
+say[208] = "i want to be a horse";
+say[209] = "i want to be a cow";
+say[210] = "i want to be a sheep";
+say[211] = "i want to be a goat";
+say[212] = "i want to be a chicken";
+say[213] = "i want to be a pig";
+say[214] = "i want to be a piplup";
+say[215] = "i want to be a 3kh0";
+say[216] = "i want to be a bozo";
+say[217] = "i want to be a gaemer";
+say[218] = "Is this the United Airlines costumer service center?";
+say[219] = "we will steal your china and sell it to ip";
+say[220] = "Never half-ass two things. Whole-ass one thing.";
+say[221] = "bottem text";
+say[222] = "top text";
+say[223] = "Why do they call it oven if you oven the cold food of out hot eat the food";
+say[224] = "furryegirl";
+say[225] = "No fun allowed";
+say[226] = "Your toes will be pulled tonight";
+say[227] = "Someone was too lazy to give it a title";
+say[228] = "i do love buying birth certificates from the black market! - Piplup"
+say[229] = "'If you are trash go cry to Fortnite you loser' - Sun Tzu, Art of war"
+say[230] = "undefined"
+say[231] = "i wanted free vbucks :("
+say[232] = "Avocados \ud83e\udd51 from Mexico \ud83c\uddf2\ud83c\uddfd"
+say[233] = "i realised i haven't blinked in like half an hour and now blinking feels uncomfortable";
+say[234] = "reload for another message";
+say[235] = "Boost the discord server for a very cool role!";
+say[236] = "Why does the discord server exist";
+say[237] = "I purchased a baby clown from the Russian terrorist black market.";
+say[238] = "He stomped on his fruit loops and thus became a cereal killer.";
+say[239] = "Technoblade never dies!";
+say[240] = "And just to think I knew him before he was famous!";
+say[241] = "Trust me, I did not copy Minecraft with this!";
+say[242] = "It is everyday bro!";
+say[243] = "That proves you are unusual";
+say[244] = "What's my age again?";
+say[245] = "If you think you are dumb, it is true";
+say[256] = "This is the 5th time this week, and it's only Monday!";
 
 // pick a random greeting
 var howmany = say.length;
