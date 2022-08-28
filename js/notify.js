@@ -19,7 +19,7 @@ async function send() {
       localStorage.setItem("gamecode", jsdata.gaSmecode - 1);
     }
 
-    var clicklink = window.location.origin + jsdata.link;
+    var clicklink = window.location.origin + jsdata.link
     var img = "/favicon.ico";
     var text = "A new game has been released, " + jsdata.title + ". Click here to play it now!";
     var notif = new Notification("New game added!", { body: text, icon: img });
