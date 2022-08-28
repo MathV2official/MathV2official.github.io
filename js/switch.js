@@ -37,7 +37,7 @@ function tog1() {
   if (document.getElementById("redadswitch").checked) {
     let ram = navigator.deviceMemory;
     if (ram === undefined) {
-      alert("Sorry, this feature is not available in this broswer. Please switch to Chrome, Opera, or Edge to use this feature.");
+      alert("Sorry, this feature is not available in this broswer. Please switch to Chrome, Opera, or Edge to use this feature!");
       document.getElementById("redadswitch").checked = true;
       window.localStorage.setItem("redads", "true");
       return;
@@ -49,7 +49,7 @@ function tog1() {
     };
     document.getElementById("redadswitch").checked = false;
     window.localStorage.setItem("redads", "false"); //we dont want this
-    return;
+    location.reload();
   } else {
     document.getElementById("redadswitch").checked = true;
     window.localStorage.setItem("redads", "true");

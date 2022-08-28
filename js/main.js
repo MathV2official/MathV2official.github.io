@@ -29,11 +29,15 @@ if (gaenabled == "false") {
       gtag('js', new Date());
       gtag('config', 'G-98DP5VKS42');`;
   document.head.append(gascript, inlinegascript);
-  script("Injected script 1/2");
+  script("Injected script 1/3");
 }
 
 const tabCloak = document.createElement("script");
-tabCloak.setAttribute("async", "");
 tabCloak.setAttribute("src", "/js/tab_cloak.js");
 document.head.append(tabCloak);
-script("Injected script 2/2");
+script("Injected script 2/3");
+
+const notify = document.createElement("script");
+notify.setAttribute("src", "/js/notify.js");
+document.head.append(notify);
+script("Injected script 3/3");
