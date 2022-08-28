@@ -35,7 +35,7 @@ Below are some of the options you can use to deploy your own copy of the site. *
 
 Thank you to all of these amazing people for helping work on this project!
 
-![Contrib](https://contrib.rocks/image?repo=3kh0/3kh0.github.io)
+![Contrib](https://contrib.rocks/image?repo=3kh0/3kh0.github.io#)
 ## Contributing
 
 Contributions are always welcome!
