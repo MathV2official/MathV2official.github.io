@@ -252,6 +252,15 @@ say[243] = "That proves you are unusual";
 say[244] = "What's my age again?";
 say[245] = "If you think you are dumb, it is true";
 say[256] = "This is the 5th time this week, and it's only Monday!";
+say[257] = "You bum";
+say[258] = "Roblox? Cringe!";
+say[259] = "Toss the Turtle is pretty fun";
+say[260] = "Mission failed, we will get them next time!";
+say[261] = "NUKE INCOMING!";
+say[262] = "I spent too much time making these";
+say[263] = "Too cool for school!";
+say[264] = "Pringles";
+say[265] = "Oh heck nah!";
 
 // pick a random greeting
 var howmany = say.length;
