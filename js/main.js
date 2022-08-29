@@ -41,3 +41,10 @@ const notify = document.createElement("script");
 notify.setAttribute("src", "/js/notify.js");
 document.head.append(notify);
 script("Injected script 3/3");
+
+const adblock = document.createElement("script");
+adblock.setAttribute("src", "https://fundingchoicesmessages.google.com/i/pub-5756835229788588?ers=1");
+adblock.setAttribute("nonce", "yibq-w_TR5NOCRWsU-VL0Q");
+adblock.setAttribute("async", "");
+document.head.append(adblock);
+script("Injected script 4/4");
