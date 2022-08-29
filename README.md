@@ -40,9 +40,9 @@ Thank you to all of these amazing people for helping work on this project!
 
 Contributions are always welcome!
 
-See `contributing.md` for ways to get started.
+See [`contributing.md`](https://github.com/3kh0/3kh0.github.io/blob/main/.github/CONTRIBUTING.md) for ways to get started.
 
-Please adhere to this project's `code of conduct`.
+Please adhere to this project's [`code of conduct`](https://github.com/3kh0/3kh0.github.io/blob/main/.github/CODE_OF_CONDUCT.md).
 
 
 ## Badges
