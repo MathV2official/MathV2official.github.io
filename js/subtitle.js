@@ -261,6 +261,8 @@ say[262] = "I spent too much time making these";
 say[263] = "Too cool for school!";
 say[264] = "Pringles";
 say[265] = "Oh heck nah!";
+say[266] = "Hoo hoo hoo!";
+say[267] = "Light mode eww!";
 
 // pick a random greeting
 var howmany = say.length;

@@ -18,6 +18,9 @@ NOTE: Make sure you refresh the page! Sometimes you will not get the lastest upd
 - Means something was removed
 ------------------------------------------------------------
 Aug, 29
++ Added Precision Client
+------------------------------------------------------------
+Aug, 28
 + Updated site to v3
 ------------------------------------------------------------
 May, 23
