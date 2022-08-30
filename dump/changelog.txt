@@ -18,6 +18,7 @@ NOTE: Make sure you refresh the page! Sometimes you will not get the lastest upd
 - Means something was removed
 ------------------------------------------------------------
 Aug, 29
++ Added Krunker
 + Added Precision Client
 ------------------------------------------------------------
 Aug, 28
