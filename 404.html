@@ -10,11 +10,10 @@
   <body>
     <h1 id="header">404 Error</h1>
     <p id="detail">
-      That requested URL or file was not found. This might be on you or it is just my bad coding, that might be it.<br />
+      That requested URL or file was not found. This might be on you or it is just my bad coding, \.<br />
       Help us out and <a href="https://github.com/3kh0/3kh0.github.io/issues">open a issue</a> so we know this happened!
     </p>
     <button id="sfnButton" onclick="statsForNerds()">Stats for nerds</button>
-    <p></p>
     <div id="sfn">
       Requested URL: <span id="full">Fetching URL...</span><br />
       User IP: <span id="ip">Fetching IP...</span><br />
@@ -26,7 +25,7 @@
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5756835229788588" crossorigin="anonymous"></script>
     <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5756835229788588" data-ad-slot="6230603875" data-ad-format="auto" data-full-width-responsive="true"></ins>
     <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="/js/lib/jquery-3.2.1.min.js"></script>
     <script>
       function statsForNerds() {
         var x = document.getElementById("sfn");
@@ -38,10 +37,10 @@
           console.log("[ℹ️] Hiding the stats for nerds!");
         }
       }
-      document.getElementById("full").innerHTML = window.location.href;
+      document.getElementById("full").innerText = window.location.href;
 
       $.getJSON("https://ipgeolocation.abstractapi.com/v1/?api_key=a1ebbf04c6164dd98b527e26c57fc28c", function (data) {
-        document.getElementById("ip").innerHTML = data.ip_address;
+        document.getElementById("ip").innerText = data.ip_address;
       });
     </script>
     <script src="/js/main.js"></script>
