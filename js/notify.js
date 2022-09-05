@@ -1,3 +1,5 @@
+return;
+
 Notification.requestPermission();
 var consent = localStorage.getItem("notify");
 if (!consent) {
