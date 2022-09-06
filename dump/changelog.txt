@@ -18,6 +18,7 @@ NOTE: Make sure you refresh the page! Sometimes you will not get the lastest upd
 - Means something was removed
 ------------------------------------------------------------
 Sep, 5
++ Added Random Reddit meme (going to make seperate repo for this soon)
 + Added Om Nom Bounce
 ------------------------------------------------------------
 Aug, 29
