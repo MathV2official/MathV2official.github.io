@@ -17,6 +17,9 @@ NOTE: Make sure you refresh the page! Sometimes you will not get the lastest upd
 ^ Means something was upgraded or changed
 - Means something was removed
 ------------------------------------------------------------
+Sep, 9
++ Started the open beta for our discord in browser plugin!
+------------------------------------------------------------
 Sep, 5
 + Added Random Reddit meme (going to make seperate repo for this soon)
 + Added Om Nom Bounce
