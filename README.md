@@ -82,7 +82,7 @@ to something like 8080 and open up a browser and point to `localhost:8080`
 
 This code is licensed under the **Apache-2.0 License**. I ask you that you do not copy the code in the repo what-so-ever; I take time to build this and I do not need someone just yoinking all of my games for ones site. If you have any questions please open a issue!
 
-> You can view the full licence [here](https://github.com/3kh0/3kh0.github.io/blob/main/LICENSE.md)!
+> You can view the full license [here](https://github.com/3kh0/3kh0.github.io/blob/main/LICENSE.md)!
 
 
 ## Previous versions
