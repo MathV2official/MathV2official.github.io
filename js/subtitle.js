@@ -263,6 +263,22 @@ say[264] = "Pringles";
 say[265] = "Oh heck nah!";
 say[266] = "Hoo hoo hoo!";
 say[267] = "Light mode eww!";
+say[268] = "pretzels";
+say[269] = "Please game responsibly";
+say[270] = "burbur";
+say[271] = "Apple bottom jeans!";
+say[272] = "We out here!";
+say[273] = "what a gaemer";
+say[274] = "Please enjoy responsibly";
+say[275] = "Can you really buy land on the moon?";
+say[276] = "Breaking news! Your computer will blow up in 3...";
+say[277] = "Gaming since 2020!";
+say[278] = "Hacker man!";
+say[279] = "Your fortune is...";
+say[280] = "Let's just hope you dont get caught doing this...";
+say[281] = "Site shutting down in 2 days...jk";
+say[282] = "This is not the first time you did this...";
+say[283] = "baba booey"
 
 // pick a random greeting
 var howmany = say.length;
