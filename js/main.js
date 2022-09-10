@@ -37,9 +37,9 @@ tabCloak.setAttribute("src", "/js/tab_cloak.js");
 document.head.append(tabCloak);
 script("Injected script 2/3");
 
-const notify = document.createElement("script");
-notify.setAttribute("src", "/js/notify.js");
-document.head.append(notify);
+//const notify = document.createElement("script");
+//notify.setAttribute("src", "/js/notify.js");
+//document.head.append(notify);
 script("Injected script 3/3");
 
 const adblock = document.createElement("script");

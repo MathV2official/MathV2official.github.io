@@ -25,7 +25,7 @@
     <script>
       (adsbygoogle = window.adsbygoogle || []).push({});
     </script>
-    <button id="button" onclick="go()">Continue</button>
+    <button id="button" class="pure-material-button-contained" disabled="true" onclick="go()">Continue</button>
     <script src="/js/main.js"></script>
     <script>
       const keysValues = window.location.search;
@@ -38,7 +38,6 @@
         if (!urlParams.get("local")) {
           document.getElementById("message").innerText = "Oh no! This link is invalid. Please make sure you are using the correct link.";
         }
-        console.log(local);
         var redirect = urlParams.get("to");
         decodeURI(redirect);
         if (local == "true") {
@@ -59,7 +58,7 @@
           if (timeleft <= 0) {
             clearInterval(downloadTimer);
             document.getElementById("count").innerHTML = "0";
-            document.getElementById("button").style.display = "block";
+            document.getElementById("button").disabled = false;
           } else {
             document.getElementById("count").innerHTML = timeleft;
           }
