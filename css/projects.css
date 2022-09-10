@@ -23,6 +23,7 @@ a {
   background-color: #949494;
   height: 400px;
   width: 300px;
+  color: #ffffff;
   border-radius: 30px;
   -webkit-animation: scale-down-center 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   animation: scale-down-center 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
@@ -79,7 +80,7 @@ a {
 }
 .game-title {
   font-size: 30px;
-  color: #000000;
+  color: #ffffff;
   text-align: center;
 }
 .flex-container {
@@ -93,4 +94,11 @@ a {
 }
 .container {
   padding: 10px;
+}
+.badge {
+  background-color: red;
+  color: white;
+  padding: 4px 8px;
+  text-align: center;
+  border-radius: 5px;
 }
