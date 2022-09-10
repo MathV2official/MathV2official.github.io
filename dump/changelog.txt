@@ -22,6 +22,7 @@ Sep, 10
 + Added Glass City
 + Added Station 141
 + Added VELOCE
++ Added Core Ball
 ^ Fixed error on about:blank embedder looking weird
 ^ Added a review from food to homepage
 ^ Fix issue #40
