@@ -38,6 +38,9 @@ body {
 .text-center {
   text-align: center;
 }
+.card-wrapper {
+  padding-top: 20px;
+}
 .card-img-top {
   width: 100px;
   height: auto;
@@ -47,7 +50,7 @@ body {
 .card {
   background: #fff;
   box-shadow: 0 8px 15px -7px #c9dff0;
-  margin: 0 20px;
+  margin: 0 10px;
   padding-left: 10px;
   border-radius: 20px;
   border: 0;
@@ -137,3 +140,40 @@ a {
     transform: scale(1);
   }
 }
+* {
+  box-sizing: border-box;
+}
+
+/* Float four columns side by side */
+.column {
+  float: none;
+  width: 25%;
+  padding: 0 5px;
+  padding-bottom: 30px;
+  padding-left: 10px;
+}
+
+.row {
+  width: 100%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the counter cards */
+.thing {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  text-align: center;
+  background-color: #fff;
+  color: #3b3b3b;
+  height: 200px;
+  border-radius: 20px;
+  box-shadow: 0 8px 15px -7px #c9dff0;
+  padding-top: 10px;
+}
+
+.fa {font-size:50px;}
