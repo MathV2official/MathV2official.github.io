@@ -24,6 +24,7 @@ Sep, 10
 + Added VELOCE
 + Added Core Ball
 + Added Protektor
++ Added Drive Mad (kinda)
 ^ Fixed error on about:blank embedder looking weird
 ^ Added a review from food to homepage
 ^ Fix issue #40
@@ -244,11 +245,11 @@ Happy TWOsday! Haha
 ^ Add back tetris icon for project menu (thx u4pak!)
 ------------------------------------------------------------
 Feb, 21
-+ Added Cut the rope 
++ Added Cut the rope
 + Added Cut the rope: Time Travel
 + Added Zombs Royale
 + Added Vex 5
-+ Added people.txt (https://3kh0.github.io/dump/people.txt)
++ Added people.txt
 ^ Revamp the comment box, will re-enable soon-ish
 ^ Fixed issue of Tetris not working.
 ^ Updated green text (again)
