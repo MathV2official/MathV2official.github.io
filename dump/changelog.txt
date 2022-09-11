@@ -18,7 +18,6 @@ NOTE: Make sure you refresh the page! Sometimes you will not get the lastest upd
 - Means something was removed
 ------------------------------------------------------------
 Sep, 10
-+ Added Tactical Weapon Pack 2
 + Added Glass City
 + Added Station 141
 + Added VELOCE
@@ -28,6 +27,9 @@ Sep, 10
 ^ Fixed error on about:blank embedder looking weird
 ^ Added a review from food to homepage
 ^ Fix issue #40
+------------------------------------------------------------
+Sep, 9
++ Added Tactical Weapon Pack 2
 ------------------------------------------------------------
 Sep, 8
 + Added GOODNIGHT
