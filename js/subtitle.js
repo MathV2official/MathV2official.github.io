@@ -284,7 +284,18 @@ say[285] = "beans";
 say[286] = "OwO";
 say[287] = "UwU";
 say[288] = "._.";
-say[289]
+say[289] = "null";
+say[290] = "It's over 100!";
+say[291] = "Get to work!"
+say[292] = "Cats or Dogs?";
+say[293] = "[error] var braincells is to low";
+say[294] = "DM Echo if you want to see your name here!";
+say[295] = "shadrYT on top!"
+say[296] = "Sub to shadrYT!"
+say[297] = "Free robux! Wait who even plays that game eww";
+say[298] = "Did you know that there are other JAWS movies, yeah they are bad!";
+say[299] = "This is the 300th splash text!"
+say[300] = "Extra credit be like"
 
 // pick a random greeting
 var howmany = say.length;
