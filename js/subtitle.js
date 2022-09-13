@@ -278,7 +278,13 @@ say[279] = "Your fortune is...";
 say[280] = "Let's just hope you dont get caught doing this...";
 say[281] = "Site shutting down in 2 days...jk";
 say[282] = "This is not the first time you did this...";
-say[283] = "baba booey"
+say[283] = "baba booey";
+say[284] = "Can't stop me now!";
+say[285] = "beans";
+say[286] = "OwO";
+say[287] = "UwU";
+say[288] = "._.";
+say[289]
 
 // pick a random greeting
 var howmany = say.length;
