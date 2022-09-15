@@ -17,6 +17,9 @@ NOTE: Make sure you refresh the page! Sometimes you will not get the lastest upd
 ^ Means something was upgraded or changed
 - Means something was removed
 ------------------------------------------------------------
+Sep, 15
++ Added ext remover
+------------------------------------------------------------
 Sep, 13
 + Added more splash texts
 ^ Optimized all images
