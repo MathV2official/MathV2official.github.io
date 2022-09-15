@@ -294,8 +294,9 @@ say[295] = "shadrYT on top!"
 say[296] = "Sub to shadrYT!"
 say[297] = "Free robux! Wait who even plays that game eww";
 say[298] = "Did you know that there are other JAWS movies, yeah they are bad!";
-say[299] = "This is the 300th splash text!"
-say[300] = "Extra credit be like"
+say[299] = "This is the 300th splash text!";
+say[300] = "Extra credit be like";
+say[301] = "Blue Potato's are superior";
 
 // pick a random greeting
 var howmany = say.length;
