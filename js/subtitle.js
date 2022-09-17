@@ -307,6 +307,9 @@ say[308] = "Toto, I've a feeling we're not in Kansas anymore";
 say[309] = "You keep using that word. I do not think it means what you think it means.";
 say[310] = "c h a o s";
 say[310] = "a- amogu- *gets shot with laser*";
+say[311] = "potato";
+say[312] = "Ping: 87654ms";
+say[313] = "Ping: 1ms";
 
 // pick a random greeting
 var howmany = say.length;
