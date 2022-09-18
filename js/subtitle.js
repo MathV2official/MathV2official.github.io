@@ -310,6 +310,8 @@ say[310] = "a- amogu- *gets shot with laser*";
 say[311] = "potato";
 say[312] = "Ping: 87654ms";
 say[313] = "Ping: 1ms";
+say[314] = "69 x 21 + 420 + 911 - 760 = 2020";
+say[315] = "Aspaceman is n o i c e";
 
 // pick a random greeting
 var howmany = say.length;
