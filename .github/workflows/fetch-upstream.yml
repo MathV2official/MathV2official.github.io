@@ -1,5 +1,7 @@
 # File: .github/workflows/repo-sync.yml
 
+name: "Auto Fetch Upstream"
+
 on:
   schedule:
   - cron:  "*/15 * * * *"
