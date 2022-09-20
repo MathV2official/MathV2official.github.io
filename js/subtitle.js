@@ -312,6 +312,11 @@ say[312] = "Ping: 87654ms";
 say[313] = "Ping: 1ms";
 say[314] = "69 x 21 + 420 + 911 - 760 = 2020";
 say[315] = "Aspaceman is n o i c e";
+say[316] = "With great power comes great need to take a nap. Wake me up later.";
+say[317] = "I’m going to defeat you with the power of friendship! ... And this knife I found.";
+say[318] = "If you can’t beat them, dress better than them";
+say[319] = "Died and came back as a cowboy, I call that reintarnation.";
+say[320] = "So what’s for dinner?";
 
 // pick a random greeting
 var howmany = say.length;
