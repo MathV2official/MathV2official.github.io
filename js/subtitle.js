@@ -317,6 +317,8 @@ say[317] = "I’m going to defeat you with the power of friendship! ... And this
 say[318] = "If you can’t beat them, dress better than them";
 say[319] = "Died and came back as a cowboy, I call that reintarnation.";
 say[320] = "So what’s for dinner?";
+say[321] = "#VoteForJude";
+say[322] = "0.0";
 
 // pick a random greeting
 var howmany = say.length;
