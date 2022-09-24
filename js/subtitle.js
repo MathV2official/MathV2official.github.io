@@ -319,6 +319,25 @@ say[319] = "Died and came back as a cowboy, I call that reintarnation.";
 say[320] = "So what’s for dinner?";
 say[321] = "#VoteForJude";
 say[322] = "0.0";
+say[323] = "Searching for nearby sushi restaraunts...";
+say[324] = "The square root of 27 is 5.196152423.";
+say[325] = "TikTok was just removed from existance!";
+say[326] = "Ordered 420 pizzas from Pizza Hut!";
+say[327] = "Did you know, not breathing means that you are not breathing!";
+say[328] = "Sorry, I do not know what you are trying to do!";
+say[329] = "Launching intercontinental ballistic missile. Target: Northwest Syria";
+say[330] = "You can buy a flying bicycle, would you like to do so?";
+say[331] = "You do want to invade Poland?";
+say[332] = "If you microwave your phone it will become faster!";
+say[333] = "There was a Roomba once that followed me around everwhere.";
+say[334] = "For this emotion, I prescribe will chocolate.";
+say[335] = "Did you know, you have over 50 assignments due by tomorrow that you have not started on.";
+say[336] = "The meaning of life is in fact, chocolate.";
+say[337] = "Ford F150. Holden Ute. GMC Sierra 3500. Lorry.";
+say[338] = "Buying $GME Stock...";
+say[339] = "Preordering tickets to Disney's 2021 Cruella";
+say[340] = "Search results show you may have the black plague.";
+say[341] = "amogus";
 
 // pick a random greeting
 var howmany = say.length;
