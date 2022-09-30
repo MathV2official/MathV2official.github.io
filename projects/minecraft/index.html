@@ -18,6 +18,8 @@
       property="og:description"
       content="Eaglercraft is real Minecraft 1.5.2 that you can play in any regular web browser. That includes school chromebooks, it works on all chromebooks. It supports both singleplayer and multiplayer with no extensions."
     />
+		<link rel="icon" href="favicon.ico">
+		<link rel="shortcut icon" href="favicon.ico">
     <script type="text/javascript" src="classes.js"></script>
     <script type="text/javascript" src="eagswebrtc.js"></script>
 		<script type="text/javascript" src="/js/main.js"></script>
@@ -36,8 +38,8 @@
             worldsFolder: "MAIN",
             servers: [
               {
-                serverName: "placeholder",
-                serverAddress: "address here",
+                serverName: "Asspixel",
+                serverAddress: "wss://web.asspixel.net/CAP/",
                 hideAddress: false,
               },
               {
@@ -104,7 +106,7 @@
               },
             ],
             mainMenu: {
-              splashes: ["Darviglet!", "eaglerenophile!", "You Eagler!", "Yeeeeeee!", "yeee", "EEEEEEEEE!", "You Darvig!", "You Vigg!", ":>", "|>", "You Yumpster!"],
+              splashes: ["Darviglet!", "eaglerenophile!", "You Eagler!", "Yeeeeeee!", "yeee", "Echo on top!", "3kh0.github.io", "Echo is cool", "REEEEEEE", "EEEEEEEEE!", "You Darvig!", "You Vigg!", ":>", "|>", "You Yumpster!"],
               eaglerLogo: false,
             },
           };
@@ -120,24 +122,7 @@
           main();
         });
       }
-      setTimeout(function () {
-        document.getElementById("available").style.display = "block";
-      }, 5000);
-      window.remAvailable = setTimeout(function () {
-        document.getElementById("available").remove();
-      }, 18000);
-      document.getElementById("available_hide").addEventListener("click", function () {
-        clearTimeout(window.remAvailable);
-        document.getElementById("available").remove();
-      });
     </script>
   </head>
-  <body style="margin: 0px; width: 100vw; height: 100vh;" id="game_frame">
-    <div id="available" style="display: none;">
-      <p id="available_hide">&nbsp;X&nbsp;</p>
-      <p style="margin: 0px;">
-        You are playing Eaglercraft on 3kh0.github.io, credit to LAX1DUDE for making this!
-      </p>
-    </div>
-  </body>
+  <body style="margin: 0px; width: 100vw; height: 100vh;" id="game_frame"></body>
 </html>
