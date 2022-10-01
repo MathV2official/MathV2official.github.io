@@ -2,6 +2,11 @@
 <html>
   <head>
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <!--Review Carousel Scripts-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!--End Review Carousel Scripts-->
     <link rel="stylesheet" type="text/css" href="/css/index.css" />
     <title>3kh0.github.io</title>
     <meta name="keywords" content="front-end web developer, unblocked, games, google sites, unblocked games mom, ublocked, code, coding, programmer, development, javascript, jquery, bootstrap, sass, less, git" />
@@ -32,102 +37,117 @@
     <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5756835229788588" data-ad-slot="6230603875" data-ad-format="auto" data-full-width-responsive="true"></ins>
     <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
     <!-- Start Review section -->
-    <div class="flex-container">
-      <div class="card-wrapper">
-        <div class="card text-center">
-          <img class="card-img-top" src="/img/reviews/NotJumbled86.webp" alt="NotJumbled86" />
-          <div class="card-body">
-            <h3>NotJumbled86</h3>
-            <p class="card-text">
-              10/10 Site, it is easy to use and has a lot of features. When it gets blocked, you can just deploy your own copy of the site!
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div class="card-wrapper">
-        <div class="card text-center">
-          <img class="card-img-top" src="/img/reviews/Piplup7575.webp" alt="Piplup7575" />
-          <div class="card-body">
-            <h3>Piplup7575</h3>
-            <p class="card-text">10/10 would meme again. i am totally not one of the people working on the site...</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="card-wrapper">
-        <div class="card text-center">
-          <img class="card-img-top" src="/img/reviews/DreamXD.webp" alt="DreamXD" />
-          <div class="card-body">
-            <h3>DreamXD</h3>
-            <p class="card-text">amazing site, i play on it everyday, super fun games and the site looks fire. it never gets blocked for me. the site is just good, everyone at my school plays it</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="card-wrapper">
-        <div class="card text-center">
-          <img class="card-img-top" src="/img/reviews/food.png" alt="food" />
-          <div class="card-body">
-            <h3>food</h3>
-            <p class="card-text">100/10 best website ever, as soon as i opened it i instantly gained 546 girlfriends and 69420 boyfriends, + i got A's on all of my classes and had a 5.0 GPA (real)</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="card-wrapper">
-        <div class="card text-center">
-          <img class="card-img-top" src="/img/reviews/inspiration.webp" alt="inspiration" />
-          <div class="card-body">
-            <h3>Inspiration</h3>
-            <p class="card-text">good game site, tons of games, and easy to make a copy of with github, vercel and netify. echo please let me out of your basement i want to see the sun please</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="card-wrapper">
-        <div class="card text-center">
-          <img class="card-img-top" src="/img/reviews/TheTwoLegCat.webp" alt="TheTwoLegCat" />
-          <div class="card-body">
-            <h3>TheTwoLegCat</h3>
-            <p class="card-text">beans</p>
-          </div>
-        </div>
-      </div>
-      
-      <div class="card-wrapper">
-        <div class="card text-center">
-          <img class="card-img-top" src="/img/reviews/nicolasog12.png" alt="nicolasog12" />
-          <div class="card-body">
-            <h3>nicolasog12</h3>
-            <p class="card-text">100 out 10 best site ever love the games love the easy interface and how there's so many proxies, also ummm echo why are people in your basement uhh ok :)</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="flex-container row">
-      <div class="column">
-        <div class="thing">
-          <p><i class="fa fa-user"></i></p>
-          <h3>4,000,000+</h3>
-          <p>unique visitors</p>
-        </div>
-      </div>
+    <div class="container">
+      <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#myCarousel" data-slide-to="1"></li>
+        </ol>
     
-      <div class="column">
-        <div class="thing">
-          <p><i class="fa fa-solid fa-gamepad"></i></p>
-          <h3>164</h3>
-          <p>total games</p>
-        </div>
-      </div>
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+          <div class="item active">
+        <div class="flex-container">
+          <div class="card-wrapper">
+            <div class="card text-center">
+              <img class="card-img-top" src="/img/NotJumbled86.webp" alt="NotJumbled86" />
+              <div class="card-body">
+                <h3>NotJumbled86</h3>
+                <p class="card-text">
+                  10/10 Site, it is easy to use and has a lot of features. When it gets blocked, you can just deploy your own copy of the site!
+                </p>
+              </div>
+            </div>
+          </div>
     
-      <div class="column">
-        <div class="thing">
-          <p><i class="fa fa-solid fa-clock"></i></p>
-          <h3>10,000,000+</h3>
-          <p>hours of gaming</p>
+          <div class="card-wrapper">
+            <div class="card text-center">
+              <img class="card-img-top" src="/img/Piplup7575.webp" alt="Piplup7575" />
+              <div class="card-body">
+                <h3>Piplup7575</h3>
+                <p class="card-text">10/10 would meme again. i am totally not one of the people working on the site...</p>
+              </div>
+            </div>
+          </div>
+    
+          <div class="card-wrapper">
+            <div class="card text-center">
+              <img class="card-img-top" src="/img/DreamXD.webp" alt="DreamXD" />
+              <div class="card-body">
+                <h3>DreamXD</h3>
+                <p class="card-text">amazing site, i play on it everyday, super fun games and the site looks fire. it never gets blocked for me. the site is just good, everyone at my school plays it</p>
+              </div>
+            </div>
+          </div>
+    
+          <div class="card-wrapper">
+            <div class="card text-center">
+              <img class="card-img-top" src="/img/emburn.png" alt="placeholder" />
+              <div class="card-body">
+                <h3>emburn</h3>
+                <p class="card-text">Great site 9/10! I mostly use it for the emulators (Mario 64/Webretro), and they have been doing great! A bit laggy, might be due to either the ads or my proxy, but other than that, I'm happy with it!</p>
+              </div>
+            </div>
+          </div>
         </div>
+          </div>
+    
+          <div class="item">
+        <div class="flex-container">
+          <div class="card-wrapper">
+            <div class="card text-center">
+              <img class="card-img-top" src="/img/food.png" alt="food" />
+              <div class="card-body">
+                <h3>food</h3>
+                <p class="card-text">100/10 best website ever, as soon as i opened it i instantly gained 546 girlfriends and 69420 boyfriends, + i got A's on all of my classes and had a 5.0 GPA (real)</p>
+              </div>
+            </div>
+          </div>
+    
+          <div class="card-wrapper">
+            <div class="card text-center">
+              <img class="card-img-top" src="/img/inspiration.webp" alt="inspiration" />
+              <div class="card-body">
+                <h3>Inspiration</h3>
+                <p class="card-text">good game site, tons of games, and easy to make a copy of with github, vercel and netify. echo please let me out of your basement i want to see the sun please</p>
+              </div>
+            </div>
+          </div>
+    
+          <div class="card-wrapper">
+            <div class="card text-center">
+              <img class="card-img-top" src="/img/TheTwoLegCat.webp" alt="TheTwoLegCat" />
+              <div class="card-body">
+                <h3>TheTwoLegCat</h3>
+                <p class="card-text">beans</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="card-wrapper">
+            <div class="card text-center">
+              <img class="card-img-top" src="/img/nicolasog12.png" alt="nicolasog12" />
+              <div class="card-body">
+                <h3>nicolasog12</h3>
+                <p class="card-text">100 out 10 best site ever love the games love the easy interface and how there's so many proxies, also ummm echo why are people in your basement uhh ok :)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+            
+          </div>
+        </div>
+    
+        <!-- Left and right controls -->
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right"></span>
+          <span class="sr-only">Next</span>
+        </a>
       </div>
     </div>
     <!-- End Review section -->
