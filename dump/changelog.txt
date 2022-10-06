@@ -17,6 +17,16 @@ NOTE: Make sure you refresh the page! Sometimes you will not get the lastest upd
 ^ Means something was upgraded or changed
 - Means something was removed
 ------------------------------------------------------------
+Oct, 4
++ Added Stickman boost
+------------------------------------------------------------
+Oct, 1
++ Added 2048 Multitask
++ Added Fish Hack Client (Eaglercraft)
++ Added search bar to projects list
+^ Changed the reviews so they scrolled
+- Remove #VoteForJude splash
+------------------------------------------------------------
 Sep, 15
 + Added ext remover
 ------------------------------------------------------------
