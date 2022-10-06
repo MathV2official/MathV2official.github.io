@@ -120,6 +120,7 @@
         document.getElementById("guess-who-back").play();
         document.getElementById("coc-intro").play();
         document.getElementById("cr-intro").play();
+        document.getElementById("psst").play();
       }
       function stopAll() {
         document.getElementById("fart").load();
@@ -212,6 +213,7 @@
         document.getElementById("guess-who-back").load();
         document.getElementById("coc-intro").load();
         document.getElementById("cr-intro").load();
+        document.getElementById("psst").load();
       }
     </script>
     <div class="control">
@@ -1323,6 +1325,19 @@
           <p class="name">
             <button onclick="window.location.href='sounds/cr-intro.mp3'">Download</button><br>
             Clash Royale Intro<br>
+          </p>
+        </div>
+      </div>
+      
+      <div>
+        <div class="sound">
+          <div class="circle small-button-background" style="background-color:#636363;"></div>
+          <audio id="psst" src="sounds/psst.mp3" preload="auto"></audio>
+          <button class="small-button" onclick="document.getElementById('psst').play();"></button>
+          <div class="small-button-shadow"></div>
+          <p class="name">
+            <button onclick="window.location.href='sounds/psst.mp3'">Download</button><br>
+            Doors Screech psst<br>
           </p>
         </div>
       </div>
