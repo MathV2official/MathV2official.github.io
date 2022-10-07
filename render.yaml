@@ -1,0 +1,5 @@
+services:
+  - type: web
+    name: echo-website
+    env: static
+    staticPublishPath: .
