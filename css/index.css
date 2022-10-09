@@ -58,6 +58,10 @@ body {
   width: 200px;
   height: 350px;
 }
+.glyphicon {
+  font-size: 30px;
+  padding-top: 200px;
+}
 a {
   text-decoration: none;
   color: #0084ff;
