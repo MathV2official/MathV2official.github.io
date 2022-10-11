@@ -2,10 +2,10 @@
 
 ![3kh0.github.io](https://socialify.git.ci/3kh0/3kh0.github.io/image?description=1&descriptionEditable=This%20is%203kh0.github.io%20v3%20the%20better%20unblocked%20games%20website!&font=Source%20Code%20Pro&forks=1&issues=1&language=1&logo=https%3A%2F%2F3kh0.github.io%2Ffavicon.ico&name=1&owner=1&pattern=Circuit%20Board&pulls=1&stargazers=1&theme=Dark)
 
-Welcome to 3kh0.github.io, your best option for unblocked games on the internet.
-This is the GitHub repo which is used to host the website. If you want to use the
-games on here on your website, please message me on discord and we can talk! `3kh0_#1791`
-If you fork this this repo please consider giving me a :star:!
+Welcome to 3kh0.github.io, your best option for unblocked games on the internet. This is the GitHub repo which is used to host the website. If you want to use the games on here on your website, please message me on discord and we can talk! `3kh0_#1791`
+
+> **Note**
+> **If you do fork this repo, please give the orginal repo a star! It helps out alot and only 30% of people who fork give me a star.**
 
 [![Vulnerability](https://github.com/3kh0/3kh0.github.io/actions/workflows/codeql-analysis.yml/badge.svg?branch=main)](https://github.com/3kh0/3kh0.github.io/actions/workflows/codeql-analysis.yml) [![pages-build-deployment](https://github.com/3kh0/3kh0.github.io/actions/workflows/pages/pages-build-deployment/badge.svg?branch=main)](https://github.com/3kh0/3kh0.github.io/actions/workflows/pages/pages-build-deployment)
 
@@ -82,10 +82,10 @@ or if you have GitHub CLI
 gh repo clone 3kh0/3kh0.github.io
 ```
 
-This project does not require any servers, for the best expericance, I suggest 
-using [XAMPP](https://www.apachefriends.org/) and cloning the repo into the
-Apache Server directory at `C:\xampp\htdocs` (for windows) and set the port
-to something like 8080 and open up a browser and point to `localhost:8080`
+This project does not require any backendservers, for the best expericance, I suggest using [XAMPP](https://www.apachefriends.org/) and cloning the repo into the Apache Server directory at `C:\xampp\htdocs` (for windows) and set the port to something like 8080 and open up a browser and point to `localhost:8080`
+
+> **Warning**
+> Please make your you know what you are doing, you could delete your entire drive if you are not careful!
 
 ## License
 
@@ -94,6 +94,7 @@ to something like 8080 and open up a browser and point to `localhost:8080`
 
 This code is licensed under the **Apache-2.0 License**. I ask you that you do not copy the code in the repo what-so-ever; I take time to build this and I do not need someone just yoinking all of my games for ones site. If you have any questions please open a issue!
 
+> **Note**
 > You can view the full license [here](https://github.com/3kh0/3kh0.github.io/blob/main/LICENSE.md)!
 
 
@@ -104,4 +105,3 @@ sense, this is v3
 
 - [Website v1](https://github.com/3kh0/website-v1)
 - [Website v2](https://github.com/3kh0/website-v2)
-
