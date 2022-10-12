@@ -7,7 +7,7 @@ Welcome to 3kh0.github.io, your best option for unblocked games on the internet.
 > **Note**
 > **If you do fork this repo, please give the orginal repo a star! It helps out alot and only 30% of people who fork give me a star.**
 
-[![Vulnerability](https://github.com/3kh0/3kh0.github.io/actions/workflows/codeql-analysis.yml/badge.svg?branch=main)](https://github.com/3kh0/3kh0.github.io/actions/workflows/codeql-analysis.yml) [![pages-build-deployment](https://github.com/3kh0/3kh0.github.io/actions/workflows/pages/pages-build-deployment/badge.svg?branch=main)](https://github.com/3kh0/3kh0.github.io/actions/workflows/pages/pages-build-deployment)
+[![Vulnerability](https://github.com/coolguy564738/math-v2/actions/workflows/codeql-analysis.yml/badge.svg?branch=main)](https://github.com/coolguy564738/math-v2/actions/workflows/codeql-analysis.yml) [![pages-build-deployment](https://github.com/coolguy564738/math-v2/actions/workflows/pages/pages-build-deployment/badge.svg?branch=main)](https://github.com/coolguy564738/math-v2/actions/workflows/pages/pages-build-deployment)
 
 ## Features
 
@@ -24,7 +24,7 @@ Welcome to 3kh0.github.io, your best option for unblocked games on the internet.
 
 You can access this project using the link below
 
-[https://3kh0.github.io](https://3kh0.github.io)
+[https://math-v2.netlify.app](https://math-v2.netlify.app)
 
 
 ## Host the website
