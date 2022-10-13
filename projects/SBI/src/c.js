@@ -1,0 +1,1 @@
+const W=1920;const H=1080;
