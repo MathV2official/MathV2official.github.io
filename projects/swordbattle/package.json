@@ -1,0 +1,60 @@
+{
+  "name": "swordbattle.io",
+  "version": "1.0.0",
+  "description": "A multiplayer 2D sword battle game",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --config webpack.config.js",
+    "prod": "webpack --config webpackprod.config.js",
+    "heroku-postbuild": "node setup",
+    "watch": "webpack --config webpack.config.js --watch --progress",
+    "test": "node index.js --unhandled-rejections=strict",
+    "start": "node index.js --unhandled-rejections=strict"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@faker-js/faker": "^6.0.0-alpha.7",
+    "axios": "^0.24.0",
+    "bcrypt": "^5.0.1",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "ejs": "^3.1.6",
+    "email-validator": "^2.0.4",
+    "eventemitter3": "^4.0.7",
+    "express": "^4.17.1",
+    "express-rate-limit": "^5.5.0",
+    "intersects": "^2.7.2",
+    "leo-profanity": "^1.5.0",
+    "on-screen-keyboard-detector": "^2.3.0",
+    "password-validator": "^5.2.1",
+    "phaser": "^3.55.2",
+    "postgres": "^1.0.2",
+    "potato-detection": "^1.0.2",
+    "purgomalum-swear-filter": "^1.0.2",
+    "uui": "^1.0.7",
+    "uuid": "^8.3.2",
+    "webhook-discord": "^3.7.8",
+    "ws": "^8.9.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.18.2",
+    "@babel/preset-env": "^7.18.2",
+    "@babel/preset-typescript": "^7.17.12",
+    "babel-loader": "^8.2.5",
+    "copy-webpack-plugin": "^10.0.0",
+    "eslint": "^8.3.0",
+    "webpack": "^5.61.0",
+    "webpack-cli": "^4.9.1"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/codergautam/swordbattle.io.git"
+  }
+}
