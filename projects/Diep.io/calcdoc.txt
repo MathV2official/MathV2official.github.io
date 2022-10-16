@@ -1,0 +1,121 @@
+<a name="module_Calc"></a>
+
+## Calc
+
+* [Calc](#module_Calc)
+    * [.dist(x1, y1, x2, y2)](#module_Calc.dist) ⇒ <code>Number</code>
+    * [.constrain(num, min, max)](#module_Calc.constrain) ⇒ <code>Number</code>
+    * [.scale(num, fromMin, fromMax, toMin, toMax)](#module_Calc.scale) ⇒ <code>Number</code>
+    * [.radToDeg(radians)](#module_Calc.radToDeg) ⇒ <code>Number</code>
+    * [.degToRad(degrees)](#module_Calc.degToRad) ⇒ <code>Number</code>
+    * [.circleArea(radius)](#module_Calc.circleArea) ⇒ <code>Number</code>
+    * [.randFloat(min, max)](#module_Calc.randFloat) ⇒ <code>Number</code>
+    * [.randInt(min, max)](#module_Calc.randInt) ⇒ <code>Number</code>
+
+<a name="module_Calc.dist"></a>
+
+### Calc.dist(x1, y1, x2, y2) ⇒ <code>Number</code>
+Calculates the distance between 2 coordinates.
+
+**Kind**: static method of [<code>Calc</code>](#module_Calc)  
+**Returns**: <code>Number</code> - The distance between the 2 coordinates.  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| x1 | <code>Number</code> | The first coordinate's x-value. |
+| y1 | <code>Number</code> | The first coordinate's y-value. |
+| x2 | <code>Number</code> | The second coordinate's x-value. |
+| y2 | <code>Number</code> | The second coordinate's y-value. |
+
+<a name="module_Calc.constrain"></a>
+
+### Calc.constrain(num, min, max) ⇒ <code>Number</code>
+Constrains a number to be between 2 values.
+
+**Kind**: static method of [<code>Calc</code>](#module_Calc)  
+**Returns**: <code>Number</code> - The constrained value.  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| num | <code>Number</code> | The number to constrain. |
+| min | <code>Number</code> | The minimum value of the number. |
+| max | <code>Number</code> | The maximum value of the number. |
+
+<a name="module_Calc.scale"></a>
+
+### Calc.scale(num, fromMin, fromMax, toMin, toMax) ⇒ <code>Number</code>
+Scales a number proportionally from an input range to a desired range, constraining the input to the input range.
+
+**Kind**: static method of [<code>Calc</code>](#module_Calc)  
+**Returns**: <code>Number</code> - The scaled value.  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| num | <code>Number</code> | The number to scale. |
+| fromMin | <code>Number</code> | The lower limit and lower constraint of the input. |
+| fromMax | <code>Number</code> | The upper limit and upper constraint of the input. |
+| toMin | <code>Number</code> | The lower limit of the output. |
+| toMax | <code>Number</code> | The upper limit of the output. |
+
+<a name="module_Calc.radToDeg"></a>
+
+### Calc.radToDeg(radians) ⇒ <code>Number</code>
+Converts radians to degrees.
+
+**Kind**: static method of [<code>Calc</code>](#module_Calc)  
+**Returns**: <code>Number</code> - The angle converted to degrees.  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| radians | <code>Number</code> | The angle, in radians, to convert to degrees. |
+
+<a name="module_Calc.degToRad"></a>
+
+### Calc.degToRad(degrees) ⇒ <code>Number</code>
+Converts degrees to radians.
+
+**Kind**: static method of [<code>Calc</code>](#module_Calc)  
+**Returns**: <code>Number</code> - The angle converted to radians.  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| degrees | <code>Number</code> | The angle, in degrees, to convert to radians. |
+
+<a name="module_Calc.circleArea"></a>
+
+### Calc.circleArea(radius) ⇒ <code>Number</code>
+Calculates the area of a circle.
+
+**Kind**: static method of [<code>Calc</code>](#module_Calc)  
+**Returns**: <code>Number</code> - The area of the circle.  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| radius | <code>Number</code> | The radius of the circle. |
+
+<a name="module_Calc.randFloat"></a>
+
+### Calc.randFloat(min, max) ⇒ <code>Number</code>
+Returns a random float in a given range.
+
+**Kind**: static method of [<code>Calc</code>](#module_Calc)  
+**Returns**: <code>Number</code> - The random float.  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| min | <code>Number</code> | The minimum value of the random float. |
+| max | <code>Number</code> | The maximum value of the random float. |
+
+<a name="module_Calc.randInt"></a>
+
+### Calc.randInt(min, max) ⇒ <code>Number</code>
+Returns a random integer in a given range.
+
+**Kind**: static method of [<code>Calc</code>](#module_Calc)  
+**Returns**: <code>Number</code> - The random integer.  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| min | <code>Number</code> | The minimum value of the random integer. |
+| max | <code>Number</code> | The maximum value of the random integer. |
+

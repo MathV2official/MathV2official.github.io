@@ -1,0 +1,63 @@
+<a name="module_Physics"></a>
+
+## Physics
+
+* [Physics](#module_Physics)
+    * [~Physics([config])](#module_Physics..Physics) ⇒ <code>Object</code>
+    * [~update()](#module_Physics..update) ⇒ <code>Object</code>
+    * [~applyForce(force, angle)](#module_Physics..applyForce) ⇒ <code>Object</code>
+
+<a name="module_Physics..Physics"></a>
+
+### Physics~Physics([config]) ⇒ <code>Object</code>
+**Kind**: inner method of [<code>Physics</code>](#module_Physics)  
+**Requires**: <code>module:Calc</code>  
+
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| [config] | <code>Object</code> | <code>{}</code> | The initial config of this object. |
+| [config.posX] | <code>Number</code> | <code>0</code> | The initial X position. |
+| [config.posY] | <code>Number</code> | <code>0</code> | The initial Y position. |
+| [config.velX] | <code>Number</code> | <code>0</code> | The initial X velocity. |
+| [config.velY] | <code>Number</code> | <code>0</code> | The initial Y velocity. |
+| [config.accelX] | <code>Number</code> | <code>0</code> | The initial X acceleration. |
+| [config.accelY] | <code>Number</code> | <code>0</code> | The initial Y acceleration. |
+| [config.velLimit] | <code>Number</code> | <code>Infinity</code> | The initial maximum velocity. |
+| [config.accelLimit] | <code>Number</code> | <code>Infinity</code> | The initial maximum acceleration. |
+| [config.friction] | <code>Number</code> | <code>Infinity</code> | The initial friction. |
+
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| Physics | <code>Object</code> | The Physics object. |
+| Physics.posX | <code>Number</code> | This object's X position. |
+| Physics.posY | <code>Number</code> | This object's Y position. |
+| Physics.velX | <code>Number</code> | This object's X velocity. |
+| Physics.velY | <code>Number</code> | This object's Y velocity. |
+| Physics.accelX | <code>Number</code> | This object's X acceleration. |
+| Physics.accelY | <code>Number</code> | This object's Y acceleration. |
+| Physics.velLimit | <code>Number</code> | This object's maximum velocity. |
+| Physics.accelLimit | <code>Number</code> | This object's maximum acceleration. |
+| Physics.friction | <code>Number</code> | The friction for this object (applies a force, decelerating the object). |
+
+<a name="module_Physics..update"></a>
+
+### Physics~update() ⇒ <code>Object</code>
+Update every physics algorithm on this object for one time interval.
+
+**Kind**: inner method of [<code>Physics</code>](#module_Physics)  
+**Returns**: <code>Object</code> - Returns an object with properties `posX` and `posY`, the coordinates of the updated object.  
+<a name="module_Physics..applyForce"></a>
+
+### Physics~applyForce(force, angle) ⇒ <code>Object</code>
+Calculates the new acceleration given a force and an angle.
+
+**Kind**: inner method of [<code>Physics</code>](#module_Physics)  
+**Returns**: <code>Object</code> - Returns an object with properties `velX` and `velY`, the velocity of the updated object.  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| force | <code>Number</code> | The amount of force to apply. |
+| angle | <code>Number</code> | The direction of the force, given as an angle (in radians). |
+

@@ -1,0 +1,6 @@
+{
+  "port": 8001,
+  "arenaWidth": 250,
+  "arenaHeight": 250,
+  "adminPassword": "NOT CONFIGURED"
+}
