@@ -1,16 +1,30 @@
 /* CSS for /projects */
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,600,700,800,900');
+@import url('https://fonts.googleapis.com/css?family=Ubuntu:100,200,300,400,500,600,700,800,900');
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-  font-family: sans-serif;
-  font-size: "25px";
-  color: #ffffff;
-  text-align: left;
-  background-color: #1c1c1c;
-  background-repeat: no-repeat;
-  background-size: cover;
+    text-align: center;
+    background: linear-gradient(-45deg, 	#080a3f,   #01263f, #0e384b, #0b3243, #0c242b);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+    color: grey;
+    font-weight: 500;
+    font-family: 'Ubuntu';
+    font-size: 20px;
+}
+
+@keyframes gradient {
+0% {background-position: 0% 50%;}
+50% {background-position: 100% 50%;}
+100% {background-position: 0% 50%;}
 }
 a {
   text-decoration: none;
-  color: #0084ff;
+  color: #01263f;
 }
 .text-center {
   text-align: center;
@@ -20,7 +34,7 @@ a {
   width: 300px;
 }
 .game-tile {
-  background-color: #949494;
+  background-color: #0c242b;
   height: 400px;
   width: 300px;
   color: #ffffff;
@@ -80,7 +94,7 @@ a {
 }
 .game-title {
   font-size: 30px;
-  color: #ffffff;
+  color: #0c242b;
   text-align: center;
 }
 .flex-container {
