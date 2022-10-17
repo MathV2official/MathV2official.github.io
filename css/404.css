@@ -1,3 +1,26 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,600,700,800,900');
+@import url('https://fonts.googleapis.com/css?family=Ubuntu:100,200,300,400,500,600,700,800,900');
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    text-align: center;
+    background: linear-gradient(-45deg, 	#080a3f,   #01263f, #0e384b, #0b3243, #0c242b);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+    color: grey;
+    font-weight: 500;
+    font-family: 'Ubuntu';
+    font-size: 20px;
+}
+
+@keyframes gradient {
+0% {background-position: 0% 50%;}
+50% {background-position: 100% 50%;}
+100% {background-position: 0% 50%;}
+}
 body {
   font-family: sans-serif;
   color: #fff;
