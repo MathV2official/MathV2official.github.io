@@ -1,5 +1,5 @@
 services:
   - type: web
-    name: echo-website
+    name: Math-V2
     env: static
     staticPublishPath: .
