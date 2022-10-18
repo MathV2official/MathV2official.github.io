@@ -1,9 +1,135 @@
 const contents = {
-  // path = same-origin resource (no proxy)
+	// path = same-origin resource (no proxy)
 	// url = cross-origin resource (with proxy)
 	// TODO add preview images for every game
-  
-  	flashGames: [
+
+	dosGames: [
+		{
+			name: "Blood",
+			path: "embed.html?type=jsdos&src=%2Fdos-games%2Fblood.jsdos"
+		},
+		{
+			name: "Bombjack",
+			path: "embed.html?type=jsdos&src=%2Fdos-games%2Fbombjack.jsdos"
+		},
+		{
+			name: "CHAMP Kong",
+			path: "embed.html?type=jsdos&src=%2Fdos-games%2Fchamp-kong.jsdos"
+		},
+		{
+			name: "Doom",
+			path: "embed.html?type=jsdos&src=%2Fdos-games%2Fdoom.jsdos"
+		},
+		{
+			name: "Doom II",
+			path: "embed.html?type=jsdos&src=%2Fdos-games%2Fdoom-ii.jsdos"
+		},
+		{
+			name: "Double Snake",
+			path: "embed.html?type=jsdos&src=%2Fdos-games%2Fdouble-snake.jsdos"
+		},
+		{
+			name: "Drake Snake and the Secret Crypt",
+			path: "embed.html?type=jsdos&src=%2Fdos-games%2Fdrake-snake-and-the-secret-crypt.jsdos"
+		},
+		{
+			name: "Duke Nukem 3D",
+			path: "embed.html?type=jsdos&src=%2Fdos-games%2Fduke-nukem-3d.jsdos"
+		},
+		{
+			name: "Grand Theft Auto",
+			path: "embed.html?type=jsdos&src=https%3A%2F%2Fbare.whitespider.gq%2Flfs%2Fdos-games%2Fgrand-theft-auto.jsdos"
+		},
+		{
+			name: "GroundFire",
+			path: "embed.html?type=jsdos&src=%2Fdos-games%2Fground-fire.jsdos"
+		},
+		{
+			name: "HangMan!",
+			path: "embed.html?type=jsdos&src=%2Fdos-games%2Fhang-man.jsdos"
+		},
+		{
+			name: "Kasia",
+			path: "embed.html?type=jsdos&src=%2Fdos-games%2Fkasia.jsdos"
+		},
+		{
+			name: "Mini Prince",
+			path: "embed.html?type=jsdos&src=%2Fdos-games%2Fmini-prince.jsdos"
+		},
+		{
+			name: "Mortal Kombat",
+			path: "embed.html?type=jsdos&src=%2Fdos-games%2Fmortal-kombat.jsdos"
+		},
+		{
+			name: "Neut Tower",
+			path: "embed.html?type=jsdos&src=%2Fdos-games%2Fneut-tower.jsdos"
+		},
+		{
+			name: "Ninja Blitz",
+			path: "embed.html?type=jsdos&src=%2Fdos-games%2Fninja-blitz.jsdos"
+		},
+		{
+			name: "Pac-Man",
+			path: "embed.html?type=jsdos&src=%2Fdos-games%2Fpac-man.jsdos"
+		},
+		{
+			name: "Prince of Persia",
+			path: "embed.html?type=jsdos&src=%2Fdos-games%2Fprince-of-persia.jsdos"
+		},
+		{
+			name: "Quake",
+			path: "embed.html?type=jsdos&src=%2Fdos-games%2Fquake.jsdos"
+		},
+		{
+			name: "Silencer",
+			path: "embed.html?type=jsdos&src=%2Fdos-games%2Fsilencer.jsdos"
+		},
+		{
+			name: "Slip Speed",
+			path: "embed.html?type=jsdos&src=%2Fdos-games%2Fslip-speed.jsdos"
+		},
+		{
+			name: "Snake",
+			path: "embed.html?type=jsdos&src=%2Fdos-games%2Fsnake.jsdos"
+		},
+		{
+			name: "Space Invaders",
+			path: "embed.html?type=jsdos&src=%2Fdos-games%2Fspace-invaders.jsdos"
+		},
+		{
+			name: "Spectre",
+			path: "embed.html?type=jsdos&src=%2Fdos-games%2Fspectre.jsdos"
+		},
+		{
+			name: "Spitball",
+			path: "embed.html?type=jsdos&src=%2Fdos-games%2Fspitball.jsdos"
+		},
+		{
+			name: "Super Roco Bros",
+			path: "embed.html?type=jsdos&src=%2Fdos-games%2Fsuper-roco-bros.jsdos"
+		},
+		{
+			name: "Super Street Fighter II Turbo",
+			path: "embed.html?type=jsdos&src=%2Fdos-games%2Fsuper-street-fighter-ii-turbo.jsdos"
+		},
+		{
+			name: "TetraFix",
+			path: "embed.html?type=jsdos&src=%2Fdos-games%2Ftetrafix.jsdos"
+		},
+		{
+			name: "Tetris",
+			path: "embed.html?type=jsdos&src=%2Fdos-games%2Ftetris.jsdos"
+		},
+		{
+			name: "Wolfenstein 3D",
+			path: "embed.html?type=jsdos&src=%2Fdos-games%2Fwolfenstein-3d.jsdos"
+		},
+		{
+			name: "X-Men: Children of the Atom",
+			path: "embed.html?type=jsdos&src=%2Fdos-games%2Fx-men-children-of-the-atom.jsdos"
+		}
+	],
+	flashGames: [
 		{
 			name: "3 Foot Ninja",
 			path: "embed.html?type=flash&src=%2Fflash-games%2F3-foot-ninja.swf"
@@ -708,7 +834,253 @@ const contents = {
 			name: "Zombocalypse",
 			path: "embed.html?type=flash&src=%2Fflash-games%2Fzombocalypse.swf"
 		}
-		],
+	],
+	html5Games: [
+		{
+			name: "1v1.lol",
+			url: "https://1v1.lol/"
+		},
+		{
+			name: "2048",
+			path: "html5-games/2048/"
+		},
+		{
+			name: "4 Colors",
+			url: "https://storage.y8.com/y8-studio/html5/akeemywka/four_colors_v2/"
+		},
+		{
+			name: "9007199254740992",
+			path: "html5-games/9007199254740992/"
+		},
+		{
+			name: "Among US",
+			path: "html5-games/among-us/"
+		},
+		{
+			name: "Appel",
+			url: "https://scratch.mit.edu/projects/60917032/embed"
+		},
+		{
+			name: "Ball Fall 3D",
+			url: "https://storage.y8.com/y8-studio/unity_webgl/y8games/BallFall3D-2022-b4/index.html"
+		},
+		{
+			name: "Bricks Breaker",
+			url: "https://embed.gamedistribution.com/?url=https://html5.gamedistribution.com/3d3d68da6d5a471e93bab1c3bde01d70/"
+		},
+		{
+			name: "Bubble Burst",
+			url: "https://embed.gamedistribution.com/?url=https://html5.gamedistribution.com/405c00612981466cbc5d9dcef4214811/"
+		},
+		{
+			name: "Chess",
+			url: "https://playpager.com/embed/minichess/index.html"
+		},
+		{
+			name: "Cookie Clicker",
+			url: "https://shsgames.github.io/built-games/cookieclicker/index.html"
+		},
+		{
+			name: "Cut the Rope",
+			path: "html5-games/cut-the-rope/"
+		},
+		{
+			name: "Cut the Rope: Time Travel",
+			url: "https://embed.gamedistribution.com/?url=https://app-97515.games.s3.yandex.net/97515/u1824c0o9xlk2nm9hlcxtbs4l6ysl44s/index.html"
+		},
+		{
+			name: "Cut the Rope Vivid Edition",
+			path: "html5-games/cut-the-rope-vivid-edition/"
+		},
+		{
+			name: "Cut The Rope 2",
+			url: "https://embed.gamedistribution.com/?url=https://app-151508.games.s3.yandex.net/151508/jvxf9j9k2sdt71knpwa2f6azsndo6nrw/index.html"
+		},
+		{
+			name: "Death Worm",
+			url: "https://embed.gamedistribution.com/?url=https://app-165865.games.s3.yandex.net/165865/g5i92zlftj709k08ejk195g6vimi7ezc/index.html"
+		},
+		{
+			name: "Dogeminer",
+			path: "html5-games/dogeminer/"
+		},
+		{
+			name: "Dogeminer 2",
+			url: "https://dogeminer2.com/"
+		},
+		{
+			name: "Doodle Jump",
+			path: "html5-games/doodle-jump/"
+		},
+		{
+			name: "ev.io",
+			url: "https://www.ev.io"
+		},
+		{
+			name: "Flappy Bird",
+			path: "html5-games/flappy-bird/"
+		},
+		{
+			name: "Flip 3D",
+			url: "https://scratch.mit.edu/projects/430999356/embed"
+		},
+		{
+			name: "Fruit Ninja",
+			path: "html5-games/fruit-ninja/"
+		},
+		{
+			name: "Geometry Dash",
+			url: "https://scratch.mit.edu/projects/105500895/embed"
+		},
+		{
+			name: "Greedy Shark",
+			path: "html5-games/greedy-shark/"
+		},
+		{
+			name: "Happy Wheels",
+			url: "https://games-online.io/game/HappyWheels/"
+		},
+		{
+			name: "Hextris",
+			path: "html5-games/hextris/"
+		},
+		{
+			name: "hole.io",
+			url: "https://hole-io.com"
+		},
+		{
+			name: "Krunker",
+			url: "https://krunker.io"
+		},
+		{
+			name: "Ludo",
+			url: "https://cdn.htmlgames.com/Ludo/"
+		},
+		{
+			name: "MaZe",
+			url: "https://storage.y8.com/y8-studio/html5/akeemywka/maze_v1/index.html"
+		},
+		{
+			name: "Minecraft 2D",
+			url: "https://scratch.mit.edu/projects/10128407/embed"
+		},
+		{
+			name: "Minecraft Classic",
+			path: "html5-games/minecraft-classic/"
+		},
+		{
+			name: "Minesweeper",
+			path: "html5-games/minesweeper/"
+		},
+		{
+			name: "Pac-Man",
+			url: "https://freepacman.org/"
+		},
+		{
+			name: "Paper Battle",
+			url: "https://storage.y8.com/y8-studio/unity/joll/papergame/paper_battle_v20/index.html"
+		},
+		{
+			name: "powerline.io",
+			url: "https://powerline.io"
+		},
+		{
+			name: "Reversi",
+			url: "https://playpager.com/embed/reversi/index.html"
+		},
+		{
+			name: "Run 3",
+			url: "https://ubg100.github.io/games/run3"
+		},
+		{
+			name: "Shadow Fighters",
+			url: "https://embed.gamedistribution.com/?url=https://html5.gamedistribution.com/49cb67eea34644a1afafea2970eaead1/"
+		},
+		{
+			name: "Shell Shockers",
+			url: "https://shellshock.io/"
+		},
+		{
+			name: "Skydom",
+			url: "https://embed.gamedistribution.com/?url=https://html5.gamedistribution.com/ae10263247c44278b33c845ff1c2df80/"
+		},
+		{
+			name: "slither.io",
+			url: "https://slither.io"
+		},
+		{
+			name: "Slope",
+			url: "https://storage.y8.com/y8-studio/unity_webgl/bitlaslt/slope_v_1_2_5/index.html"
+		},
+		{
+			name: "snake.io",
+			url: "https://snake.io"
+		},
+		{
+			name: "Solitaire",
+			path: "html5-games/solitaire/"
+		},
+		{
+			name: "Space Blaze",
+			url: "https://embed.gamedistribution.com/?url=https://html5.gamedistribution.com/a1c4858cc2db451bb97c8e926257b49a/"
+		},
+		{
+			name: "Squid Game",
+			url: "https://squad-game.vakhtangi1980.repl.co/"
+		},
+		{
+			name: "Surf",
+			path: "html5-games/surf/"
+		},
+		{
+			name: "T-Rex Run",
+			path: "html5-games/chromedino/"
+		},
+		{
+			name: "T-Rex Run 3D",
+			path: "html5-games/chromedino-3d/"
+		},
+		{
+			name: "Temple Run 2",
+			path: "html5-games/temple-run-2/"
+		},
+		{
+			name: "Tetris",
+			path: "html5-games/tetris/"
+		},
+		{
+			name: "Triple Connect",
+			url: "https://cdn.htmlgames.com/TripleConnect/"
+		},
+		{
+			name: "Tunnel Rush",
+			path: "html5-games/tunnel-rush/"
+		},
+		{
+			name: "Uno",
+			url: "https://embed.gamedistribution.com/?url=https://app-177799.games.s3.yandex.net/177799/d7a35e57hl874np745ncsvajwen2ges9/index.html"
+		},
+		{
+			name: "venge.io",
+			url: "https://venge.io"
+		},
+		{
+			name: "voxiom.io",
+			url: "https://voxiom.io"
+		},
+		{
+			name: "wings.io",
+			url: "https://wings.io"
+		},
+		{
+			name: "Zombie Killer",
+			url: "https://embed.gamedistribution.com/?url=https://app-158693.games.s3.yandex.net/158693/2289i4hez4nkfqyo31x4l2jr4mq2lx0u/index.html"
+		},
+		{
+			name: "zombsroyale.io",
+			url: "https://zombsroyale.io"
+		}
+	]
 };
 
 export default contents;
