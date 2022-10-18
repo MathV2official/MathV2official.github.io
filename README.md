@@ -3,10 +3,6 @@
 
 
 
-[![Vulnerability](https://github.com/coolguy564738/mathv2.github.io/actions/workflows/codeql-analysis.yml/badge.svg?branch=main)](https://github.com/coolguy564738/mathv2.github.io/actions/workflows/codeql-analysis.yml) [![pages-build-deployment](https://github.com/coolguy564738/mathv2.github.io/actions/workflows/pages/pages-build-deployment/badge.svg?branch=main)](https://github.com/coolguy564738/mathv2.github.io/actions/workflows/pages/pages-build-deployment)
-
-
-
 [![Remix on Glitch](https://binbashbanana.github.io/deploy-buttons/buttons/remade/glitch.svg)](https://glitch.com/edit/#!/import/github/coolguy564738/mathv2.github.io)
 [![Deploy with Vercel](https://binbashbanana.github.io/deploy-buttons/buttons/remade/vercel.svg)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fcoolguy564738%2Fmathv2.github.io) 
 [![Deploy with Netlify](https://binbashbanana.github.io/deploy-buttons/buttons/remade/netlify.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/coolguy564738/mathv2.github.io)
