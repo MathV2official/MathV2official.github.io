@@ -1,0 +1,1 @@
+/**/idnet_autologin({"error":"Invalid session!"})
