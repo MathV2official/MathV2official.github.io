@@ -2,7 +2,7 @@
 - [Website v1](https://math.thebest12789.repl.co)
 
 OTHER SITES<br>
-https://math-v2.onrender.com/
+-- coming soon
 
 
 [![Remix on Glitch](https://binbashbanana.github.io/deploy-buttons/buttons/remade/glitch.svg)](https://glitch.com/edit/#!/import/github/coolguy564738/math-v2)
