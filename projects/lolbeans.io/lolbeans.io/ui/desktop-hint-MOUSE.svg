@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="187px" height="271px" viewBox="0 0 187 271" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
+    <title>desktop-hint-MOUSE</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="37" y="44" width="113" height="183" rx="50"></rect>
+        <rect id="path-2" x="88" y="70" width="11" height="32" rx="5.5"></rect>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="desktop-hint-MOUSE">
+            <g id="Rectangle-3">
+                <use fill="#000000" fill-rule="evenodd" xlink:href="#path-1"></use>
+                <rect stroke="#FFFFFF" stroke-width="6" x="34" y="41" width="119" height="189" rx="50"></rect>
+            </g>
+            <g id="Rectangle-3">
+                <use fill="#000000" fill-rule="evenodd" xlink:href="#path-2"></use>
+                <rect stroke="#FFFFFF" stroke-width="6" x="85" y="67" width="17" height="38" rx="8.5"></rect>
+            </g>
+            <path d="M94,105 L94,126" id="Path-2" stroke="#FFFFFF" stroke-width="6"></path>
+            <path d="M94,43 L94,66" id="Path-2-Copy" stroke="#FFFFFF" stroke-width="6"></path>
+        </g>
+    </g>
+</svg>

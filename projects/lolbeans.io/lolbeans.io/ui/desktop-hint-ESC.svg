@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="210px" height="136px" viewBox="0 0 210 136" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
+    <title>desktop-hint-ESC</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="19" y="19" width="169" height="76" rx="6"></rect>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="desktop-hint-ESC">
+            <rect id="Rectangle-Copy-2" fill="#FFFFFF" x="142" y="13" width="56" height="52"></rect>
+            <rect id="Rectangle-2-Copy-3" fill="#000000" x="12" y="20" width="184" height="97" rx="9"></rect>
+            <g id="Rectangle-2-Copy-4" stroke-linecap="round" stroke-linejoin="round">
+                <use fill="#000000" fill-rule="evenodd" xlink:href="#path-1"></use>
+                <rect stroke="#FFFFFF" stroke-width="6" x="16" y="16" width="175" height="82" rx="6"></rect>
+            </g>
+            <text id="ESC" font-family="ArialRoundedMTBold, Arial Rounded MT Bold" font-size="50" font-weight="normal" fill="#FFFFFF">
+                <tspan x="51.1445312" y="75">ESC</tspan>
+            </text>
+        </g>
+    </g>
+</svg>

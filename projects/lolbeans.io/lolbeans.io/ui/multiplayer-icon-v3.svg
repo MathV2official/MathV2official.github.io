@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="141px" height="72px" viewBox="0 0 141 72" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
+    <title>Group</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M64,68 L64,52 C64,49.6 62.8,47.2 60.8,45.6 C56.4,42 50.8,39.6 45.2,38 C41.2,36.8 36.8,36 32,36 C27.6,36 23.2,36.8 18.8,38 C13.2,39.6 7.6,42.4 3.2,45.6 C1.2,47.2 0,49.6 0,52 L0,68 L64,68 Z" id="path-1"></path>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group" transform="translate(-4.000000, -30.000000)">
+            <g id="user-icon-copy" transform="translate(90.000000, 31.000000)" fill-rule="nonzero" fill="#000000">
+                <ellipse id="Oval" cx="28" cy="13.5" rx="14" ry="13.5"></ellipse>
+                <path d="M55,58 L55,44.5 C55,42.475 53.96875,40.45 52.25,39.1 C48.46875,36.0625 43.65625,34.0375 38.84375,32.6875 C35.40625,31.675 31.625,31 27.5,31 C23.71875,31 19.9375,31.675 16.15625,32.6875 C11.34375,34.0375 6.53125,36.4 2.75,39.1 C1.03125,40.45 0,42.475 0,44.5 L0,58 L55,58 Z" id="Shape"></path>
+            </g>
+            <g id="user-icon" transform="translate(48.000000, 30.000000)" fill-rule="nonzero">
+                <circle id="Oval" fill="#000000" cx="32" cy="16" r="16"></circle>
+                <g id="Shape">
+                    <use fill="#000000" fill-rule="evenodd" xlink:href="#path-1"></use>
+                    <path stroke="#FFFFFF" stroke-width="4" d="M66,68 L66,52 C66,48.9805717 64.5151488,46.0108694 62.0493901,44.0382624 C57.778669,40.54388 52.2405208,37.931546 45.7494423,36.0769521 C41.2404932,34.7240867 36.6890914,34 32,34 C27.7173676,34 23.2728786,34.7070778 18.2737652,36.0704724 C12.5525884,37.7049434 6.72334692,40.5645712 2.0236566,43.9825278 C-0.515148842,46.0108694 -2,48.9805717 -2,52 L-2,68 L-2,70 L0,70 L64,70 L66,70 L66,68 Z"></path>
+                </g>
+            </g>
+            <text id="+" font-family="ArialRoundedMTBold, Arial Rounded MT Bold" font-size="99" font-weight="normal" fill="#000000">
+                <tspan x="0.141113281" y="94">+</tspan>
+            </text>
+        </g>
+    </g>
+</svg>
