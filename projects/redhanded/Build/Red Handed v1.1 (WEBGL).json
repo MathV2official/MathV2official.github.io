@@ -1,0 +1,13 @@
+{
+"companyName": "BadPiggy",
+"productName": "Red Handed",
+"dataUrl": "Red Handed v1.1 (WEBGL).data.unityweb",
+"wasmCodeUrl": "Red Handed v1.1 (WEBGL).wasm.code.unityweb",
+"wasmFrameworkUrl": "Red Handed v1.1 (WEBGL).wasm.framework.unityweb",
+"TOTAL_MEMORY": 268435456,
+"graphicsAPI": ["WebGL 2.0", "WebGL 1.0"],
+"webglContextAttributes": {"preserveDrawingBuffer": false},
+"splashScreenStyle": "Dark",
+"backgroundColor": "#000000",
+"cacheControl": {"default": "must-revalidate"}
+}
