@@ -1,79 +1,85 @@
 <!DOCTYPE html>
 <html lang="en-us">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Math V2</title>
-    <link rel="shortcut icon" href="TemplateData/favicon.ico">
-    <link rel="stylesheet" href="TemplateData/style.css">
-  </head>
-  <body>
-    <div id="unity-container" class="unity-desktop">
-      <canvas id="unity-canvas"></canvas>
-      <div id="unity-loading-bar">
-        <div id="unity-logo"></div>
-        <div id="unity-progress-bar-empty">
-          <div id="unity-progress-bar-full"></div>
-        </div>
-      </div>
-      <div id="unity-mobile-warning">
-        WebGL builds are not supported on mobile devices.
-      </div>
-      <div id="unity-footer">
-        <div id="unity-webgl-logo"></div>
-        <div id="unity-fullscreen-button"></div>
-        <div id="unity-build-title">Horde Killer</div>
-      </div>
-    </div>
-    <script>
-      var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/HordeKiller.loader.js";
-      var config = {
-        dataUrl: buildUrl + "/HordeKiller.data.br",
-        frameworkUrl: buildUrl + "/HordeKiller.framework.js.br",
-        codeUrl: buildUrl + "/HordeKiller.wasm.br",
-        streamingAssetsUrl: "StreamingAssets",
-        companyName: "GoGoMan",
-        productName: "Horde Killer",
-        productVersion: "1.1.6",
-      };
 
-      var container = document.querySelector("#unity-container");
-      var canvas = document.querySelector("#unity-canvas");
-      var loadingBar = document.querySelector("#unity-loading-bar");
-      var progressBarFull = document.querySelector("#unity-progress-bar-full");
-      var fullscreenButton = document.querySelector("#unity-fullscreen-button");
-      var mobileWarning = document.querySelector("#unity-mobile-warning");
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Math V2</title>
+	<script src="Build/UnityLoader.js"></script>
+	<script>
+		var gameInstance = UnityLoader.instantiate("gameContainer", "Build/HordeKiller.json");
+		var scaleToFit;
+		try {
+			scaleToFit = !!JSON.parse("");
+		} catch (e) {
+			scaleToFit = true;
+		}
 
-      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-        container.className = "unity-mobile";
-        config.devicePixelRatio = 1;
-        mobileWarning.style.display = "block";
-        setTimeout(() => {
-          mobileWarning.style.display = "none";
-        }, 5000);
-      } else {
-        canvas.style.width = "960px";
-        canvas.style.height = "540px";
-      }
-      canvas.style.background = "url('" + buildUrl + "/logo.jpg') center / cover";
-      loadingBar.style.display = "block";
+		function onResize() {
+			var canvas = gameInstance.Module.canvas;
+			var container = gameInstance.container;
+			var w;
+			var h;
 
-      var script = document.createElement("script");
-      script.src = loaderUrl;
-      script.onload = () => {
-        createUnityInstance(canvas, config, (progress) => {
-          progressBarFull.style.width = 100 * progress + "%";
-        }).then((unityInstance) => {
-          loadingBar.style.display = "none";
-          fullscreenButton.onclick = () => {
-            unityInstance.SetFullscreen(1);
-          };
-        }).catch((message) => {
-          alert(message);
-        });
-      };
-      document.body.appendChild(script);
-    </script>
-  </body>
+			if (scaleToFit) {
+				w = window.innerWidth;
+				h = window.innerHeight;
+
+				var r = 675 / 1200;
+
+				if (w * r > window.innerHeight) {
+					w = Math.min(w, Math.ceil(h / r));
+				}
+				h = Math.floor(w * r);
+			} else {
+				w = 1200;
+				h = 675;
+			}
+
+			container.style.width = canvas.style.width = w + "px";
+			container.style.height = canvas.style.height = h + "px";
+			container.style.top = Math.floor((window.innerHeight - h) / 2) + "px";
+			container.style.left = Math.floor((window.innerWidth - w) / 2) + "px";
+		}
+		window.addEventListener('resize', onResize);
+	</script>
+	<style>
+		html,
+		body {
+			background: #000;
+			background: ;
+			width: 100%;
+			height: 100%;
+			overflow: visible;
+			padding: 0;
+			margin: 0;
+		}
+
+		div#gameContainer {
+			background: transparent !important;
+			position: absolute;
+		}
+
+		div#gameContainer canvas {
+			position: absolute;
+		}
+
+		div#gameContainer[data-pixelated='true'] canvas {
+			image-rendering: optimizeSpeed;
+			image-rendering: -webkit-crisp-edges;
+			image-rendering: -moz-crisp-edges;
+			image-rendering: -o-crisp-edges;
+			image-rendering: crisp-edges;
+			image-rendering: -webkit-optimize-contrast;
+			image-rendering: optimize-contrast;
+			image-rendering: pixelated;
+			-ms-interpolation-mode: nearest-neighbor;
+		}
+	</style>
+</head>
+
+<body onload="onResize();">
+	<div id="gameContainer" data-pixelated="true"></div>
+</body>
+
 </html>
