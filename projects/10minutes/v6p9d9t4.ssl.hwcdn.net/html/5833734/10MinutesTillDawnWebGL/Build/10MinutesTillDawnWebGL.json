@@ -2,7 +2,7 @@
 "companyName": "Flanne",
 "productName": "MinutesTillDawn",
 "productVersion": "0.1",
-"dataUrl": "10MinutesTillDawnWebGL.data.unityweb",
+"dataUrl": "https://v6p9d9t4.ssl.hwcdn.net/html/5833734/10MinutesTillDawnWebGL/Build/10MinutesTillDawnWebGL.data.unityweb",
 "wasmCodeUrl": "10MinutesTillDawnWebGL.wasm.code.unityweb",
 "wasmFrameworkUrl": "10MinutesTillDawnWebGL.wasm.framework.unityweb",
 "graphicsAPI": ["WebGL 2.0","WebGL 1.0"],
