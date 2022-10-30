@@ -1,0 +1,16 @@
+{
+"companyName": "DefaultCompany",
+"productName": "TriangleGame",
+"productVersion": "0.1",
+"dataUrl": "Web 3.data.unityweb",
+"wasmCodeUrl": "Web 3.wasm.code.unityweb",
+"wasmFrameworkUrl": "Web 3.wasm.framework.unityweb",
+"graphicsAPI": ["WebGL 2.0","WebGL 1.0"],
+"webglContextAttributes": {"preserveDrawingBuffer": false},
+"splashScreenStyle": "Dark",
+"backgroundColor": "#231F20",
+"cacheControl": {"default": "must-revalidate"},
+"developmentBuild": false,
+"multithreading": false,
+"unityVersion": "2019.2.6f1"
+}
