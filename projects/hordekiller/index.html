@@ -3,101 +3,77 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>Math V2</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
-	<script src="/adinLoader.js"></script>
   </head>
-  <body class="dark">
+  <body>
     <div id="unity-container" class="unity-desktop">
       <canvas id="unity-canvas"></canvas>
-    </div>
-    <div id="loading-cover" style="display:none;">
       <div id="unity-loading-bar">
-        <div id="unity-logo"><img src="logo.png"></div>
-        <div id="unity-progress-bar-empty" style="display: none;">
+        <div id="unity-logo"></div>
+        <div id="unity-progress-bar-empty">
           <div id="unity-progress-bar-full"></div>
         </div>
-        <div class="spinner"></div>
+      </div>
+      <div id="unity-mobile-warning">
+        WebGL builds are not supported on mobile devices.
+      </div>
+      <div id="unity-footer">
+        <div id="unity-webgl-logo"></div>
+        <div id="unity-fullscreen-button"></div>
+        <div id="unity-build-title">Horde Killer</div>
       </div>
     </div>
-    <div id="unity-fullscreen-button" style="display: none;"></div>
     <script>
-      const hideFullScreenButton = "1";
-      const buildUrl = "Build";
-      const loaderUrl = buildUrl + "/UnityLoader.js";
-      const config = {
-        dataUrl: buildUrl + "/HordeKiller_CrazyGames.data.br",
-        frameworkUrl: buildUrl + "/HordeKiller_CrazyGames.framework.js.br",
-        codeUrl: buildUrl + "/HordeKiller_CrazyGames.wasm.br",
+      var buildUrl = "Build";
+      var loaderUrl = buildUrl + "/HordeKiller.loader.js";
+      var config = {
+        dataUrl: buildUrl + "/HordeKiller.data.br",
+        frameworkUrl: buildUrl + "/HordeKiller.framework.js.br",
+        codeUrl: buildUrl + "/HordeKiller.wasm.br",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "GoGoMan",
-        productName: "Horde Killer: You vs 100",
-        productVersion: "0.1",
+        productName: "Horde Killer",
+        productVersion: "1.1.6",
       };
 
-      const container = document.querySelector("#unity-container");
-      const canvas = document.querySelector("#unity-canvas");
-      const loadingCover = document.querySelector("#loading-cover");
-      const progressBarEmpty = document.querySelector("#unity-progress-bar-empty");
-      const progressBarFull = document.querySelector("#unity-progress-bar-full");
-      const fullscreenButton = document.querySelector("#unity-fullscreen-button");
-      const spinner = document.querySelector('.spinner');
-
-      const canFullscreen = (function() {
-        for (const key of [
-            'exitFullscreen',
-            'webkitExitFullscreen',
-            'webkitCancelFullScreen',
-            'mozCancelFullScreen',
-            'msExitFullscreen',
-          ]) {
-          if (key in document) {
-            return true;
-          }
-        }
-        return false;
-      }());
+      var container = document.querySelector("#unity-container");
+      var canvas = document.querySelector("#unity-canvas");
+      var loadingBar = document.querySelector("#unity-loading-bar");
+      var progressBarFull = document.querySelector("#unity-progress-bar-full");
+      var fullscreenButton = document.querySelector("#unity-fullscreen-button");
+      var mobileWarning = document.querySelector("#unity-mobile-warning");
 
       if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
         container.className = "unity-mobile";
         config.devicePixelRatio = 1;
+        mobileWarning.style.display = "block";
+        setTimeout(() => {
+          mobileWarning.style.display = "none";
+        }, 5000);
+      } else {
+        canvas.style.width = "960px";
+        canvas.style.height = "540px";
       }
       canvas.style.background = "url('" + buildUrl + "/logo.jpg') center / cover";
-      loadingCover.style.display = "";
+      loadingBar.style.display = "block";
 
-      const script = document.createElement("script");
+      var script = document.createElement("script");
       script.src = loaderUrl;
       script.onload = () => {
         createUnityInstance(canvas, config, (progress) => {
-          spinner.style.display = "none";
-          progressBarEmpty.style.display = "";
-          progressBarFull.style.width = `${100 * progress}%`;
+          progressBarFull.style.width = 100 * progress + "%";
         }).then((unityInstance) => {
-          loadingCover.style.display = "none";
-          if (canFullscreen) {
-            if (!hideFullScreenButton) {
-              fullscreenButton.style.display = "";
-            }
-            fullscreenButton.onclick = () => {
-              unityInstance.SetFullscreen(1);
-            };
-          }
+          loadingBar.style.display = "none";
+          fullscreenButton.onclick = () => {
+            unityInstance.SetFullscreen(1);
+          };
         }).catch((message) => {
           alert(message);
         });
       };
       document.body.appendChild(script);
     </script>
-		<script>
-       if (typeof getAdinDomain !== 'undefined') {
-           const bodyTag = document.getElementsByTagName('body')[0];
-
-           let addAdinPreroll = document.createElement('script');
-            addAdinPreroll.src = getAdinDomain;
-            bodyTag.appendChild(addAdinPreroll);
-        }
-  </script>
   </body>
 </html>
