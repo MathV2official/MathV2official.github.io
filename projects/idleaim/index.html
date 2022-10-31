@@ -1,0 +1,127 @@
+
+<!DOCTYPE html><html lang="en"><head><title>Math V2</title><link href="/js/bundle.js" rel="preload" as="script" /><link href="/index.html" rel="canonical" /><meta charset="UTF-8" /><meta name="robots" content="noindex, follow" /><meta name="description" content="The game files for Aim Trainer Idle, a free browser game on CrazyGames.com" /><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta http-equiv="Accept-CH" content="DPR" /><meta name="viewport" content="width=device-width, maximum-scale=1.0, initial-scale=1.0, user-scalable=no, minimal-ui" /><style id="pacman-styles">/* background */
+body {
+  background-image: linear-gradient(290deg, #3b2b73 55%, #6f2f93, #6f2f93);
+  background-position: center;
+  text-align: center;
+} 
+/* for positioning of pacman loader */
+body, html { height: 100%; }
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+@keyframes rotate_preloadpacman_half_up {
+  0% {
+    transform: rotate(270deg); }
+  50% {
+    transform: rotate(360deg); }
+  100% {
+    transform: rotate(270deg); }
+}
+
+@keyframes rotate_preloadpacman_half_down {
+  0% {
+    transform: rotate(90deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(90deg);
+  }
+}
+
+@keyframes preloadpacman-balls {
+  75% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translate(-100px, -6.25px);
+  }
+}
+
+.preloadpacman {
+  position: relative;
+}
+.preloadpacman > div:nth-child(2) {
+  animation: preloadpacman-balls 1s -0.99s infinite linear;
+}
+.preloadpacman > div:nth-child(3) {
+  animation: preloadpacman-balls 1s -0.66s infinite linear;
+}
+.preloadpacman > div:nth-child(4) {
+  animation: preloadpacman-balls 1s -0.33s infinite linear;
+}
+.preloadpacman > div:nth-child(5) {
+  animation: preloadpacman-balls 1s 0s infinite linear;
+}
+.preloadpacman > div:first-of-type {
+  width: 0px;
+  height: 0px;
+  border-right: 25px solid transparent;
+  border-top: 25px solid #fff;
+  border-left: 25px solid #fff;
+  border-bottom: 25px solid #fff;
+  border-radius: 25px;
+  animation: rotate_preloadpacman_half_up 0.5s 0s infinite;
+  position: relative;
+  left: -30px;
+}
+.preloadpacman > div:nth-child(2) {
+  width: 0px;
+  height: 0px;
+  border-right: 25px solid transparent;
+  border-top: 25px solid #fff;
+  border-left: 25px solid #fff;
+  border-bottom: 25px solid #fff;
+  border-radius: 25px;
+  animation: rotate_preloadpacman_half_down 0.5s 0s infinite;
+  margin-top: -50px;
+  position: relative;
+  left: -30px;
+}
+.preloadpacman > div:nth-child(3),
+.preloadpacman > div:nth-child(4),
+.preloadpacman > div:nth-child(5),
+.preloadpacman > div:nth-child(6) {
+  background-color: #fff;
+  width: 15px;
+  height: 15px;
+  border-radius: 100%;
+  margin: 2px;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  transform: translate(0, -6.25px);
+  top: 25px;
+  left: 70px;
+}
+</style></head><body><div class="preloadpacman" id="pacman"><div></div><div></div><div></div><div></div><div></div></div><script type="text/javascript">function loadScript(url, callback) {
+  var head = document.head;
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src = url;
+  script.async = true;
+  script.onreadystatechange = callback;
+  script.onload = callback;
+  head.appendChild(script);
+}
+var options = {"loader":"unity2022","loaderOptions":{"showProgress":true,"unityLoaderUrl":"/Build/AimTrainerIdle.loader.js","unityConfigOptions":{"codeUrl":"/Build/AimTrainerIdle.wasm.br","dataUrl":"/Build/AimTrainerIdle.data.br","frameworkUrl":"/Build/AimTrainerIdle.framework.js.br","streamingAssetsUrl":"https://files.crazygames.com/aim-trainer-idle/1/StreamingAssets"}},"author":"Neko","thumbnail":"/logo.png","gameName":"Aim Trainer Idle","gameHttps":true,"gameSlug":"aim-trainer-idle","gameId":"21053","gameStatus":"published","showAdOnExternal":"ALWAYS","showAdOnInternal":"DEFAULT","disableEmbedding":false,"dollarRate":1.0035505618879597,"upvotes":4451,"downvotes":357,"releaseDate":"2022-10-12","locale":"en_US","controls":{"text":"<h3>Controls</h3>\n<ul>\n    <li>Left-click = interact with in-game UI, shoot</li>\n    <li>Right-click = aim</li>\n    <li>Q = option</li>\n</ul>"},"videoThumbnail":"https://videos.crazygames.com/aim-trainer-idle/1/aim-trainer-idle-thumbnail.mp4","video":{"original":"https://videos.crazygames.com/aim-trainer-idle/1/aim-trainer-idle.mp4","sizes":[{"width":205,"height":115,"location":"https://videos.crazygames.com/aim-trainer-idle/1/aim-trainer-idle-205x115.mp4"},{"width":249,"height":140,"location":"https://videos.crazygames.com/aim-trainer-idle/1/aim-trainer-idle-249x140.mp4"},{"width":364,"height":208,"location":"https://videos.crazygames.com/aim-trainer-idle/1/aim-trainer-idle-364x208.mp4"},{"width":494,"height":276,"location":"https://videos.crazygames.com/aim-trainer-idle/1/aim-trainer-idle-494x276.mp4"},{"width":611,"height":343,"location":"https://videos.crazygames.com/aim-trainer-idle/1/aim-trainer-idle-611x343.mp4"}]},"sandbox":true,"totalSize":"15 MB","minTimeBetweenMidrollAdsInMs":180000,"minTimeBetweenRewardedAdsInMs":5000,"noMidrollAdInFirstMinutes":3,"noRewardedAdInFirstMinutes":0,"categoryEnSlug":"clicker","tagsEnSlugs":["3d","webgl","gun","incremental","mouse","upgrade","idle"],"isKids":false,"hasMidroll":false,"hasRewarded":true,"fullscreen":"SUPPORTED","orientation":null,"category":"Gun","categoryLink":"https://www.crazygames.com/t/gun","gameLink":"https://www.crazygames.com/game/aim-trainer-idle","alternativeGames":[],"domainHasNoCMP":false};
+var SDK_READY = false;
+var GF_READY = false;
+var GF_LOAD_CALLED = false;
+loadScript("/js/bundle.js", function() {
+    Crazygames.load(options).then(function() {
+      var pacmanWrapper = document.getElementById('pacman');
+      var pacmanStyles = document.getElementById('pacman-styles');
+
+      if (pacmanWrapper && pacmanStyles) {
+        pacmanWrapper.remove();
+        pacmanStyles.remove();
+      }
+    });
+});</script></body></html>
