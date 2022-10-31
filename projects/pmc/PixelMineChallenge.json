@@ -1,0 +1,17 @@
+
+{
+"companyName": "BigMetalGames",
+"productName": "Pixel Mine Challenge",
+"productVersion": "1.0",
+"dataUrl": "PixelMineChallenge.data.unityweb",
+"wasmCodeUrl": "PixelMineChallenge.wasm.code.unityweb",
+"wasmFrameworkUrl": "PixelMineChallenge.wasm.framework.unityweb",
+"graphicsAPI": ["WebGL 2.0","WebGL 1.0"],
+"webglContextAttributes": {"preserveDrawingBuffer": false},
+"backgroundUrl": "PixelMineChallenge.jpg",
+"splashScreenStyle": "Dark",
+"backgroundColor": "#FFFFFF",
+"developmentBuild": false,
+"multithreading": false,
+"unityVersion": "2019.2.18f1"
+}
