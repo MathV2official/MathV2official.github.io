@@ -371,22 +371,22 @@
       var timerStart = Date.now();
       var sentGameInstanceStartEvent = false;
       
-      const buildUrl = "Build";
-      const loaderUrl = buildUrl + "/SmashKartsSCPatch4.loader.js";
-      const config = {
-        dataUrl: buildUrl + "/fd9af547cadb72fc4b6e83d56d5da82a.data.br",
-        frameworkUrl: buildUrl + "/44bcce360664b499f9205162a4907044.js.br",
-        codeUrl: buildUrl + "/cf55536d109c6254a3cf1d22e6451618.wasm.br",
-// #if MEMORY_FILENAME
-//         memoryUrl: buildUrl + "/",
-// #endif
-// #if SYMBOLS_FILENAME
-//         symbolsUrl: buildUrl + "/",
-// #endif
-        streamingAssetsUrl: "StreamingAssets",
-        companyName: "TallTeam",
-        productName: "Smash Karts",
-        productVersion: "1.0.14",
+      const buildUrl = "https://smashkartsgc.b-cdn.net/Build2020New";
+	const loaderUrl = buildUrl + "/adb1.loader.js";
+	const config = {
+		dataUrl: buildUrl + "/6983b2c57ed23e0a59c9bdfda7700854.data.br",
+		frameworkUrl: buildUrl + "/40d0ce1953c9c3e526fb1970444149c4.js.br",
+		codeUrl: buildUrl + "/138b1cb0676ed2be88e43631ab9ec12e.wasm.br",
+		// #if MEMORY_FILENAME
+		//         memoryUrl: buildUrl + "/",
+		// #endif
+		// #if SYMBOLS_FILENAME
+		//         symbolsUrl: buildUrl + "/",
+		// #endif
+		streamingAssetsUrl: "StreamingAssets",
+		companyName: "TallTeam",
+		productName: "Smash Karts",
+		productVersion: "2.0.2",
       };
 
       var container = document.querySelector("#mainContainer");
