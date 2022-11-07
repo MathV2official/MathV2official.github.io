@@ -1,0 +1,16 @@
+{
+    "companyName": "RGames",
+    "productName": "A Night At Andy's",
+    "productVersion": "0.1",
+    "dataUrl": "A Night At Andy's WEBGL.data.unityweb",
+    "wasmCodeUrl": "A Night At Andy's WEBGL.wasm.code.unityweb",
+    "wasmFrameworkUrl": "A Night At Andy's WEBGL.wasm.framework.unityweb",
+    "graphicsAPI": ["WebGL 2.0","WebGL 1.0"],
+    "webglContextAttributes": {"preserveDrawingBuffer": false},
+    "splashScreenStyle": "Dark",
+    "backgroundColor": "#231F20",
+    "cacheControl": {"default": "must-revalidate"},
+    "developmentBuild": false,
+    "multithreading": false,
+    "unityVersion": "2019.4.21f1"
+    }
