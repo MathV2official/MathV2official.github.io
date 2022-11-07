@@ -1,0 +1,16 @@
+{
+    "companyName": "GoGoMan",
+    "productName": "Funny Shooter 2",
+    "productVersion": "0.1",
+    "dataUrl": "funnyshooter2.data.br",
+    "wasmCodeUrl": "funnyshooter2.wasm.br",
+    "wasmFrameworkUrl": "funnyshooter2.framework.js.br",
+    "graphicsAPI": ["WebGL 2.0","WebGL 1.0"],
+    "webglContextAttributes": {"preserveDrawingBuffer": false},
+    "splashScreenStyle": "Dark",
+    "backgroundColor": "#231F20",
+    "cacheControl": {"default": "must-revalidate"},
+    "developmentBuild": false,
+    "multithreading": false,
+    "unityVersion": "2019.2.6f1"
+    }

@@ -1,122 +1,85 @@
-
 <!DOCTYPE html>
 <html lang="en-us">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Math V2</title>
-    <link rel="shortcut icon" href="TemplateData/favicon.ico">
-    <link rel="stylesheet" href="TemplateData/style.css">
-  </head>
-  <body>
-    <div id="unity-container" class="unity-desktop">
-      <canvas id="unity-canvas" width=960 height=600></canvas>
-      <div id="unity-loading-bar">
-        <div id="unity-logo"></div>
-        <div id="unity-progress-bar-empty">
-          <div id="unity-progress-bar-full"></div>
-        </div>
-      </div>
-      <div id="unity-warning"> </div>
-      <div id="unity-footer">
-        <div id="unity-webgl-logo"></div>
-        <div id="unity-fullscreen-button"></div>
-        <div id="unity-build-title">IGNORE THE WARNING</div>
-      </div>
-    </div>
-    <script>
-      var container = document.querySelector("#unity-container");
-      var canvas = document.querySelector("#unity-canvas");
-      var loadingBar = document.querySelector("#unity-loading-bar");
-      var progressBarFull = document.querySelector("#unity-progress-bar-full");
-      var fullscreenButton = document.querySelector("#unity-fullscreen-button");
-      var warningBanner = document.querySelector("#unity-warning");
 
-      // Shows a temporary message banner/ribbon for a few seconds, or
-      // a permanent error message on top of the canvas if type=='error'.
-      // If type=='warning', a yellow highlight color is used.
-      // Modify or remove this function to customize the visually presented
-      // way that non-critical warnings and error messages are presented to the
-      // user.
-      function unityShowBanner(msg, type) {
-        function updateBannerVisibility() {
-          warningBanner.style.display = warningBanner.children.length ? 'block' : 'none';
-        }
-        var div = document.createElement('div');
-        div.innerHTML = msg;
-        warningBanner.appendChild(div);
-        if (type == 'error') div.style = 'background: red; padding: 10px;';
-        else {
-          if (type == 'warning') div.style = 'background: yellow; padding: 10px;';
-          setTimeout(function() {
-            warningBanner.removeChild(div);
-            updateBannerVisibility();
-          }, 5000);
-        }
-        updateBannerVisibility();
-      }
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Math V2</title>
+	<script src="Build/UnityLoader.js"></script>
+	<script>
+		var gameInstance = UnityLoader.instantiate("gameContainer", "Build/funnyshooter2.json");
+		var scaleToFit;
+		try {
+			scaleToFit = !!JSON.parse("");
+		} catch (e) {
+			scaleToFit = true;
+		}
 
-      var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/funnyshooter2.loader.js";
-      var config = {
-        dataUrl: buildUrl + "/funnyshooter2.data.br",
-        frameworkUrl: buildUrl + "/funnyshooter2.framework.js.br",
-        codeUrl: buildUrl + "/funnyshooter2.wasm.br",
-        streamingAssetsUrl: "StreamingAssets",
-        companyName: "GoGoMan",
-        productName: "Funny Shooter 2",
-        productVersion: "1",
-        showBanner: unityShowBanner,
-      };
+		function onResize() {
+			var canvas = gameInstance.Module.canvas;
+			var container = gameInstance.container;
+			var w;
+			var h;
 
-      // By default Unity keeps WebGL canvas render target size matched with
-      // the DOM size of the canvas element (scaled by window.devicePixelRatio)
-      // Set this to false if you want to decouple this synchronization from
-      // happening inside the engine, and you would instead like to size up
-      // the canvas DOM size and WebGL render target sizes yourself.
-      // config.matchWebGLToCanvasSize = false;
+			if (scaleToFit) {
+				w = window.innerWidth;
+				h = window.innerHeight;
 
-      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-        // Mobile device style: fill the whole browser client area with the game canvas:
+				var r = 675 / 1200;
 
-        var meta = document.createElement('meta');
-        meta.name = 'viewport';
-        meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
-        document.getElementsByTagName('head')[0].appendChild(meta);
-        container.className = "unity-mobile";
+				if (w * r > window.innerHeight) {
+					w = Math.min(w, Math.ceil(h / r));
+				}
+				h = Math.floor(w * r);
+			} else {
+				w = 1200;
+				h = 675;
+			}
 
-        // To lower canvas resolution on mobile devices to gain some
-        // performance, uncomment the following line:
-        // config.devicePixelRatio = 1;
+			container.style.width = canvas.style.width = w + "px";
+			container.style.height = canvas.style.height = h + "px";
+			container.style.top = Math.floor((window.innerHeight - h) / 2) + "px";
+			container.style.left = Math.floor((window.innerWidth - w) / 2) + "px";
+		}
+		window.addEventListener('resize', onResize);
+	</script>
+	<style>
+		html,
+		body {
+			background: #000;
+			background: ;
+			width: 100%;
+			height: 100%;
+			overflow: visible;
+			padding: 0;
+			margin: 0;
+		}
 
-        canvas.style.width = window.innerWidth + 'px';
-        canvas.style.height = window.innerHeight + 'px';
+		div#gameContainer {
+			background: transparent !important;
+			position: absolute;
+		}
 
-        unityShowBanner('WebGL builds are not supported on mobile devices.');
-      } else {
-        // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
+		div#gameContainer canvas {
+			position: absolute;
+		}
 
-        canvas.style.width = "960px";
-        canvas.style.height = "600px";
-      }
+		div#gameContainer[data-pixelated='true'] canvas {
+			image-rendering: optimizeSpeed;
+			image-rendering: -webkit-crisp-edges;
+			image-rendering: -moz-crisp-edges;
+			image-rendering: -o-crisp-edges;
+			image-rendering: crisp-edges;
+			image-rendering: -webkit-optimize-contrast;
+			image-rendering: optimize-contrast;
+			image-rendering: pixelated;
+			-ms-interpolation-mode: nearest-neighbor;
+		}
+	</style>
+</head>
 
-      loadingBar.style.display = "block";
+<body onload="onResize();">
+	<div id="gameContainer" data-pixelated="true"></div>
+</body>
 
-      var script = document.createElement("script");
-      script.src = loaderUrl;
-      script.onload = () => {
-        createUnityInstance(canvas, config, (progress) => {
-          progressBarFull.style.width = 100 * progress + "%";
-        }).then((unityInstance) => {
-          loadingBar.style.display = "none";
-          fullscreenButton.onclick = () => {
-            unityInstance.SetFullscreen(1);
-          };
-        }).catch((message) => {
-          alert(message);
-        });
-      };
-      document.body.appendChild(script);
-    </script>
-  </body>
 </html>
