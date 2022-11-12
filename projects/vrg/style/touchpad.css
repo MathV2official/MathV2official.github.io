@@ -1,0 +1,44 @@
+/*
+    Copyright 2022 latel88 All Rights Reserved.
+*/
+.touch-pad {
+	font-family: monospace;
+	position: absolute;
+}
+
+.touch-pad .touch-axes {
+	z-index: 1;
+	position: absolute;
+}
+
+.touch-pad .touch-layer {
+	pointer-events: none;
+
+	z-index: 2;
+	position: absolute;
+
+	text-align: center;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	user-select: none;
+}
+
+.touch-pad .touch-button, .touch-pad .touch-layout {
+	pointer-events: auto;
+
+	z-index: 2;
+	position: absolute;
+
+	text-align: center;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	user-select: none;
+}
