@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -5,8 +6,7 @@
     <link rel="icon" sizes="192x192" href="img/mlg-favicon.png" />
     <link rel="shortcut icon" href="img/mlg-favicon.png" type="image/x-icon" />
     <link rel="apple-touch-icon" href="img/mlg-favicon.png" type="image/x-icon" />
-
-    <title>Soundboard | 3kh0</title>
+    <title>Math V2</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta content="https://3kh0.github.io/" property="og:url" />
     <meta content="img/mlg.png" property="og:image" />
@@ -26,195 +26,21 @@
       Just click on the colorful buttons to play the sound.<br />
       <a href="https://forms.gle/hoiTBEZ4p14iupXH6">Click here to submit a sound to be added!</a>
     </h2>
-    <h3>Click the Download button to download the sound. All sounds are copyright free!</h3>
     <script>
       // functions for audio control menu
       function playAll() {
-        document.getElementById("fart").play();
-        document.getElementById("fart-with-reverb").play();
-        document.getElementById("sloppy-fart").play();
-        document.getElementById("bruh").play();
-        document.getElementById("WinError").play();
-        document.getElementById("nope").play();
-        document.getElementById("bonk").play();
-        document.getElementById("yeet").play();
-        document.getElementById("taco-bell").play();
-        document.getElementById("nut").play();
-        document.getElementById("bazinga").play();
-        document.getElementById("DUN_DUN").play();
-        document.getElementById("what-the-dog-doin").play();
-        document.getElementById("discord-notification").play();
-        document.getElementById("android-notif").play();
-        document.getElementById("sheep").play();
-        document.getElementById("hello-there").play();
-        document.getElementById("oof").play();
-        document.getElementById("rick-roll").play();
-        document.getElementById("trololo").play();
-        document.getElementById("turtles").play();
-        document.getElementById("bababooey").play();
-        document.getElementById("nice").play();
-        document.getElementById("bye-have-a-great-time").play();
-        document.getElementById("inception").play();
-        document.getElementById("sicko").play();
-        document.getElementById("vine-boom").play();
-        document.getElementById("anime-wow").play();
-        document.getElementById("yummy").play();
-        document.getElementById("deez-nutz").play();
-        document.getElementById("lebron-james").play();
-        document.getElementById("woody-woodpecker-laugh").play();
-        document.getElementById("earape-base").play();
-        document.getElementById("nomnomnomnom").play();
-        document.getElementById("spongebob-dolphin").play();
-        document.getElementById("fn-default-bb").play();
-        document.getElementById("five-nights-at-freddys-full-scream").play();
-        document.getElementById("gta5-wasted").play();
-        document.getElementById("morgan-smell").play();
-        document.getElementById("john-cena-intro").play();
-        document.getElementById("dababy-lets-go").play();
-        document.getElementById("gas-gas-gas").play();
-        document.getElementById("ohno-table-broken").play();
-        document.getElementById("full-table-broken").play();
-        document.getElementById("airhorn").play();
-        document.getElementById("badumtss").play();
-        document.getElementById("yoda-laugh").play();
-        document.getElementById("sad_song").play();
-        document.getElementById("cut-g").play();
-        document.getElementById("i_love_refrigerators").play();
-        document.getElementById("i-will-send-you-to-jesus").play();
-        document.getElementById("imposter").play();
-        document.getElementById("run").play();
-        document.getElementById("radio-beep").play();
-        document.getElementById("9+10=21").play();
-        document.getElementById("emotional-damage").play();
-        document.getElementById("hog-rider").play();
-        document.getElementById("sprite-cranberry").play();
-        document.getElementById("fbi-open-up").play();
-        document.getElementById("to-be-continued").play();
-        document.getElementById("yeah").play();
-        document.getElementById("skull-trumpet").play();
-        document.getElementById("wrong").play();
-        document.getElementById("mario").play();
-        document.getElementById("goofy-yell").play();
-        document.getElementById("sike").play();
-        document.getElementById("why-are-you-running").play();
-        document.getElementById("coffin-dance").play();
-        document.getElementById("nestle-crunch").play();
-        document.getElementById("hit-marker").play();
-        document.getElementById("sad-violin").play();
-        document.getElementById("AUUGHHH").play();
-        document.getElementById("Censor-Beep-Sound-Effect").play();
-        document.getElementById("hiyah").play();
-        document.getElementById("soviet").play();
-        document.getElementById("talking-ben-ho-ho-ho.mp3").play();
-        document.getElementById("winxpshutdown.mp3").play();
-        document.getElementById("stop-the-cap").play();
-        document.getElementById("hey-ya").play();
-        document.getElementById("who-touch-my").play();
-        document.getElementById("oh-baby-a-triple").play();
-        document.getElementById("x-games-mode").play();
-        document.getElementById("ben-yes").play();
-        document.getElementById("roblox-num-num").play();
-        document.getElementById("mc-anvil").play();
-        document.getElementById("wii-sports-aww").play();
-        document.getElementById("crona-time").play();
-        document.getElementById("guess-who-back").play();
-        document.getElementById("coc-intro").play();
-        document.getElementById("cr-intro").play();
-        document.getElementById("psst").play();
+        const els = document.getElementsByTagName("AUDIO");
+        Array.from(els).forEach((el) => {
+          el.play();
+        });
       }
       function stopAll() {
-        document.getElementById("fart").load();
-        document.getElementById("fart-with-reverb").load();
-        document.getElementById("sloppy-fart").load();
-        document.getElementById("bruh").load();
-        document.getElementById("WinError").load();
-        document.getElementById("nope").load();
-        document.getElementById("bonk").load();
-        document.getElementById("yeet").load();
-        document.getElementById("taco-bell").load();
-        document.getElementById("nut").load();
-        document.getElementById("bazinga").load();
-        document.getElementById("DUN_DUN").load();
-        document.getElementById("what-the-dog-doin").load();
-        document.getElementById("discord-notification").load();
-        document.getElementById("android-notif").load();
-        document.getElementById("sheep").load();
-        document.getElementById("hello-there").load();
-        document.getElementById("oof").load();
-        document.getElementById("rick-roll").load();
-        document.getElementById("trololo").load();
-        document.getElementById("turtles").load();
-        document.getElementById("bababooey").load();
-        document.getElementById("nice").load();
-        document.getElementById("bye-have-a-great-time").load();
-        document.getElementById("inception").load();
-        document.getElementById("sicko").load();
-        document.getElementById("vine-boom").load();
-        document.getElementById("anime-wow").load();
-        document.getElementById("yummy").load();
-        document.getElementById("deez-nutz").load();
-        document.getElementById("lebron-james").load();
-        document.getElementById("woody-woodpecker-laugh").load();
-        document.getElementById("earape-base").load();
-        document.getElementById("nomnomnomnom").load();
-        document.getElementById("spongebob-dolphin").load();
-        document.getElementById("fn-default-bb").load();
-        document.getElementById("five-nights-at-freddys-full-scream").load();
-        document.getElementById("gta5-wasted").load();
-        document.getElementById("morgan-smell").load();
-        document.getElementById("john-cena-intro").load();
-        document.getElementById("dababy-lets-go").load();
-        document.getElementById("gas-gas-gas").load();
-        document.getElementById("ohno-table-broken").load();
-        document.getElementById("full-table-broken").load();
-        document.getElementById("airhorn").load();
-        document.getElementById("badumtss").load();
-        document.getElementById("yoda-laugh").load();
-        document.getElementById("sad_song").load();
-        document.getElementById("cut-g").load();
-        document.getElementById("i_love_refrigerators").load();
-        document.getElementById("i-will-send-you-to-jesus").load();
-        document.getElementById("imposter").load();
-        document.getElementById("run").load();
-        document.getElementById("radio-beep").load();
-        document.getElementById("9+10=21").load();
-        document.getElementById("emotional-damage").load();
-        document.getElementById("hog-rider").load();
-        document.getElementById("sprite-cranberry").load();
-        document.getElementById("fbi-open-up").load();
-        document.getElementById("to-be-continued").load();
-        document.getElementById("yeah").load();
-        document.getElementById("skull-trumpet").load();
-        document.getElementById("wrong").load();
-        document.getElementById("mario").load();
-        document.getElementById("goofy-yell").load();
-        document.getElementById("sike").load();
-        document.getElementById("why-are-you-running").load();
-        document.getElementById("coffin-dance").load();
-        document.getElementById("nestle-crunch").load();
-        document.getElementById("hit-marker").load();
-        document.getElementById("sad-violin").load();
-        document.getElementById("AUUGHHH").load();
-        document.getElementById("Censor-Beep-Sound-Effect").load();
-        document.getElementById("hiyah").load();
-        document.getElementById("soviet").load();
-        document.getElementById("talking-ben-ho-ho-ho.mp3").load();
-        document.getElementById("winxpshutdown.mp3").load();
-        document.getElementById("stop-the-cap").load();
-        document.getElementById("hey-ya").load();
-        document.getElementById("who-touch-my").load();
-        document.getElementById("oh-baby-a-triple").load();
-        document.getElementById("x-games-mode").load();
-        document.getElementById("ben-yes").load();
-        document.getElementById("roblox-num-num").load();
-        document.getElementById("mc-anvil").load();
-        document.getElementById("wii-sports-aww").load();
-        document.getElementById("crona-time").load();
-        document.getElementById("guess-who-back").load();
-        document.getElementById("coc-intro").load();
-        document.getElementById("cr-intro").load();
-        document.getElementById("psst").load();
+        const els = document.getElementsByTagName("AUDIO");
+        Array.from(els).forEach((el) => {
+          el.load();
+        });
       }
+      // https://stackoverflow.com/q/74351622/18183112 ty <3
     </script>
     <div class="control">
       Audio Controls
@@ -1246,98 +1072,813 @@
       </div>
       <div>
         <div class="sound">
-          <div class="circle small-button-background" style="background-color:#825624;"></div>
+          <div class="circle small-button-background" style="background-color: #825624;"></div>
           <audio id="roblox-num-num" src="sounds/roblox-num-num.mp3" preload="auto"></audio>
           <button class="small-button" onclick="document.getElementById('roblox-num-num').play();"></button>
           <div class="small-button-shadow"></div>
           <p class="name">
-            <button onclick="window.location.href='sounds/roblox-num-num.mp3'">Download</button><br>
-            Roblox Num Num Num<br>
+            <button onclick="window.location.href='sounds/roblox-num-num.mp3'">Download</button><br />
+            Roblox Num Num Num<br />
           </p>
         </div>
       </div>
       <div>
         <div class="sound">
-          <div class="circle small-button-background" style="background-color:#414345;"></div>
+          <div class="circle small-button-background" style="background-color: #414345;"></div>
           <audio id="mc-anvil" src="sounds/mc-anvil.mp3" preload="auto"></audio>
           <button class="small-button" onclick="document.getElementById('mc-anvil').play();"></button>
           <div class="small-button-shadow"></div>
           <p class="name">
-            <button onclick="window.location.href='sounds/mc-anvil.mp3'">Download</button><br>
-            Minecraft Anvil Sound<br>
+            <button onclick="window.location.href='sounds/mc-anvil.mp3'">Download</button><br />
+            Minecraft Anvil Sound<br />
           </p>
         </div>
       </div>
       <div>
         <div class="sound">
-          <div class="circle small-button-background" style="background-color:#ffffff;"></div>
+          <div class="circle small-button-background" style="background-color: #ffffff;"></div>
           <audio id="wii-sports-aww" src="sounds/wii-sports-aww.mp3" preload="auto"></audio>
           <button class="small-button" onclick="document.getElementById('wii-sports-aww').play();"></button>
           <div class="small-button-shadow"></div>
           <p class="name">
-            <button onclick="window.location.href='sounds/wii-sports-aww.mp3'">Download</button><br>
-            Wii Sports Awww<br>
+            <button onclick="window.location.href='sounds/wii-sports-aww.mp3'">Download</button><br />
+            Wii Sports Awww<br />
           </p>
         </div>
       </div>
       <div>
         <div class="sound">
-          <div class="circle small-button-background" style="background-color:#fae7e3;"></div>
+          <div class="circle small-button-background" style="background-color: #fae7e3;"></div>
           <audio id="crona-time" src="sounds/crona-time.mp3" preload="auto"></audio>
           <button class="small-button" onclick="document.getElementById('crona-time').play();"></button>
           <div class="small-button-shadow"></div>
           <p class="name">
-            <button onclick="window.location.href='sounds/crona-time.mp3'">Download</button><br>
-            It's Corona Time<br>
+            <button onclick="window.location.href='sounds/crona-time.mp3'">Download</button><br />
+            It's Corona Time<br />
           </p>
         </div>
       </div>
       <div>
         <div class="sound">
-          <div class="circle small-button-background" style="background-color:#63c73c;"></div>
+          <div class="circle small-button-background" style="background-color: #63c73c;"></div>
           <audio id="guess-who-back" src="sounds/guess-who-back.mp3" preload="auto"></audio>
           <button class="small-button" onclick="document.getElementById('guess-who-back').play();"></button>
           <div class="small-button-shadow"></div>
           <p class="name">
-            <button onclick="window.location.href='sounds/guess-who-back.mp3'">Download</button><br>
-            Guess who's back!<br>
+            <button onclick="window.location.href='sounds/guess-who-back.mp3'">Download</button><br />
+            Guess who's back!<br />
           </p>
         </div>
       </div>
       <div>
         <div class="sound">
-          <div class="circle small-button-background" style="background-color:#ff0000;"></div>
+          <div class="circle small-button-background" style="background-color: #ff0000;"></div>
           <audio id="coc-intro" src="sounds/coc-intro.mp3" preload="auto"></audio>
           <button class="small-button" onclick="document.getElementById('coc-intro').play();"></button>
           <div class="small-button-shadow"></div>
           <p class="name">
-            <button onclick="window.location.href='sounds/coc-intro.mp3'">Download</button><br>
-            Clash of Clans Intro<br>
+            <button onclick="window.location.href='sounds/coc-intro.mp3'">Download</button><br />
+            Clash of Clans Intro<br />
           </p>
         </div>
       </div>
       <div>
         <div class="sound">
-          <div class="circle small-button-background" style="background-color:#0000ff;"></div>
+          <div class="circle small-button-background" style="background-color: #0000ff;"></div>
           <audio id="cr-intro" src="sounds/cr-intro.mp3" preload="auto"></audio>
           <button class="small-button" onclick="document.getElementById('cr-intro').play();"></button>
           <div class="small-button-shadow"></div>
           <p class="name">
-            <button onclick="window.location.href='sounds/cr-intro.mp3'">Download</button><br>
-            Clash Royale Intro<br>
+            <button onclick="window.location.href='sounds/cr-intro.mp3'">Download</button><br />
+            Clash Royale Intro<br />
           </p>
         </div>
       </div>
-      
+
       <div>
         <div class="sound">
-          <div class="circle small-button-background" style="background-color:#636363;"></div>
+          <div class="circle small-button-background" style="background-color: #636363;"></div>
           <audio id="psst" src="sounds/psst.mp3" preload="auto"></audio>
           <button class="small-button" onclick="document.getElementById('psst').play();"></button>
           <div class="small-button-shadow"></div>
           <p class="name">
-            <button onclick="window.location.href='sounds/psst.mp3'">Download</button><br>
-            Doors Screech psst<br>
+            <button onclick="window.location.href='sounds/psst.mp3'">Download</button><br />
+            Doors Screech psst<br />
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <div class="sound">
+          <div class="circle small-button-background" style="background-color: #4bc90c;"></div>
+          <audio id="ohmygod" src="sounds/ohmygod.mp3" preload="auto"></audio>
+          <button class="small-button" onclick="document.getElementById('ohmygod').play();"></button>
+          <div class="small-button-shadow"></div>
+          <p class="name">
+            <button onclick="window.location.href='sounds/ohmygod.mp3'">Download</button><br />
+            Oh my god<br />
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <div class="sound">
+          <div class="circle small-button-background" style="background-color: #12b2de;"></div>
+          <audio id="yourmom-deep" src="sounds/yourmom-deep.mp3" preload="auto"></audio>
+          <button class="small-button" onclick="document.getElementById('yourmom-deep').play();"></button>
+          <div class="small-button-shadow"></div>
+          <p class="name">
+            <button onclick="window.location.href='sounds/yourmom-deep.mp3'">Download</button><br />
+            Your mom Deep voice<br />
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <div class="sound">
+          <div class="circle small-button-background" style="background-color: #03fcfc;"></div>
+          <audio id="wiimusic" src="sounds/wiimusic.mp3" preload="auto"></audio>
+          <button class="small-button" onclick="document.getElementById('wiimusic').play();"></button>
+          <div class="small-button-shadow"></div>
+          <p class="name">
+            <button onclick="window.location.href='sounds/wiimusic.mp3'">Download</button><br />
+            Wii Theme song<br />
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <div class="sound">
+          <div class="circle small-button-background" style="background-color: #32a852;"></div>
+          <audio id="telephonedial" src="sounds/telephonedial.mp3" preload="auto"></audio>
+          <button class="small-button" onclick="document.getElementById('telephonedial').play();"></button>
+          <div class="small-button-shadow"></div>
+          <p class="name">
+            <button onclick="window.location.href='sounds/telephonedial.mp3'">Download</button><br />
+            Telephone Dial tone<br />
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <div class="sound">
+          <div class="circle small-button-background" style="background-color: #8c8c18;"></div>
+          <audio id="boxingbell" src="sounds/boxingbell.mp3" preload="auto"></audio>
+          <button class="small-button" onclick="document.getElementById('boxingbell').play();"></button>
+          <div class="small-button-shadow"></div>
+          <p class="name">
+            <button onclick="window.location.href='sounds/boxingbell.mp3'">Download</button><br />
+            Boxing Bell Ding Ding<br />
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <div class="sound">
+          <div class="circle small-button-background" style="background-color: #fc0303;"></div>
+          <audio id="amongus" src="sounds/amongus.mp3" preload="auto"></audio>
+          <button class="small-button" onclick="document.getElementById('amongus').play();"></button>
+          <div class="small-button-shadow"></div>
+          <p class="name">
+            <button onclick="window.location.href='sounds/amongus.mp3'">Download</button><br />
+            Amongus Earrape loud<br />
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <div class="sound">
+          <div class="circle small-button-background" style="background-color: #fc0303;"></div>
+          <audio id="reportedbody" src="sounds/reportedbody.mp3" preload="auto"></audio>
+          <button class="small-button" onclick="document.getElementById('reportedbody').play();"></button>
+          <div class="small-button-shadow"></div>
+          <p class="name">
+            <button onclick="window.location.href='sounds/reportedbody.mp3'">Download</button><br />
+            Among us Reported Body<br />
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <div class="sound">
+          <div class="circle small-button-background" style="background-color: #ff0000;"></div>
+          <audio id="damnwheredidyoufindthis" src="sounds/damnwheredidyoufindthis.mp3" preload="auto"></audio>
+          <button class="small-button" onclick="document.getElementById('damnwheredidyoufindthis').play();"></button>
+          <div class="small-button-shadow"></div>
+          <p class="name">
+            <button onclick="window.location.href='sounds/damnwheredidyoufindthis.mp3'">Download</button><br />
+            Where'd you find this?<br />
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <div class="sound">
+          <div class="circle small-button-background" style="background-color: #d1c5be;"></div>
+          <audio id="yougotjebaited" src="sounds/yougotjebaited.mp3" preload="auto"></audio>
+          <button class="small-button" onclick="document.getElementById('yougotjebaited').play();"></button>
+          <div class="small-button-shadow"></div>
+          <p class="name">
+            <button onclick="window.location.href='sounds/yougotjebaited.mp3'">Download</button><br />
+            You Got Jebaited<br />
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <div class="sound">
+          <div class="circle small-button-background" style="background-color: #d9d8a7;"></div>
+          <audio id="iamtheone" src="sounds/iamtheone.mp3" preload="auto"></audio>
+          <button class="small-button" onclick="document.getElementById('iamtheone').play();"></button>
+          <div class="small-button-shadow"></div>
+          <p class="name">
+            <button onclick="window.location.href='sounds/iamtheone.mp3'">Download</button><br />
+            I am the one<br />
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <div class="sound">
+          <div class="circle small-button-background" style="background-color: #0000ff;"></div>
+          <audio id="superidol" src="sounds/superidol.mp3" preload="auto"></audio>
+          <button class="small-button" onclick="document.getElementById('superidol').play();"></button>
+          <div class="small-button-shadow"></div>
+          <p class="name">
+            <button onclick="window.location.href='sounds/superidol.mp3'">Download</button><br />
+            Super Idol<br />
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <div class="sound">
+          <div class="circle small-button-background" style="background-color: #00d5ff;"></div>
+          <audio id="whatthehellboy" src="sounds/whatthehellboy.mp3" preload="auto"></audio>
+          <button class="small-button" onclick="document.getElementById('whatthehellboy').play();"></button>
+          <div class="small-button-shadow"></div>
+          <p class="name">
+            <button onclick="window.location.href='sounds/whatthehellboy.mp3'">Download</button><br />
+            Boi what the hell boy<br />
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <div class="sound">
+          <div class="circle small-button-background" style="background-color: #70492f;"></div>
+          <audio id="ben" src="sounds/ben.mp3" preload="auto"></audio>
+          <button class="small-button" onclick="document.getElementById('ben').play();"></button>
+          <div class="small-button-shadow"></div>
+          <p class="name">
+            <button onclick="window.location.href='sounds/ben.mp3'">Download</button><br />
+            Talking Ben "Ben"<br />
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <div class="sound">
+          <div class="circle small-button-background" style="background-color: #0000ff;"></div>
+          <audio id="hehehe" src="sounds/hehehe.mp3" preload="auto"></audio>
+          <button class="small-button" onclick="document.getElementById('hehehe').play();"></button>
+          <div class="small-button-shadow"></div>
+          <p class="name">
+            <button onclick="window.location.href='sounds/hehehe.mp3'">Download</button><br />
+            Clash Royale Heheha<br />
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <div class="sound">
+          <div class="circle small-button-background" style="background-color: #eaff00;"></div>
+          <audio id="screamemoji" src="sounds/screamemoji.mp3" preload="auto"></audio>
+          <button class="small-button" onclick="document.getElementById('screamemoji').play();"></button>
+          <div class="small-button-shadow"></div>
+          <p class="name">
+            <button onclick="window.location.href='sounds/screamemoji.mp3'">Download</button><br />
+            Emoji loud scream<br />
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <div class="sound">
+          <div class="circle small-button-background" style="background-color: #32a8a4;"></div>
+          <audio id="hoodclassic" src="sounds/hoodclassic.mp3" preload="auto"></audio>
+          <button class="small-button" onclick="document.getElementById('hoodclassic').play();"></button>
+          <div class="small-button-shadow"></div>
+          <p class="name">
+            <button onclick="window.location.href='sounds/hoodclassic.mp3'">Download</button><br />
+            Certified hood classic<br />
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <div class="sound">
+          <div class="circle small-button-background" style="background-color: #9132a8;"></div>
+          <audio id="darknessmyoldfriend" src="sounds/darknessmyoldfriend.mp3" preload="auto"></audio>
+          <button class="small-button" onclick="document.getElementById('darknessmyoldfriend').play();"></button>
+          <div class="small-button-shadow"></div>
+          <p class="name">
+            <button onclick="window.location.href='sounds/darknessmyoldfriend.mp3'">Download</button><br />
+            Hello Darkness<br />
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <div class="sound">
+          <div class="circle small-button-background" style="background-color: #039dfc;"></div>
+          <audio id="afewmomentslater" src="sounds/afewmomentslater.mp3" preload="auto"></audio>
+          <button class="small-button" onclick="document.getElementById('afewmomentslater').play();"></button>
+          <div class="small-button-shadow"></div>
+          <p class="name">
+            <button onclick="window.location.href='sounds/afewmomentslater.mp3'">Download</button><br />
+            A few moments later<br />
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <div class="sound">
+          <div class="circle small-button-background" style="background-color: #02f5e5;"></div>
+          <audio id="danger-alarm" src="sounds/danger-alarm.mp3" preload="auto"></audio>
+          <button class="small-button" onclick="document.getElementById('danger-alarm').play();"></button>
+          <div class="small-button-shadow"></div>
+          <p class="name">
+            <button onclick="window.location.href='sounds/danger-alarm.mp3'">Download</button><br />
+            Danger Alarm loud<br />
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <div class="sound">
+          <div class="circle small-button-background" style="background-color: #e0b02b;"></div>
+          <audio id="hotpizzarolls" src="sounds/hotpizzarolls.mp3" preload="auto"></audio>
+          <button class="small-button" onclick="document.getElementById('hotpizzarolls').play();"></button>
+          <div class="small-button-shadow"></div>
+          <p class="name">
+            <button onclick="window.location.href='sounds/hotpizzarolls.mp3'">Download</button><br />
+            Totino's Hot Pizza Rolls<br />
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <div class="sound">
+          <div class="circle small-button-background" style="background-color:#32a8a2;"></div>
+          <audio id="throwitbackay" src="sounds/throwitbackay.mp3" preload="auto"></audio>
+          <button class="small-button" onclick="document.getElementById('throwitbackay').play();"></button>
+          <div class="small-button-shadow"></div>
+          <p class="name">
+            <button onclick="window.location.href='sounds/throwitbackay.mp3'">Download</button><br>
+            INDUSTRY BABY Throw it back<br>
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <div class="sound">
+          <div class="circle small-button-background" style="background-color:#ff9000;"></div>
+          <audio id="ohhmygod" src="sounds/ohhmygod.mp3" preload="auto"></audio>
+          <button class="small-button" onclick="document.getElementById('ohhmygod').play();"></button>
+          <div class="small-button-shadow"></div>
+          <p class="name">
+            <button onclick="window.location.href='sounds/ohhmygod.mp3'">Download</button><br>
+            OOOOOHHH MY GOD<br>
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <div class="sound">
+          <div class="circle small-button-background" style="background-color:#32e81e;"></div>
+          <audio id="tetristheme" src="sounds/tetristheme.mp3" preload="auto"></audio>
+          <button class="small-button" onclick="document.getElementById('tetristheme').play();"></button>
+          <div class="small-button-shadow"></div>
+          <p class="name">
+            <button onclick="window.location.href='sounds/tetristheme.mp3'">Download</button><br>
+            Original Tetris theme<br>
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <div class="sound">
+          <div class="circle small-button-background" style="background-color:#2a4652;"></div>
+          <audio id="ohnoohnoohnonono" src="sounds/ohnoohnoohnonono.mp3" preload="auto"></audio>
+          <button class="small-button" onclick="document.getElementById('ohnoohnoohnonono').play();"></button>
+          <div class="small-button-shadow"></div>
+          <p class="name">
+            <button onclick="window.location.href='sounds/SOohnoohnoohnononoUND.mp3'">Download</button><br>
+            Ohon ohno ohnonono<br>
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <div class="sound">
+          <div class="circle small-button-background" style="background-color:#e6c2be;"></div>
+          <audio id="woahcalmdownjamal" src="sounds/woahcalmdownjamal.mp3" preload="auto"></audio>
+          <button class="small-button" onclick="document.getElementById('woahcalmdownjamal').play();"></button>
+          <div class="small-button-shadow"></div>
+          <p class="name">
+            <button onclick="window.location.href='sounds/woahcalmdownjamal.mp3'">Download</button><br>
+            Woah calm down Jamal<br>
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <div class="sound">
+          <div class="circle small-button-background" style="background-color:#09b33c;"></div>
+          <audio id="helloyourcomputerhasvirus" src="sounds/helloyourcomputerhasvirus.mp3" preload="auto"></audio>
+          <button class="small-button" onclick="document.getElementById('helloyourcomputerhasvirus').play();"></button>
+          <div class="small-button-shadow"></div>
+          <p class="name">
+            <button onclick="window.location.href='sounds/helloyourcomputerhasvirus.mp3'">Download</button><br>
+            Hello your computer has virus<br>
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <div class="sound">
+          <div class="circle small-button-background" style="background-color:#65adba;"></div>
+          <audio id="fortnite-battlepass" src="sounds/fortnite-battlepass.mp3" preload="auto"></audio>
+          <button class="small-button" onclick="document.getElementById('fortnite-battlepass').play();"></button>
+          <div class="small-button-shadow"></div>
+          <p class="name">
+            <button onclick="window.location.href='sounds/fortnite-battlepass.mp3'">Download</button><br>
+            Fortnite Battlepass<br>
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <div class="sound">
+          <div class="circle small-button-background" style="background-color:#34abeb;"></div>
+          <audio id="scotlandforever" src="sounds/scotlandforever.mp3" preload="auto"></audio>
+          <button class="small-button" onclick="document.getElementById('scotlandforever').play();"></button>
+          <div class="small-button-shadow"></div>
+          <p class="name">
+            <button onclick="window.location.href='sounds/scotlandforever.mp3'">Download</button><br>
+            SCOTLAND FOREVER!!!<br>
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <div class="sound">
+          <div class="circle small-button-background" style="background-color:#f50f07;"></div>
+          <audio id="helpme" src="sounds/helpme.mp3" preload="auto"></audio>
+          <button class="small-button" onclick="document.getElementById('helpme').play();"></button>
+          <div class="small-button-shadow"></div>
+          <p class="name">
+            <button onclick="window.location.href='sounds/helpme.mp3'">Download</button><br>
+            HELP ME! HELP ME!<br>
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <div class="sound">
+          <div class="circle small-button-background" style="background-color:#151621;"></div>
+          <audio id="nootnoot" src="sounds/nootnoot.mp3" preload="auto"></audio>
+          <button class="small-button" onclick="document.getElementById('nootnoot').play();"></button>
+          <div class="small-button-shadow"></div>
+          <p class="name">
+            <button onclick="window.location.href='sounds/nootnoot.mp3'">Download</button><br>
+            Noot Noot<br>
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <div class="sound">
+          <div class="circle small-button-background" style="background-color:#c7c5c1;"></div>
+          <audio id="nokieringtone" src="sounds/nokieringtone.mp3" preload="auto"></audio>
+          <button class="small-button" onclick="document.getElementById('nokieringtone').play();"></button>
+          <div class="small-button-shadow"></div>
+          <p class="name">
+            <button onclick="window.location.href='sounds/nokieringtone.mp3'">Download</button><br>
+            Nokia arabic ringtone<br>
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <div class="sound">
+          <div class="circle small-button-background" style="background-color:#ff0000;"></div>
+          <audio id="bananadontjigglejiggle" src="sounds/bananadontjigglejiggle.mp3" preload="auto"></audio>
+          <button class="small-button" onclick="document.getElementById('bananadontjigglejiggle').play();"></button>
+          <div class="small-button-shadow"></div>
+          <p class="name">
+            <button onclick="window.location.href='sounds/bananadontjigglejiggle.mp3'">Download</button><br>
+            Banana no jiggle jiggle<br>
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <div class="sound">
+          <div class="circle small-button-background" style="background-color:#36210d;"></div>
+          <audio id="nahjittrippin" src="sounds/nahjittrippin.mp3" preload="auto"></audio>
+          <button class="small-button" onclick="document.getElementById('nahjittrippin').play();"></button>
+          <div class="small-button-shadow"></div>
+          <p class="name">
+            <button onclick="window.location.href='sounds/nahjittrippin.mp3'">Download</button><br>
+            Nah jit trippin!<br>
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <div class="sound">
+          <div class="circle small-button-background" style="background-color:#7dfff8;"></div>
+          <audio id="wewillberightback" src="sounds/wewillberightback.mp3" preload="auto"></audio>
+          <button class="small-button" onclick="document.getElementById('wewillberightback').play();"></button>
+          <div class="small-button-shadow"></div>
+          <p class="name">
+            <button onclick="window.location.href='sounds/wewillberightback.mp3'">Download</button><br>
+            We'll be right back<br>
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <div class="sound">
+          <div class="circle small-button-background" style="background-color:#32a0a8;"></div>
+          <audio id="breathair" src="sounds/breathair.mp3" preload="auto"></audio>
+          <button class="small-button" onclick="document.getElementById('breathair').play();"></button>
+          <div class="small-button-shadow"></div>
+          <p class="name">
+            <button onclick="window.location.href='sounds/breathair.mp3'">Download</button><br>
+            Breathe Air (Andrew Tate)<br>
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <div class="sound">
+          <div class="circle small-button-background" style="background-color:#4287f5;"></div>
+          <audio id="bluekidscream" src="sounds/bluekidscream.mp3" preload="auto"></audio>
+          <button class="small-button" onclick="document.getElementById('bluekidscream').play();"></button>
+          <div class="small-button-shadow"></div>
+          <p class="name">
+            <button onclick="window.location.href='sounds/bluekidscream.mp3'">Download</button><br>
+            Blue kid scream<br>
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <div class="sound">
+          <div class="circle small-button-background" style="background-color:#21130d;"></div>
+          <audio id="jurassicpark" src="sounds/jurassicpark.mp3" preload="auto"></audio>
+          <button class="small-button" onclick="document.getElementById('jurassicpark').play();"></button>
+          <div class="small-button-shadow"></div>
+          <p class="name">
+            <button onclick="window.location.href='sounds/jurassicpark.mp3'">Download</button><br>
+            Jurrasic Park theme<br>
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <div class="sound">
+          <div class="circle small-button-background" style="background-color:#0000ff;"></div>
+          <audio id="wedonotcare" src="sounds/wedonotcare.mp3" preload="auto"></audio>
+          <button class="small-button" onclick="document.getElementById('wedonotcare').play();"></button>
+          <div class="small-button-shadow"></div>
+          <p class="name">
+            <button onclick="window.location.href='sounds/wedonotcare.mp3'">Download</button><br>
+            We do not care<br>
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <div class="sound">
+          <div class="circle small-button-background" style="background-color:#b81d1d;"></div>
+          <audio id="oldspice" src="sounds/oldspice.mp3" preload="auto"></audio>
+          <button class="small-button" onclick="document.getElementById('oldspice').play();"></button>
+          <div class="small-button-shadow"></div>
+          <p class="name">
+            <button onclick="window.location.href='sounds/oldspice.mp3'">Download</button><br>
+            Old Spice Whistle<br>
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <div class="sound">
+          <div class="circle small-button-background" style="background-color:#3480eb;"></div>
+          <audio id="thefatratxenogenesis" src="sounds/thefatratxenogenesis.mp3" preload="auto"></audio>
+          <button class="small-button" onclick="document.getElementById('thefatratxenogenesis').play();"></button>
+          <div class="small-button-shadow"></div>
+          <p class="name">
+            <button onclick="window.location.href='sounds/thefatratxenogenesis.mp3'">Download</button><br>
+            TheFatRat Xenogenesis<br>
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <div class="sound">
+          <div class="circle small-button-background" style="background-color:#4287f5;"></div>
+          <audio id="itscorn" src="sounds/itscorn.mp3" preload="auto"></audio>
+          <button class="small-button" onclick="document.getElementById('itscorn').play();"></button>
+          <div class="small-button-shadow"></div>
+          <p class="name">
+            <button onclick="window.location.href='sounds/itscorn.mp3'">Download</button><br>
+            It's Corn!<br>
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <div class="sound">
+          <div class="circle small-button-background" style="background-color:#4034eb;"></div>
+          <audio id="mepersonally" src="sounds/mepersonally.mp3" preload="auto"></audio>
+          <button class="small-button" onclick="document.getElementById('mepersonally').play();"></button>
+          <div class="small-button-shadow"></div>
+          <p class="name">
+            <button onclick="window.location.href='sounds/mepersonally.mp3'">Download</button><br>
+            Me Personally<br>
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <div class="sound">
+          <div class="circle small-button-background" style="background-color:#32a885;"></div>
+          <audio id="quandale" src="sounds/quandale.mp3" preload="auto"></audio>
+          <button class="small-button" onclick="document.getElementById('quandale').play();"></button>
+          <div class="small-button-shadow"></div>
+          <p class="name">
+            <button onclick="window.location.href='sounds/quandale.mp3'">Download</button><br>
+            Quandale dingle REHEHE<br>
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <div class="sound">
+          <div class="circle small-button-background" style="background-color:#00a9df;"></div>
+          <audio id="thomastankengine" src="sounds/thomastankengine.mp3" preload="auto"></audio>
+          <button class="small-button" onclick="document.getElementById('thomastankengine').play();"></button>
+          <div class="small-button-shadow"></div>
+          <p class="name">
+            <button onclick="window.location.href='sounds/thomastankengine.mp3'">Download</button><br>
+            Thomas the train earrape<br>
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <div class="sound">
+          <div class="circle small-button-background" style="background-color:#bf15ab;"></div>
+          <audio id="mariofalling" src="sounds/mariofalling.mp3" preload="auto"></audio>
+          <button class="small-button" onclick="document.getElementById('mariofalling').play();"></button>
+          <div class="small-button-shadow"></div>
+          <p class="name">
+            <button onclick="window.location.href='sounds/mariofalling.mp3'">Download</button><br>
+            Mario Falling<br>
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <div class="sound">
+          <div class="circle small-button-background" style="background-color:#0000ff;"></div>
+          <audio id="watchyojet" src="sounds/watchyojet.mp3" preload="auto"></audio>
+          <button class="small-button" onclick="document.getElementById('watchyojet').play();"></button>
+          <div class="small-button-shadow"></div>
+          <p class="name">
+            <button onclick="window.location.href='sounds/watchyojet.mp3'">Download</button><br>
+            Watch yo jet<br>
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <div class="sound">
+          <div class="circle small-button-background" style="background-color:#34deeb;"></div>
+          <audio id="noamountof" src="sounds/noamountof.mp3" preload="auto"></audio>
+          <button class="small-button" onclick="document.getElementById('noamountof').play();"></button>
+          <div class="small-button-shadow"></div>
+          <p class="name">
+            <button onclick="window.location.href='sounds/noamountof.mp3'">Download</button><br>
+            No amount of therapy<br>
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <div class="sound">
+          <div class="circle small-button-background" style="background-color:#00ff00;"></div>
+          <audio id="ohhellothereshreak" src="sounds/ohhellothereshreak.mp3" preload="auto"></audio>
+          <button class="small-button" onclick="document.getElementById('ohhellothereshreak').play();"></button>
+          <div class="small-button-shadow"></div>
+          <p class="name">
+            <button onclick="window.location.href='sounds/ohhellothereshreak.mp3'">Download</button><br>
+            Oh hello there Shreak<br>
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <div class="sound">
+          <div class="circle small-button-background" style="background-color:#ccff00;"></div>
+          <audio id="explodingtoilet" src="sounds/explodingtoilet.mp3" preload="auto"></audio>
+          <button class="small-button" onclick="document.getElementById('explodingtoilet').play();"></button>
+          <div class="small-button-shadow"></div>
+          <p class="name">
+            <button onclick="window.location.href='sounds/explodingtoilet.mp3'">Download</button><br>
+            Skibidibopmmdada BHBHBHHKKHB<br>
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <div class="sound">
+          <div class="circle small-button-background" style="background-color:#A4DE02;"></div>
+          <audio id="mayonnaise" src="sounds/mayonnaise.mp3" preload="auto"></audio>
+          <button class="small-button" onclick="document.getElementById('mayonnaise').play();"></button>
+          <div class="small-button-shadow"></div>
+          <p class="name">
+            <button onclick="window.location.href='sounds/mayonnaise.mp3'">Download</button><br>
+            Mayonnaise on an escalator<br>
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <div class="sound">
+          <div class="circle small-button-background" style="background-color:#2596be;"></div>
+          <audio id="fanfend" src="sounds/fanfend.mp3" preload="auto"></audio>
+          <button class="small-button" onclick="document.getElementById('fanfend').play();"></button>
+          <div class="small-button-shadow"></div>
+          <p class="name">
+            <button onclick="window.location.href='sounds/fanfend.mp3'">Download</button><br>
+            FNAF Toreador March<br>
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <div class="sound">
+          <div class="circle small-button-background" style="background-color:#ff03d1;"></div>
+          <audio id="notevenclose" src="sounds/notevenclose.mp3" preload="auto"></audio>
+          <button class="small-button" onclick="document.getElementById('notevenclose').play();"></button>
+          <div class="small-button-shadow"></div>
+          <p class="name">
+            <button onclick="window.location.href='sounds/notevenclose.mp3'">Download</button><br>
+            Technoblade NOT EVEN CLOSE<br>
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <div class="sound">
+          <div class="circle small-button-background" style="background-color:#ff03d1;"></div>
+          <audio id="technoneverdies" src="sounds/technoneverdies.mp3" preload="auto"></audio>
+          <button class="small-button" onclick="document.getElementById('technoneverdies').play();"></button>
+          <div class="small-button-shadow"></div>
+          <p class="name">
+            <button onclick="window.location.href='sounds/technoneverdies.mp3'">Download</button><br>
+            Technoblade never dies!<br>
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <div class="sound">
+          <div class="circle small-button-background" style="background-color:#fff700;"></div>
+          <audio id="kidsyay" src="sounds/kidsyay.mp3" preload="auto"></audio>
+          <button class="small-button" onclick="document.getElementById('kidsyay').play();"></button>
+          <div class="small-button-shadow"></div>
+          <p class="name">
+            <button onclick="window.location.href='sounds/kidsyay.mp3'">Download</button><br>
+            Kids cheering<br>
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <div class="sound">
+          <div class="circle small-button-background" style="background-color:#00ff00;"></div>
+          <audio id="areyouseriousrnbro" src="sounds/areyouseriousrnbro.mp3" preload="auto"></audio>
+          <button class="small-button" onclick="document.getElementById('areyouseriousrnbro').play();"></button>
+          <div class="small-button-shadow"></div>
+          <p class="name">
+            <button onclick="window.location.href='sounds/areyouseriousrnbro.mp3'">Download</button><br>
+            are you serious right now bro<br>
           </p>
         </div>
       </div>
