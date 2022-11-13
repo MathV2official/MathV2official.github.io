@@ -1,0 +1,16 @@
+{
+"companyName": "mentol",
+"productName": "CrazyCraft",
+"productVersion": "1.2.8",
+"dataUrl": "CrazyCraftv1.data.unityweb",
+"wasmCodeUrl": "CrazyCraftv1.wasm.code.unityweb",
+"wasmFrameworkUrl": "CrazyCraftv1.wasm.framework.unityweb",
+"graphicsAPI": ["WebGL 2.0","WebGL 1.0"],
+"webglContextAttributes": {"preserveDrawingBuffer": false},
+"splashScreenStyle": "Dark",
+"backgroundColor": "#000000",
+"cacheControl": {"default": "must-revalidate"},
+"developmentBuild": false,
+"multithreading": false,
+"unityVersion": "2019.3.15f1"
+}
