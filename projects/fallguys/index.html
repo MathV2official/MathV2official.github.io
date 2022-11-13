@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-241311961-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-241311961-1');
+</script>
+
+
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Math V2</title>
+    <link rel="shortcut icon" href="TemplateData/favicon.ico">
+    <link rel="stylesheet" href="TemplateData/style.css">
+
+<style>	
+      @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@200;500&display=swap');	
+      @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@200;500&family=MuseoModerno:wght@600&display=swap');	
+    </style>
+
+  </head>
+  <body class="dark">
+    <div id="unity-container" class="unity-desktop">
+      <canvas id="unity-canvas"></canvas>
+    </div>
+    <div id="loading-cover" style="display:none;">
+      <div id="unity-loading-bar">
+        
+	
+        <div id="unity-logo">	
+          <img src="logo.png">	
+          <br>	
+          <p id="loading-txt" style="text-align: center; font-family: 'MuseoModerno', cursive;color: white;font-size: 50px;margin-top: 0px;margin-bottom: 0px;" >Loading...</p>	
+        </div>
+
+
+        <div id="unity-progress-bar-empty" style="display: none;">
+          <div id="unity-progress-bar-full"></div>
+        </div>
+        <div class="spinner"></div>
+      </div>
+    </div>
+    <div id="unity-fullscreen-button" style="display: none;"></div>
+    <script>
+      const hideFullScreenButton = "";
+      const buildUrl = "Build";
+      const loaderUrl = buildUrl + "/Fall-Boys-And-Girls-Runningv4_word_profanaty.loader.js";
+      const config = {
+        dataUrl: buildUrl + "/Fall-Boys-And-Girls-Runningv4_word_profanaty.data.unityweb",
+        frameworkUrl: buildUrl + "/Fall-Boys-And-Girls-Runningv4_word_profanaty.framework.js.unityweb",
+        codeUrl: buildUrl + "/Fall-Boys-And-Girls-Runningv4_word_profanaty.wasm.unityweb",
+        streamingAssetsUrl: "StreamingAssets",
+        companyName: "BestCrazyGames",
+        productName: "Fall Boys And Girls",
+        productVersion: "38",
+      };
+
+      const container = document.querySelector("#unity-container");
+      const canvas = document.querySelector("#unity-canvas");
+      const loadingCover = document.querySelector("#loading-cover");
+      const progressBarEmpty = document.querySelector("#unity-progress-bar-empty");
+      const progressBarFull = document.querySelector("#unity-progress-bar-full");
+      const fullscreenButton = document.querySelector("#unity-fullscreen-button");
+      const spinner = document.querySelector('.spinner');
+
+      const canFullscreen = (function() {
+        for (const key of [
+            'exitFullscreen',
+            'webkitExitFullscreen',
+            'webkitCancelFullScreen',
+            'mozCancelFullScreen',
+            'msExitFullscreen',
+          ]) {
+          if (key in document) {
+            return true;
+          }
+        }
+        return false;
+      }());
+
+      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+        container.className = "unity-mobile";
+        config.devicePixelRatio = 1;
+      }
+      loadingCover.style.display = "";
+var myGameInstance = null;
+      const script = document.createElement("script");
+      script.src = loaderUrl;
+      script.onload = () => {
+        createUnityInstance(canvas, config, (progress) => {
+          spinner.style.display = "none";
+          progressBarEmpty.style.display = "";
+          progressBarFull.style.width = `${100 * progress}%`;
+        }).then((unityInstance) => {
+myGameInstance = unityInstance;
+          loadingCover.style.display = "none";
+          if (canFullscreen) {
+            if (!hideFullScreenButton) {
+              fullscreenButton.style.display = "";
+            }
+            fullscreenButton.onclick = () => {
+              unityInstance.SetFullscreen(1);
+            };
+          }
+        }).catch((message) => {
+          alert(message);
+        });
+      };
+      document.body.appendChild(script);
+
+    </script>
+ <script async
+    data-ad-client="ca-pub-6129580795478709"
+    data-ad-channel="2808339311"
+  
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">
+    </script>
+     <script type="text/javascript" src="js/gameBreakBeta.js"></script>
+  </body>
+</html>
