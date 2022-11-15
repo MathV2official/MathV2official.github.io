@@ -1,0 +1,74 @@
+[
+	{
+		"active": true,
+		"content": "🌽 It's Corn! 🦃🍂 The latest Shell Shockers Update is here! Turkey SMG for VIPs, New items & more",
+		"imageExt": ".png",
+		"id": "news_l9yrfhc00",
+		"elId": "FYlObt",
+		"linksToChangeLog": "1"
+	},
+	{
+		"content": "👻🗡️The Melee Madness Update is here! 🎃 Whisk it & press F in-game to swing your weapon!!     ",
+		"imageExt": ".png",
+		"id": "news_l9db7i3c1",
+		"elId": "EMrvU4",
+		"active": false,
+		"linksToChangeLog": "1"
+	},
+	{
+		"content": "⛹🏼‍♂️ The Basket Bros Update is here! Ballin' Skins, Awesome VIP shotgun, map movements and more!  ",
+		"linksToChangeLog": "1",
+		"imageExt": ".png",
+		"id": "news_l0sra7a97",
+		"elId": "aENH8t",
+		"active": false
+	},
+	{
+		"content": "🕵️‍♀️ Update! The Scavenger Hunt has been completed - Find the hidden items in every map! ",
+		"imageExt": ".png",
+		"active": false,
+		"id": "news_l6znpj8s3",
+		"elId": "fxkOd1",
+		"linksToTaggedItems": "Scavenger"
+	},
+	{
+		"content": "🐓 King of the Coop is here!!!! Try the new game mode, new hats, new map OH MY!  💥",
+		"imageExt": ".png",
+		"id": "news_kwo55g9h1",
+		"active": true,
+		"elId": "O0Wmeh",
+		"linksToKotc": "1"
+	},
+	{
+		"content": "👑Introducing the VIP Club. Join  for as little as $5 per month with 2 premium items, no ads, x2 eggs and more!  ",
+		"linksToVipStore": "1",
+		"imageExt": ".png",
+		"id": "news_ksovpe1g6",
+		"active": true,
+		"elId": "4pUs2b"
+	},
+	{
+		"content": "💥 Wishlist our latest Cybertronic Synthwave shooter - Nuke Zone! ",
+		"link": "https://store.steampowered.com/app/1255530/Nuke_Zone/",
+		"imageExt": ".png",
+		"id": "news_ksovr61e7",
+		"active": true,
+		"elId": "tf9Dkl"
+	},
+	{
+		"content": "👨‍💼 Jump in the Merc Zone now - Slide and shoot to victory!",
+		"link": "https://merc.zone",
+		"imageExt": ".png",
+		"id": "news_ksovs9nm8",
+		"active": false,
+		"elId": "2I5xHo"
+	},
+	{
+		"content": "🗺️ Try our block building MMO Castles.cc & earn Level 4 to receive an awesome in-game Shell Shockers item!",
+		"link": "https://castles.cc",
+		"imageExt": ".png",
+		"id": "news_ksovtf0q9",
+		"active": true,
+		"elId": "MhN3aq"
+	}
+]
