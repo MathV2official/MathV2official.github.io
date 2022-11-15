@@ -1,0 +1,127 @@
+
+<!DOCTYPE html><html lang="en"><head><title>Total Crush Game Files - Crazy Games</title><link href="https://gameframe.crazygames.com/crazygames-gameframe-v1.bundle.js" rel="preload" as="script" /><link href="https://www.crazygames.com/game/total-crush" rel="canonical" /><meta charset="UTF-8" /><meta name="robots" content="noindex, follow" /><meta name="description" content="The game files for Total Crush, a free browser game on CrazyGames.com" /><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta http-equiv="Accept-CH" content="DPR" /><meta name="viewport" content="width=device-width, maximum-scale=1.0, initial-scale=1.0, user-scalable=no, minimal-ui" /><style id="pacman-styles">/* background */
+    body {
+      background-image: linear-gradient(290deg, #3b2b73 55%, #6f2f93, #6f2f93);
+      background-position: center;
+      text-align: center;
+    } 
+    /* for positioning of pacman loader */
+    body, html { height: 100%; }
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+    
+    @keyframes rotate_preloadpacman_half_up {
+      0% {
+        transform: rotate(270deg); }
+      50% {
+        transform: rotate(360deg); }
+      100% {
+        transform: rotate(270deg); }
+    }
+    
+    @keyframes rotate_preloadpacman_half_down {
+      0% {
+        transform: rotate(90deg);
+      }
+      50% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(90deg);
+      }
+    }
+    
+    @keyframes preloadpacman-balls {
+      75% {
+        opacity: 0.7;
+      }
+      100% {
+        transform: translate(-100px, -6.25px);
+      }
+    }
+    
+    .preloadpacman {
+      position: relative;
+    }
+    .preloadpacman > div:nth-child(2) {
+      animation: preloadpacman-balls 1s -0.99s infinite linear;
+    }
+    .preloadpacman > div:nth-child(3) {
+      animation: preloadpacman-balls 1s -0.66s infinite linear;
+    }
+    .preloadpacman > div:nth-child(4) {
+      animation: preloadpacman-balls 1s -0.33s infinite linear;
+    }
+    .preloadpacman > div:nth-child(5) {
+      animation: preloadpacman-balls 1s 0s infinite linear;
+    }
+    .preloadpacman > div:first-of-type {
+      width: 0px;
+      height: 0px;
+      border-right: 25px solid transparent;
+      border-top: 25px solid #fff;
+      border-left: 25px solid #fff;
+      border-bottom: 25px solid #fff;
+      border-radius: 25px;
+      animation: rotate_preloadpacman_half_up 0.5s 0s infinite;
+      position: relative;
+      left: -30px;
+    }
+    .preloadpacman > div:nth-child(2) {
+      width: 0px;
+      height: 0px;
+      border-right: 25px solid transparent;
+      border-top: 25px solid #fff;
+      border-left: 25px solid #fff;
+      border-bottom: 25px solid #fff;
+      border-radius: 25px;
+      animation: rotate_preloadpacman_half_down 0.5s 0s infinite;
+      margin-top: -50px;
+      position: relative;
+      left: -30px;
+    }
+    .preloadpacman > div:nth-child(3),
+    .preloadpacman > div:nth-child(4),
+    .preloadpacman > div:nth-child(5),
+    .preloadpacman > div:nth-child(6) {
+      background-color: #fff;
+      width: 15px;
+      height: 15px;
+      border-radius: 100%;
+      margin: 2px;
+      width: 10px;
+      height: 10px;
+      position: absolute;
+      transform: translate(0, -6.25px);
+      top: 25px;
+      left: 70px;
+    }
+    </style></head><body><div class="preloadpacman" id="pacman"><div></div><div></div><div></div><div></div><div></div></div><script type="text/javascript">function loadScript(url, callback) {
+      var head = document.head;
+      var script = document.createElement('script');
+      script.type = 'text/javascript';
+      script.src = url;
+      script.async = true;
+      script.onreadystatechange = callback;
+      script.onload = callback;
+      head.appendChild(script);
+    }
+    var options = {"loader":"unity2021","loaderOptions":{"showProgress":true,"unityLoaderUrl":"https://files.crazygames.com/total-crush/1/Build/WebGLBuild.loader.js","unityConfigOptions":{"codeUrl":"https://files.crazygames.com/total-crush/1/Build/7bdc8e155831cc2b6e16c5d5c7a0db21.wasm.br","dataUrl":"https://files.crazygames.com/total-crush/1/Build/004ef06a82f4d851ee15644f002b0efb.data.br","frameworkUrl":"https://files.crazygames.com/total-crush/1/Build/c7cddd6109b40f1fa5ed1c2091af61d5.js.br","streamingAssetsUrl":"https://files.crazygames.com/total-crush/1/StreamingAssets"}},"thumbnail":"https://images.crazygames.com/total-crush/20221103163217/total-crush-cover?auto=format,compress&q=75&cs=strip&w=360","gameName":"Total Crush","gameHttps":true,"gameSlug":"total-crush","gameId":"21139","gameStatus":"published","showAdOnExternal":"ALWAYS","showAdOnInternal":"DEFAULT","disableEmbedding":false,"dollarRate":0.9685248784985541,"upvotes":4,"downvotes":1,"releaseDate":"2022-11-14","locale":"en_US","controls":{"text":"<h3>Controls</h3>\n<p>Drag the left mouse button to aim and release it to shoot.</p>"},"videoThumbnail":"https://videos.crazygames.com/total-crush/1/total-crush-205x115.mp4","video":{"original":"https://videos.crazygames.com/total-crush/1/total-crush.mp4","sizes":[{"width":205,"height":115,"location":"https://videos.crazygames.com/total-crush/1/total-crush-205x115.mp4"},{"width":249,"height":140,"location":"https://videos.crazygames.com/total-crush/1/total-crush-249x140.mp4"},{"width":364,"height":208,"location":"https://videos.crazygames.com/total-crush/1/total-crush-364x208.mp4"},{"width":494,"height":276,"location":"https://videos.crazygames.com/total-crush/1/total-crush-494x276.mp4"},{"width":611,"height":343,"location":"https://videos.crazygames.com/total-crush/1/total-crush-611x343.mp4"}]},"sandbox":true,"totalSize":"10 MB","minTimeBetweenMidrollAdsInMs":180000,"minTimeBetweenRewardedAdsInMs":5000,"noMidrollAdInFirstMinutes":3,"noRewardedAdInFirstMinutes":0,"categoryEnSlug":"casual","tagsEnSlugs":["cannon","pixel","webgl","destroy","build","physics","2d","mouse","upgrade","idle"],"isKids":false,"hasMidroll":true,"hasRewarded":false,"fullscreen":"SUPPORTED","orientation":null,"category":"Destroy","categoryLink":"https://www.crazygames.com/t/destroy","gameLink":"https://www.crazygames.com/game/total-crush","alternativeGames":[],"domainHasNoCMP":false};
+    var SDK_READY = false;
+    var GF_READY = false;
+    var GF_LOAD_CALLED = false;
+    loadScript("https://gameframe.crazygames.com/crazygames-gameframe-v1.bundle.js", function() {
+        Crazygames.load(options).then(function() {
+          var pacmanWrapper = document.getElementById('pacman');
+          var pacmanStyles = document.getElementById('pacman-styles');
+    
+          if (pacmanWrapper && pacmanStyles) {
+            pacmanWrapper.remove();
+            pacmanStyles.remove();
+          }
+        });
+    });</script></body></html>
