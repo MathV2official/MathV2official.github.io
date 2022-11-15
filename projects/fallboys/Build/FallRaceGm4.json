@@ -1,0 +1,15 @@
+{
+"companyName": "hihoy",
+"productName": "Fall-A-Mong",
+"productVersion": "2.1",
+"dataUrl": "FallRaceGm4.data.unityweb",
+"wasmCodeUrl": "FallRaceGm4.wasm.code.unityweb",
+"wasmFrameworkUrl": "FallRaceGm4.wasm.framework.unityweb",
+"graphicsAPI": ["WebGL 2.0","WebGL 1.0"],
+"webglContextAttributes": {"preserveDrawingBuffer": false},
+"splashScreenStyle": "Dark",
+"backgroundColor": "#4E009A",
+"developmentBuild": false,
+"multithreading": false,
+"unityVersion": "2019.3.15f1"
+}
