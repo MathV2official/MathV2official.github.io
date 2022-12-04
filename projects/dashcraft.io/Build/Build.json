@@ -1,0 +1,16 @@
+{
+    "companyName": "IDK",
+    "productName": "DashCraft.io",
+    "productVersion": "1.2.8",
+    "dataUrl": "WebGLBuild.data.br",
+    "wasmCodeUrl": "WebGLBuild.wasm.br",
+    "wasmFrameworkUrl": "WebGLBuild.framework.js.br",
+    "graphicsAPI": ["WebGL 2.0","WebGL 1.0"],
+    "webglContextAttributes": {"preserveDrawingBuffer": false},
+    "splashScreenStyle": "Dark",
+    "backgroundColor": "#000000",
+    "cacheControl": {"default": "must-revalidate"},
+    "developmentBuild": false,
+    "multithreading": false,
+    "unityVersion": "2020.3.0"
+    }
