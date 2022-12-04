@@ -56,18 +56,18 @@
         updateBannerVisibility();
       }
 
-      var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/Build.loader.js";
-      var config = {
-        dataUrl: buildUrl + "/WebGLBuild.data.br",
-        frameworkUrl: buildUrl + "/WebGLBuild.framework.js.br",
-        codeUrl: buildUrl + "/WebGLBuild.wasm.br",
-        streamingAssetsUrl: "StreamingAssets",
-        companyName: "WA2AB1",
-        productName: "Hyperspace Racers 3",
-        productVersion: "1",
-        showBanner: unityShowBanner,
-      };
+      function loadGame() 
+  var buildUrl = "Build";
+  var loaderUrl = buildUrl + "/WebGLBuild.loader.js";
+  var config = {
+    dataUrl: buildUrl + "/WebGLBuild.data.br",
+    frameworkUrl: buildUrl + "/WebGLBuild.framework.js.br",
+    codeUrl: buildUrl + "/WebGLBuild.wasm.br",
+    streamingAssetsUrl: "StreamingAssets",
+    companyName: "DefaultCompany",
+    productName: "DashCraft.io",
+    productVersion: "0.6",
+  };
 
       // By default Unity keeps WebGL canvas render target size matched with
       // the DOM size of the canvas element (scaled by window.devicePixelRatio)
