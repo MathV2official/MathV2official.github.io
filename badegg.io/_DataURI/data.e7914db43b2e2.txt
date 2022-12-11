@@ -1,0 +1,1 @@
+chrome-extension://hhckidpbkbmoeejbddojbdgidalionif/third_party/davidshimjs-qrcodejs/qrcode.min.js
