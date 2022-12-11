@@ -1,0 +1,69 @@
+.TopHUD {
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #dfdfdf;
+  z-index: 1;
+
+  .inner {
+    width: 15rem;
+    height: 10rem;
+  }
+
+  .countdownTimer {
+    position: absolute;
+    top: 2.5rem;
+    left: 50%;
+    font-size: 2.5rem;
+    color: #FFD800;
+    transform: translateX(-50%);
+  }
+
+  .countdownTimerBack {
+    position: absolute;
+    left: -4rem;
+    right: -4rem;
+    top: -2.5rem;
+    bottom: -2.5rem;
+    background-image: url(/img/ui/mercZone_timeBackground.svg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    opacity: 0.8;
+  }
+
+  .time {
+    position: relative;
+  }
+
+  .redScore {
+    position: absolute;
+    top: 2rem;
+    right: 86%;
+    padding: 0.5rem;
+    padding-right: 1.5rem;
+    text-align: right;
+    width: 5rem;
+    border-top-right-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+    background: linear-gradient(90deg, transparent, #BF5050);
+    color: #FF8F8F;
+  }
+
+  .blueScore {
+    position: absolute;
+    top: 2rem;
+    left: 86%;
+    padding: 0.5rem;
+    padding-left: 1.5rem;
+    text-align: left;
+    width: 5rem;
+    border-top-left-radius: 2rem;
+    border-bottom-left-radius: 2rem;
+    background: linear-gradient(90deg, #5050BF,transparent);
+    color: #8F8FFF;
+  }
+}

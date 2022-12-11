@@ -1,0 +1,19 @@
+.CustomizationItem {
+  width: 5em;
+  height: 5em;
+  margin: 0.25em;
+  mask: url(/img/ui/mercZone_Tab_back.svg);
+  mask-size: 100% 100%;
+  -webkit-mask: url(/img/ui/mercZone_Tab_back.svg);
+  -webkit-mask-size: 100% 100%;
+
+  .type {
+    mask-size: 100% 100%;
+    -webkit-mask-size: 100% 100%;
+    background-color: #FFD800;
+    top: -50%;
+    width: 50%;
+    height: 50%;
+    position: relative;
+  }
+}

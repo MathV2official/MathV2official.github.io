@@ -1,0 +1,92 @@
+.PlayerItem {
+  display: flex;
+  flex-direction: row;
+
+  .inner {
+    width: 11rem;
+    height: 1.5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-weight: bold;
+    white-space: nowrap;
+    background-image: url(/img/ui/mercZone_playerName.svg);
+
+    &.noteam {
+      color: #ffd800;
+    }
+
+    &.red {
+      background: #bf5050;
+      color: #ff8f8f;
+    }
+
+    &.blue {
+      background: #5050bf;
+      color: #8f8fff;
+    }
+
+    &.local {
+      color: #2f4546;
+      background-image: url(/img/ui/mercZone_playerName_local.svg);
+    }
+
+    .name {
+      padding-left: 0.5rem;
+    }
+
+    .score {
+      text-align: right;
+      padding-right: 1rem;
+      color: #e9e4c6;
+      flex-grow: 1;
+    }
+
+    &.local .score {
+      color: #2f4546;
+    }
+
+    .state {
+      margin-left: 10px;
+      padding-left: 5px;
+      padding-right: 5px;
+      background: rgba(0, 0, 0, 0.9);
+      border-radius: 10px;
+      font-weight: normal;
+      font-size: 12px;
+    }
+
+    &.local .state {
+      color: #ffd800;
+    }
+  }
+
+  .bounty {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: #e9e4c6;
+    background: #eb4040;
+    margin-left: 0.5rem;
+
+    .icon {
+      width: 1rem;
+      height: 1rem;
+      margin: 0.25rem;
+    }
+
+    span {
+      margin-left: 0.25rem;
+      margin-right: 0.5rem;
+    }
+  }
+}
+
+.PlayerList {
+  display: block;
+  gap: 0.25rem;
+  display: flex;
+  flex-direction: column;
+  opacity: 80%;
+  pointer-events: none;
+}
