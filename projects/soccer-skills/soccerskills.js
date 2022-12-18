@@ -7,7 +7,7 @@ rad.src = "data/interface" + rdres + "/rad.png";
 var xlogo = null;
 if (gameorigin == "crazygames" || gameorigin == "crazygamesa") {
     xlogo = new Image();
-    xlogo.src = "favicon.ico";
+    xlogo.src = "https://mathv22.netlify.app/favicon.ico";
 }
 var bimg = [];
 var blimg = [];
