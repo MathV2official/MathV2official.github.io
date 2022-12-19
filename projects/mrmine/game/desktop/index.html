@@ -1,0 +1,800 @@
+<html>
+
+<head>
+    <script src="https://payments.playsaurus.com/v1/main.js" data-src="Mr.Mine Web"></script>
+    <link rel="shortcut icon" href="icon.png">
+    <meta name="Description" content="Get rich or die mining! Idle your way through the mines, unearth treasures, and discover what great mysteries lie in the depths below!" />
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <meta name="Distribution" content="Global" />
+    <meta name="Robots" content="index,follow" />
+    <meta name="viewport" content="user-scalable=no" />
+    <title>Mr.Mine</title>
+    <link rel="stylesheet" href="style.css?v=5" type="text/css" media="screen, projection" />
+    <script src="Shared/constants.js?t=1657913090"></script>
+    <script src="Shared/formulas.js?t=1626395714"></script>
+    <script src="Shared/helperfunctions.js?t=1670376159"></script>
+    <script src="Shared/SplitTest.js?t=1670455016"></script>
+    <script src="Shared/eventhook.js?t=1626395720"></script>
+    <script src="Shared/translation.js?t=1667601055" charset="utf-8"></script>
+    <script src="Shared/platform.js?t=1665776048"></script>
+    <script src="Shared/AssetData.js?t=1661809487"></script>
+    <script src="Shared/assetloader.js?t=1670538998"></script>
+    <script src="assets.js?t=1670538635"></script>
+    <script src="../web.js"></script>
+    <script src="Shared/shortcut.js?v=1"></script>
+    <script src="Shared/shortcuts.js?t=1664330500"></script>
+    <script src="Shared/cache.js?t=1626395714"></script>
+    <script src="Shared/PlayerStats.js?t=1670627321"></script>
+    <!-- https://cdn.jsdelivr.net/npm/statsig-js/build/statsig-prod-web-sdk.min.js -->
+    <script src="Shared/statsig-prod-web-sdk.min.js"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-98HXVM1ER8"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'G-98HXVM1ER8');
+    </script>
+    <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
+    <script>
+        window.TrackJS && TrackJS.install({
+            token: "672a75e2963a46b19c7e9e726ded8d4f",
+            application: "MrMine-PC"
+        });
+    </script>
+</head>
+
+<body>
+    <!-- Preload fonts so they can be used on first canvas draw -->
+    <div id="fontLoader1" style="height:0px; width:0px; font-family: KanitB; position: absolute; top:0px; left: 0px; z-index: -2;">.</div>
+    <div id="fontLoader2" style="height:0px; width:0px; font-family: KanitM; position: absolute; top:0px; left: 0px; z-index: -2;">.</div>
+    <div id="fontLoader3" style="height:0px; width:0px; font-family: CFont; position: absolute; top:0px; left: 0px; z-index: -2;">.</div>
+    <div id="fontLoader4" style="height:0px; width:0px; font-family: BubbleGum; position: absolute; top:0px; left: 0px; z-index: -2;">.</div>
+
+    <div id="WRAPPERD" onselectstart="return false" ondragstart="return false">
+        <canvas id="WRAPPER"> </canvas>
+    </div>
+
+    <div id="PARTICLESD" onselectstart="return false" ondragstart="return false">
+        <canvas id="PARTICLES"> </canvas>
+    </div>
+
+    <div id="STAGED" onselectstart="return false" ondragstart="return false">
+        <canvas id="STAGE"> </canvas>
+    </div>
+
+    <div id="TRANSIENTEFFECTSD" onselectstart="return false" ondragstart="return false">
+        <canvas id="TRANSIENTEFFECTS"> </canvas>
+    </div>
+
+    <div id="TUTORIALD" onselectstart="return false" ondragstart="return false">
+        <div id="TUTORIALDI"></div>
+        <div id="TUTORIALTEXT">
+            <div id="tutorialTextContent"></div>
+        </div>
+        <div id="tutorialNextText"></div>
+        <div id="personTalkingNameText"></div>
+        <canvas id="TUTORIAL"> </canvas>
+    </div>
+
+    <div id="DIALOGUED" onselectstart="return false" ondragstart="return false" onclick="onProgressTutorial()" touchstart="onProgressTutorial()">
+        <canvas id="DIALOGUE"> </canvas>
+    </div>
+
+    <div id="PLACE1" onselectstart="return false" ondragstart="return false"> </div>
+    <div id="PLACE2" onselectstart="return false" ondragstart="return false"> </div>
+    <div id="PLACE3" onselectstart="return false" ondragstart="return false"> </div>
+    <div id="PLACE4" onselectstart="return false" ondragstart="return false"> </div>
+    <div id="PLACE5" onselectstart="return false" ondragstart="return false"> </div>
+    <div id="PLACE6" onselectstart="return false" ondragstart="return false"> </div>
+    <div id="PLACE7" onselectstart="return false" ondragstart="return false"> </div>
+    <div id="ARCHPLACE" onselectstart="return false" ondragstart="return false"> </div>
+    <div id="GARAGE" onselectstart="return false" ondragstart="return false"> </div>
+    <div id="METALDETECTORPLACE" onselectstart="return false" ondragstart="return false"> </div>
+
+    <div id="SELLD" onselectstart="return false" ondragstart="return false">
+        <canvas id="SELL"> </canvas>
+    </div>
+
+    <div id="OILD" onselectstart="return false" ondragstart="return false">
+        <canvas id="OIL"> </canvas>
+    </div>
+
+    <div id="DRILLD" onselectstart="return false" ondragstart="return false">
+        <canvas id="DRILL"> </canvas>
+    </div>
+
+    <div id="OFFLINEPROGRESSD" onselectstart="return false" ondragstart="return false">
+        <canvas id="OFFLINEPROGRESS"> </canvas>
+    </div>
+
+    <div id="PROMOD" onselectstart="return false" ondragstart="return false">
+        <canvas id="PROMO"> </canvas>
+    </div>
+
+    <div id="WEAPONFORGED" onselectstart="return false" ondragstart="return false">
+        <canvas id="WEAPONFORGE"> </canvas>
+    </div>
+
+    <div id="PITD" onselectstart="return false" ondragstart="return false">
+        <canvas id="PIT"> </canvas>
+    </div>
+
+    <div id="SMSD" onselectstart="return false" ondragstart="return false">
+        <canvas id="SMS"> </canvas>
+    </div>
+
+    <div id="GEMFORGED" onselectstart="return false" ondragstart="return false">
+        <canvas id="GEMFORGE"> </canvas>
+    </div>
+
+    <div id="TRADINGPOSTD" onselectstart="return false" ondragstart="return false">
+        <div id="CLOSEtrade" onselectstart="return false" ondragstart="return false"> </div>
+        <div id="TPTooltip1" onselectstart="return false" ondragstart="return false"> </div>
+        <div id="TPTooltip2" onselectstart="return false" ondragstart="return false"> </div>
+        <div id="TPB1" onselectstart="return false" ondragstart="return false"> </div>
+        <div id="TPB2" onselectstart="return false" ondragstart="return false"> </div>
+        <div id="TPRefreshButton" onselectstart="return false" ondragstart="return false"> </div>
+        <canvas id="TRADINGPOST"> </canvas>
+    </div>
+
+    <div id="REACTORD" onselectstart="return false" ondragstart="return false">
+        <canvas id="REACTOR"> </canvas>
+    </div>
+
+    <div id="CAVESYSTEMD" onselectstart="return false" ondragstart="return false">
+        <canvas id="CAVESYSTEM"> </canvas>
+    </div>
+
+    <div id="ARCHD" onselectstart="return false" ondragstart="return false">
+        <canvas id="ARCH"> </canvas>
+    </div>
+
+    <div id="PACKD" onselectstart="return false" ondragstart="return false">
+        <canvas id="PACK"> </canvas>
+    </div>
+    <div id="PACKANIMATIOND" onselectstart="return false" ondragstart="return false">
+        <canvas id="PACKANIMATION"> </canvas>
+    </div>
+    <div id="CRAFTINGD" onselectstart="return false" ondragstart="return false">
+        <canvas id="CRAFTING"> </canvas>
+    </div>
+    <div id="ONECLICKMINIGAMED" onselectstart="return false" ondragstart="return false">
+        <canvas id="ONECLICKMINIGAME"> </canvas>
+    </div>
+
+    <div id="SETTINGSD" onselectstart="return false" ondragstart="return false">
+        <canvas id="SETTINGS"> </canvas>
+    </div>
+
+    <div id="QUESTSD" onselectstart="return false" ondragstart="return false">
+        <canvas id="QUESTS"> </canvas>
+    </div>
+
+    <div id="CONFIRMATIOND" onselectstart="return false" ondragstart="return false">
+        <canvas id="CONFIRMATION"> </canvas>
+    </div>
+
+    <div id="SPECIALD" onselectstart="return false" ondragstart="return false">
+        <canvas id="SPECIAL"> </canvas>
+    </div>
+
+    <div id="BUYD" onselectstart="return false" ondragstart="return false">
+        <div id="CLOSEb" onselectstart="return false" ondragstart="return false"> </div>
+        <div id="BTB1" onselectstart="return false" ondragstart="return false"> </div>
+        <div id="BTB2" onselectstart="return false" ondragstart="return false"> </div>
+        <div id="BTB3" onselectstart="return false" ondragstart="return false"> </div>
+        <div id="BTB4" onselectstart="return false" ondragstart="return false"> </div>
+        <div id="BB2" onselectstart="return false" ondragstart="return false"> </div>
+        <div id="BB3" onselectstart="return false" ondragstart="return false"> </div>
+        <div id="BB4" onselectstart="return false" ondragstart="return false"> </div>
+        <div id="BB5" onselectstart="return false" ondragstart="return false"> </div>
+        <div id="BB6" onselectstart="return false" ondragstart="return false"> </div>
+        <div id="BB7" onselectstart="return false" ondragstart="return false"> </div>
+        <div id="BB8" onselectstart="return false" ondragstart="return false"> </div>
+        <div id="BB9" onselectstart="return false" ondragstart="return false"> </div>
+        <div id="BB10" onselectstart="return false" ondragstart="return false"> </div>
+        <div id="BB11" onselectstart="return false" ondragstart="return false"> </div>
+        <div id="BB12" onselectstart="return false" ondragstart="return false"> </div>
+        <div id="BB13" onselectstart="return false" ondragstart="return false"> </div>
+        <div id="BB14" onselectstart="return false" ondragstart="return false"> </div>
+        <div id="BB15" onselectstart="return false" ondragstart="return false"> </div>
+        <div id="BB16" onselectstart="return false" ondragstart="return false"> </div>
+        <div id="BB17" onselectstart="return false" ondragstart="return false"> </div>
+        <div id="BB18" onselectstart="return false" ondragstart="return false"> </div>
+        <div id="BB19" onselectstart="return false" ondragstart="return false"> </div>
+        <div id="PAGES1" onselectstart="return false" ondragstart="return false"> </div>
+        <div id="PAGES2" onselectstart="return false" ondragstart="return false"> </div>
+        <div id="PAGES3" onselectstart="return false" ondragstart="return false"> </div>
+        <div id="PAGES4" onselectstart="return false" ondragstart="return false"> </div>
+        <div id="PAGES5" onselectstart="return false" ondragstart="return false"> </div>
+        <div id="PAGES6" onselectstart="return false" ondragstart="return false"> </div>
+        <canvas id="BUY"> </canvas>
+    </div>
+
+    <!-- This is here to fix steam overlay issues do not remove it! -->
+    <canvas id="forceRefreshCanvas" width="1" height="1" style="position: fixed; top: 0px; left: 0; right: 0; bottom: 0; width: 100%; height: 100%; opacity: 0.01; pointer-events: none; z-index: -1;"></canvas>
+    <!-- Do not remove the above line! -->
+
+    <div id="PURCHASED" onselectstart="return false" ondragstart="return false">
+        <div id="BTP1" onselectstart="return false" ondragstart="return false"> </div>
+        <div id="BTP2" onselectstart="return false" ondragstart="return false"> </div>
+        <div id="BTC1" onselectstart="return false" ondragstart="return false"> </div>
+        <div id="BTC2" onselectstart="return false" ondragstart="return false"> </div>
+        <div id="REDEEM" onselectstart="return false" ondragstart="return false"> </div>
+        <canvas id="PURCHASE"> </canvas>
+    </div>
+
+
+    <div id="CHESTD" onselectstart="return false" ondragstart="return false">
+        <canvas id="CHEST"> </canvas>
+    </div>
+
+    <div id="TITLED" onselectstart="return false" ondragstart="return false">
+        <div id="G1" onselectstart="return false" ondragstart="return false"> </div>
+        <div id="G2" onselectstart="return false" ondragstart="return false"> </div>
+        <div id="G3" onselectstart="return false" ondragstart="return false"> </div>
+        <div id="G7" onselectstart="return false" ondragstart="return false"> </div>
+        <div id="G7i" onselectstart="return false" ondragstart="return false"> </div>
+        <div id="G1d" onselectstart="return false" ondragstart="return false"> </div>
+        <div id="G2d" onselectstart="return false" ondragstart="return false"> </div>
+        <div id="G3d" onselectstart="return false" ondragstart="return false"> </div>
+        <div id="G1c" onselectstart="return false" ondragstart="return false"> </div>
+        <div id="G2c" onselectstart="return false" ondragstart="return false"> </div>
+        <div id="G3c" onselectstart="return false" ondragstart="return false"> </div>
+        <div id="languageSelection" onselectstart="return false" ondragstart="return false"></div>
+        <div id="steamCloudBackup" onselectstart="return false" ondragstart="return false"></div>
+        <div id="Gi" onselectstart="return false" ondragstart="return false">
+            <center><b><u>Update v0.41 - 12/9/22</u></b></center><br> The Christmas event is back and better than ever! From now until Decemeber 28th the mines will be Christmas themed!
+            <br><br> Other changes:
+            <br>
+            <ul>
+                <li>Basic chests are now Christmas presents and they have double the rewards</li>
+                <li>Caves are Christmas themed and have the occasional Candy Cane reward.</li>
+                <li>Some monsters will be Christmas monsters and occasionaly drop a Candy Cane. </li>
+                <li>Candy Canes can be used in the Christmas shop UI to purchase chests.</li>
+                <li>Reviving Scientist no longer scales cost based on rarity.</li>
+                <li>4 new relics have been added</li>
+                <li>4 new quests (+steam achievements) have been added</li>
+            </ul>
+            <br> Also be sure to join our holiday <span onclick='openDiscord();' style='cursor:pointer;'><u>Discord</u></span> giveaway where we are giving away over $1,000 in prizes.
+            <br><br>
+            <center><b><u>Update v0.40 - 10/24/22</u></b></center><br> Hey everyone! We have a <b><u>MAJOR</u></b> update today.
+            <br><br> Are normal miners not cutting it for you anymore? Do you find yourself wanting something a little more grand? Well have no fear, <b><u>Super Miners</u></b> are here!
+            <br><br> Super Miners wander around your mines and perform many actions for you! Super Miners come from Ethereal chests. Ethereal chests can spawn very rarely, be compressed from gold chests, or purchased in the shop.
+            <br><br> Each super miner can be leveled up with Super Miner souls increasing their abilities. You can gain souls from scraping super miners, from Ethereal chests, from scientist excavations, and possibly other features in the future.
+            <br><br> Other changes:
+            <br>
+            <ul>
+                <li>Doubled the frame rate.</li>
+                <li>New Cave Tutorial.</li>
+                <li>Chest compressor is now unlocked at 700km and has cheaper conversion rates, but is time based.</li>
+                <li>Reactor moved down to W2-100km</li>
+                <li>Reviving Scientist no longer scales cost based on rarity.</li>
+                <li>Some pop ups will now show above other popups without closing the previous popup.</li>
+                <li>Replaced confirmation popups and text input popups with a newer nicer looking popup.</li>
+                <li>All sorts of weird performance improvements.</li>
+                <li>Added a survey which grants some tickets</li>
+            </ul>
+            <br> Make sure to join us on <span onclick='openDiscord();' style='cursor:pointer;'><u>Discord</u></span> for occasional redemption codes and community updates!<br><br> Also follow us on <span onclick='openInstagram();' style='cursor:pointer;'><u>Instagram</u></span>,
+            <span onclick='openTikTok();' style='cursor:pointer;'><u>TikTok</u></span>, and <span onclick='openTwitter();' style='cursor:pointer;'><u>Twitter</u></span> for sneak peaks, giveaways, and redemption codes!<br>
+        </div>
+        <div id="NEWGAME" onselectstart="return false" ondragstart="return false">
+            <center><br><b><u><span id="gameNameText">GAME NAME</span></u></b><br>
+                <br><input type="text" id="gname"><br><br>
+                <img src="Shared/Assets/UI/upgradebs.png?t=1626395716" id="cng" style="cursor: pointer;"><br><br><img src="Shared/Assets/UI/upgradebs.png?t=1626395716" id="cngc" style="cursor: pointer;">
+            </center>
+        </div>
+        <canvas id="TITLE"> </canvas>
+    </div>
+
+
+    <div id="HIRED" onselectstart="return false" ondragstart="return false">
+        <canvas id="HIRE"> </canvas>
+    </div>
+
+    <div id="SUPSELLD" onselectstart="return false" ondragstart="return false">
+        <canvas id="SUPSELL"> </canvas>
+    </div>
+
+    <div id="SUPERD" onselectstart="return false" ondragstart="return false">
+        <canvas id="SUPER"> </canvas>
+    </div>
+
+    <div id="SUPBD" onselectstart="return false" ondragstart="return false">
+        <canvas id="SUPB"> </canvas>
+    </div>
+
+    <div id="BATTLED" onselectstart="return false" ondragstart="return false">
+        <canvas id="BATTLE"> </canvas>
+    </div>
+
+    <div id="LOGGERD" onselectstart="return false" ondragstart="return false">
+        <div id="CLOSEl2" onselectstart="return false" ondragstart="return false"> </div>
+        <div id="LOGGERTAB1" onselectstart="return false" ondragstart="return false"> </div>
+        <div id="LOGGERTAB2" onselectstart="return false" ondragstart="return false"> </div>
+        <canvas id="LOGGER"> </canvas>
+    </div>
+
+    <div id="drillHitbox"></div>
+    <div id="bossLevel"></div>
+
+    <div id="HELPD" onselectstart="return false" ondragstart="return false">
+        <div id="CLOSEhe" onselectstart="return false" ondragstart="return false"> </div>
+        <div id="H2"></div>
+        <div id="H3"></div>
+        <div id="H4"></div>
+        <div id="H5"></div>
+        <div id="H6"></div>
+        <div id="H7"></div>
+        <div id="H8"></div>
+        <div id="H9"></div>
+        <div id="H10"></div>
+        <div id="H11"></div>
+        <div id="H12"></div>
+        <div id="H13"></div>
+        <div id="H14"></div>
+        <div id="H15"></div>
+        <div id="H16"></div>
+        <div id="DebugH">
+            <center>Please tell us what went wrong in the box below. The more information the better.<br><textarea rows='18' cols='38' id='debugi'></textarea><br><br><img src='Shared/Assets/UI/submitb.png' id='sdebug'></center>
+        </div>
+        <div id="H17"></div>
+        <canvas id="HELP"> </canvas>
+    </div>
+
+    <div id="SIMPLEINPUTFIELD">
+        <center>
+            <input id="simpleInputFieldText" type="text"></input><br>
+        </center>
+    </div>
+
+    <div id="SIMPLEINPUTFIELDALERT">
+        <center>
+            <br>
+            <div id="simpleInputAlertFieldDescription"></div><br>
+            <button id="simpleInputAlertButton" type="button">OK</button><br>
+        </center>
+    </div>
+
+    <div id="EQUIPS" onselectstart="return false" ondragstart="return false"></div>
+    <div id="ENGINEM" onselectstart="return false" ondragstart="return false"></div>
+    <div id="ENGINE1" onselectstart="return false" ondragstart="return false"></div>
+    <div id="ENGINE2" onselectstart="return false" ondragstart="return false"></div>
+    <div id="ENGINE3" onselectstart="return false" ondragstart="return false"></div>
+    <div id="ENGINE4" onselectstart="return false" ondragstart="return false"></div>
+    <div id="ENGINE5" onselectstart="return false" ondragstart="return false"></div>
+    <div id="ENGINE6" onselectstart="return false" ondragstart="return false"></div>
+    <div id="ENGINE7" onselectstart="return false" ondragstart="return false"></div>
+    <div id="ENGINE8" onselectstart="return false" ondragstart="return false"></div>
+    <div id="ENGINE9" onselectstart="return false" ondragstart="return false"></div>
+    <div id="ENGINE10" onselectstart="return false" ondragstart="return false"></div>
+    <div id="DRILLM" onselectstart="return false" ondragstart="return false"></div>
+    <div id="DRILL1" onselectstart="return false" ondragstart="return false"></div>
+    <div id="DRILL2" onselectstart="return false" ondragstart="return false"></div>
+    <div id="DRILL3" onselectstart="return false" ondragstart="return false"></div>
+    <div id="DRILL4" onselectstart="return false" ondragstart="return false"></div>
+    <div id="DRILL5" onselectstart="return false" ondragstart="return false"></div>
+    <div id="DRILL6" onselectstart="return false" ondragstart="return false"></div>
+    <div id="DRILL7" onselectstart="return false" ondragstart="return false"></div>
+    <div id="DRILL8" onselectstart="return false" ondragstart="return false"></div>
+    <div id="DRILL9" onselectstart="return false" ondragstart="return false"></div>
+    <div id="DRILL10" onselectstart="return false" ondragstart="return false"></div>
+    <div id="RADIATORM" onselectstart="return false" ondragstart="return false"></div>
+    <div id="RADIATOR1" onselectstart="return false" ondragstart="return false"></div>
+    <div id="RADIATOR2" onselectstart="return false" ondragstart="return false"></div>
+    <div id="RADIATOR3" onselectstart="return false" ondragstart="return false"></div>
+    <div id="RADIATOR4" onselectstart="return false" ondragstart="return false"></div>
+    <div id="RADIATOR5" onselectstart="return false" ondragstart="return false"></div>
+    <div id="RADIATOR6" onselectstart="return false" ondragstart="return false"></div>
+    <div id="RADIATOR7" onselectstart="return false" ondragstart="return false"></div>
+    <div id="RADIATOR8" onselectstart="return false" ondragstart="return false"></div>
+    <div id="RADIATOR9" onselectstart="return false" ondragstart="return false"></div>
+    <div id="RADIATOR10" onselectstart="return false" ondragstart="return false"></div>
+    <div id="CARGOBAYM" onselectstart="return false" ondragstart="return false"></div>
+    <div id="CARGOBAY1" onselectstart="return false" ondragstart="return false"></div>
+    <div id="CARGOBAY2" onselectstart="return false" ondragstart="return false"></div>
+    <div id="CARGOBAY3" onselectstart="return false" ondragstart="return false"></div>
+    <div id="CARGOBAY4" onselectstart="return false" ondragstart="return false"></div>
+    <div id="CARGOBAY5" onselectstart="return false" ondragstart="return false"></div>
+    <div id="CARGOBAY6" onselectstart="return false" ondragstart="return false"></div>
+    <div id="CARGOBAY7" onselectstart="return false" ondragstart="return false"></div>
+    <div id="CARGOBAY8" onselectstart="return false" ondragstart="return false"></div>
+    <div id="CARGOBAY9" onselectstart="return false" ondragstart="return false"></div>
+    <div id="CARGOBAY10" onselectstart="return false" ondragstart="return false"></div>
+    <div id="DELETEE" onselectstart="return false" ondragstart="return false"></div>
+
+    <div id="L5a" onselectstart="return false" ondragstart="return false"></div>
+    <div id="L5b" onselectstart="return false" ondragstart="return false"></div>
+    <div id="L5c" onselectstart="return false" ondragstart="return false"></div>
+    <div id="L5d" onselectstart="return false" ondragstart="return false"></div>
+    <div id="L5e" onselectstart="return false" ondragstart="return false"></div>
+    <div id="L5f" onselectstart="return false" ondragstart="return false"></div>
+    <div id="L5g" onselectstart="return false" ondragstart="return false"></div>
+    <div id="L5h" onselectstart="return false" ondragstart="return false"></div>
+    <div id="L5i" onselectstart="return false" ondragstart="return false"></div>
+    <div id="L5j" onselectstart="return false" ondragstart="return false"></div>
+    <div id="L4a" onselectstart="return false" ondragstart="return false"></div>
+    <div id="L4b" onselectstart="return false" ondragstart="return false"></div>
+    <div id="L4c" onselectstart="return false" ondragstart="return false"></div>
+    <div id="L4d" onselectstart="return false" ondragstart="return false"></div>
+    <div id="L4e" onselectstart="return false" ondragstart="return false"></div>
+    <div id="L4f" onselectstart="return false" ondragstart="return false"></div>
+    <div id="L4g" onselectstart="return false" ondragstart="return false"></div>
+    <div id="L4h" onselectstart="return false" ondragstart="return false"></div>
+    <div id="L4i" onselectstart="return false" ondragstart="return false"></div>
+    <div id="L4j" onselectstart="return false" ondragstart="return false"></div>
+    <div id="L3a" onselectstart="return false" ondragstart="return false"></div>
+    <div id="L3b" onselectstart="return false" ondragstart="return false"></div>
+    <div id="L3c" onselectstart="return false" ondragstart="return false"></div>
+    <div id="L3d" onselectstart="return false" ondragstart="return false"></div>
+    <div id="L3e" onselectstart="return false" ondragstart="return false"></div>
+    <div id="L3f" onselectstart="return false" ondragstart="return false"></div>
+    <div id="L3g" onselectstart="return false" ondragstart="return false"></div>
+    <div id="L3h" onselectstart="return false" ondragstart="return false"></div>
+    <div id="L3i" onselectstart="return false" ondragstart="return false"></div>
+    <div id="L3j" onselectstart="return false" ondragstart="return false"></div>
+    <div id="L2a" onselectstart="return false" ondragstart="return false"></div>
+    <div id="L2b" onselectstart="return false" ondragstart="return false"></div>
+    <div id="L2c" onselectstart="return false" ondragstart="return false"></div>
+    <div id="L2d" onselectstart="return false" ondragstart="return false"></div>
+    <div id="L2e" onselectstart="return false" ondragstart="return false"></div>
+    <div id="L2f" onselectstart="return false" ondragstart="return false"></div>
+    <div id="L2g" onselectstart="return false" ondragstart="return false"></div>
+    <div id="L2h" onselectstart="return false" ondragstart="return false"></div>
+    <div id="L2i" onselectstart="return false" ondragstart="return false"></div>
+    <div id="L2j" onselectstart="return false" ondragstart="return false"></div>
+    <div id="L1a" onselectstart="return false" ondragstart="return false"></div>
+    <div id="L1b" onselectstart="return false" ondragstart="return false"></div>
+    <div id="L1c" onselectstart="return false" ondragstart="return false"></div>
+    <div id="L1d" onselectstart="return false" ondragstart="return false"></div>
+    <div id="L1e" onselectstart="return false" ondragstart="return false"></div>
+    <div id="L1f" onselectstart="return false" ondragstart="return false"></div>
+    <div id="L1g" onselectstart="return false" ondragstart="return false"></div>
+    <div id="L1h" onselectstart="return false" ondragstart="return false"></div>
+    <div id="L1i" onselectstart="return false" ondragstart="return false"></div>
+    <div id="L1j" onselectstart="return false" ondragstart="return false"></div>
+
+    <!-- Gap hitboxes -->
+    <div id="L5gap1" onselectstart="return false" ondragstart="return false"></div>
+    <div id="L5gap2" onselectstart="return false" ondragstart="return false"></div>
+    <div id="L5gap3" onselectstart="return false" ondragstart="return false"></div>
+    <div id="L5gap4" onselectstart="return false" ondragstart="return false"></div>
+    <div id="L5gap5" onselectstart="return false" ondragstart="return false"></div>
+    <div id="L5gap6" onselectstart="return false" ondragstart="return false"></div>
+    <div id="L5gap7" onselectstart="return false" ondragstart="return false"></div>
+    <div id="L5gap8" onselectstart="return false" ondragstart="return false"></div>
+    <div id="L5gap9" onselectstart="return false" ondragstart="return false"></div>
+    <div id="L5gap10" onselectstart="return false" ondragstart="return false"></div>
+    <div id="L5gap11" onselectstart="return false" ondragstart="return false"></div>
+    <div id="L4gap1" onselectstart="return false" ondragstart="return false"></div>
+    <div id="L4gap2" onselectstart="return false" ondragstart="return false"></div>
+    <div id="L4gap3" onselectstart="return false" ondragstart="return false"></div>
+    <div id="L4gap4" onselectstart="return false" ondragstart="return false"></div>
+    <div id="L4gap5" onselectstart="return false" ondragstart="return false"></div>
+    <div id="L4gap6" onselectstart="return false" ondragstart="return false"></div>
+    <div id="L4gap7" onselectstart="return false" ondragstart="return false"></div>
+    <div id="L4gap8" onselectstart="return false" ondragstart="return false"></div>
+    <div id="L4gap9" onselectstart="return false" ondragstart="return false"></div>
+    <div id="L4gap10" onselectstart="return false" ondragstart="return false"></div>
+    <div id="L4gap11" onselectstart="return false" ondragstart="return false"></div>
+    <div id="L3gap1" onselectstart="return false" ondragstart="return false"></div>
+    <div id="L3gap2" onselectstart="return false" ondragstart="return false"></div>
+    <div id="L3gap3" onselectstart="return false" ondragstart="return false"></div>
+    <div id="L3gap4" onselectstart="return false" ondragstart="return false"></div>
+    <div id="L3gap5" onselectstart="return false" ondragstart="return false"></div>
+    <div id="L3gap6" onselectstart="return false" ondragstart="return false"></div>
+    <div id="L3gap7" onselectstart="return false" ondragstart="return false"></div>
+    <div id="L3gap8" onselectstart="return false" ondragstart="return false"></div>
+    <div id="L3gap9" onselectstart="return false" ondragstart="return false"></div>
+    <div id="L3gap10" onselectstart="return false" ondragstart="return false"></div>
+    <div id="L3gap11" onselectstart="return false" ondragstart="return false"></div>
+    <div id="L2gap1" onselectstart="return false" ondragstart="return false"></div>
+    <div id="L2gap2" onselectstart="return false" ondragstart="return false"></div>
+    <div id="L2gap3" onselectstart="return false" ondragstart="return false"></div>
+    <div id="L2gap4" onselectstart="return false" ondragstart="return false"></div>
+    <div id="L2gap5" onselectstart="return false" ondragstart="return false"></div>
+    <div id="L2gap6" onselectstart="return false" ondragstart="return false"></div>
+    <div id="L2gap7" onselectstart="return false" ondragstart="return false"></div>
+    <div id="L2gap8" onselectstart="return false" ondragstart="return false"></div>
+    <div id="L2gap9" onselectstart="return false" ondragstart="return false"></div>
+    <div id="L2gap10" onselectstart="return false" ondragstart="return false"></div>
+    <div id="L2gap11" onselectstart="return false" ondragstart="return false"></div>
+    <div id="L1gap1" onselectstart="return false" ondragstart="return false"></div>
+    <div id="L1gap2" onselectstart="return false" ondragstart="return false"></div>
+    <div id="L1gap3" onselectstart="return false" ondragstart="return false"></div>
+    <div id="L1gap4" onselectstart="return false" ondragstart="return false"></div>
+    <div id="L1gap5" onselectstart="return false" ondragstart="return false"></div>
+    <div id="L1gap6" onselectstart="return false" ondragstart="return false"></div>
+    <div id="L1gap7" onselectstart="return false" ondragstart="return false"></div>
+    <div id="L1gap8" onselectstart="return false" ondragstart="return false"></div>
+    <div id="L1gap9" onselectstart="return false" ondragstart="return false"></div>
+    <div id="L1gap10" onselectstart="return false" ondragstart="return false"></div>
+    <div id="L1gap11" onselectstart="return false" ondragstart="return false"></div>
+
+    <div id="INFOD" onselectstart="return false" ondragstart="return false">
+        <canvas id="INFO"> </canvas>
+    </div>
+
+    <div id="TOOLTIP" onselectstart="return false" ondragstart="return false"></div>
+
+    <div id="loadingOverlay" onselectstart="return false" ondragstart="return false">
+        <p id="LoadingText">Loading...</p><br>
+        <p id="LoadingPercent">0%</p>
+        <div id="LoadingBarBg">
+            <div id="LoadingBar"></div>
+        </div>
+    </div>
+
+    <div id="LANGUAGESELECTIOND">
+        <div id="selectLanguageTitle" style="width: 100%; font-size: 20px; text-align: center; color: #FFFFFF; margin-top: 10px; padding-bottom: 10px; cursor: default;" onselectstart="return false" ondragstart="return false">SELECT LANGUAGE &#128491;</div>
+
+        <div class="languageSelection" data-language="english" onClick="setNewLanguageOverride('english'); hideLanguageSelection();" onselectstart="return false" ondragstart="return false">English</div>
+        <div class="languageSelection" data-language="german" onClick="setNewLanguageOverride('german'); hideLanguageSelection();" onselectstart="return false" ondragstart="return false">Deutsch</div>
+        <div class="languageSelection" data-language="brazilian" onClick="setNewLanguageOverride('brazilian'); hideLanguageSelection();" onselectstart="return false" ondragstart="return false">Portugu&#xEA;s do Brasil</div>
+        <div class="languageSelection" data-language="french" onClick="setNewLanguageOverride('french'); hideLanguageSelection();" onselectstart="return false" ondragstart="return false">Fran&ccedil;ais</div>
+        <div class="languageSelection" data-language="japanese" onClick="setNewLanguageOverride('japanese'); hideLanguageSelection();" onselectstart="return false" ondragstart="return false">&#x65E5;&#x672C;&#x8A9E;</div>
+        <div class="languageSelection" data-language="dutch" onClick="setNewLanguageOverride('dutch'); hideLanguageSelection();" onselectstart="return false" ondragstart="return false">Nederlands</div>
+        <div class="languageSelection" data-language="polish" onClick="setNewLanguageOverride('polish'); hideLanguageSelection();" onselectstart="return false" ondragstart="return false">Polski</div>
+        <div class="languageSelection" data-language="swedish" onClick="setNewLanguageOverride('swedish'); hideLanguageSelection();" onselectstart="return false" ondragstart="return false">Svenska</div>
+        <div class="languageSelection" data-language="danish" onClick="setNewLanguageOverride('danish'); hideLanguageSelection();" onselectstart="return false" ondragstart="return false">Dansk</div>
+        <div class="languageSelection" data-language="koreana" onClick="setNewLanguageOverride('koreana'); hideLanguageSelection();" onselectstart="return false" ondragstart="return false">&#54620;&#44397;&#50612;</div>
+        <div class="languageSelection" data-language="czech" onClick="setNewLanguageOverride('czech'); hideLanguageSelection();" onselectstart="return false" ondragstart="return false">&#x10C;e&#x161;tina</div>
+        <div class="languageSelection" data-language="italian" onClick="setNewLanguageOverride('italian'); hideLanguageSelection();" onselectstart="return false" ondragstart="return false">Italiano</div>
+        <div class="languageSelection" data-language="spanish" onClick="setNewLanguageOverride('spanish'); hideLanguageSelection();" onselectstart="return false" ondragstart="return false">Espa&#xF1;ol</div>
+        <div class="languageSelection" data-language="russian" onClick="setNewLanguageOverride('russian'); hideLanguageSelection();" onselectstart="return false" ondragstart="return false">&#x420;&#x443;&#x441;&#x441;&#x43A;&#x438;&#x439;</div>
+        <div class="languageSelection" data-language="finnish" onClick="setNewLanguageOverride('finnish'); hideLanguageSelection();" onselectstart="return false" ondragstart="return false">Suomen kieli</div>
+        <div class="languageSelection" data-language="norwegian" onClick="setNewLanguageOverride('norwegian'); hideLanguageSelection();" onselectstart="return false" ondragstart="return false">Norsk</div>
+        <div class="languageSelection" data-language="schinese" onClick="setNewLanguageOverride('schinese'); hideLanguageSelection();" onselectstart="return false" ondragstart="return false">&#31616;&#20307;&#20013;&#25991;</div>
+        <div class="languageSelection" data-language="tchinese" onClick="setNewLanguageOverride('tchinese'); hideLanguageSelection();" onselectstart="return false" ondragstart="return false">&#x7E41;&#x9AD4;&#x4E2D;&#x6587;</div>
+        <div class="languageSelection" data-language="slovak" onClick="setNewLanguageOverride('slovak'); hideLanguageSelection();" onselectstart="return false" ondragstart="return false">Slovensk&yacute;</div>
+        <div class="languageSelection" data-language="turkish" onClick="setNewLanguageOverride('turkish'); hideLanguageSelection();" onselectstart="return false" ondragstart="return false">T&uuml;rk&ccedil;e</div>
+        <div class="languageSelection" data-language="ukrainian" onClick="setNewLanguageOverride('ukrainian'); hideLanguageSelection();" onselectstart="return false" ondragstart="return false">&#x423;&#x43A;&#x440;&#x430;&#x457;&#x43D;&#x441;&#x44C;&#x43A;&#x430;</div>
+        <div class="languageSelection" data-language="arabic" onClick="setNewLanguageOverride('arabic'); hideLanguageSelection();" onselectstart="return false" ondragstart="return false">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</div>
+        <div class="languageSelection" data-language="vietnamese" onClick="setNewLanguageOverride('vietnamese'); hideLanguageSelection();" onselectstart="return false" ondragstart="return false">Ti&#7871;ng Vi&#7879;t</div>
+        <div class="languageSelection" data-language="filipino" onClick="setNewLanguageOverride('filipino'); hideLanguageSelection();" onselectstart="return false" ondragstart="return false">Tagalog</div>
+        <div class="languageSelection" data-language="thai" onClick="setNewLanguageOverride('thai'); hideLanguageSelection();" onselectstart="return false" ondragstart="return false">&#3652;&#3607;&#3618;</div>
+        <div class="languageSelection" data-language="hungarian" onClick="setNewLanguageOverride('hungarian'); hideLanguageSelection();" onselectstart="return false" ondragstart="return false">Magyar</div>
+        <div class="languageSelection" data-language="indonesian" onClick="setNewLanguageOverride('indonesian'); hideLanguageSelection();" onselectstart="return false" ondragstart="return false">bahasa Indonesia</div>
+        <div class="languageSelection" data-language="hindi" onClick="setNewLanguageOverride('hindi'); hideLanguageSelection();" onselectstart="return false" ondragstart="return false">&#2361;&#2367;&#2344;&#2381;&#2342;&#2368;</div>
+        <div class="languageSelection" data-language="portuguese" onClick="setNewLanguageOverride('portuguese'); hideLanguageSelection();" onselectstart="return false" ondragstart="return false">Portugu&#xEA;s Europeu</div>
+    </div>
+
+
+    <script src="Shared/revisionnumber.js?t=1670538681"></script>
+    <script src="Shared/app.js?t=1671070755"></script>
+    <script src="Core/Random.js?t=1638486598"></script>
+    <script src="Shared/Rollers.js?t=1664581243"></script>
+    <script src="Shared/src/util/ScaledPosition.js?t=1626395714"></script>
+    <script src="Shared/advertisement.js?t=1626395720"></script>
+    <script src="Shared/animatehelpers.js?t=1666819904"></script>
+    <script src="Core/UI/uilayer.js?t=1659486043"></script>
+    <script src="Shared/UI/Elements/scrollbox.js?t=1664310398"></script>
+    <script src="Shared/UI/Elements/horizontalscrollbox.js?t=1647474620"></script>
+    <script src="Shared/UI/Elements/collapsiblemenu.js?t=1656616451"></script>
+    <script src="Shared/UI/Elements/slider.js?t=1656442396"></script>
+    <script src="Shared/UI/Elements/contextmenu.js?t=1662668028"></script>
+    <script src="Shared/UI/Elements/hintarrow.js?t=1660087078"></script>
+    <script src="Shared/UI/Elements/hinthighlight.js?t=1666043696"></script>
+    <script src="Shared/UI/Elements/questbutton.js?t=1639513952"></script>
+    <script src="Shared/UI/Elements/spritesheetanimation.js?t=1670477339"></script>
+    <script src="Shared/UI/popupwindow.js?t=1670369843"></script>
+    <script src="Shared/UI/dialoguemanager.js?t=1666837502"></script>
+    <script src="Core/Input/dragdrop.js?t=1651111169"></script>
+    <script src="Shared/animate.js?t=1669232646"></script>
+    <script src="Shared/input.js?t=1670640077"></script>
+    <script src="Shared/display.js?t=1671066814"></script>
+    <script src="worldconfig.js?t=1663640587"></script>
+    <script src="MainUILayer.js?t=1671057994"></script>
+    <script src="WorldLayer.js?t=1670477338"></script>
+    <script src="Shared/stage.js?t=1650498756"></script>
+    <script src="Shared/particles.js?t=1670477339"></script>
+    <script src="Core/Input/mousemanager.js?t=1660871432"></script>
+    <script src="Core/UI/hitboxdebug.js?t=1666311625"></script>
+    <script src="Shared/battle.js?t=1670640077"></script>
+    <script src="Shared/src/superminers/superminerworldrenderer.js?t=1667871835"></script>
+    <script src="Shared/src/superminers/superMiner.js?t=1670477340"></script>
+    <script src="Shared/src/superminers/superMinerManager.js?t=1667871816"></script>
+    <script src="Shared/src/superminers/baseMiners.js?t=1670905289"></script>
+    <script src="Shared/buffs.js?t=1665776048"></script>
+    <script src="Shared/staticvalues.js?t=1670640077"></script>
+    <script src="Shared/scientists.js?t=1670905289"></script>
+    <script src="Shared/quests.js?t=1671069629"></script>
+    <script src="Shared/tutorial.js?t=1660167263"></script>
+    <script src="Shared/audio.js?t=1649369219"></script>
+    <script src="Shared/mineralmanagement.js?t=1670373318"></script>
+    <script src="Shared/equips.js?t=1639448312"></script>
+    <script src="Shared/structures.js?t=1666663878"></script>
+    <script src="Shared/tradingpost.js?t=1664562804"></script>
+    <script src="Shared/drillmanagement.js?t=1670477339"></script>
+    <script src="Shared/workermanagement.js?t=1670477340"></script>
+    <script src="Shared/oilmanagement.js?t=1626395714"></script>
+    <script src="Shared/coderedemption.js?t=1666643887"></script>
+    <script src="Shared/news.js?t=1652395540"></script>
+    <script src="Shared/transienteffects.js?t=1670477340"></script>
+    <script src="Shared/worldclickables.js?t=1670376214"></script>
+    <script src="Shared/userexperiencemanager.js?t=1642651434"></script>
+
+    <script src="Shared/emails.js?t=1637112869"></script>
+    <script src="Shared/backpack.js?t=1626395720"></script>
+    <script src="Shared/craftingitems.js?t=1663699067"></script>
+    <script src="Shared/crafting.js?t=1667586389"></script>
+    <script src="Shared/reactorcomponents.js?t=1642707264"></script>
+    <script src="Shared/blueprints.js?t=1666128787"></script>
+    <script src="Shared/offlineprogress.js?t=1666740491"></script>
+    <script src="Shared/world.js?t=1666986571"></script>
+    <script src="Shared/simulation.js?t=1666914169"></script>
+    <script src="Shared/promo.js?t=1654123164"></script>
+    <script src="Shared/quotes.js?t=1670477339"></script>
+    <script src="Shared/dialogues.js?t=1645744305"></script>
+    <script src="Shared/GemForge.js?t=1626395714"></script>
+    <script src="Shared/src/pit/Pit.js?t=1660605880"></script>
+    <script src="Shared/src/pit/PitConfig.js?t=1634691535"></script>
+    <script src="Shared/reactor.js?t=1666815369"></script>
+
+    <script src="Shared/src/util/Reward.js?t=1667871816"></script>
+    <script src="Shared/src/chest/ChestRewards.js?t=1669232647"></script>
+    <script src="Shared/src/chest/Chest.js?t=1664581243"></script>
+    <script src="Shared/src/chest/ChestService.js?t=1671069629"></script>
+    <script src="Shared/src/chest/ChestCompressor.js?t=1665794812"></script>
+
+    <script src="Shared/caves/cavenode.js?t=1639789852"></script>
+    <script src="Shared/caves/caveobstacle.js?t=1629414475"></script>
+    <script src="Shared/caves/cavereward.js?t=1670373318"></script>
+    <script src="Shared/caves/treasurestorage.js?t=1653524564"></script>
+    <script src="Shared/caves/caveconfig.js?t=1670373318"></script>
+    <script src="Shared/caves/cavesystem.js?t=1670477339"></script>
+    <script src="Shared/caves/drone.js?t=1670477339"></script>
+    <script src="Shared/caves/caves.js?t=1666641786"></script>
+    <script src="Shared/caves/droneblueprints.js?t=1659576065"></script>
+
+    <script src="Shared/bufflab.js?t=1639163907"></script>
+    <script src="Shared/LimitedTimeEventManager.js?t=1670627321"></script>
+
+    <script src="popups/BackpackWindow.js?t=1640117729"></script>
+    <script src="popups/BattleWindow.js?t=1670538635"></script>
+    <script src="popups/ChestWindow.js?t=1670455325"></script>
+    <script src="popups/ChestCollectorWindow.js?t=1670477338"></script>
+    <script src="popups/DialogueWindow.js?t=1662763786"></script>
+    <script src="popups/CraftingWindow.js?t=1666815369"></script>
+    <script src="popups/HireWindow.js?t=1640041943"></script>
+    <script src="popups/OfflineProgressWindow.js?t=1636154088"></script>
+    <script src="popups/OilPumpWindow.js?t=1662764894"></script>
+    <script src="popups/DrillUpgradeWindow.js?t=1660082904"></script>
+    <script src="popups/PromoWindow.js?t=1654123164"></script>
+    <script src="popups/PurchaseWindow.js?t=1666643128"></script>
+    <script src="popups/EventPurchaseWindow.js?t=1670373318"></script>
+    <script src="popups/ScientistsWindow.js?t=1661809489"></script>
+    <script src="popups/SellWindow.js?t=1661809489"></script>
+    <script src="popups/SettingsWindow.js?t=1671069629"></script>
+    <script src="popups/GemForgeWindow.js?t=1636154088"></script>
+    <script src="popups/PitWindow.js?t=1656445673"></script>
+    <script src="popups/WeaponCraftingWindow.js?t=1645739457"></script>
+    <script src="popups/ReactorWindow.js?t=1642728547"></script>
+    <script src="popups/TradeWindow.js?t=1645743401"></script>
+    <script src="popups/BuffLabWindow.js?t=1634774665"></script>
+    <script src="popups/QuestWindow.js?t=1639617298"></script>
+    <script src="popups/TranslationHelpWindow.js?t=1626732325"></script>
+    <script src="popups/CaveWindow.js?t=1670538635"></script>
+    <script src="popups/CaveManagementWindow.js?t=1670538635"></script>
+    <script src="popups/SuperMinerSelectorWindow.js?t=1670627163"></script>
+    <script src="popups/SuperMinerBlackWindow.js?t=1667871816"></script>
+    <script src="popups/SuperSellerWindow.js?t=1661809489"></script>
+    <script src="popups/SuperMinersWindow.js?t=1666658358"></script>
+    <script src="popups/SuperMinerWindow.js?t=1666914169"></script>
+    <script src="Shared/statstracking.js?t=1669247298"></script>
+    <script src="popups/confirmationLayer.js?t=1666921877"></script>
+
+    <!-- <script src="branches/MineralUpgrade.js?t=1626395728"></script> -->
+
+    <script src="Shared/savemanager.js?t=1670373318"></script>
+    <script>
+        //Stats Tracking
+        ! function(f, b, e, v, n, t, s) {
+            if (f.fbq) return;
+            n = f.fbq = function() {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n;
+            n.push = n;
+            n.loaded = !0;
+            n.version = '2.0';
+            n.queue = [];
+            t = b.createElement(e);
+            t.async = !0;
+            t.src = v;
+            s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window,
+            document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+
+        fbq('init', '1658647427735318');
+        fbq('track', "PageView");
+        fbq('trackCustom', "MrMine");
+    </script>
+    <noscript>
+		<img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1658647427735318&ev=PageView&noscript=1" />
+	</noscript>
+
+    <script type='text/javascript'>
+        window._tfa = window._tfa || [];
+        window._tfa.push({
+            notify: 'event',
+            name: 'page_view',
+            id: 1507821
+        });
+        ! function(t, f, a, x) {
+            if (!document.getElementById(x)) {
+                t.async = 1;
+                t.src = a;
+                t.id = x;
+                f.parentNode.insertBefore(t, f);
+            }
+        }(document.createElement('script'),
+            document.getElementsByTagName('script')[0],
+            'http://cdn.taboola.com/libtrc/unip/1507821/tfa.js',
+            'tb_tfa_script');
+    </script>
+
+    <img src="http://pixel.quantserve.com/pixel/p-QH8ZVZ5kseFEq.gif" border="0" height="1" width="1" />
+
+    <div class='modal hidden' id='privacyPolicyPopup'>
+        <div class='modal-contents'>
+            <iframe class='privacyPolicyFrame' src='https://www.clickerheroes.com/privacyPolicy.txt'></iframe>
+            <br>
+            <br>
+            <button onclick="agreeToPrivacyPolicy()">I have read and agree</button>
+        </div>
+    </div>
+
+    <script>
+        if (!localStorage['agreedToPrivacyPolicy']) {
+            document.getElementById('privacyPolicyPopup').classList.remove('hidden');
+        }
+
+        function agreeToPrivacyPolicy() {
+            document.getElementById('privacyPolicyPopup').classList.add('hidden');
+            localStorage['agreedToPrivacyPolicy'] = true;
+        }
+    </script>
+
+    <style>
+        .modal {
+            position: fixed;
+            z-index: 999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgb(0, 0, 0);
+            /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.4);
+            /* Black w/ opacity */
+        }
+
+        .modal-contents {
+            background-color: #fefefe;
+            margin: 10% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            height: 60%;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .modal-contents iframe {
+            width: 90%;
+            height: 90%;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</body>
+
+</html>

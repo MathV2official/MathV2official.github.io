@@ -1,0 +1,1 @@
+No Content: https://mrmine.com/game/desktop/Shared/revisionnumber.js?t=1670538681
