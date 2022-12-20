@@ -2,7 +2,6 @@
 - [Website v1](https://math.thebest12789.repl.co)
 
 OTHER SITES<br>
-https://mathv2.netlify.app<br>
 https://mathv22.netlify.app<br>
 https://math-v2-vf9z.onrender.com/
 
