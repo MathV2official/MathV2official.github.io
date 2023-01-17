@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
+    <title>Golf Fling - Golf Fling Unblocked | Unblocked Games WTF</title>
+    <link rel="icon" href="images/icon-red.png" type="image/gif" sizes="16x16">
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta name="description" content="
+    Golf Fling transports you to the thrilling golfing world via difficult settings. 
+    Your primary objective is to pull and release your golf ball 
+    in the direction you want it to travel in order to assist it in reaching the flag. 
+    For an extra point, make the ball roll on the yellow coin. 
+    Keep your golf ball from falling into the lava's raging abyss! 
+    There will be many of barriers on your path. 
+    Get the ball to bounce off surfaces and over obstructions until it reaches the flag. 
+    Can you manage it? Play the entertaining golf game Golf Fling at Y8.com and have fun!">
+    <meta name="title" content="Golf Fling">
+    <meta name="keywords" content="sport games online, sport games free download, sport games for kids, sports games free ">
+    <meta name="news_keywords" content="Golf Fling game
+    fling ball game 
+    fling golf 
+    fling golf stick amazon
+    fling golf wiki
+    where can i play fling golf 
+    fling golf rules
+    fling golf stick for sale
+    fling golf reviews">
+    <link rel="canonical" href="index.html">
+    <meta content="" name="keywords" />
+    <meta content="" name="author" />
+    <!-- CSS Files
+    ================================================== -->
+    <link id="bootstrap" href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/plugins.css" rel="stylesheet" type="text/css" />    
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link href="css/de-grey.css" rel="stylesheet" type="text/css" />
+    <!-- color scheme -->
+    <link id="colors" href="css/colors/scheme-04.css" rel="stylesheet" type="text/css" />
+    <link href="css/coloring.css" rel="stylesheet" type="text/css" />
+    <style>
+        .game-iframe-container {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            min-height: 75vh;
+        }
+        .game-iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+        }
+                .FG-splash-button{
+                    border-bottom-color:#ffb53d!important;
+                    color:#000;background:linear-gradient(140deg,#fbde04,#e2c803)}
+                .FG-splash-button:hover{
+                    border-bottom-color:#ff5e00!important;
+                    color:#fff;
+                    background:linear-gradient(140deg,#ff9214,#fa8500)}
+                .FG-splash-button:active{
+                    border-bottom-color:#ff7e33!important;
+                    background:linear-gradient(140deg,#ff5e00,#ff5e00)}
+                .SP-splash-button{
+                    width:290px;
+                    height:60px;
+                    margin-top:2.5rem;
+                    border-radius:290486px!important;
+                    padding-left:2rem;
+                    padding-right:2rem;
+                    border:3px solid #fff!important;
+                    color:#0a0a0a;
+                    text-transform:uppercase;
+                    background:linear-gradient(180deg,#00a2ff,#00a2ff);
+                    box-shadow:12px 14px 15px -1px rgba(0,0,0,.2)}
+                .SP-splash-button:before{
+                    content:"";
+                    position:absolute;
+                    left:0;top:1px;
+                    width:100%;
+                    height:100%;
+                    border-radius:290486px!important;
+                    opacity:0;
+                    background: linear-gradient(180deg,#af39b9,#c815d7);
+                    box-shadow:inset 0 0 7px 0 rgba(223,180,170,.53);
+                    transform:scale(0);
+                    transform-origin:50% 100%;
+                    will-change:transform;
+                    transition:transform .3s cubic-bezier(.25,.46,.45,.94),opacity .2s cubic-bezier(.25,.46,.45,.94);
+                    z-index:-1}
+                .SP-splash-top>div>button:active{transform:translateY(0)}
+                .SP-splash-button:hover:before{
+                    top:0;
+                    opacity:1;
+                    transform:scale(1)}
+                .SP-splash-top>div>button:active:before{
+                    box-shadow:inset 0 0 7px 0 rgba(224,71,36,.53),inset 0 0 7px 0 rgba(0,0,0,.35)}
+                .HG-splash-button{
+                    height:35px;
+                    line-height:35px;
+                    border-bottom:none!important;
+                    border-radius:5px!important;
+                    color:#f06000;
+                    background:#fff}
+                .HG-splash-button:hover{
+                    color:#fff;
+                    background:#f06000}
+                .BG-splash-button,.BG-splash-button:active{
+                    box-shadow:inset 0 3px 0 0 #00fcff,
+                    inset 20px 0 50px rgba(8,238,225,.3),
+                    inset 20px 0 300px rgba(0,200,187,.05),
+                    inset 0 20px 50px rgba(8,238,225,.3),
+                    inset 0 0 10px #affffa,4px 4px 4px 0 rgba(10,10,10,.5)!important;
+                    background-color:rgba(9,81,105,.5);
+                    border:0;
+                    color:#affffa;
+                    width:290px;
+                    height:4rem;
+                    border-radius:290486px!important;
+                    font-size:1.25rem!important;
+                    border:2px solid #5258b5!important;
+                    opacity:.7}
+                .BG-splash-button:before{
+                    content:"";
+                    position:absolute;
+                    left:0;top:1px;
+                    width:100%;
+                    height:100%;
+                    border-radius:290486px!important;
+                    opacity:0;
+                    background-color:#fff;box-shadow:inset 0 0 7px 0 rgba(223,180,170,.53)!important;transform:scale(0);
+                    transform-origin:50% 50%;will-change:transform;
+                    transition:transform 172ms cubic-bezier(.25,.46,.45,.94),opacity 172ms cubic-bezier(.25,.46,.45,.94);
+                    z-index:-1}
+                .BG-splash-button:hover{
+                    color:rgba(0,0,0,.7)!important;border:2px solid #098c9c!important}
+                .BG-splash-button:active{
+                    border-color:transparent!important;
+                    color:rgba(0,0,0,.7);transform:translateY(0)}
+                .BG-splash-button:hover:before{
+                    top:0;
+                    opacity:1;
+                    transform:scale(1)}
+                .BG-splash-button:active:before{
+                    box-shadow:inset 0 0 7px 0 rgba(224,71,36,.53),inset 0 0 7px 0 rgba(0,0,0,.35)!important}body{position:inherit}
+                .talpa-splash-background-container{
+                    box-sizing:border-box;
+                    position:absolute;
+                    top:0;
+                    left:0;
+                    width:100%;
+                    height:100%;
+                    background-color:#000;
+                    overflow:hidden}
+                .talpa-splash-background-image{
+                    box-sizing:border-box;
+                    position:absolute;
+                    top:-25%;
+                    left:-25%;
+                    width:150%;
+                    height:150%;
+                    background-image:var(--thumb);
+                    background-size:cover;
+                    filter:blur(50px) brightness(1.5)}
+                .talpa-splash-container{
+                    display:flex;
+                    flex-flow:column;
+                    box-sizing:border-box;
+                    position:absolute;
+                    bottom:0;
+                    width:100%;
+                    height:100%}
+                .talpa-splash-top{
+                    display:flex;
+                    flex-flow:column;
+                    box-sizing:border-box;
+                    flex:1;
+                    align-self:center;
+                    justify-content:center;
+                    padding:20px}
+                .talpa-splash-top>div{text-align:center}
+                .talpa-splash-top>div>button{
+                    position:relative;
+                    min-width:180px;
+                    min-height:45px;
+                    line-height:45px;
+                    border:0;
+                    border-radius:25px;
+                    border-bottom:5px solid grey;
+                    white-space:nowrap;
+                    text-overflow:ellipsis;
+                    text-align:center;
+                    text-transform:uppercase;
+                    text-shadow:1px 1px 1px rgba(0,0,0,.004);
+                    font-family:Roboto Condensed,Helvetica Neue,Arial,"sans-serif";
+                    font-size:16px;
+                    font-weight:400;
+                    cursor:pointer;
+                    box-shadow:inset 0 -1px 1px hsla(0,0%,100%,.1),inset 0 1px 1px hsla(0,0%,100%,.2);
+                    will-change:transform;
+                    transition:transform .15s linear}
+                .talpa-splash-top>div>button:focus{outline:none}
+                .talpa-splash-top>div>button:active{
+                    box-shadow:0 10px 20px rgba(0,0,0,.19),0 6px 6px rgba(0,0,0,.13);
+                    transform:translateY(-5px)}
+                .talpa-loader,.talpa-loader:after{
+                    border-radius:50%;
+                    width:1.5em;
+                    height:1.5em}
+                .talpa-loader{
+                    box-sizing:content-box;
+                    margin:0 auto;
+                    font-size:10px;
+                    position:relative;
+                    text-indent:-9999em;
+                    border:1.1em solid hsla(0,0%,100%,.2);
+                    border-left-color:#fff;
+                    -webkit-transform:translateZ(0);
+                    -ms-transform:translateZ(0);
+                    transform:translateZ(0);
+                    -webkit-animation:talpa-load8 1.1s linear infinite;
+                    animation:talpa-load8 1.1s linear infinite;
+                    display:none}
+                .talpa-splash-top>div>div:first-child{
+                    position:relative;
+                    width:150px;
+                    height:150px;
+                    margin:auto auto 20px;
+                    border-radius:10px;
+                    overflow:hidden;
+                    border:2px solid hsla(0,0%,100%,.8);
+                    box-shadow:inset 0 5px 5px rgba(0,0,0,.5),0 2px 4px rgba(0,0,0,.3);
+                    background-image:var(--thumb);
+                    background-position:50%;
+                    background-size:cover}
+                .talpa-splash-top>div>div>img{
+                    width:100%;
+                    height:100%}
+                .talpa-splash-bottom{
+                    display:flex;
+                    flex-flow:column;
+                    box-sizing:border-box;
+                    align-self:center;
+                    justify-content:center;
+                    width:100%;
+                    padding:0 0 20px}
+                .talpa-splash-bottom>.talpa-splash-consent,.talpa-splash-bottom>.talpa-splash-title{
+                    box-sizing:border-box;
+                    width:100%;
+                    padding:20px;
+                    background:linear-gradient(90deg,transparent,rgba(0,0,0,.5) 50%,transparent);
+                    color:#fff;
+                    text-align:left;
+                    font-size:12px;
+                    font-family:Arial;
+                    font-weight:400;
+                    text-shadow:0 0 1px rgba(0,0,0,.7);
+                    line-height:150%}
+                .talpa-splash-bottom>.talpa-splash-title{
+                    padding:15px 0;
+                    text-align:center;
+                    font-size:18px;
+                    font-family:Helvetica,Arial,sans-serif;
+                    font-weight:700;
+                    line-height:100%}
+                .talpa-splash-bottom>.talpa-splash-consent a{
+                    color:#fff}
+                    @-webkit-keyframes talpa-load8{0%{-webkit-transform:rotate(0deg);
+                    transform:rotate(0deg)}to{-webkit-transform:rotate(1turn);
+                    transform:rotate(1turn)}}
+                    @keyframes talpa-load8{0%{-webkit-transform:rotate(0deg);
+                    transform:rotate(0deg)}to{-webkit-transform:rotate(1turn);
+                    transform:rotate(1turn)}}
+                    @keyframes talpa-gradient{0%{background-position:0 50%}50%{background-position:100% 50%}to{background-position:0 50%}}
+                .iframeloader {
+                    background: url(./images/loadinggif.gif) center center no-repeat;
+                    background-size: 5vw;}
+        .article-header {
+            width: 100%;
+            float: left;
+            border-bottom: 1px solid rgba(255,255,255,.1);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+            margin-top: 20px
+        }
+        
+    </style>
+</head>
+<body class="dark-scheme de-grey">
+    <div id="wrapper">            
+        <!-- header begin -->
+        <header class="transparent">
+            <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="de-flex sm-pt10">
+                        <div class="de-flex-col">
+                            <div class="de-flex-col">
+                                <!-- logo begin -->
+                                <div id="logo">
+                                    <a href="index.html">
+                                        <img alt="" src="images/logo-1.png" />
+                                    </a>
+                                </div>
+                                <!-- logo close -->
+                            </div>
+                        </div>
+                         <div class="de-flex-col header-col-mid">
+                            <!-- mainmenu begin -->
+                            <ul id="mainmenu">
+                                <li><a href="3d-games.html">3D<span></span></a></li>
+                                <li><a href="action-games.html">Action<span></span></a></li>
+                                <li><a href="cars-games.html">Cars<span></span></a></li>                                    
+                                <li><a href="running-games.html">Running<span></span></a></li>
+                                <li><a href="shooting-games.html">Shooting<span></span></a></li>
+                                <li><a href="sports-games.html">Sports<span></span></a></li>
+                            </ul>
+                            <!-- mainmenu close -->
+                         </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- header close -->
+        <!-- content begin -->
+        <div class="no-bottom no-top" id="content">
+            <div id="top"></div>          
+                <!-- Games Details Area Start -->
+                <section class="games-details">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="details-wrapper">
+                                        <div class="game-iframe-container" id="loadgame">
+                                            <div class="talpa-splash-container" style="background: var(--color2);"><div class="talpa-splash-top"><div>
+                                                 <div style="--thumb:url(img/golffling/golf-fling.png);" alt="Stylish Crop Top Trends"></div>
+                                                 <button id="talpa-splash-button" class="SP-splash-button" onclick="loadMainGame()" style="display: block;">PLAY NOW</button>
+                                                 <div class="talpa-loader" style="display: none;">Loading...</div></div></div><div class="talpa-splash-bottom"></div></div>
+                                        </div>
+                                </div>
+                                <a onclick="open_fullscreen()" class="btn btn-outline-primary">FULL SCREEN</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- Games Details Area End -->
+            <!-- section begin -->
+			<section aria-label="section">
+                <div class="container">
+                    <div class="row wow fadeIn">
+                        <div class="col-lg-12">
+                            <div class="items_filter">
+                                <form action="#" class="row form-dark" id="form_quick_search" method="post" name="form_quick_search">
+                                    <div class="col text-center">
+                                        <input class="form-control" id="name_1" name="name_1" placeholder="search item here..." type="text" /> <a href="#" id="btn-submit">
+                                            <i class="fa fa-search bg-color-secondary"></i></a>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </form>
+                                <div id="item_category" class="dropdown">
+                                    <a href="sports-games.html" class="btn-selector">Sports Games</a>
+                                </div>
+                            </div>
+                        </div>              
+                    <!-- nft item begin -->
+                    <div class="d-item col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                        <div class="nft__item nft_type_music">
+                            <div class="nft__item_wrap">
+                                <div class="nft_type_wrap">
+                                </div>
+                                <a href="3d-free-kick.html">
+                                    <img src="img/3dfreekick/logo.jpg" class="lazy nft__item_preview" alt="3d Free Kick">
+                                </a>
+                            </div>
+                            <div class="nft__item_info">
+                                <a href="3d-free-kick.html">
+                                    <h4>3D Free Kick</h4>
+                                </a>
+                            </div> 
+                        </div>
+                    </div>
+                    <!-- nft item begin -->
+                    <div class="d-item col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                        <div class="nft__item nft_type_music">
+                            <div class="nft__item_wrap">
+                                <div class="nft_type_wrap">
+                                </div>
+                                <a href="archery-world-tour.html">
+                                    <img src="img/archeryworldtour/archery-world-tour.png" class="lazy nft__item_preview" alt="Archery World Tour">
+                                </a>
+                            </div>
+                            <div class="nft__item_info">
+                                <a href="archery-world-tour.html">
+                                    <h4>Archery World Tour</h4>
+                                </a>
+                            </div> 
+                        </div>
+                    </div>
+                        <!-- nft item begin -->
+                        <div class="d-item col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                            <div class="nft__item nft_type_music">
+                                <div class="nft__item_wrap">
+                                    <div class="nft_type_wrap">
+                                    </div>
+                                    <a href="3d-bowling.html">
+                                        <img src="img/3dbowling/logo.png" class="lazy nft__item_preview" alt="3D Bowling">
+                                    </a>
+                                </div>
+                                <div class="nft__item_info">
+                                    <a href="3d-bowling.html">
+                                        <h4>3D Bowling</h4>
+                                    </a>
+                                </div> 
+                            </div>
+                        </div>
+                        <!-- nft item begin --> 
+                        <!-- nft item begin -->
+                        <div class="d-item col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                            <div class="nft__item nft_type_music">
+                                <div class="nft__item_wrap">
+                                    <div class="nft_type_wrap">
+                                    </div>
+                                    <a href="3d-chess.html">
+                                        <img src="img/3dchess/logo.jpg" class="lazy nft__item_preview" alt="3D Chess">
+                                    </a>
+                                </div>
+                                <div class="nft__item_info">
+                                    <a href="3d-chess.html">
+                                        <h4>3D Chess</h4>
+                                    </a>
+                                </div> 
+                            </div>
+                        </div>
+                        <!-- nft item begin --> 
+                        <div class="d-item col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                            <div class="nft__item nft_type_music">
+                                <div class="nft__item_wrap">
+                                    <div class="nft_type_wrap">
+                                    </div>
+                                    <a href="bowling.html">
+                                        <img src="img/bowling/bowling.png" class="lazy nft__item_preview" alt="Bowling">
+                                    </a>
+                                </div>
+                                <div class="nft__item_info">
+                                    <a href="bowling.html">
+                                        <h4>Bowling</h4>
+                                    </a>
+                                </div> 
+                            </div>
+                        </div>
+                        <!-- nft item begin --> 
+                        <!-- nft item begin -->
+                        <div class="d-item col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                            <div class="nft__item nft_type_music">
+                                <div class="nft__item_wrap">
+                                    <div class="nft_type_wrap">
+                                    </div>
+                                    <a href="cricket-hero.html">
+                                        <img src="img/crickethero/cricket-hero.png" class="lazy nft__item_preview" alt="Cricket Hero">
+                                    </a>
+                                </div>
+                                <div class="nft__item_info">
+                                    <a href="cricket-hero.html">
+                                        <h4>Cricket Hero</h4>
+                                    </a>
+                                </div> 
+                            </div>
+                        </div>
+                        <!-- nft item begin --> 
+                        <!-- nft item begin -->
+                        <div class="d-item col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                            <div class="nft__item nft_type_music">
+                                <div class="nft__item_wrap">
+                                    <div class="nft_type_wrap">
+                                    </div>
+                                    <a href="footchinko.html">
+                                        <img src="img/footchinko/foot-chinko.png" class="lazy nft__item_preview" alt="Footchinko">
+                                    </a>
+                                </div>
+                                <div class="nft__item_info">
+                                    <a href="footchinko.html">
+                                        <h4>Footchinko</h4>
+                                    </a>
+                                </div> 
+                            </div>
+                        </div>
+                        <!-- nft item begin -->
+                        <div class="d-item col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                            <div class="nft__item nft_type_music">
+                                <div class="nft__item_wrap">
+                                    <div class="nft_type_wrap">
+                                    </div>
+                                    <a href="getaway-shootout.html">
+                                        <img src="img/getawayshootout/logo.png" class="lazy nft__item_preview" alt="Getway Shootout">
+                                    </a>
+                                </div>
+                                <div class="nft__item_info">
+                                    <a href="getaway-shootout.html">
+                                        <h4>Getway Shootout</h4>
+                                    </a>
+                                </div> 
+                            </div>
+                        </div>
+                        <!-- nft item begin --> 
+                        <!-- nft item begin -->
+                        <div class="d-item col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                            <div class="nft__item nft_type_music">
+                                <div class="nft__item_wrap">
+                                    <div class="nft_type_wrap">
+                                    </div>
+                                    <a href="free-kick-football.html">
+                                        <img src="img/freekickfootball/free-kick-football.png" class="lazy nft__item_preview" alt="Free Kick Football">
+                                    </a>
+                                </div>
+                                <div class="nft__item_info">
+                                    <a href="free-kick-football.html">
+                                        <h4>Free Kick Football</h4>
+                                    </a>
+                                </div> 
+                            </div>
+                        </div>
+                        <!-- nft item begin -->
+                        <div class="d-item col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                            <div class="nft__item nft_type_music">
+                                <div class="nft__item_wrap">
+                                    <div class="nft_type_wrap">
+                                    </div>
+                                    <a href="home-run-champion.html">
+                                        <img src="img/homerunchampion/home-run-champion.png" class="lazy nft__item_preview" alt="Home Run Champion">
+                                    </a>
+                                </div>
+                                <div class="nft__item_info">
+                                    <a href="home-run-champion.html">
+                                        <h4>Home Run Champion</h4>
+                                    </a>
+                                </div> 
+                            </div>
+                        </div>
+                         <!-- nft item begin -->
+                         <div class="d-item col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                            <div class="nft__item nft_type_music">
+                                <div class="nft__item_wrap">
+                                    <div class="nft_type_wrap">
+                                    </div>
+                                    <a href="mini-golf-5.html">
+                                        <img src="img/minigolf5/mini-golf-5.png" class="lazy nft__item_preview" alt="Mini Golf 5">
+                                    </a>
+                                </div>
+                                <div class="nft__item_info">
+                                    <a href="mini-golf-5.html">
+                                        <h4>Mini Golf 5</h4>
+                                    </a>
+                                </div> 
+                            </div>
+                        </div>   
+                         <!-- nft item begin -->
+                         <div class="d-item col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                            <div class="nft__item nft_type_music">
+                                <div class="nft__item_wrap">
+                                    <div class="nft_type_wrap">
+                                    </div>
+                                    <a href="penalty-shooters-2.html">
+                                        <img src="img/penaltyshooters2/penalty-shooters-2logo.png" class="lazy nft__item_preview" alt="Penalty Shooters 2">
+                                    </a>
+                                </div>
+                                <div class="nft__item_info">
+                                    <a href="penalty-shooters-2.html">
+                                        <h4>Penalty Shooters 2</h4>
+                                    </a>
+                                </div> 
+                            </div>
+                        </div>
+                        <!-- nft item begin -->     
+                         <!-- nft item begin -->
+                         <div class="d-item col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                            <div class="nft__item nft_type_music">
+                                <div class="nft__item_wrap">
+                                    <div class="nft_type_wrap">
+                                    </div>
+                                    <a href="penalty-shootout-2.html">
+                                        <img src="img/penaltyshootout/penalty-shootout.logo.png" class="lazy nft__item_preview" alt="Penalty Shootout 2">
+                                    </a>
+                                </div>
+                                <div class="nft__item_info">
+                                    <a href="penalty-shootout-2.html">
+                                        <h4>Penalty Shootout 2</h4>
+                                    </a>
+                                </div> 
+                            </div>
+                        </div>
+                          <!-- nft item begin -->
+                          <div class="d-item col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                            <div class="nft__item nft_type_music">
+                                <div class="nft__item_wrap">
+                                    <div class="nft_type_wrap">
+                                    </div>
+                                    <a href="snow-rider-3d.html">
+                                        <img src="img/snowrider3d/logo.png" class="lazy nft__item_preview" alt="Snow Rider 3D">
+                                    </a>
+                                </div>
+                                <div class="nft__item_info">
+                                    <a href="snow-rider-3d.html">
+                                        <h4>Snow Rider 3D</h4>
+                                    </a>
+                                </div> 
+                            </div>
+                        </div> 
+                          <!-- nft item begin -->
+                          <div class="d-item col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                            <div class="nft__item nft_type_music">
+                                <div class="nft__item_wrap">
+                                    <div class="nft_type_wrap">
+                                    </div>
+                                    <a href="street-ball-star.html">
+                                        <img src="img/streetballstar/street-ball-star.png" class="lazy nft__item_preview" alt="Street Ball Star">
+                                    </a>
+                                </div>
+                                <div class="nft__item_info">
+                                    <a href="street-ball-star.html">
+                                        <h4>Street Ball Star</h4>
+                                    </a>
+                                </div> 
+                            </div>
+                        </div>
+                        <!-- nft item begin -->  
+                          <!-- nft item begin -->
+                          <div class="d-item col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                            <div class="nft__item nft_type_music">
+                                <div class="nft__item_wrap">
+                                    <div class="nft_type_wrap">
+                                    </div>
+                                    <a href="street-hoops-3d.html">
+                                        <img src="img/streethoops3d/logo.jpg" class="lazy nft__item_preview" alt="Street Hoops 3D">
+                                    </a>
+                                </div>
+                                <div class="nft__item_info">
+                                    <a href="street-hoops-3d.html">
+                                        <h4>Street Hoops 3D</h4>
+                                    </a>
+                                </div> 
+                            </div>
+                        </div>  
+                          <!-- nft item begin -->
+                          <div class="d-item col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                            <div class="nft__item nft_type_music">
+                                <div class="nft__item_wrap">
+                                    <div class="nft_type_wrap">
+                                    </div>
+                                    <a href="table-tennis-world-tour.html">
+                                        <img src="img/tabletennisworldtour/table-tennis-world-tour.png" class="lazy nft__item_preview" alt="Table Tennis World Tour">
+                                    </a>
+                                </div>
+                                <div class="nft__item_info">
+                                    <a href="table-tennis-world-tour.html">
+                                        <h4>Table Tennis World Tour</h4>
+                                    </a>
+                                </div> 
+                            </div>
+                        </div> 
+                        <div class="col-md-12 text-center">
+                            <a href="#" id="loadmore" class="btn-main wow fadeInUp lead">LOAD MORE</a>
+                        </div>                                              
+                    </div>
+                </div>
+            </section>    
+        </div>
+        <!-- content close -->
+
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-6 col-xs-1">
+                        <div class="widget">
+                            <h5>General</h5>
+                            <ul>
+                                <li><a href="#">About</a></li>
+                                <li><a href="#">FAQ</a></li>
+                                <li><a href="#">Support</a></li>
+                                <li><a href="#">Build</a></li>
+                                <li><a href="#">Careers</a></li>
+                                <li><a href="#">Contact Us</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-xs-1">
+                        <div class="widget">
+                            <h5>Technology</h5>
+                            <ul>
+                                <li><a href="#">Technology</a></li>
+                                <li><a href="#">Roadmap</a></li>
+                                <li><a href="#">Token</a></li>
+                                <li><a href="#">Telemetry</a></li>
+                                <li><a href="#">Lightpaper</a></li>
+                                <li><a href="#">Whitepaper</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-xs-1">
+                        <div class="widget">
+                            <h5>Community</h5>
+                            <ul>
+                                <li><a href="#">Community</a></li>
+                                <li><a href="#">Documentation</a></li>
+                                <li><a href="#">Brand Assets</a></li>
+                                <li><a href="#">Blog</a></li>
+                                <li><a href="#">Forum</a></li>
+                                <li><a href="#">Mailing List</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-xs-1">
+                        <div class="widget">
+                            <h5>Newsletter</h5>
+                            <p>Signup for our newsletter to get the latest news in your inbox.</p>
+                            <form action="#" class="row form-dark" id="form_subscribe" method="post" name="form_subscribe">
+                                <div class="col text-center">
+                                    <input class="form-control" id="txt_subscribe" name="txt_subscribe" placeholder="Enter your email" type="text" /> 
+                                    <a href="#" id="btn-subscribe"><i class="arrow_right bg-color-secondary"></i></a>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </form>
+                            <div class="spacer-10"></div>
+                            <small>Your email is safe with us. We don't spam.</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="subfooter">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="de-flex">
+                                <div class="de-flex-col">
+                                    <a href="index.html">
+                                        <img alt="" class="f-logo" src="images/logo-1.png" /><span class="copy">&copy; Copyright 2022 - Unblocked Games WTF</span>
+                                    </a>
+                                </div>
+                                <div class="de-flex-col">
+                                    <div class="social-icons">
+                                        <a href="#"><i class="fa fa-facebook fa-lg"></i></a>
+                                        <a href="#"><i class="fa fa-twitter fa-lg"></i></a>
+                                        <a href="#"><i class="fa fa-linkedin fa-lg"></i></a>
+                                        <a href="#"><i class="fa fa-pinterest fa-lg"></i></a>
+                                        <a href="#"><i class="fa fa-rss fa-lg"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- footer close -->
+    <!-- Javascript Files
+    ================================================== -->
+    <script src="js/plugins.js"></script>
+    <script src="js/designesia.js"></script>
+                
+                <!-- jquery -->
+    <script src="assets/js/jquery.js"></script>
+                <!-- popper -->
+    <script src="assets/js/popper.min.js"></script>
+                <!-- bootstrap -->
+    <script src="assets/js/bootstrap.min.js"></script>
+                <!-- plugin js-->
+    <script src="assets/js/plugin.js"></script>
+            
+                <!-- MpusemoverParallax JS-->
+    <script src="assets/js/TweenMax.js"></script>
+    <script src="assets/js/mousemoveparallax.js"></script>
+                <!-- main -->
+    <script src="assets/js/main.js"></script>
+    <script>
+        function loadMainGame()
+        {
+            var html = `<iframe class="game-iframe iframeloader" id="game-area" src="https://golf.games235.com/" width="480" height="800" scrolling="none" frameborder="0" allowfullscreen="" tabindex="0"></iframe>`;
+            document.getElementById("loadgame").innerHTML = html;
+            document.getElementById('loadgame').scrollIntoView();
+        }
+        function open_fullscreen() {
+            let game = document.getElementById("game-area");
+            if (game.requestFullscreen) {
+            game.requestFullscreen();
+            } else if (game.mozRequestFullScreen) { /* Firefox */
+            game.mozRequestFullScreen();
+            } else if (game.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
+            game.webkitRequestFullscreen();
+            } else if (game.msRequestFullscreen) { /* IE/Edge */
+             game.msRequestFullscreen();
+            }
+            };
+    </script>
+
+</body>
+</html>
