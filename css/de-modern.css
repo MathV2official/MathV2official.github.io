@@ -1,0 +1,169 @@
+body{
+    font-size: 15px;
+    font-weight: 500;
+    color: #808080;
+}
+
+#item-carousel-big-type-4 .owl-stage{
+    margin-top: -5px;
+}
+
+.box-url,
+.box-url:hover,
+.bg-custom{
+    border: none;
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    background: linear-gradient(45deg, rgba(var(--secondary-color-rgb),.2) 0%, rgba(var(--secondary-color-rgb-2),.2) 50%);
+}
+.box-url:hover,
+.bg-gradient,
+.icon-box.style-2{
+     background: linear-gradient(45deg, rgba(var(--secondary-color-rgb-2),.2) 0%, rgba(var(--secondary-color-rgb),.2) 50%);   
+}
+
+h1,h2,h3,h4,h5,h6{
+    font-weight: 600;
+}
+
+h1{
+    font-size: 48px;
+}
+
+h2{
+    font-size: 24px;
+    letter-spacing: 0;
+}
+
+.icon-box{
+    position: relative;
+    height: 125px;
+}
+.icon-box span{
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    top: calc(50% - 20px);
+    text-align: center;
+}
+.icon-box i{
+    opacity: .3;
+    position: absolute;
+    display: block;
+    width: 100%;
+    font-size: 80px;
+    margin: 0 auto;
+}
+
+.item_info_counts>div{
+    border-radius: 30px;
+    -moz-border-radius: 30px;
+    -webkit-border-radius: 30px;
+    color: #0d0c22;
+}
+    .dark-scheme .item_info_counts>div{
+        color: #ffffff;
+    }
+
+
+footer{
+    color: rgba(255, 255, 255, .5);
+    font-size: 14px;
+}
+footer a{
+    color: rgba(255, 255, 255, .5);
+}
+footer .social-icons a i{
+   background: rgba(255, 255, 255, .2);
+}
+#form_search_big input{
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+}
+
+.form-border input[type=text], .form-border textarea, .form-underline input[type=email], .form-border input[type=password], .form-border input[type=date], .form-border select{
+    border-color: rgba(0, 0, 0, .2);
+}
+
+header.header-light,
+header.header-light.smaller{
+    border: none;
+    -webkit-backdrop-filter: blur(10px);
+    -o-backdrop-filter: blur(10px);
+    -moz-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+}
+
+header.header-light.smaller{
+    background: rgba(255, 255, 255, .8);
+    -webkit-box-shadow: 0 20px 40px 0 rgba(10,10,10,.05);
+    -moz-box-shadow: 0 20px 40px 0 rgba(10,10,10,.05);
+    box-shadow: 0 20px 40px 0 rgba(10,10,10,.05);
+}
+    .dark-scheme header.smaller{
+        -webkit-box-shadow: 0 20px 40px 0 rgba(0,0,0,.3);
+        -moz-box-shadow: 0 20px 40px 0 rgba(0,0,0,.3);
+        box-shadow: 0 20px 40px 0 rgba(0,0,0,.3);
+    }
+header #quick_search{
+    max-width: 250px;
+}
+.header-light #quick_search{
+    background: linear-gradient(45deg, rgba(var(--secondary-color-rgb),.2) 0%, rgba(var(--secondary-color-rgb-2),.2) 50%);
+}
+
+.item_info h2{
+    font-size: 30px;
+}
+
+#mainmenu li>a{
+    font-weight: 600;
+}
+
+.modal-content{
+    background: rgba(255, 255, 255, .8);
+    -webkit-backdrop-filter: blur(10px);
+    -o-backdrop-filter: blur(10px);
+    -moz-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+}
+    .dark-scheme .modal-content{
+        background: rgba(33, 39, 62, .6);
+    }
+
+.nft__item{
+    padding: 10px;
+}
+.nft__item h4{
+    font-weight: bold;
+}
+.nft__item .de_countdown{
+    right: 10px;
+}
+    .rtl .nft__item .de_countdown{
+        right: auto;
+    }
+    .nft__item_price{
+        font-weight: 500;
+        font-size: 12px;
+    }
+
+.nft__item.s2{
+    padding: 20px;
+    border: none;
+    background: linear-gradient(45deg, rgba(var(--secondary-color-rgb),.1) 0%, rgba(var(--secondary-color-rgb-2),.1) 50%);
+}
+
+.nft_pic.mod-b .nft_pic_info .nft_pic_by{
+    font-weight: 500;
+}
+
+.dropdown.alt-2>a{
+    font-size: 24px;
+}
+
+#subheader h1{
+    font-size: 40px;
+}
