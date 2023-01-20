@@ -15,6 +15,7 @@
         text-decoration: none;
         position: relative;
         transition: all 0.5s ease-in-out;
+        margin: 10px;
       }
       a.circle:hover {
         width: 100px;
@@ -37,8 +38,18 @@
     </style>
   </head>
   <body>
-    <a href="index.html" class="circle">test</a>
+    <div id="circles"></div>
+    <script>
+        var count = 5; // number of circles
+        var container = document.getElementById("circles");
+        for (var i = 0; i < count; i++) {
+            var link = document.createElement("a");
+            link.classList.add("circle");
+            link.innerHTML = "Link " + (i+1);
+            link.href = "#";
+            container.appendChild(link);
+        }
+    </script>
   </body>
 </html>
-
 
