@@ -76,6 +76,7 @@ function movePlayer(event) {
     player.style.top = playerY + "px";
 }
 
+var enemies = []; // array to store the enemies
 var intervalId; // variable to store the interval ID for spawning enemies
 
 // Function to shoot the projectile
@@ -132,12 +133,20 @@ function spawnEnemy() {
     if (Math.abs(enemyX - playerX) < 50 && Math.abs(enemyY - playerY) < 50) {
         spawnEnemy(); // If so, call the function again to generate new coordinates
     } else {
-        // Update the position of the enemy
-        enemy.style.left = enemyX + "px";
-        enemy.style.top = enemyY + "px";
-        enemy.style.display = "block";
+        // Create a new enemy element
+        var newEnemy = document.createElement("div");
+        newEnemy.style.position = "absolute";
+        newEnemy.style.width = "50px";
+        newEnemy.style.height = "50px";
+        newEnemy.style.backgroundColor = "red";
+        newEnemy.style.left = enemyX + "px";
+        newEnemy.style.top = enemyY + "px";
+        document.body.appendChild(newEnemy);
+
+        enemies.push(newEnemy);
     }
 }
+
 
 intervalId = setInterval(spawnEnemy, 2000); // start spawning enemies every 2 seconds
 
