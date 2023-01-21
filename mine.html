@@ -50,6 +50,14 @@
       <div class="block ore" id="ore3"></div>
       <div class="block player" id="player"></div>
     </div>
+    <div>
+      <p>Inventory: <span id="inventory"></span></p>
+    </div>
+    <div>
+      <button onclick="craft('pickaxe')">Craft Pickaxe</button>
+      <button onclick="craft('shovel')">Craft Shovel</button>
+      <button onclick="craft('axe')">Craft Axe</button>
+    </div>
     <script>
       // Variables to keep track of player position
       var playerRow = 0;
@@ -60,34 +68,9 @@
         {row: 7, col: 6},
         {row: 4, col: 8}
       ];
-
-      // Move player based on arrow key presses
-      document.onkeydown = function(e) {
-        switch (e.keyCode) {
-          case 37: // left arrow
-            if (playerCol > 0) playerCol--;
-            break;
-          case 38: // up arrow
-            if (playerRow > 0) playerRow--;
-            break;
-          case 39: // right arrow
-            if (playerCol < 9) playerCol++;
-            break;
-          case 40: // down arrow
-            if (playerRow < 9) playerRow++;
-            break;
-        }
-        updatePlayer();
-        checkForOre();
-      }
-
-      function updatePlayer() {
-        // Update player position in the grid
-        var player = document.getElementById("player");
-        player.style.gridRow = playerRow + 1;
-        player.style.gridColumn = playerCol + 1;
-      }
-
-      function checkForOre() {
-        // Check if player is on an ore block
+      // Add inventory
+      var inventory = {
+        "wood": 0,
+        "stone": 0,
+        "iron_ore": 0,
        
