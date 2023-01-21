@@ -24,8 +24,8 @@
     } 
     /* Style for the images */
     .image { 
-      width: 100px; 
-      height: 100px; 
+      width: 150px; 
+      height: 150px; 
     } 
     /* Style for when the mouse hovers over the circles */
     .circle:hover { 
@@ -37,6 +37,7 @@
     body {
        background: linear-gradient(to right, #00b4db, #0083b0);
        display: flex;
+       flex-wrap: wrap;
        align-items: center;
        justify-content: center;
     }
@@ -51,5 +52,11 @@
   </a>
   <a href="https://www.example3.com" class="circle">
     <img class="image" src="image3.jpg" onmouseover="this.style.borderRadius='0%'" onmouseout="this.style.borderRadius='50%'"/>
+  </a>
+  <a href="https://www.example4.com" class="circle">
+    <img class="image" src="image4.jpg" onmouseover="this.style.borderRadius='0%'" onmouseout="this.style.borderRadius='50%'"/>
+  </a>
+  <a href="https://www.example5.com" class="circle">
+    <img class="image" src="image5.jpg" onmouseover="this.style.borderRadius='0%'" onmouseout="this.style.borderRadius='50%'"/>
 
 
