@@ -114,7 +114,7 @@ function shoot(event) {
 }
 
 // Function to check for collision between the projectile and the enemy
-function collisionDetection() {
+function collisionDetection(enemy) {
     // Get the coordinates of the projectile and the enemy
     var projectileX = parseInt(projectile.style.left);
     var projectileY = parseInt(projectile.style.top);
