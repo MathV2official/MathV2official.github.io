@@ -1,55 +1,50 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <style>
-      a.circle {
-        display: inline-block;
-        width: 50px;
-        height: 50px;
-        border-radius: 25px;
-        text-align: center;
-        line-height: 50px;
-        font-size: 20px;
-        color: white;
-        background-color: blue;
-        text-decoration: none;
-        position: relative;
-        transition: all 0.5s ease-in-out;
-        margin: 10px;
-      }
-      a.circle:hover {
-        width: 100px;
-        height: 100px;
-        border-radius: 0;
-        background-color: red;
-      }
-      a.circle:hover:after {
-        content: "";
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-image: url('https://mathv22.netlify.app/image.jpg');
-        background-size: cover;
-        z-index: -1;
-      }
-    </style>
-  </head>
-  <body>
-    <div id="circles"></div>
-    <script>
-        var count = 5; // number of circles
-        var container = document.getElementById("circles");
-        for (var i = 0; i < count; i++) {
-            var link = document.createElement("a");
-            link.classList.add("circle");
-            link.innerHTML = "Link " + (i+1);
-            link.href = "#";
-            container.appendChild(link);
-        }
-    </script>
-  </body>
-</html>
+<!DOCTYPE html> 
+<html> 
+<head> 
+  <style> 
+    /* Style for the circles */
+    .circle { 
+      width: 100px; 
+      height: 100px; 
+      border-radius: 50%; 
+      background-color: blue; 
+      transition: all 0.5s ease; 
+    } 
+    
+    /* Style for the squares */
+    .square { 
+      width: 100px; 
+      height: 100px; 
+      background-color: blue; 
+      transition: all 0.5s ease; 
+    } 
+    
+    /* Style for the images */
+    .image { 
+      width: 100px; 
+      height: 100px; 
+    } 
+    
+    /* Style for when the mouse hovers over the circles */
+    .circle:hover { 
+      width: 100px; 
+      height: 100px; 
+      border-radius: 0%; 
+      background-color: blue; 
+    } 
+  </style> 
+</head> 
+<body> 
+  <div class="circle">
+    <img class="image" src="image.jpg" onmouseover="this.style.borderRadius='0%'" onmouseout="this.style.borderRadius='50%'"/>
+  </div>
+  <div class="circle">
+    <img class="image" src="image.jpg" onmouseover="this.style.borderRadius='0%'" onmouseout="this.style.borderRadius='50%'"/>
+  </div>
+  <div class="circle">
+    <img class="image" src="favicon.ico" onmouseover="this.style.borderRadius='0%'" onmouseout="this.style.borderRadius='50%'"/>
+  </div>
+</body> 
+</html> 
+
 
