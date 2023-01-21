@@ -76,29 +76,9 @@ function movePlayer(event) {
     player.style.top = playerY + "px";
 }
 
-// Function to spawn the enemy
-function spawnEnemy() {
-    // Get the width and height of the body
-    var bodyWidth = document.body.clientWidth;
-    var bodyHeight = document.body.clientHeight;
-    
-    // Generate random coordinates for the enemy
-    var enemyX = Math.floor(Math.random() * bodyWidth);
-    var enemyY = Math.floor(Math.random() * bodyHeight);
-    
-    // Check if the enemy is spawning on top of the player
-    if (Math.abs(enemyX - playerX) < 50 && Math.abs(enemyY - playerY) < 50) {
-        spawnEnemy(); // If so, call the function again to generate new coordinates
-    } else {
-        // Update the position of the enemy
-        enemy.style.left = enemyX + "px";
-        enemy.style.top = enemyY + "px";
-        enemy.style.display = "block";
-    }
-}
+<script>
 
-// Call the spawnEnemy() function to spawn the enemy when the page loads
-window.onload = spawnEnemy;
+var intervalId; // variable to store the interval ID for spawning enemies
 
 // Function to shoot the projectile
 function shoot() {
@@ -115,7 +95,54 @@ function shoot() {
         duration: 1000,
         fill: "forwards"
     });
+
+    // Check for collision with the enemy
+    if (collisionDetection()) {
+        enemy.style.display = "none"; // hide the enemy
+        clearInterval(intervalId); // stop spawning enemies
+        intervalId = setInterval(spawnEnemy, 1000); // spawn enemies faster
+    }
 }
+
+// Function to check for collision between the projectile and the enemy
+function collisionDetection() {
+    // Get the coordinates of the projectile and the enemy
+    var projectileX = parseInt(projectile.style.left);
+    var projectileY = parseInt(projectile.style.top);
+    var enemyX = parseInt(enemy.style.left);
+    var enemyY = parseInt(enemy.style.top);
+
+    // Check if the projectile and the enemy are overlapping
+    if (projectileX > enemyX && projectileX < enemyX + 50 && projectileY > enemyY && projectileY < enemyY + 50) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+// Function to spawn the enemy
+function spawnEnemy() {
+    // Get the width and height of the body
+    var bodyWidth = document.body.clientWidth;
+    var bodyHeight = document.body.clientHeight;
+
+    // Generate random coordinates for the enemy
+    var enemyX = Math.floor(Math.random() * bodyWidth);
+    var enemyY = Math.floor(Math.random() * bodyHeight);
+
+    // Check if the enemy is spawning on top of the player
+    if (Math.abs(enemyX - playerX) < 50 && Math.abs(enemyY - playerY) < 50) {
+        spawnEnemy(); // If so, call the function again to generate new coordinates
+    } else {
+        // Update the position of the enemy
+        enemy.style.left = enemyX + "px";
+        enemy.style.top = enemyY + "px";
+        enemy.style.display = "block";
+    }
+}
+
+intervalId = setInterval(spawnEnemy, 2000); // start spawning enemies every 2 seconds
+
 </script>
 </body> 
 </html> 
