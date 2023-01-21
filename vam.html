@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Vampire Survivors</title>
+    <script>
+      // Game logic and variables go here
+      let survivorCount = 10;
+      let vampireCount = 3;
+      let daysPassed = 0;
+
+      function updateSurvivorCount(change) {
+        survivorCount += change;
+        document.getElementById("survivor-count").innerHTML = survivorCount;
+      }
+
+      function updateVampireCount(change) {
+        vampireCount += change;
+        document.getElementById("vampire-count").innerHTML = vampireCount;
+      }
+
+      function updateDaysPassed() {
+        daysPassed++;
+        document.getElementById("days-passed").innerHTML = daysPassed;
+      }
+
+      function attackVampires() {
+        let survivorsLost = Math.round(Math.random() * survivorCount / 2);
+        let vampiresKilled = Math.round(Math.random() * vampireCount / 2);
+        updateSurvivorCount(-survivorsLost);
+        updateVampireCount(-vampiresKilled);
+        updateDaysPassed();
+      }
+
+      function gatherResources() {
+        let survivorsGained = Math.round(Math.random() * 2);
+        updateSurvivorCount(survivorsGained);
+        updateDaysPassed();
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Vampire Survivors</h1>
+    <p>Survivors: <span id="survivor-count">10</span></p>
+    <p>Vampires: <span id="vampire-count">3</span></p>
+    <p>Days passed: <span id="days-passed">0</span></p>
+    <button onclick="attackVampires()">Attack Vampires</button>
+    <button onclick="gatherResources()">Gather Resources</button>
+  </body>
+</html>
