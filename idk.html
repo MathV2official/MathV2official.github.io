@@ -159,6 +159,30 @@ function spawnEnemy() {
 
 
 intervalId = setInterval(spawnEnemy, 2000); // start spawning enemies every 2 seconds
+var enemySpeed = 10; // speed of the enemies
+
+function moveEnemies() {
+    for (var i = 0; i < enemies.length; i++) {
+        if (enemies[i].style.display !== "none") {
+            var enemyX = parseInt(enemies[i].style.left);
+            var enemyY = parseInt(enemies[i].style.top);
+            var dx = playerX - enemyX;
+            var dy = playerY - enemyY;
+            var distance = Math.sqrt(dx * dx + dy * dy);
+
+            // calculate the x and y velocity of the enemy
+            var xVelocity = (dx / distance) * enemySpeed;
+            var yVelocity = (dy / distance) * enemySpeed;
+
+            // update the position of the enemy
+            enemies[i].style.left = (enemyX + xVelocity) + "px";
+            enemies[i].style.top = (enemyY + yVelocity) + "px";
+        }
+    }
+}
+
+setInterval(moveEnemies, 50); // call the moveEnemies function every 50 milliseconds
+
 
 </script>
 </body> 
