@@ -5,54 +5,89 @@
 body {
        background: linear-gradient(to right, #1e1e1e, #0a0a0a);
 }
-#box {
+#player {
    position: absolute;
-   left: 0px;
-   top: 0px;
+   left: 50px;
+   top: 50px;
    width: 50px;
    height: 50px;
-   background-color: rgb(198, 198, 229);
+   background-color: rgb(200, 200, 237);
+}
+#enemy {
+   position: absolute;
+   width: 50px;
+   height: 50px;
+   background-color: red;
+   display: none;
 }
 </style> 
 </head> 
 <body> 
 
-<div id="box"></div> 
+<div id="player">Player</div> 
+<div id="enemy">Enemy</div>
 
 <script>
-// Get the box element
-var box = document.getElementById("box");
+// Get the player and enemy elements
+var player = document.getElementById("player");
+var enemy = document.getElementById("enemy");
 
-// Initial position of the box
-var x = 0;
-var y = 0;
+// Initial position of the player
+var playerX = 50;
+var playerY = 50;
 
-// Step size for moving the box
+// Step size for moving the player
 var step = 10;
 
 // Listen for key presses
-document.addEventListener("keydown", moveBox);
+document.addEventListener("keydown", movePlayer);
 
-function moveBox(event) {
+// Function to move the player
+function movePlayer(event) {
     // Check which key is pressed
     switch (event.code) {
         case "KeyW":
-            y -= step;
+            playerY -= step;
             break;
         case "KeyA":
-            x -= step;
+            playerX -= step;
             break;
         case "KeyS":
-            y += step;
+            playerY += step;
             break;
         case "KeyD":
-            x += step;
+            playerX += step;
             break;
     }
-    // Update the position of the box
-    box.style.left = x + "px";
-    box.style.top = y + "px";
+    // Update the position of the player
+    player.style.left = playerX + "px";
+    player.style.top = playerY + "px";
 }
+
+// Function to spawn the enemy
+function spawnEnemy() {
+    // Get the width and height of the body
+    var bodyWidth = document.body.clientWidth;
+    var bodyHeight = document.body.clientHeight;
+    
+    // Generate random coordinates for the enemy
+    var enemyX = Math.floor(Math.random() * bodyWidth);
+    var enemyY = Math.floor(Math.random() * bodyHeight);
+    
+    // Check if the enemy is spawning on top of the player
+    if (Math.abs(enemyX - playerX) < 50 && Math.abs(enemyY - playerY) < 50) {
+        spawnEnemy(); // If so, call the function again to generate new coordinates
+    } else {
+        // Update the position of the enemy
+        enemy.style.left = enemyX + "px";
+        enemy.style.top = enemyY + "px";
+        enemy.style.display = "block";
+    }
+}
+
+// Call the spawnEnemy() function to spawn the enemy when the page loads
+window.onload = spawnEnemy;
+
 </script>
 </body> 
 </html> 
