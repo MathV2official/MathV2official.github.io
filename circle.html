@@ -9,6 +9,9 @@
       border-radius: 50%; 
       background-color: blue; 
       transition: all 0.5s ease; 
+      display: flex;
+      align-items: center;
+      justify-content: center;
     } 
     
     /* Style for the squares */
@@ -32,6 +35,12 @@
       border-radius: 0%; 
       background-color: blue; 
     } 
+    body {
+       background-color: lightgray;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+    }
   </style> 
 </head> 
 <body> 
@@ -42,7 +51,7 @@
     <img class="image" src="image.jpg" onmouseover="this.style.borderRadius='0%'" onmouseout="this.style.borderRadius='50%'"/>
   </div>
   <div class="circle">
-    <img class="image" src="favicon.ico" onmouseover="this.style.borderRadius='0%'" onmouseout="this.style.borderRadius='50%'"/>
+    <img class="image" src="image.jpg" onmouseover="this.style.borderRadius='0%'" onmouseout="this.style.borderRadius='50%'"/>
   </div>
 </body> 
 </html> 
