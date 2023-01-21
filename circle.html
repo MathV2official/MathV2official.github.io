@@ -55,6 +55,7 @@
       justify-content: center;
       border: solid 1px white;
       text-decoration: none;
+      visibility: visible;
     } 
     /* Style for the squares */
     .square { 
@@ -62,6 +63,7 @@
       height: 200px; 
       background-color: blue; 
       transition: all 0.5s ease; 
+      visibility: hidden;
     } 
     /* Style for the images */
     .image { 
@@ -75,7 +77,11 @@
       height: 200px; 
       border-radius: 0%; 
       background-color: rgb(21, 21, 29); 
+      visibility: hidden;
     } 
+    .circle:hover + .square {
+    visibility: visible;
+    }
     body {
        background: linear-gradient(to right, #1e1e1e, #0a0a0a);
        display: flex;
