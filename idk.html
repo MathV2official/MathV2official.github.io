@@ -79,8 +79,15 @@ function movePlayer(event) {
 var enemies = []; // array to store the enemies
 var intervalId; // variable to store the interval ID for spawning enemies
 
+// Listen for clicks on the body
+document.body.addEventListener("click", shoot);
+
 // Function to shoot the projectile
-function shoot() {
+function shoot(event) {
+    // Get the mouse coordinates
+    var mouseX = event.clientX;
+    var mouseY = event.clientY;
+
     // Set the initial position of the projectile
     projectile.style.left = playerX + 25 + "px";
     projectile.style.top = playerY + 25 + "px";
@@ -88,18 +95,21 @@ function shoot() {
 
     // Set the animation for the projectile
     projectile.animate([
-        { transform: 'translateX(0px)' }, 
-        { transform: 'translateX(1000px)' }
+        { transform: 'translate(' + (mouseX - (playerX + 25)) + 'px,' + (mouseY - (playerY + 25)) + 'px)' }
     ], { 
         duration: 1000,
         fill: "forwards"
     });
 
-    // Check for collision with the enemy
-    if (collisionDetection()) {
-        enemy.style.display = "none"; // hide the enemy
-        clearInterval(intervalId); // stop spawning enemies
-        intervalId = setInterval(spawnEnemy, 1000); // spawn enemies faster
+    // Check for collision with the enemies
+    for (var i = 0; i < enemies.length; i++) {
+        if (collisionDetection(enemies[i])) {
+            enemies[i].style.display = "none";
+            enemies.splice(i, 1); // remove the enemy from the array
+            clearInterval(intervalId);
+            intervalId = setInterval(spawnEnemy, 1000); // spawn enemies faster
+            break;
+        }
     }
 }
 
