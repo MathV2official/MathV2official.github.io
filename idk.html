@@ -99,17 +99,15 @@ function shoot(event) {
     ], { 
         duration: 1000,
         fill: "forwards"
-    });
-
-    // Check for collision with the enemies
-    for (var i = 0; i < enemies.length; i++) {
+    }).onfinish = function(){
+      // Check for collision with the enemies
+      for (var i = 0; i < enemies.length; i++) {
         if (collisionDetection(enemies[i])) {
             enemies[i].style.display = "none";
             enemies.splice(i, 1); // remove the enemy from the array
-            clearInterval(intervalId);
-            intervalId = setInterval(spawnEnemy, 1000); // spawn enemies faster
             break;
         }
+      }
     }
 }
 
