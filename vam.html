@@ -1,49 +1,57 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Vampire Survivors</title>
-    <script>
-      // Game logic and variables go here
-      let survivorCount = 10;
-      let vampireCount = 3;
-      let daysPassed = 0;
+/ RPG Game in JavaScript
 
-      function updateSurvivorCount(change) {
-        survivorCount += change;
-        document.getElementById("survivor-count").innerHTML = survivorCount;
-      }
+// Create player object with properties for name, health, and attack power
+var player = {
+name: "Player",
+health: 100,
+attackPower: 10
+};
 
-      function updateVampireCount(change) {
-        vampireCount += change;
-        document.getElementById("vampire-count").innerHTML = vampireCount;
-      }
+// Create enemy object with properties for name, health, and attack power
+var enemy = {
+name: "Enemy",
+health: 50,
+attackPower: 5
+};
 
-      function updateDaysPassed() {
-        daysPassed++;
-        document.getElementById("days-passed").innerHTML = daysPassed;
-      }
+// Function for player's attack
+function playerAttack() {
+// Subtract enemy's health by player's attack power
+enemy.health -= player.attackPower;
+console.log(player.name + " attacked " + enemy.name + " and dealt " + player.attackPower + " damage!");
+console.log(enemy.name + "'s health is now at " + enemy.health + ".");
+}
 
-      function attackVampires() {
-        let survivorsLost = Math.round(Math.random() * survivorCount / 2);
-        let vampiresKilled = Math.round(Math.random() * vampireCount / 2);
-        updateSurvivorCount(-survivorsLost);
-        updateVampireCount(-vampiresKilled);
-        updateDaysPassed();
-      }
+// Function for enemy's attack
+function enemyAttack() {
+// Subtract player's health by enemy's attack power
+player.health -= enemy.attackPower;
+console.log(enemy.name + " attacked " + player.name + " and dealt " + enemy.attackPower + " damage!");
+console.log(player.name + "'s health is now at " + player.health + ".");
+}
 
-      function gatherResources() {
-        let survivorsGained = Math.round(Math.random() * 2);
-        updateSurvivorCount(survivorsGained);
-        updateDaysPassed();
-      }
-    </script>
-  </head>
-  <body>
-    <h1>Vampire Survivors</h1>
-    <p>Survivors: <span id="survivor-count">10</span></p>
-    <p>Vampires: <span id="vampire-count">3</span></p>
-    <p>Days passed: <span id="days-passed">0</span></p>
-    <button onclick="attackVampires()">Attack Vampires</button>
-    <button onclick="gatherResources()">Gather Resources</button>
-  </body>
-</html>
+// Game loop
+while (player.health > 0 && enemy.health > 0) {
+// Ask player if they want to attack or defend
+var action = prompt("Do you want to attack or defend?");
+
+if (action === "attack") {
+playerAttack();
+} else if (action === "defend") {
+console.log(player.name + " defended the attack!");
+} else {
+console.log("Invalid action, please choose either attack or defend.");
+}
+
+// Check if enemy is still alive before attacking
+if (enemy.health > 0) {
+enemyAttack();
+}
+
+// Check if player is still alive
+if (player.health <= 0) {
+console.log(player.name + " has been defeated!");
+} else if (enemy.health <= 0) {
+console.log(enemy.name + " has been defeated!");
+}
+}
