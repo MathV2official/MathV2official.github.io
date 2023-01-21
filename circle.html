@@ -40,7 +40,7 @@
 
 </head>
 
-<style>
+  <style> 
     /* Style for the circles */
     .circle { 
       width: 150px; 
@@ -51,7 +51,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      border: solid 5px white;
+      border: solid 1px white;
       text-decoration: none;
     } 
     /* Style for the squares */
@@ -65,6 +65,7 @@
     .image { 
       width: 150px; 
       height: 150px; 
+      border: 1px solid black;
     } 
     /* Style for when the mouse hovers over the circles */
     .circle:hover { 
@@ -74,6 +75,7 @@
       background-color: blue; 
     } 
     body {
+       background: linear-gradient(to right, #5f27cd, #341f97);
        display: flex;
        flex-wrap: wrap;
        align-items: center;
@@ -83,18 +85,15 @@
 </head> 
 <body> 
   <a href="https://www.example1.com" class="circle">
-    <img class="image" src="image.jpg" onmouseover="this.style.borderRadius='0%'" onmouseout="this.style.borderRadius='50%'"/>
+    <img class="image" src="image1.jpg" onmouseover="this.style.borderRadius='0%'" onmouseout="this.style.borderRadius='50%'"/>
   </a>
   <a href="https://www.example2.com" class="circle">
-    <img class="image" src="image.jpg" onmouseover="this.style.borderRadius='0%'" onmouseout="this.style.borderRadius='50%'"/>
+    <img class="image" src="image2.jpg" onmouseover="this.style.borderRadius='0%'" onmouseout="this.style.borderRadius='50%'"/>
   </a>
   <a href="https://www.example3.com" class="circle">
-    <img class="image" src="image.jpg" onmouseover="this.style.borderRadius='0%'" onmouseout="this.style.borderRadius='50%'"/>
+    <img class="image" src="image3.jpg" onmouseover="this.style.borderRadius='0%'" onmouseout="this.style.borderRadius='50%'"/>
   </a>
   <a href="https://www.example4.com" class="circle">
-    <img class="image" src="image.jpg" onmouseover="this.style.borderRadius='0%'" onmouseout="this.style.borderRadius='50%'"/>
+    <img class="image" src="image4.jpg" onmouseover="this.style.borderRadius='0%'" onmouseout="this.style.borderRadius='50%'"/>
   </a>
   <a href="https://www.example5.com" class="circle">
-    <img class="image" src="image.jpg" onmouseover="this.style.borderRadius='0%'" onmouseout="this.style.borderRadius='50%'"/>
-
-
