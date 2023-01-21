@@ -54,24 +54,34 @@
       visibility: visible;
       opacity: 1;
     }
+    /* Style for the words */
+    .circle h1,
+    .circle h2,
+    .circle h3,
+    .circle h4,
+    .circle h5,
+    .circle h6{
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 12px;
+      padding: 5px;
+      background-color: white;
+      visibility: hidden;
+      opacity: 0;
+      transition: all 0.3s ease;
+    }
+    /* Style for when the mouse hovers over the circles */
+    .circle:hover h1,
+    .circle:hover h2,
+    .circle:hover h3,
+    .circle:hover h4,
+    .circle:hover h5,
+    .circle:hover h6{
+      visibility: visible;
+      opacity: 1;
+    }
     body {
        background-color: lightgray;
-       display: flex;
-       align-items: center;
-       justify-content: center;
-    }
-  </style> 
-</head> 
-<body> 
-  <a href="https://www.example1.com" class="circle">
-    <img class="image" src="image.jpg" onmouseover="this.style.borderRadius='0%'" onmouseout="this.style.borderRadius='50%'"/>
-    <h1>Example 1</h1>
-  </a>
-  <a href="https://www.example2.com" class="circle">
-    <img class="image" src="image.jpg" onmouseover="this.style.borderRadius='0%'" onmouseout="this.style.borderRadius='50%'"/>
-    <h2>Example 2</h2>
-  </a>
-  <a href="https://www.example3.com" class="circle">
-    <img class="image" src="image.jpg" onmouseover="this.style
-
-
+       display: flex
