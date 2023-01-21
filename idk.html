@@ -13,6 +13,13 @@ body {
    height: 50px;
    background-color: rgb(200, 200, 237);
 }
+#projectile {
+   position: absolute;
+   width: 10px;
+   height: 10px;
+   background-color: white;
+   display: none;
+}
 #enemy {
    position: absolute;
    width: 50px;
@@ -26,8 +33,13 @@ body {
 
 <div id="player">Player</div> 
 <div id="enemy">Enemy</div>
+<div id="projectile"></div>
 
 <script>
+ // Get the player and projectile elements
+var player = document.getElementById("player");
+var projectile = document.getElementById("projectile");
+
 // Get the player and enemy elements
 var player = document.getElementById("player");
 var enemy = document.getElementById("enemy");
@@ -88,6 +100,22 @@ function spawnEnemy() {
 // Call the spawnEnemy() function to spawn the enemy when the page loads
 window.onload = spawnEnemy;
 
+// Function to shoot the projectile
+function shoot() {
+    // Set the initial position of the projectile
+    projectile.style.left = playerX + 25 + "px";
+    projectile.style.top = playerY + 25 + "px";
+    projectile.style.display = "block";
+
+    // Set the animation for the projectile
+    projectile.animate([
+        { transform: 'translateX(0px)' }, 
+        { transform: 'translateX(1000px)' }
+    ], { 
+        duration: 1000,
+        fill: "forwards"
+    });
+}
 </script>
 </body> 
 </html> 
