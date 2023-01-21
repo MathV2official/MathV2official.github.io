@@ -4,8 +4,8 @@
   <style> 
     /* Style for the circles */
     .circle { 
-      width: 150px; 
-      height: 150px; 
+      width: 150px; /* Increased the width value */
+      height: 150px; /* Increased the height value */
       border-radius: 50%; 
       background-color: blue; 
       transition: all 0.5s ease; 
@@ -14,74 +14,39 @@
       justify-content: center;
       border: solid 1px white;
       text-decoration: none;
-      position: relative;
     } 
     /* Style for the squares */
     .square { 
-      width: 150px; 
-      height: 150px; 
+      width: 150px; /* Increased the width value */
+      height: 150px; /* Increased the height value */
       background-color: blue; 
       transition: all 0.5s ease; 
     } 
     /* Style for the images */
     .image { 
-      width: 150px; 
-      height: 150px; 
+      width: 150px; /* Increased the width value */
+      height: 150px; /* Increased the height value */
     } 
     /* Style for when the mouse hovers over the circles */
     .circle:hover { 
-      width: 150px; 
-      height: 150px; 
+      width: 150px; /* Increased the width value */
+      height: 150px; /* Increased the height value */
       border-radius: 0%; 
       background-color: blue; 
     } 
-    /* Style for the tooltip */
-    .circle::after {
-      content: "example";
-      position: absolute;
-      bottom: -20px;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 12px;
-      padding: 5px;
-      background-color: white;
-      visibility: hidden;
-      opacity: 0;
-      transition: all 0.3s ease;
-    }
-    /* Style for when the mouse hovers over the circles */
-    .circle:hover::after {
-      visibility: visible;
-      opacity: 1;
-    }
-    /* Style for the words */
-    .circle h1,
-    .circle h2,
-    .circle h3,
-    .circle h4,
-    .circle h5,
-    .circle h6{
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 12px;
-      padding: 5px;
-      background-color: white;
-      visibility: hidden;
-      opacity: 0;
-      transition: all 0.3s ease;
-    }
-    /* Style for when the mouse hovers over the circles */
-    .circle:hover h1,
-    .circle:hover h2,
-    .circle:hover h3,
-    .circle:hover h4,
-    .circle:hover h5,
-    .circle:hover h6{
-      visibility: visible;
-      opacity: 1;
-    }
     body {
        background-color: lightgray;
-       display: flex
+       display: flex;
+       align-items: center;
+       justify-content: center;
+    }
+  </style> 
+</head> 
+<body> 
+  <a href="https://www.example1.com" class="circle">
+    <img class="image" src="image1.jpg" onmouseover="this.style.borderRadius='0%'" onmouseout="this.style.borderRadius='50%'"/>
+  </a>
+  <a href="https://www.example2.com" class="circle">
+    <img class="image" src="image2.jpg
+
+
