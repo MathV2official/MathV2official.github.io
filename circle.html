@@ -1,6 +1,7 @@
 <!DOCTYPE html> 
 <html> 
 <head> 
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.1.9/lib/p5.min.js"></script>
   <style> 
     /* Style for the canvas */
     canvas { 
@@ -91,39 +92,4 @@
   <a href="https://www.example2.com" class="circle">
     <img class="image" src="image.jpg" onmouseover="this.style.borderRadius='0%'" onmouseout="this.style.borderRadius='50%'"/>
   </a>
-  <script>
-    // Get the canvas element
-    var canvas = document.getElementById("canvas");
-    var ctx = canvas.getContext("2d");
-
-    // Set the canvas dimensions to match the window
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-
-    // Create an array to store the particles
-    var particles = [];
-
-    // Create a function to generate new particles
-    function Particle() {
-        this.x = Math.random() * canvas.width;
-        this.y = Math.random() * canvas.height;
-        this.vx = Math.random() * 10 - 5;
-        this.vy = Math.random() * 10 - 5;
-        this.radius = Math.random() * 5 + 2;
-    }
-
-    // Add a new particle to the array every 50 milliseconds
-    setInterval(function() {
-        particles.push(new Particle());
-    }, 50);
-
-    // Create a function to animate the particles
-    function animate() {
-        // Clear the canvas
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-        // Draw each particle
-        for (var i = 0; i < particles.length; i++) {
-            var p = particles[i];
-            ctx.beginPath();
   
