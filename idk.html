@@ -2,16 +2,10 @@
 <html> 
 <head> 
 <style> 
-/* define the animation */
-@keyframes move {
-   from {left: 0px;}
-   to {left: 200px;}
-}
-
-/* apply the animation to the element */
 #box {
-   position: relative;
-   animation: move 5s linear infinite;
+   position: absolute;
+   left: 0px;
+   top: 0px;
 }
 </style> 
 </head> 
@@ -19,5 +13,40 @@
 
 <div id="box">Move me!</div> 
 
+<script>
+// Get the box element
+var box = document.getElementById("box");
+
+// Initial position of the box
+var x = 0;
+var y = 0;
+
+// Step size for moving the box
+var step = 10;
+
+// Listen for key presses
+document.addEventListener("keydown", moveBox);
+
+function moveBox(event) {
+    // Check which key is pressed
+    switch (event.code) {
+        case "KeyW":
+            y -= step;
+            break;
+        case "KeyA":
+            x -= step;
+            break;
+        case "KeyS":
+            y += step;
+            break;
+        case "KeyD":
+            x += step;
+            break;
+    }
+    // Update the position of the box
+    box.style.left = x + "px";
+    box.style.top = y + "px";
+}
+</script>
 </body> 
 </html> 
