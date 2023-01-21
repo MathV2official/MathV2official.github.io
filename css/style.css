@@ -17389,4 +17389,43 @@ img {
         left: 0;
         top: -21px;
     }
+    /* Style for the circles */
+    .circle { 
+      width: 150px; 
+      height: 150px; 
+      border-radius: 50%; 
+      background-color: blue; 
+      transition: all 0.5s ease; 
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: solid 1px white;
+      text-decoration: none;
+    } 
+    /* Style for the squares */
+    .square { 
+      width: 150px; 
+      height: 150px; 
+      background-color: blue; 
+      transition: all 0.5s ease; 
+    } 
+    /* Style for the images */
+    .image { 
+      width: 150px; 
+      height: 150px; 
+    } 
+    /* Style for when the mouse hovers over the circles */
+    .circle:hover { 
+      width: 150px; 
+      height: 150px; 
+      border-radius: 0%; 
+      background-color: blue; 
+    } 
+    body {
+       background: linear-gradient(to right, #00b4db, #0083b0);
+       display: flex;
+       flex-wrap: wrap;
+       align-items: center;
+       justify-content: center;
+    }
 }
