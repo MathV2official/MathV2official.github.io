@@ -76,6 +76,45 @@ function movePlayer(event) {
     player.style.top = playerY + "px";
 }
 
+var playerWidth = 50;
+var playerHeight = 50;
+var bodyWidth = document.body.clientWidth;
+var bodyHeight = document.body.clientHeight;
+
+document.onkeydown = function(e) {
+    // Move the player based on the key pressed
+    switch (e.keyCode) {
+        case 87: // W key
+            playerY -= playerSpeed;
+            break;
+        case 83: // S key
+            playerY += playerSpeed;
+            break;
+        case 65: // A key
+            playerX -= playerSpeed;
+            break;
+        case 68: // D key
+            playerX += playerSpeed;
+            break;
+    }
+    // Check if the player is going off the screen
+    if (playerX < 0) {
+        playerX = 0;
+    }
+    if (playerX + playerWidth > bodyWidth) {
+        playerX = bodyWidth - playerWidth;
+    }
+    if (playerY < 0) {
+        playerY = 0;
+    }
+    if (playerY + playerHeight > bodyHeight) {
+        playerY = bodyHeight - playerHeight;
+    }
+    // Update the position of the player element
+    player.style.left = playerX + "px";
+    player.style.top = playerY + "px";
+};
+
 var enemies = []; // array to store the enemies
 var intervalId; // variable to store the interval ID for spawning enemies
 
