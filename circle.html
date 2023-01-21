@@ -4,8 +4,8 @@
   <style> 
     /* Style for the circles */
     .circle { 
-      width: 150px; /* Increased the width value */
-      height: 150px; /* Increased the height value */
+      width: 150px; 
+      height: 150px; 
       border-radius: 50%; 
       background-color: blue; 
       transition: all 0.5s ease; 
@@ -14,26 +14,46 @@
       justify-content: center;
       border: solid 1px white;
       text-decoration: none;
+      position: relative;
     } 
     /* Style for the squares */
     .square { 
-      width: 150px; /* Increased the width value */
-      height: 150px; /* Increased the height value */
+      width: 150px; 
+      height: 150px; 
       background-color: blue; 
       transition: all 0.5s ease; 
     } 
     /* Style for the images */
     .image { 
-      width: 150px; /* Increased the width value */
-      height: 150px; /* Increased the height value */
+      width: 150px; 
+      height: 150px; 
     } 
     /* Style for when the mouse hovers over the circles */
     .circle:hover { 
-      width: 150px; /* Increased the width value */
-      height: 150px; /* Increased the height value */
+      width: 150px; 
+      height: 150px; 
       border-radius: 0%; 
       background-color: blue; 
     } 
+    /* Style for the tooltip */
+    .circle::after {
+      content: "example";
+      position: absolute;
+      bottom: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 12px;
+      padding: 5px;
+      background-color: white;
+      visibility: hidden;
+      opacity: 0;
+      transition: all 0.3s ease;
+    }
+    /* Style for when the mouse hovers over the circles */
+    .circle:hover::after {
+      visibility: visible;
+      opacity: 1;
+    }
     body {
        background-color: lightgray;
        display: flex;
@@ -44,9 +64,6 @@
 </head> 
 <body> 
   <a href="https://www.example1.com" class="circle">
-    <img class="image" src="image1.jpg" onmouseover="this.style.borderRadius='0%'" onmouseout="this.style.borderRadius='50%'"/>
-  </a>
-  <a href="https://www.example2.com" class="circle">
-    <img class="image" src="image2.jpg
+    <img class="image" src="image1.jpg" onmouseover="this.style.
 
 
