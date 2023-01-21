@@ -117,28 +117,38 @@ document.onkeydown = function(e) {
 
 var enemies = []; // array to store the enemies
 var intervalId; // variable to store the interval ID for spawning enemies
+var projectiles = []; // array to store the projectiles
 
 // Listen for clicks on the body
 document.body.addEventListener("click", shoot);
 
-// Function to shoot the projectile
+document.body.addEventListener("click", shoot);
+
 function shoot(event) {
     // Get the mouse coordinates
     var mouseX = event.clientX;
     var mouseY = event.clientY;
 
-    // Set the initial position of the projectile
-    projectile.style.left = playerX + 25 + "px";
-    projectile.style.top = playerY + 25 + "px";
-    projectile.style.display = "block";
+    // Create a new projectile element
+    var newProjectile = document.createElement("div");
+    newProjectile.style.position = "absolute";
+    newProjectile.style.width = "10px";
+    newProjectile.style.height = "10px";
+    newProjectile.style.backgroundColor = "white";
+    newProjectile.style.left = playerX + 25 + "px";
+    newProjectile.style.top = playerY + 25 + "px";
+    document.body.appendChild(newProjectile);
 
+    projectiles.push(newProjectile);
     // Set the animation for the projectile
-    projectile.animate([
+    newProjectile.animate([
         { transform: 'translate(' + (mouseX - (playerX + 25)) + 'px,' + (mouseY - (playerY + 25)) + 'px)' }
     ], { 
         duration: 1000,
         fill: "forwards"
-    }).onfinish = function(){
+    });
+    setTimeout(function(){ newProjectile.style.display = "none"; }, 1000);
+}
       // Check for collision with the enemies
       for (var i = 0; i < enemies.length; i++) {
         if (collisionDetection(enemies[i])) {
@@ -147,8 +157,6 @@ function shoot(event) {
             break;
         }
       }
-    }
-}
 
 // Function to check for collision between the projectile and the enemy
 function collisionDetection(enemy) {
