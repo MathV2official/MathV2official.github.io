@@ -68,17 +68,18 @@
 .image { 
   width: 150px; 
   height: 150px; 
-  border: 1px solid black;
+  border-radius: 50%; /* this makes the images circles */
+  transition: all 0.5s ease; /* this allows for a smooth transition */
 } 
+.circle:hover .image { 
+  border-radius: 0%; /* this removes the border-radius, making the image square */
+}
     /* Style for when the mouse hovers over the circles */
     .circle:hover { 
       width: 200px; 
       height: 200px; 
       border-radius: 50%;
       background-color: rgb(21, 21, 29);     } 
-      .circle:hover .image { 
-  border-radius: 50%;
-}
     body {
        background: linear-gradient(to right, #1e1e1e, #0a0a0a);
        display: flex;
