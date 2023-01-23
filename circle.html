@@ -84,6 +84,16 @@
     }
     
   </style> 
+  // JavaScript code
+  <script>
+  const circles = document.querySelectorAll('.circle');
+  
+  circles.forEach((circle) => {
+    circle.addEventListener('mouseover', () => {
+      circle.style.visibility = 'hidden';
+    });
+  });
+</script>
 </head> 
 <body> 
     <div class="header">
