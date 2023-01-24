@@ -108,21 +108,19 @@
 </head> 
     <div class="header">
         <div class="search-container">
-          <input id="search" type="text" placeholder="Search...">
+          <script src="/js/search.js"></script>
+          <input type="text" id="mySearch" onload="startSearch()" onkeyup="startSearch()" placeholder="Search for games..." title="Search" autofocus>
         </div>
         <img src="favicon.ico" alt="header-logo">
         <a href="https://cfisd.schoology.com/">EMERGENCY EXIT</a>
         <a href="https://docs.google.com/forms/d/e/1FAIpQLSfKoI9zmua1SanZrZF8O6oTLyXKNvCGYY27wYXB_Daxgyn5VA/viewform">Add A Game</a>
     </div>
-        <div id="particles-js"></div>
-            <script type="text/javascript" src="particles.js"></script>
-            <script type="text/javascript" src="app.js"></script>
       <!-- Back arrow -->
 <a href="index.html">
   <img src="arrow.png" class="back-arrow" alt="back-arrow">
 
   <!--start of games list-->
-  <div class="circles-container">
+  <div id="search" class="flex-container"><br>
     <a href="projects/10minutes/v6p9d9t4.ssl.hwcdn.net/html/5833734/10MinutesTillDawnWebGL/index.html" class="circle">
     <img class="image" src="projects/10minutes/v6p9d9t4.ssl.hwcdn.net/html/5833734/10MinutesTillDawnWebGL/10.png" onmouseover="this.style.borderRadius='0%'" onmouseout="this.style.borderRadius='50%'"/>
   </a>
