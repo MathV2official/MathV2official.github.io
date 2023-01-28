@@ -3,8 +3,6 @@
 
 OTHER SITES<br>
 https://mathv22.netlify.app<br>
-https://math-v2-vf9z.onrender.com/
-
 
 [![Remix on Glitch](https://binbashbanana.github.io/deploy-buttons/buttons/remade/glitch.svg)](https://glitch.com/edit/#!/import/github/coolguy564738/math-v2)
 [![Deploy with Vercel](https://binbashbanana.github.io/deploy-buttons/buttons/remade/vercel.svg)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fcoolguy564738%2Fmath-v2) 
