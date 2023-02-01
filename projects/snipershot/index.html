@@ -1,127 +1,98 @@
 
-<!DOCTYPE html><html lang="en"><head><title>Capybara Clicker Game Files - Crazy Games</title><link href="https://gameframe.crazygames.com/crazygames-gameframe-v1.bundle.js" rel="preload" as="script" /><link href="https://www.crazygames.com/game/capybara-clicker" rel="canonical" /><meta charset="UTF-8" /><meta name="description" content="The game files for Capybara Clicker, a free browser game on CrazyGames.com" /><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta http-equiv="Accept-CH" content="DPR" /><meta name="viewport" content="width=device-width, maximum-scale=1.0, initial-scale=1.0, user-scalable=no, minimal-ui" /><style id="pacman-styles">/* background */
-  body {
-    background-image: linear-gradient(290deg, #3b2b73 55%, #6f2f93, #6f2f93);
-    background-position: center;
-    text-align: center;
-  } 
-  /* for positioning of pacman loader */
-  body, html { height: 100%; }
-  body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-  }
-  
-  @keyframes rotate_preloadpacman_half_up {
-    0% {
-      transform: rotate(270deg); }
-    50% {
-      transform: rotate(360deg); }
-    100% {
-      transform: rotate(270deg); }
-  }
-  
-  @keyframes rotate_preloadpacman_half_down {
-    0% {
-      transform: rotate(90deg);
-    }
-    50% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(90deg);
-    }
-  }
-  
-  @keyframes preloadpacman-balls {
-    75% {
-      opacity: 0.7;
-    }
-    100% {
-      transform: translate(-100px, -6.25px);
-    }
-  }
-  
-  .preloadpacman {
-    position: relative;
-  }
-  .preloadpacman > div:nth-child(2) {
-    animation: preloadpacman-balls 1s -0.99s infinite linear;
-  }
-  .preloadpacman > div:nth-child(3) {
-    animation: preloadpacman-balls 1s -0.66s infinite linear;
-  }
-  .preloadpacman > div:nth-child(4) {
-    animation: preloadpacman-balls 1s -0.33s infinite linear;
-  }
-  .preloadpacman > div:nth-child(5) {
-    animation: preloadpacman-balls 1s 0s infinite linear;
-  }
-  .preloadpacman > div:first-of-type {
-    width: 0px;
-    height: 0px;
-    border-right: 25px solid transparent;
-    border-top: 25px solid #fff;
-    border-left: 25px solid #fff;
-    border-bottom: 25px solid #fff;
-    border-radius: 25px;
-    animation: rotate_preloadpacman_half_up 0.5s 0s infinite;
-    position: relative;
-    left: -30px;
-  }
-  .preloadpacman > div:nth-child(2) {
-    width: 0px;
-    height: 0px;
-    border-right: 25px solid transparent;
-    border-top: 25px solid #fff;
-    border-left: 25px solid #fff;
-    border-bottom: 25px solid #fff;
-    border-radius: 25px;
-    animation: rotate_preloadpacman_half_down 0.5s 0s infinite;
-    margin-top: -50px;
-    position: relative;
-    left: -30px;
-  }
-  .preloadpacman > div:nth-child(3),
-  .preloadpacman > div:nth-child(4),
-  .preloadpacman > div:nth-child(5),
-  .preloadpacman > div:nth-child(6) {
-    background-color: #fff;
-    width: 15px;
-    height: 15px;
-    border-radius: 100%;
-    margin: 2px;
-    width: 10px;
-    height: 10px;
-    position: absolute;
-    transform: translate(0, -6.25px);
-    top: 25px;
-    left: 70px;
-  }
-  </style></head><body><div class="preloadpacman" id="pacman"><div></div><div></div><div></div><div></div><div></div></div><script type="text/javascript">function loadScript(url, callback) {
-    var head = document.head;
-    var script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.src = url;
-    script.async = true;
-    script.onreadystatechange = callback;
-    script.onload = callback;
-    head.appendChild(script);
-  }
-  var options = {"loader":"unity2020","loaderOptions":{"showProgress":true,"unityLoaderUrl":"https://files.crazygames.com/capybara-clicker/7/Build/d50cc3ee055c5f5e237cc0492cefedce.js","unityConfigOptions":{"codeUrl":"https://files.crazygames.com/capybara-clicker/7/Build/1365cb23b1dfab9f5c6e57a9b6a7c7b5.wasm.br","dataUrl":"https://files.crazygames.com/capybara-clicker/7/Build/65696d80142bb4bf620f35b7fa2871a3.data.br","frameworkUrl":"https://files.crazygames.com/capybara-clicker/7/Build/1422b06c9979bbf0a8bf0a85669b2d35.js.br"}},"thumbnail":"https://images.crazygames.com/games/capybara-clicker/cover-1673956624583.png?auto=format,compress&q=75&cs=strip&w=360","gameName":"Capybara Clicker","gameHttps":true,"gameSlug":"capybara-clicker","gameId":"21153","gameStatus":"published","showAdOnExternal":"ALWAYS","showAdOnInternal":"DEFAULT","disableEmbedding":false,"dollarRate":0.9197508211075456,"upvotes":80613,"downvotes":7090,"releaseDate":"2022-11-07","locale":"en_US","controls":{"text":"<h3>Controls</h3>\n<p>Use the left mouse button to interact with the in-game UI.</p>"},"videoThumbnail":"https://videos.crazygames.com/capybara-clicker/1/capybara-clicker-thumbnail.mp4","video":{"original":"https://videos.crazygames.com/capybara-clicker/1/capybara-clicker.mp4","sizes":[{"width":205,"height":115,"location":"https://videos.crazygames.com/capybara-clicker/1/capybara-clicker-205x115.mp4"},{"width":249,"height":140,"location":"https://videos.crazygames.com/capybara-clicker/1/capybara-clicker-249x140.mp4"},{"width":364,"height":208,"location":"https://videos.crazygames.com/capybara-clicker/1/capybara-clicker-364x208.mp4"},{"width":494,"height":276,"location":"https://videos.crazygames.com/capybara-clicker/1/capybara-clicker-494x276.mp4"},{"width":611,"height":343,"location":"https://videos.crazygames.com/capybara-clicker/1/capybara-clicker-611x343.mp4"}]},"sandbox":true,"totalSize":"16 MB","minTimeBetweenMidrollAdsInMs":180000,"minTimeBetweenRewardedAdsInMs":5000,"noMidrollAdInFirstMinutes":3,"noRewardedAdInFirstMinutes":0,"categoryEnSlug":"clicker","tagsEnSlugs":["webgl","2d","incremental","animal","mouse","upgrade","idle"],"isKids":false,"hasMidroll":false,"hasRewarded":true,"fullscreen":"SUPPORTED","orientation":"LANDSCAPE","displayRatio":{"h":9,"w":16},"category":"Incremental","categoryLink":"https://www.crazygames.com/t/incremental","gameLink":"https://www.crazygames.com/game/capybara-clicker","alternativeGames":[],"domainHasNoCMP":false};
-  var SDK_READY = false;
-  var GF_READY = false;
-  var GF_LOAD_CALLED = false;
-  loadScript("https://gameframe.crazygames.com/crazygames-gameframe-v1.bundle.js", function() {
-      Crazygames.load(options).then(function() {
-        var pacmanWrapper = document.getElementById('pacman');
-        var pacmanStyles = document.getElementById('pacman-styles');
-  
-        if (pacmanWrapper && pacmanStyles) {
-          pacmanWrapper.remove();
-          pacmanStyles.remove();
-        }
-      });
-  });</script></body></html>
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Unity WebGL Player | Sniper Shot</title>
+    <link rel="shortcut icon" href="TemplateData/favicon.ico">
+    <link rel="stylesheet" href="TemplateData/style.css">
+  </head>
+  <body>
+    <div id="unity-container" class="unity-desktop">
+      <canvas id="unity-canvas" width=960 height=600></canvas>
+      <div id="unity-loading-bar">
+        <div id="unity-logo"></div>
+        <div id="unity-progress-bar-empty">
+          <div id="unity-progress-bar-full"></div>
+        </div>
+      </div>
+      <div id="unity-warning"> </div>
+      <div id="unity-footer">
+        <div id="unity-webgl-logo"></div>
+        <div id="unity-fullscreen-button"></div>
+        <div id="unity-build-title">Sniper Shot</div>
+      </div>
+    </div>
+    <script>
+      var container = document.querySelector("#unity-container");
+      var canvas = document.querySelector("#unity-canvas");
+      var loadingBar = document.querySelector("#unity-loading-bar");
+      var progressBarFull = document.querySelector("#unity-progress-bar-full");
+      var fullscreenButton = document.querySelector("#unity-fullscreen-button");
+      var warningBanner = document.querySelector("#unity-warning");
+
+      // Shows a temporary message banner/ribbon for a few seconds, or
+      // a permanent error message on top of the canvas if type=='error'.
+      // If type=='warning', a yellow highlight color is used.
+      // Modify or remove this function to customize the visually presented
+      // way that non-critical warnings and error messages are presented to the
+      // user.
+    
+      var buildUrl = "Build";
+      var loaderUrl = buildUrl + "/SniperShot_Y8.loader.js";
+      var config = {
+        dataUrl: buildUrl + "/SniperShot_Y8.data.unityweb",
+        frameworkUrl: buildUrl + "/SniperShot_Y8.framework.js.unityweb",
+        codeUrl: buildUrl + "/SniperShot_Y8.wasm.unityweb",
+        streamingAssetsUrl: "StreamingAssets",
+        companyName: "GoGoMan",
+        productName: "Sniper Shot: Bullet Time",
+        productVersion: "0.7",
+      };
+
+      // By default Unity keeps WebGL canvas render target size matched with
+      // the DOM size of the canvas element (scaled by window.devicePixelRatio)
+      // Set this to false if you want to decouple this synchronization from
+      // happening inside the engine, and you would instead like to size up
+      // the canvas DOM size and WebGL render target sizes yourself.
+      // config.matchWebGLToCanvasSize = false;
+
+      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+        container.className = "unity-mobile";
+        // Avoid draining fillrate performance on mobile devices,
+        // and default/override low DPI mode on mobile browsers.
+        config.devicePixelRatio = 1;
+      } else {
+        canvas.style.width = "960px";
+        canvas.style.height = "600px";
+      }
+      canvas.style.background = "url('" + buildUrl + "/SniperShot_Y8.jpg') center / cover";
+      loadingBar.style.display = "block";
+
+      var myGameInstance = null;
+      var script = document.createElement("script");
+      script.src = loaderUrl;
+      script.onload = () => {
+        createUnityInstance(canvas, config, (progress) => {
+          progressBarFull.style.width = 100 * progress + "%";
+        }).then((unityInstance) => {
+          myGameInstance = unityInstance;
+          loadingBar.style.display = "none";
+          fullscreenButton.onclick = () => {
+            unityInstance.SetFullscreen(1);
+          };
+        }).catch((message) => {
+          alert(message);
+        });
+      };
+      document.body.appendChild(script);
+    </script>
+    <script async
+    data-ad-client="ca-pub-6129580795478709"
+    data-ad-channel="8361719486"
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">
+    </script>
+     <script type="text/javascript" src="js/gameBreakBeta.js"></script>
+  </body>
+</html>
