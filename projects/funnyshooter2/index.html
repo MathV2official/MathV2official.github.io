@@ -126,7 +126,7 @@
         }).catch(err => {
         })
         if(SHOW_ADS){
-          sdk.adv.showFullscreenAdv({ callbacks: {} });
+          sdk.adv.showFulleenAdv({ callbacks: {} });
           sdk.adv.showBannerAdv();
         }
         else
@@ -171,15 +171,15 @@
     function checkShop() 
     {
         payments.getPurchases().then(purchases => {
-          if (purchases.some(purchase => purchase.productID === 'remove_ads')) {
+          if(document.getElementById('button').clicked == 'remove_ads')) {
               SHOW_ADS = false;
               window.unityInstance.SendMessage('SDKPlatforms', 'ShopComplete', 0);
               sdk.adv.hideBannerAdv();
           }
-          if (purchases.some(purchase => purchase.productID === 'weapon_1')) {
+          if(document.getElementById('button').clicked == 'weapon_1')) {
               window.unityInstance.SendMessage('SDKPlatforms', 'ShopComplete', 3);
           }
-          if (purchases.some(purchase => purchase.productID === 'weapon_2')) {
+          if(document.getElementById('button').clicked == 'weapon_2')) {
               window.unityInstance.SendMessage('SDKPlatforms', 'ShopComplete', 4);
           }
         }).catch(err => {
