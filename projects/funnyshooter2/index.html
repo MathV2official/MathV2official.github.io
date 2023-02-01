@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>Funny Shooter 2</title>
+    <title>Math V2</title>
     <link rel="shortcut icon" href="favicon.ico">
     <link rel="stylesheet" href="style.css">
   </head>
@@ -126,7 +126,7 @@
         }).catch(err => {
         })
         if(SHOW_ADS){
-          sdk.adv.showFulleenAdv({ callbacks: {} });
+          sdk.adv.showFullscreenAdv({ callbacks: {} });
           sdk.adv.showBannerAdv();
         }
         else
@@ -171,15 +171,15 @@
     function checkShop() 
     {
         payments.getPurchases().then(purchases => {
-          if(document.getElementById('button').clicked == 'remove_ads')) {
+          if (purchases.some(purchase => purchase.productID === 'remove_ads')) {
               SHOW_ADS = false;
               window.unityInstance.SendMessage('SDKPlatforms', 'ShopComplete', 0);
               sdk.adv.hideBannerAdv();
           }
-          if(document.getElementById('button').clicked == 'weapon_1')) {
+          if (purchases.some(purchase => purchase.productID === 'weapon_1')) {
               window.unityInstance.SendMessage('SDKPlatforms', 'ShopComplete', 3);
           }
-          if(document.getElementById('button').clicked == 'weapon_2')) {
+          if (purchases.some(purchase => purchase.productID === 'weapon_2')) {
               window.unityInstance.SendMessage('SDKPlatforms', 'ShopComplete', 4);
           }
         }).catch(err => {
