@@ -1,10 +1,4 @@
-/**
- * è®¾ç½®LayaNativeå±å¹•æ–¹å‘ï¼Œå¯è®¾ç½®ä»¥ä¸‹å€¼
- * landscape           æ¨ªå±
- * portrait            ç«–å±
- * sensor_landscape    æ¨ªå±(åŒæ–¹å‘)
- * sensor_portrait     ç«–å±(åŒæ–¹å‘)
- */
+
 window.screenOrientation = "sensor_landscape";
 
 //-----libs-begin-----
