@@ -1,1 +1,1 @@
-No Content: https://html5.gamemonetize.co/kj4is09ju6dx2gd2liij0bp4zchsryez/index.js
+window.screenOrientation="sensor_portrait",loadLib("libs/laya.core.js"),loadLib("libs/laya.webgl.js"),loadLib("libs/laya.ui.js"),loadLib("js/bundle.run.js");
