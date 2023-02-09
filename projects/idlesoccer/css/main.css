@@ -1,0 +1,1022 @@
+@font-face {
+    font-family: "Montserrat";
+    font-weight: 400;
+    src: url("fonts/montserrat/Montserrat-Regular.woff2") format("woff2"),
+        url("fonts/montserrat/Montserrat-Regular.woff") format("woff"),
+        url("fonts/montserrat/Montserrat-Regular.ttf") format("ttf");
+}
+
+@font-face {
+    font-family: "Montserrat";
+    font-weight: 700;
+    src: url("fonts/montserrat/Montserrat-Bold.woff2") format("woff2"),
+        url("fonts/montserrat/Montserrat-Bold.woff") format("woff"),
+        url("fonts/montserrat/Montserrat-Bold.ttf") format("ttf");
+}
+
+@font-face {
+    font-family: "Montserrat";
+    font-weight: 900;
+    src: url("fonts/montserrat/Montserrat-Black.woff2") format("woff2"),
+        url("fonts/montserrat/Montserrat-Black.woff") format("woff"),
+        url("fonts/montserrat/Montserrat-Black.ttf") format("ttf");
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-size: 16px;
+    font-family: Montserrat, sans-serif;
+    background-color: var(--color-background);
+    color: var(--color-text);
+    overflow-x: hidden;
+}
+
+button{
+    background-color: var(--color-button);
+    color: var(--color-text);
+    border: 2px solid var(--color-border);
+    border-radius: 4px;
+    padding: 0.5rem;
+    font-family: Montserrat, sans-serif;
+    cursor: pointer;
+    outline: 0;
+
+    transition: border-color 300ms, background-color 300ms, filter 200ms;
+}
+
+button:hover:not(:disabled){
+    border: 2px solid var(--color-button-border-hover);
+}
+
+button.selected{
+    background-color: var(--color-button-selected);
+}
+
+button:active{
+    filter: brightness(1.3);
+}
+
+button:disabled{
+    filter: brightness(0.5);
+    cursor: not-allowed;
+}
+
+button.negative{
+    filter: hue-rotate(250deg) saturate(1.25);
+}
+
+button.help, button.help:hover{
+    background: none;
+    border: none;
+    padding: 0;
+    vertical-align: bottom;
+}
+
+button.help img{
+    height: 4em;
+}
+
+input[type="text"], input[type="number"]{
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+}
+
+input[type="color"]{
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+a, a:visited{
+    color: var(--color-text);
+}
+
+.big-heading{
+    font-size: 300%;
+    font-weight: 900;
+    margin: 1.5rem;
+    text-align: center;
+}
+
+.icon-flex{
+    display: inline-flex;
+    align-items: center;
+}
+
+.icon-flex img, .icon-flex canvas{
+    margin-right: 0.5em;
+    height: 1.5em;
+}
+
+.card{
+    width: 70%;
+    margin: auto;
+    padding: 0.5rem;
+    background-color: var(--color-card);
+    border: 4px solid var(--color-card-border);
+    color: var(--color-text-dark);
+    border-radius: 8px;
+}
+
+.card.flex{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.card.flex-column{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.money{
+    background-color: var(--color-header);
+    border-top: 2px solid rgba(0, 0, 0, 0.5);
+    text-align: center;
+    font-size: 200%;
+    font-weight: bold;
+    padding: 1rem;
+}
+
+#app{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+p.game-error{
+    user-select: all;
+    word-break: break-all;
+    padding: 1rem;
+}
+
+/*Progress Bar*/
+
+.progress-bar{
+    position: relative;
+    width: 8em;
+    height: 0.75em;
+}
+
+.progress-bar div{
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-radius: 0.5em;
+    width: 100%;
+    height: 0.75em;
+}
+
+.progress-bar .bg{
+    background-color: var(--color-border);
+}
+
+.progress-bar .front{
+    background-image: linear-gradient(to right, var(--color-button), var(--color-button-selected));
+}
+
+/*Window*/
+
+.window{
+    position: absolute;
+    background-color: var(--color-window);
+    color: var(--color-text-dark);
+    width: 600px;
+    min-height: 400px;
+    border: 4px solid var(--color-window-border);
+    border-radius: 12px;
+    box-shadow: 4px 4px 3px rgba(0, 0, 0, 0.4);
+    z-index: 9;
+}
+
+.window .header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 150%;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    user-select: none;
+}
+
+.window .header button{
+    padding: 0;
+    margin-right: 1em;
+    height: 2em;
+    width: 2em;
+}
+
+.window > div{
+    padding: 0.5rem;
+}
+
+/*Team Window*/
+
+.window-team .players{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding: 1rem;
+}
+
+.window-team .stats{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.window-team .stats span{
+    font-size: 150%;
+    font-weight: bold;
+    padding: 0 1rem;
+}
+
+.window-team .players > div{
+    margin: 0.5rem;
+    padding: 0.5rem;
+    width: 40%;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 6px;
+}
+
+/*Player Window*/
+
+.window-player .stats{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1rem;
+    grid-row-gap: 4rem;
+    padding: 0.5rem;
+}
+
+.window-player .stats p{
+    text-align: center;
+    font-size: 110%;
+    margin-bottom: 0.5rem;
+}
+
+/*Tutorial Window*/
+
+.window-tutorial .image{
+    float: right;
+    height: 64px;
+    margin: 0.5rem;
+}
+
+.window-tutorial .image > *{
+    height: 64px;
+}
+
+.window-tutorial p{
+    margin: 1rem 0;
+}
+
+.window-tutorial .navigation{
+    text-align: center;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.window-tutorial .navigation button{
+    margin: 0 0.5rem;
+}
+
+/*Header*/
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--color-header);
+    background-image: linear-gradient(45deg, transparent, rgba(0, 0, 0, 0.2));
+    padding: 1rem;
+}
+
+header h1{
+    margin-right: 1rem;
+    min-width: 400px;
+}
+
+header ul{
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+header ul li{
+    margin: 0.5rem;
+    cursor: pointer;
+}
+
+header ul li:hover{
+    text-decoration: underline;
+}
+
+/*Main*/
+
+main{
+    background-image: url("../images/background.png");
+    background-size: cover;
+    background-position: center;
+    flex-grow: 1;
+}
+
+/*Upgrade*/
+
+.upgrade{
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 25%;
+    padding: 1rem;
+    margin: 2rem;
+    background-color: var(--color-window);
+    color: var(--color-text-dark);
+    border: 3px solid var(--color-card-border);
+    border-radius: 6px;
+}
+
+.upgrade h4{
+    font-size: 150%;
+}
+
+.upgrade button{
+    width: 100%;
+    margin-top: 0.5rem;
+}
+
+.upgrade-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/*Team Management*/
+
+.team-management .players{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.team-management .players.active{
+    margin: auto auto 100px;
+    justify-content: center;
+    min-height: 400px;
+    max-width: 1200px;
+    padding-bottom: 150px;
+}
+
+.team-management .placeholder{
+    margin: 2rem;
+}
+
+.team-management .players.inactive{
+    flex: 1;
+    height: 300px;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+
+.team-management .inactive-players{
+    background-color: var(--color-background);
+    position: fixed;
+    bottom: -150px;
+    left: 0;
+    width: 100%;
+    padding: 1rem;
+    opacity: 0.5;
+
+    transition: bottom 250ms ease-in-out, opacity 250ms ease-in-out;
+}
+
+.team-management .inactive-players:hover{
+    bottom: 0;
+    opacity: 1;
+}
+
+.team-management .players .player{
+    margin: 0.5rem;
+}
+
+.team-management .players.active .player{
+    margin: 2rem;
+}
+
+.team-management > .header{
+    background-color: var(--color-header);
+    border-top: 2px solid rgba(0, 0, 0, 0.5);
+    display: flex;
+    font-size: 120%;
+    padding: 1rem;
+}
+
+.team-management .header > *{
+    margin-right: 1rem;
+}
+
+.team-management .strategy{
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+}
+
+.team-management .strategy button{
+    margin: 0 0.5rem;
+    padding: 0.5rem 1rem;
+    min-width: 7.5rem;
+}
+
+.team-management .strategy button img{
+    height: 2em;
+}
+
+.team-management .strategies{
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--color-header);
+}
+
+.team-management .no-players{
+    text-align: center;
+    font-weight: bold;
+    font-size: 110%;
+}
+
+/*Player*/
+
+.player{
+    background-color: var(--color-card);
+    border: 3px solid var(--color-card-border);
+    border-radius: 8px;
+    box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.3);
+    min-width: 200px;
+    width: 200px;
+    height: 240px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.player .header{
+    font-weight: bold;
+    text-align: center;
+    color: black;
+    padding: 0.25rem;
+}
+
+.player .header .icon-flex{ /*Clickable Area for Stat Breakdown*/
+    cursor: pointer;
+}
+
+.player .header .icon-flex:hover{
+    text-decoration: underline;
+}
+
+.player .header img{
+    border-radius: 50%;
+    margin-right: 0.1rem;
+}
+
+.player > .stats{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    background-color: var(--color-card-stat);
+}
+
+.player > .stats p{
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    text-shadow: 3px 3px rgba(0, 0, 0, 0.2);
+    font-size: 90%;
+    width: 50%;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 0.5rem 0;
+}
+
+.player > .stats p > span{
+    display: inline-block;
+    width: 3em;
+    font-weight: initial;
+    font-size: 65%;
+}
+
+.player > .stats p:nth-child(2n) > span{
+    text-align: right;
+}
+
+.player > .stats p:nth-child(2n){
+    justify-content: flex-end;
+}
+
+.player .actions{
+    width: 100%;
+}
+
+.player button{
+    width: 100%;
+    font-size: 70%;
+    padding: 0.35rem;
+}
+
+.player progress{
+    width: 100px;
+}
+
+.placeholder{
+    height: 240px;
+    width: 200px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 6px;
+}
+
+/*Player Market*/
+
+.player-market{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.player-market .player{
+    margin: 0.5rem;
+}
+
+/*Division*/
+
+.division{
+    width: 80%;
+    margin: auto;
+    border-spacing: 0;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.3);
+}
+
+.division thead{
+    background-color: var(--color-table-header);
+    background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.2));
+    font-size: 120%;
+}
+
+.division tr:nth-child(2n + 1){
+    background-color: var(--color-table-odd);
+}
+
+.division tr:nth-child(2n){
+    background-color: var(--color-table-even);
+}
+
+.division tr.promotion{
+    background-image: linear-gradient(0deg, rgba(0, 255, 0, 0.5), rgba(0, 255, 0, 0.5));
+}
+
+.division tr.own-team{
+    background-image: linear-gradient(0deg, rgba(255, 255, 0, 0.75), rgba(255, 255, 0, 0.75));
+}
+
+.division tr.relegation{
+    background-image: linear-gradient(0deg, rgba(255, 0, 0, 0.5), rgba(255, 0, 0, 0.5));
+}
+
+.division th, .division td{
+    text-align: left;
+    padding: 0.25rem;
+}
+
+.division th{
+    text-align: center;
+}
+
+.division td{
+    color: var(--color-text-dark);
+}
+
+.division td:nth-child(n + 3){
+    text-align: center;
+}
+
+.division .pos{
+    background-color: var(--color-table-pos);
+    background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.2));
+    text-align: center;
+    font-size: 120%;
+    font-weight: bold;
+    color: var(--color-text);
+}
+
+.division .team span{
+    cursor: pointer;
+}
+
+.division .team span:hover{
+    text-decoration: underline;
+}
+
+.division .team canvas{
+    height: 2em;
+}
+
+/*League*/
+
+.tab-league .next-match{
+    text-align: center;
+    margin-top: 1rem;
+}
+
+/*Match*/
+
+.match .time button{
+    display: block;
+    margin: auto;
+}
+
+.match .match-view{
+    position: absolute;
+    bottom: 5rem;
+    width: 100%;
+    padding: 1rem;
+}
+
+.match .stats{
+    font-size: 200%;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.match .stats .score{
+    display: flex;
+    align-items: center;
+    margin: 2rem;
+}
+
+.match .stats .score > p, .match .stats .score > div{
+    width: 33.3%;
+}
+
+.match .stats .score > div:last-child{
+    justify-content: flex-end;
+}
+
+.match .stats .score canvas{
+    height: 3em;
+    margin: 0 1rem;
+}
+
+.match .stats .score .numbers, .match .stats .time{
+    font-size: 150%;
+}
+
+.match .stats .time{
+    font-size: 200%;
+    letter-spacing: 0.1rem;
+}
+
+.match .events{
+    font-size: 120%;
+    display: flex;
+}
+
+.match .events div{
+    width: 33.3%;
+}
+
+.match .events div p{
+    display: flex;
+    align-items: center;
+    margin: 0.5rem 0;
+}
+
+.match .events div:first-child p{
+    justify-content: flex-end;
+}
+
+.match .events img{
+    height: 1.5em;
+    margin: 0 0.1rem;
+}
+
+.match .speed-controls{
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.match .speed-controls button{
+    display: flex;
+    align-items: center;
+    font-size: 150%;
+    font-weight: bold;
+    margin: 0 1rem;
+}
+
+.match .speed-controls label{
+    min-width: 30vw;
+    font-size: 150%;
+    font-weight: bold;
+}
+
+.match .speed-controls label input{
+    width: 100%;
+}
+
+.match .speed-controls button img{
+    height: 1.5em;
+}
+
+.match .window p{
+    text-align: center;
+}
+
+.match .window button{
+    margin-top: 1rem;
+}
+
+.match .reward{
+    font-size: 200%;
+    font-weight: bold;
+}
+
+/*Country*/
+
+.tab-countries .next-country{
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.country{
+    background-color: var(--color-card);
+    color: var(--color-text-dark);
+    border: 4px solid var(--color-card-border);
+    border-radius: 8px;
+    margin: 1rem;
+    padding: 0.5rem;
+}
+
+.country.selected{
+    background-image: linear-gradient(0deg, rgba(0, 255, 0, 0.5), rgba(0, 255, 0, 0.5));
+    border-color: var(--color-border);
+}
+
+.country .header{
+    font-size: 150%;
+}
+
+.country .country-flag{
+    height: 2em;
+}
+
+/*Stadium*/
+
+.stadium .info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 150%;
+    font-weight: 900;
+}
+
+.stadium > h4{
+    font-size: 200%;
+    margin-top: 2rem;
+    text-align: center;
+}
+
+/*Player Training*/
+
+.tab-player-training .trainings > div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+.tab-player-training .trainings div .card{
+    width: 100%;
+    margin: 1rem;
+}
+
+.tab-player-training .player, .tab-player-training .placeholder{
+    margin: 1rem;
+}
+
+.game-task{
+    align-items: flex-start !important;
+}
+
+/*TV*/
+
+.tab-tv-channels .channels{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.tv-channel{
+    display: inline-block;
+    width: 30%;
+    max-width: 400px;
+    text-align: center;
+    margin: 1rem;
+    padding: 1.5rem;
+}
+
+.tv-channel .tv{
+    width: 100%;
+    position: relative;
+}
+
+.tv-channel .tv canvas{
+    position: absolute;
+    left: 9%;
+    top: 25%;
+    width: 82%;
+    height: 55%;
+}
+
+.tv-channel .tv img{
+    position: relative;
+    width: 100%;
+    z-index: 1;
+    filter: drop-shadow(8px 8px 8px rgba(0, 0, 0, 0.5));
+}
+
+/*Settings*/
+
+.tab-settings{
+    text-align: center;
+    padding-top: 1rem;
+}
+
+.tab-settings h3{
+    font-size: 150%;
+    margin: 1rem;
+}
+
+.tab-settings p{
+    padding: 0 20%;
+}
+
+.tab-settings label{
+    margin: 0 0.5rem;
+}
+
+.tab-settings textarea{
+    width: 70%;
+    height: 200px;
+    resize: none;
+    margin-top: 1rem;
+}
+
+.tab-settings .notation-select, .tab-settings button{
+    margin: 1rem;
+}
+
+.tab-settings .icon-flex{
+    margin: 0 0.5rem;
+}
+
+.tab-settings .icon-flex img{
+    height: 2em;
+}
+
+/*Team Logo Settings*/
+
+.team-settings{
+    display: inline-flex;
+    flex-direction: column;
+    background-color: var(--color-card);
+    border: 4px solid var(--color-card-border);
+    color: var(--color-text-dark);
+    padding: 1rem;
+    margin: 1rem;
+    width: 70%;
+}
+
+.team-settings .logo-settings{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.team-settings label{
+    display: block;
+    font-size: 120%;
+    margin: 1rem 0;
+}
+
+.logo-settings label button{
+    margin: 0.5rem;
+    width: 2rem;
+}
+
+/*Achievement*/
+
+.tab-achievements .achievements{
+    padding: 5rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.achievement{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 5rem;
+    height: 5rem;
+    background-color: var(--color-card);
+    border: 2px solid var(--color-card-border);
+    margin: 1rem;
+}
+
+.achievement.completed{
+    background-image: linear-gradient(0deg, rgba(0, 255, 0, 0.5), rgba(0, 255, 0, 0.5));
+    border-color: var(--color-border);
+}
+
+.achievement img{
+    width: 4rem;
+    height: 4rem;
+}
+
+.achievement .popup{
+    background-color: rgba(0, 0, 0, 0.75);
+    border-radius: 6px;
+    position: absolute;
+    left: -7.5rem;
+    top: -5rem;
+    width: 20rem;
+    min-height: 4rem;
+    padding: 0.2rem;
+    z-index: 1;
+
+    transition: transform 200ms cubic-bezier(.17, 1.23, .65, 1.16);
+}
+
+.achievement .popup.hidden{
+    transform: scale(0);
+}
+
+/*Transitions*/
+
+.window-grow-enter-from, .window-grow-leave-to{
+    transform: scale(0);
+}
+
+.window-grow-enter-to, .window-grow-leave-from{
+    transform: scale(1);
+}
+
+.window-grow-enter-active{
+    transition: transform 300ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.window-grow-leave-active{
+    transition: transform 300ms ease;
+}
+
+@media (max-width: 1279px){
+    .team-management .strategies{
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 1024px){
+    body, button, input[type="text"], input[type="number"]{
+        font-size: 13px;
+    }
+
+    .window{
+        width: 500px;
+        min-height: 250px;
+    }
+}
+
+@media(max-height: 680px){
+    .match{
+        padding: 0.5rem;
+    }
+
+    .match .stats{
+        margin: 0;
+    }
+
+    .match-view{
+        width: 65% !important;
+        bottom: 0 !important;
+    }
+}

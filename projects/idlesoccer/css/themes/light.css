@@ -1,0 +1,24 @@
+:root{
+    --color-header: #3d9240;
+    --color-background: #266528;
+    --color-text: #f0f0f0;
+    --color-text-dark: #101010;
+    --color-border: darkgreen;
+
+    --color-button: #2c9130;
+    --color-button-selected: #45cd4b;
+    --color-button-border-hover: lightgreen;
+
+    --color-card: #e0e0e0;
+    --color-card-border: #777777;
+    --color-card-stat: #207024;
+
+    --color-table-header: #e00000;
+    --color-table-pos: #9d0000;
+    --color-table-even: #e0e0e0;
+    --color-table-odd: #b7b7b7;
+
+    --color-window: var(--color-card);
+    --color-window-header: #a2a2a2;
+    --color-window-border: #4f4f4f;
+}

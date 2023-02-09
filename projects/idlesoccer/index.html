@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+
+    <meta name="keywords" content="idle, incremental, idle, soccer, football, manager, vepro, veprogames"/>
+    <meta name="description" content="An Incremental Game where you manage your own Football Team"/>
+    <meta name="url" content="https://veprogames.github.io/idle-football-manager/"/>
+    <meta name="image" content="https://veprogames.github.io/idle-football-manager/logo.png"/>
+    <meta name="theme-color" content="#f2ae3a"/>
+
+    <meta name="og:title" content="Idle Football Manager"/>
+    <meta name="og:type" content="website"/>
+    <meta name="og:description" content="An Incremental Game where you manage your own Football Team"/>
+    <meta name="og:url" content="https://veprogames.github.io/idle-football-manager/"/>
+    <meta name="og:image" content="https://veprogames.github.io/idle-football-manager/logo.png"/>
+
+    <meta name="twitter:card" content="summary_image_large"/>
+    <meta name="twitter:title" content="Idle Football Manager"/>
+    <meta name="twitter:description" content="An Incremental Game where you manage your own Football Team"/>
+    <meta name="twitter:image" content="https://veprogames.github.io/idle-football-manager/logo.png"/>
+    <meta name="twitter:site" content="@veprogames"/>
+    <meta name="twitter:creator" content="@veprogames"/>
+
+    <link rel="stylesheet" href="css/themes/light.css"/>
+    <link rel="stylesheet" href="css/main.css"/>
+    <link rel="icon" href="icon.ico"/>
+    <title>Idle Football Manager</title>
+</head>
+<body>
+
+<div id="app">
+    <game-header v-if="init"></game-header>
+    <tutorial v-if="showTutorial"></tutorial>
+    <main>
+        <component :is="tab"></component>
+    </main>
+</div>
+
+<!-- Lib -->
+<!--<script src="js/lib/vue.js"></script>-->
+<script src="js/lib/vue.prod.js"></script>
+<script src="js/lib/break_infinity.min.js"></script>
+<script src="js/lib/ad-notations.min.js"></script>
+
+<script src="js/enums.js"></script>
+
+<!-- Classes -->
+<script src="js/classes/utils.js"></script>
+<script src="js/classes/random.js"></script>
+<script src="js/classes/keymap.js"></script>
+<script src="js/classes/upgrade.js"></script>
+<script src="js/classes/achievement.js"></script>
+<script src="js/classes/player.js"></script>
+<script src="js/classes/team.js"></script>
+<script src="js/classes/division.js"></script>
+<script src="js/classes/league.js"></script>
+<script src="js/classes/player-market.js"></script>
+<script src="js/classes/match.js"></script>
+<script src="js/classes/country-flag.js"></script>
+<script src="js/classes/country.js"></script>
+<script src="js/classes/stadium.js"></script>
+<script src="js/classes/team-logo.js"></script>
+<script src="js/classes/task/game-task.js"></script>
+<script src="js/classes/task/player-training-task.js"></script>
+<script src="js/classes/player-training.js"></script>
+<script src="js/classes/tv-channel.js"></script>
+<script src="js/classes/generator-utils.js"></script>
+
+<!-- Data -->
+<script src="js/data/game-data.js"></script>
+<script src="js/data/game-methods.js"></script>
+<script src="js/data/game-computed.js"></script>
+<script src="js/data/images.js"></script>
+<script src="js/data/vocab.js"></script>
+<script src="js/data/notations.js"></script>
+
+<script src="js/app.js"></script>
+
+<!-- Mixin -->
+<script src="js/components/mixin/help.js"></script>
+
+<!-- Components -->
+<script src="js/components/window.js"></script>
+<script src="js/components/windows/window-team.js"></script>
+<script src="js/components/windows/window-tutorial.js"></script>
+<script src="js/components/windows/window-player.js"></script>
+<script src="js/components/progress-bar.js"></script>
+<script src="js/components/upgrade.js"></script>
+<script src="js/components/achievement.js"></script>
+<script src="js/components/division.js"></script>
+<script src="js/components/player-market.js"></script>
+<script src="js/components/player.js"></script>
+<script src="js/components/team-management.js"></script>
+<script src="js/components/match.js"></script>
+<script src="js/components/match-view.js"></script>
+<script src="js/components/country-flag.js"></script>
+<script src="js/components/country.js"></script>
+<script src="js/components/team-logo.js"></script>
+<script src="js/components/team-settings.js"></script>
+<script src="js/components/stadium.js"></script>
+<script src="js/components/game-task.js"></script>
+<script src="js/components/tv-channel.js"></script>
+<script src="js/components/tutorial.js"></script>
+<script src="js/components/notation-select.js"></script>
+<script src="js/components/game-header.js"></script>
+
+<!-- Tabs -->
+<script src="js/components/tabs/tab-team.js"></script>
+<script src="js/components/tabs/tab-player-market.js"></script>
+<script src="js/components/tabs/tab-league.js"></script>
+<script src="js/components/tabs/tab-match.js"></script>
+<script src="js/components/tabs/tab-upgrades.js"></script>
+<script src="js/components/tabs/tab-countries.js"></script>
+<script src="js/components/tabs/tab-achievements.js"></script>
+<script src="js/components/tabs/tab-stadium.js"></script>
+<script src="js/components/tabs/tab-player-training.js"></script>
+<script src="js/components/tabs/tab-tv-channels.js"></script>
+<script src="js/components/tabs/tab-settings.js"></script>
+
+<script src="js/mount.js"></script>
+
+</body>
+</html>
