@@ -3,7 +3,7 @@ root {
 }
 
 body{
-    background-color: indigo;
+    background: linear-gradient(to right, #1e1e1e, #0a0a0a, #FFFFFF);
     background-repeat: repeat-x;
     background-position: top;   
 }
