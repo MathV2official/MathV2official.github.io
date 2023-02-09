@@ -79,15 +79,13 @@
 }
 
 .image-text {
+  text-align: center;
   position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  padding: 10px;
-  display: none;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
+
 
 .image-container:hover .image-text {
   display: block;
@@ -138,8 +136,8 @@
   <a href="projects/100ng/index.html" class="circle">
     <div class="image-container">
       <img class="image" src="projects/100ng/100ng.jpg" onmouseover="this.style.borderRadius='0%'" onmouseout="this.style.borderRadius='50%'"/>
-      <div class="image-text">TEST</div>
-    </div>
+      <div class="image-text">100 Player Pong</div>
+    </div>  
   </a>  
   <a href="projects/1v1lol.html" class="circle">
     <img class="image" src="projects/1v1lol/1v1lol.jpg" onmouseover="this.style.borderRadius='0%'" onmouseout="this.style.borderRadius='50%'"/>
