@@ -1,1 +1,0 @@
-No Content: https://files.crazygames.com/penalty-shooters-2/5/scripts/supportcheck.js
