@@ -74,6 +74,19 @@
   border-radius: 50%; /* this makes the images circles */
   transition: all 0.5s ease; /* this allows for a smooth transition */
 }
+.image-container:hover .image-text {
+  display: block;
+}
+
+.image-text {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5);
+  color: white;
+  padding: 10px;
+  width: 100%;
+}
 .circle:hover .image { 
   border-radius: 0%; /* this removes the border-radius, making the image square */
 }
@@ -342,4 +355,9 @@
   <a href="projects/idlesoccer/index.html" class="circle">
     <img class="image" src="projects/idlesoccer/icon.ico" alt="icon" onmouseover="this.style.borderRadius='0%'" onmouseout="this.style.borderRadius='50%'"/>
   </a> 
+  <div class="image-container">
+    <img src="projects/1/favicon.ico" alt="TEST">
+    <div class="image-text">TEST</div>
+  </div>
+  
 </body>
