@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	
+	<meta charset="utf-8">
+	
+	<title>GrindCraft</title>
+	
+	<meta id="viewport" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	
+	
+	<link rel="shortcut icon" type="image/png" href="./favicon.png">
+	
+	
+	<script type="text/javascript" src="./GrindCraft.js"></script>
+	<script type="text/javascript" src="./ads.js"></script>
+	<script type="text/javascript" src="./statsig-prod-web-sdk.min.js"></script>
+	<script type="text/javascript" src="./HaxeBridge.js"></script>
+	
+	<script>
+		window.addEventListener ("touchmove", function (event) { event.preventDefault (); }, { capture: false, passive: false });
+		if (typeof window.devicePixelRatio != 'undefined' && window.devicePixelRatio > 2) {
+			var meta = document.getElementById ("viewport");
+			meta.setAttribute ('content', 'width=device-width, initial-scale=' + (2 / window.devicePixelRatio) + ', user-scalable=no');
+		}
+		
+		//Setup statsig
+		if(!localStorage.hasOwnProperty("uid"))
+		{
+			localStorage["uid"] = Math.floor(Math.random() * Number.MAX_SAFE_INTEGER);
+		}
+		const user = {
+			userID: localStorage["uid"],
+			environment: {tier: 'production'},
+			appVersion: 1,
+			custom: {
+				"ref": document.referrer
+			}
+		};
+		
+		async function setupStatsig()
+		{
+			await statsig.initialize("client-RP6vvTJkEtrcu72ApkKYPdq3INhS6wTWwQ3X1YaH0Yz", user);
+		}
+		setupStatsig();
+	</script>
+	
+	<style>
+		html,body { overflow: hidden;  background: #000000}
+			#openfl-content { background: #000000;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		margin: auto;}
+		@font-face {
+			font-family: 'Arial';
+			src: url('fonts/ARIAL.eot?#iefix') format('embedded-opentype'),
+			url('fonts/ARIAL.woff') format('woff'),
+			url('fonts/ARIAL.TTF') format('truetype'),
+			url('fonts/ARIAL.svg#Arial') format('svg');
+			font-weight: normal;
+			font-style: normal;
+		}
+		@font-face {
+			font-family: 'Minecraftia Regular';
+			src: url('fonts/Minecraftia.eot?#iefix') format('embedded-opentype'),
+			url('fonts/Minecraftia.woff') format('woff'),
+			url('fonts/Minecraftia.ttf') format('truetype'),
+			url('fonts/Minecraftia.svg#Minecraftia%20Regular') format('svg');
+			font-weight: normal;
+			font-style: normal;
+		}
+		h3 {
+			margin-top: 0.2em;
+			margin-bottom: 0.2em;
+		}
+
+	</style>
+	
+</head>
+<body>
+	
+	<noscript>This webpage makes extensive use of JavaScript. Please enable JavaScript in your web browser to view this page.</noscript>
+	
+	<div id="openfl-content"></div>
+	
+	<script type="text/javascript">
+		lime.embed ("GrindCraft", "openfl-content", 0, 0, { parameters: {} });
+
+		window.addEventListener("wheel", (event) => event.preventDefault(), {
+		passive: false,
+		});
+
+		window.addEventListener("keydown", (event) => {
+		if (["ArrowUp", "ArrowDown", " "].includes(event.key)) {
+			event.preventDefault();
+		}
+		});
+	</script>
+</body>
+</html>
