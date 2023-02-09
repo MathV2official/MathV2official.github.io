@@ -1,0 +1,83 @@
+root { 
+    display: block;
+}
+
+body{
+    background-color: indigo;
+    background-repeat: repeat-x;
+    background-position: top;   
+}
+
+*, *:before, *:after {
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+     
+input, input:before, input:after {
+    -webkit-user-select: initial;
+    -khtml-user-select: initial;
+    -moz-user-select: initial;
+    -ms-user-select: initial;
+    user-select: initial;
+}
+
+::selection { background: transparent;color:inherit; }
+::-moz-selection { background: transparent;color:inherit; }
+
+#canvas_game,
+#canvas_3d,
+#canvas_upper_3d{
+    position: fixed;  
+    box-shadow: 0 0 5vmin 1vmin black;
+}
+
+#canvas_3d,
+#canvas_upper_3d{
+    pointer-events: none;
+}
+
+
+canvas {
+	-ms-touch-action: none;
+}
+
+.ani_hack{
+    -webkit-perspective: 1000;
+    -webkit-backface-visibility: hidden;
+    
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    outline: none;
+    -webkit-tap-highlight-color: transparent; /* mobile webkit */
+}
+
+.upper_3d{
+    z-index: 2;
+}
+
+/***************FONTS*******************/
+.check-fonts{
+                position: fixed;
+                opacity:0;
+}
+
+.check-font-1{
+        font-family: 'Montserrat';
+}
+                
+                
+@font-face {
+    font-family: 'Montserrat';
+    src: url('Montserrat-Black.woff2') format('woff2'),
+        url('Montserrat-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+}
+
