@@ -1,0 +1,253 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="author" content="~"/><meta name="mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-capable" content="yes"/><meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no"/><title>Timberman</title><style>body {
+            margin: 0;
+            background-color: black;
+            background-attachment: fixed;
+            overflow-y: hidden;
+            /* Hide vertical scrollbar */
+            overflow-x: hidden;
+            /* Hide horizontal scrollbar */
+        }
+
+        canvas {
+            /* margin: auto; */
+            margin: 0px 0px 1px 0px;
+            margin-top: 0;
+            height: 100%;
+            width: 100%;
+        }
+
+        .loading-screen {
+            margin: 0;
+            background-color: black;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            background-attachment: fixed;
+            -webkit-animation-fill-mode: forwards;
+            -moz-animation-fill-mode: forwards;
+            -o-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+        }
+
+        .left-side {
+            padding-right: 140px;
+            padding-left: 140px;
+            height: 100%;
+            position: absolute;
+            left: 0%;
+            background-image: url('images/wood_side.png');
+            background-repeat: repeat-y;
+            -webkit-transform: scaleX(-1);
+            transform: scaleX(-1);
+            visibility: hidden;
+        }
+
+        .right-side {
+            padding-right: 140px;
+            padding-left: 140px;
+            height: 100%;
+            position: absolute;
+            right: 0%;
+            background-image: url('images/wood_side.png');
+            background-repeat: repeat-y;
+            visibility: hidden;
+        }
+
+        .left-side-bg {
+            padding-right: 100px;
+            padding-left: 100px;
+            height: 100%;
+            position: absolute;
+            left: 0%;
+            background-color: #e2ae5a;
+            background-repeat: repeat-y;
+            -webkit-transform: scaleX(-1);
+            transform: scaleX(-1);
+            visibility: hidden;
+        }
+
+        .right-side-bg {
+            padding-right: 100px;
+            padding-left: 100px;
+            height: 100%;
+            position: absolute;
+            right: 0%;
+            background-color: #e2ae5a;
+            background-repeat: repeat-y;
+            visibility: hidden;
+        }
+
+        .incorrect-orientation {
+            margin: 0;
+            background-color: rgb(0, 0, 0);
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            background-attachment: fixed;
+            visibility: hidden;
+        }
+
+        #incorrect_icon {
+            left: 50%;
+            top: 50%;
+            position: absolute;
+            transform: translate(-50%, -50%);
+        }
+
+        #logo {
+            left: 50%;
+            top: 33%;
+            position: absolute;
+            transform: translate(-50%, -50%);
+        }
+
+        #btn {
+            left: 50%;
+            top: 70%;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .anim-hide {
+            animation: anim-in 0.5s ease-in forwards;
+        }
+
+        @keyframes anim-in {
+            0% {}
+            1% {
+                opacity: 1;
+            }
+            100% {
+                visibility: hidden;
+                opacity: 0;
+            }
+        }
+
+        .anim-show {
+            animation: anim-out 1s ease-out forwards;
+        }
+
+        @keyframes anim-out {
+            0% {}
+            1% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }</style><script>var _azerionBuildVersion="fix-this"</script><script>var _azerionIntegration={"gdId":"3a0fd274a3c042c9abe420823fd143ed","rtgEnabled":false,"lbEnabled":false,"fbType":"dummy","alxType":"std","advType":"gd","af":false,"sa":false,"la":true,"bd":0,"playBtn":true,"cp":false}</script><script src="azerion-libs.js"></script><script>var playBtn = true; var fbrqBD = 0; var fbrqLA= true; var fbrqSA= false;</script><script defer="defer" src="code.js?=fix-this"></script></head><body><div class="left-side-bg"></div><div class="right-side-bg"></div><div class="left-side"></div><div class="right-side"></div><div class="loading-screen"><img src="images/logo.png" alt="LOGO" id="logo"/> <img src="images/start.png" onclick="hideLoadingScreen(); this.onclick=null;" alt="Start" id="btn"/></div><div class="incorrect-orientation"><img src="images/orientation.png" alt="Incorrect" id="incorrect_icon"/></div><div class="overlay"></div><script>var EventTarget = function() {
+		this.listeners = {};
+	};
+
+	EventTarget.prototype.listeners = null;
+	EventTarget.prototype.addEventListener = function(type, callback) {
+		if (!(type in this.listeners)) {
+			this.listeners[type] = [];
+		}
+		this.listeners[type].push(callback);
+	};
+
+	EventTarget.prototype.removeEventListener = function(type, callback) {
+		if (!(type in this.listeners)) {
+			return;
+		}
+		var stack = this.listeners[type];
+		for (var i = 0, l = stack.length; i < l; i++) {
+			if (stack[i] === callback) {
+				stack.splice(i, 1);
+				return;
+			}
+		}
+	};
+
+	EventTarget.prototype.dispatchEvent = function(event) {
+		if (!(event.type in this.listeners)) {
+			return true;
+		}
+		var stack = this.listeners[event.type].slice();
+
+		for (var i = 0, l = stack.length; i < l; i++) {
+			stack[i].call(this, event);
+		}
+		return !event.defaultPrevented;
+	};
+
+	(function() {
+		if (typeof window.CustomEvent === 'function') return false; //If not IE
+
+		function CustomEvent(event, params) {
+			params = params || {
+				bubbles: false,
+				cancelable: false,
+				detail: undefined,
+			};
+			var evt = document.createEvent('CustomEvent');
+			evt.initCustomEvent(
+				event,
+				params.bubbles,
+				params.cancelable,
+				params.detail
+			);
+			return evt;
+		}
+
+		CustomEvent.prototype = window.Event.prototype;
+
+		window.CustomEvent = CustomEvent;
+	})();
+
+	var onStarted = new CustomEvent('onStarted');
+
+	function hideLoadingScreen() {
+		document
+			.getElementsByClassName('loading-screen')[0]
+			.classList.add('anim-hide');
+
+		window.dispatchEvent(onStarted);
+	}
+
+	hideLoadingScreen();
+
+	if (window.innerHeight > window.innerWidth) {
+		document.getElementsByClassName(
+			'incorrect-orientation'
+		)[0].style.visibility = 'hidden';
+	}
+
+	window.addEventListener('onLoadProgress', function(e) {});
+
+	window.addEventListener('onFittedGame', function(e) {
+		const btn = document.getElementById('btn');
+		btn.classList.add('anim-show');
+		btn.style.pointerEvents = 'all';
+
+		var canvas = document.getElementById('phaser_3_template');
+		var offset = window.innerWidth - 720;
+		// console.log(window.innerWidth, canvas.width);
+
+		const leftSide = document.getElementsByClassName('left-side');
+		leftSide[0].style.paddingLeft = `${offset / 2 - 280}px`;
+
+		const rightSide = document.getElementsByClassName('right-side');
+		rightSide[0].style.paddingRight = `${offset / 2 - 280}px`;
+
+		const leftSideBg = document.getElementsByClassName('left-side-bg');
+		leftSideBg[0].style.paddingLeft = `${offset / 2 - 280}px`;
+
+		const rightSideBg = document.getElementsByClassName('right-side-bg');
+		rightSideBg[0].style.paddingRight = `${offset / 2 - 280}px`;
+
+		if (window.innerWidth < 1280) {
+			leftSide[0].style.visibility = 'hidden';
+			rightSide[0].style.visibility = 'hidden';
+			leftSideBg[0].style.visibility = 'hidden';
+			rightSideBg[0].style.visibility = 'hidden';
+		} else {
+			leftSide[0].style.visibility = 'visible';
+			rightSide[0].style.visibility = 'visible';
+			leftSideBg[0].style.visibility = 'visible';
+			rightSideBg[0].style.visibility = 'visible';
+		}
+	});</script></body></html>
