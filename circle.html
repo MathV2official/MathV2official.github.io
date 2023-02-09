@@ -74,18 +74,23 @@
   border-radius: 50%; /* this makes the images circles */
   transition: all 0.5s ease; /* this allows for a smooth transition */
 }
-.image-container:hover .image-text {
-  display: block;
+.image-container {
+  position: relative;
 }
 
 .image-text {
-  display: none;
   position: absolute;
   bottom: 0;
-  background-color: rgba(0,0,0,0.5);
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
   color: white;
   padding: 10px;
-  width: 100%;
+  display: none;
+}
+
+.image-container:hover .image-text {
+  display: block;
 }
 .circle:hover .image { 
   border-radius: 0%; /* this removes the border-radius, making the image square */
