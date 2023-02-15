@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Nintendo Switch Repair</title>
+    <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <link rel="shortcut icon" type="image/png" href="./favicon.png">
+
+    <script async data-ad-client="ca-pub-6129580795478709" data-ad-channel="5202265763" data-ad-frequency-hint="180s" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">
+    </script>
+    <script type="text/javascript" src="./adsBeta.js"></script>
+
+    <script type="text/javascript" src="./lib/howler.min.js"></script>
+    <script type="text/javascript" src="./lib/pako.min.js"></script>
+    <script type="text/javascript" src="./lib/FileSaver.min.js"></script>
+    <script type="text/javascript" src="./nintendo_switch_repair.js"></script>
+
+    <script>
+        window.addEventListener("touchmove", function(event) {
+            event.preventDefault();
+        }, {
+            capture: false,
+            passive: false
+        });
+        if (typeof window.devicePixelRatio != 'undefined' && window.devicePixelRatio > 2) {
+            var meta = document.getElementById("viewport");
+            meta.setAttribute('content', 'width=device-width, initial-scale=' + (2 / window.devicePixelRatio) + ', user-scalable=no');
+        }
+    </script>
+
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        #openfl-content {
+            background: #000000;
+            width: 100%;
+            height: 100%;
+        }
+
+        @font-face {
+            font-family: 'Bombardier';
+            src: url('fonts/bombardier.eot?#iefix') format('embedded-opentype'), url('fonts/bombardier.woff') format('woff'), url('fonts/bombardier.ttf') format('truetype'), url('fonts/bombardier.svg#Bombardier') format('svg');
+            font-weight: normal;
+            font-style: normal;
+        }
+    </style>
+</head>
+
+<body>
+    <noscript>This webpage makes extensive use of JavaScript. Please enable JavaScript in your web browser to view this page.</noscript>
+    <div id="openfl-content"></div>
+    <script type="text/javascript">
+        lime.embed("nintendo_switch_repair", "openfl-content", 0, 0, {
+            parameters: {}
+        });
+    </script>
+</body>
+
+</html>
