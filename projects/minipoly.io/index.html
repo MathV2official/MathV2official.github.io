@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en-us" id="mainhtml">
+
+<head>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title> MiniPoly.io | BEST Online Multiplayer FPS</title>
+    <meta name="description" content="MiniPoly.io is a free Multiplayer Online Game. No Download needed!">
+    <meta name="keywords" content="MiniPoly.io, io game,.io,online game,free game,browser fps,roblox,free games,cool games,shooting, IO, io, Games, Tanks, free, tank, multiplayer, friends, weapons, coins, boom">
+    <meta name="author" content="Lee Zak">
+    <link rel="shortcut icon" href="TemplateData/favicon.ico">
+    <link rel="stylesheet" href="TemplateData/style.css">
+
+    <meta content="MiniPoly.io | BEST Online Multiplayer FPS" property="og:title" />
+    <meta content="MiniPoly.io is a free Multiplayer Online Game. No Download needed!" property="og:description" />
+    <meta content="https://minipoly.io/content-creator/logoNoText.png" property="og:image" />
+    <meta content="#FF0000" data-react-helmet="true" name="theme-color" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@200;500&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@200;500&family=MuseoModerno:wght@600&display=swap');
+    </style>
+
+    <!-- ZONETAG - PLACE INTO HEAD SECTION OR RUN CODE AT STARTUP -->
+
+    <script id='LeChuckAPIjs' src="https://ssl.minijuegosgratis.com/lechuck/js/latest.js"></script>
+    <script type='text/javascript'>
+        lechuck = new LeChuckAPI({});
+
+        function miniplaySend2API(stat, value) {
+            console.log("miniplaySend2API called. Waiting for a response");
+            lechuck.stat.put(function(response) {
+                console.log(response);
+            }, stat, value);
+        }
+    </script>
+    <script>
+        window.aiptag = window.aiptag || {
+            cmd: []
+        };
+        aiptag.cmd.player = aiptag.cmd.player || [];
+        //CMP tool settings
+        aiptag.cmp = {
+            show: true,
+            position: "centered", //centered, bottom
+            button: true,
+            buttonText: "Privacy settings",
+            buttonPosition: "bottom-left" //bottom-left, bottom-right, top-left, top-right
+        }
+        aiptag.cmd.player.push(function() {
+            aiptag.adplayer = new aipPlayer({
+                AD_WIDTH: 960,
+                AD_HEIGHT: 540,
+                AD_DISPLAY: 'fullscreen', //default, fullscreen, center, fill
+                LOADING_TEXT: 'loading advertisement',
+                PREROLL_ELEM: function() {
+                    return document.getElementById('preroll')
+                },
+                AIP_COMPLETE: function(state) {
+                    /*******************
+                     ***** WARNING *****
+                     *******************
+                     Please do not remove the PREROLL_ELEM
+                     from the page, it will be hidden automaticly.
+                    */
+
+                    console.log("Preroll Ad Completed: " + state);
+                    unityInstance.SendMessage('GameManager', 'JavascriptOnInterstitialFinish', "Success");
+
+                }
+            });
+
+        });
+
+        function show_preroll() {
+            //check if the adslib is loaded correctly or blocked by adblockers etc.
+            if (typeof aiptag.adplayer !== 'undefined') {
+                aiptag.cmd.player.push(function() {
+                    aiptag.adplayer.startPreRoll();
+                });
+            } else {
+                //Adlib didnt load this could be due to an adblocker, timeout etc.
+                //Please add your script here that starts the content, this usually is the same script as added in AIP_COMPLETE.
+                console.log("Ad Could not be loaded, load your content here");
+                unityInstance.SendMessage('GameManager', 'JavascriptOnInterstitialFinish', "failed");
+
+            }
+        }
+    </script>
+    <script async src="//api.adinplay.com/libs/aiptag/pub/BLS/minipoly.io/tag.min.js"></script>
+</head>
+
+<body class="dark">
+    <div id="preroll"></div>
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.0/firebase-app.js"; import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.9.0/firebase-analytics.js"; const firebaseConfig = { apiKey: "AIzaSyDGsWLHYIiEU-ivqvNYMVM7tIUo30NXrGc",
+        authDomain: "minipoly-7419e.firebaseapp.com", databaseURL: "https://minipoly-7419e-default-rtdb.firebaseio.com", projectId: "minipoly-7419e", storageBucket: "minipoly-7419e.appspot.com", messagingSenderId: "745958112352", appId: "1:745958112352:web:31e37c051b57f5181e1705",
+        measurementId: "G-3VY9PBRKX0" }; const app = initializeApp(firebaseConfig); const analytics = getAnalytics(app);
+    </script>
+    <div class="adBanners" style="display: none; user-select: none;">
+        <!-- 300x250 Placement Tag -->
+
+    </div>
+    <script>
+        //cpmstarAPI({
+        //kind:"game.createInterstitial",
+        //fail: function() {
+        //    console.log("API was blocked or failed to load");
+        //    window.blockedAds = true;
+        //}
+        //});
+    </script>
+    <script>
+        function SetCursor(x) {
+            console.log("SetCursor - " + x);
+            document.getElementById("mainhtml").style.cursor = x;
+        }
+        //display the interstitial after a event (eg: button click)
+        function showInterstitial() {
+            show_preroll();
+        }
+    </script>
+    <script>
+        function showBanners() {
+            var x = document.getElementsByClassName("adBanners");
+            var i;
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = 'block';
+            }
+        }
+
+        function hideBanners() {
+            var x = document.getElementsByClassName("adBanners");
+            var i;
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = 'none';
+            }
+        }
+
+        function show160x600() {
+            var x = document.getElementById("160x600");
+            x.style.display = 'block';
+        }
+
+        function hideNews() {
+            var x = document.getElementById("News");
+            x.style.display = 'none';
+        }
+
+        function hide160x600() {
+            var x = document.getElementById("160x600");
+            x.style.display = 'none';
+        }
+
+        function onWindowResize() {
+            //var w = window.innerWidth / 1920.0; // the default tested resolution width
+            //var h = window.innerHeight / 960.0; // the default tested resolution height
+            //var newScale = Math.min(w,h);
+            //var leftPX = (-(300.0 / 2.0) * (1.0 - newScale)) + (newScale * 10.0);
+            //var leftSpecialPX = (-(160.0 / 2.0) * (1.0 - newScale)) + (newScale * 10.0);
+            //var topAD = document.getElementById("300x250");
+            //var bottomAd = document.getElementById("smashtanks-io_300x600");
+            //var SpecialAd = document.getElementById("160x600");
+            //topAD.style.right = leftPX + "px";
+            //bottomAd.style.left = leftPX + "px";
+            //SpecialAd.style.left = leftSpecialPX + "px";
+            //topAD.style.transform = "scale("+newScale+")";
+            //bottomAd.style.transform = "scale("+newScale+")";
+            //SpecialAd.style.transform = "scale("+newScale+")";
+        };
+        window.onresize = onWindowResize;
+        window.onload = onWindowResize;
+    </script>
+    <div id="unity-container" class="unity-desktop">
+        <canvas id="unity-canvas"></canvas>
+    </div>
+    <div id="loading-cover" style="display:none;">
+        <div id="unity-loading-bar">
+            <div id="unity-logo" style="height: 331px;">
+                <img src="logo.png">
+            </div>
+            <div id="unity-progress-bar-empty" style="display: none; margin-top: 0px;">
+                <div id="unity-progress-bar-full"></div>
+            </div>
+            <p style="color: grey;font-family: 'VT323', monospace;font-size: 30px;"><span id="words"></span></p>
+            <div class="spinner"></div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        function shuffle(array) {
+            let currentIndex = array.length,
+                randomIndex;
+
+            // While there remain elements to shuffle.
+            while (currentIndex != 0) {
+
+                // Pick a remaining element.
+                randomIndex = Math.floor(Math.random() * currentIndex);
+                currentIndex--;
+
+                // And swap it with the current element.
+                [array[currentIndex], array[randomIndex]] = [
+                    array[randomIndex], array[currentIndex]
+                ];
+            }
+
+            return array;
+        }
+        (function() {
+            var words = ["If your'e' heavily ambushed by enemies - use shift + W to escape the ambush",
+                    "You start with 100 health, when you eliminate others, you get extra Shield.",
+                    "Complete missions to get MORE COINS",
+                    "Join our discord server",
+                    "MiniPoly.io's development has started on Aug 25, 2022",
+                    "Some YouTubers have promo codes that can get you gems/coins!"
+                ],
+                i = 0;
+            shuffle(words);
+            setInterval(function() {
+                $('#words').fadeOut(function() {
+                    $(this).html(words[(i = (i + 1) % words.length)]).fadeIn();
+                });
+            }, 3900)
+        })();
+    </script>
+    <script>
+        const buildUrl = "Build";
+        const loaderUrl = buildUrl + "/minipolyWebGL.loader.js";
+        const config = {
+            dataUrl: buildUrl + "/baec6e9a6bd14b7b27c92a8f221fa007.data.gz",
+            frameworkUrl: buildUrl + "/3226764a83cfc5e40598db287e8b6f92.js.gz",
+            codeUrl: buildUrl + "/41f511c7e52905595ed09e6f577cedf7.wasm.gz",
+            streamingAssetsUrl: "StreamingAssets",
+            companyName: "ZakStudios",
+            productName: "MiniPoly.io",
+            productVersion: "24",
+        };
+
+        const container = document.querySelector("#unity-container");
+        const canvas = document.querySelector("#unity-canvas");
+        const loadingCover = document.querySelector("#loading-cover");
+        const progressBarEmpty = document.querySelector("#unity-progress-bar-empty");
+        const progressBarFull = document.querySelector("#unity-progress-bar-full");
+        const spinner = document.querySelector('.spinner');
+        if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+            container.className = "unity-mobile";
+            config.devicePixelRatio = 1;
+        }
+        loadingCover.style.display = "";
+        const _script = document.createElement("script");
+        _script.src = loaderUrl;
+        _script.onload = () => {
+            createUnityInstance(canvas, config, (progress) => {
+                spinner.style.display = "none";
+                progressBarEmpty.style.display = "";
+                progressBarFull.style.width = `${100 * progress}%`;
+            }).then((unityInstance) => {
+                window.unityInstance = unityInstance;
+                loadingCover.style.display = "none";
+            }).catch((message) => {
+                alert(message);
+            });
+        };
+        document.body.appendChild(_script);
+    </script>
+    <div id="lobby" style="display: none;">
+        <!--button id="login"></button!-->
+        <!--button id="logout">
+        <p style="user-select:none; color:rgb(244, 244, 244); font-size: 16px;margin-top: 2%;">Logout</p>
+      </button!-->
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-database.js"></script>
+    <script>
+        var _firebaseConfig = {
+            apiKey: "AIzaSyDGsWLHYIiEU-ivqvNYMVM7tIUo30NXrGc",
+            authDomain: "minipoly-7419e.firebaseapp.com",
+            databaseURL: "https://minipoly-7419e-default-rtdb.firebaseio.com",
+            projectId: "minipoly-7419e",
+            storageBucket: "minipoly-7419e.appspot.com",
+            messagingSenderId: "745958112352",
+            appId: "1:745958112352:web:0fa8f4e810c9af421e1705",
+            measurementId: "G-WSJT32NL0Q"
+        };
+        firebase.initializeApp(_firebaseConfig);
+        //document.getElementById('login').addEventListener('click', GoogleLogin);
+        //document.getElementById('logout').addEventListener('click', LogoutUser);
+        function GoogleLogin() {
+            var provider = new firebase.auth.GoogleAuthProvider();
+            firebase.auth().signInWithPopup(provider).then(res => {
+                console.log(res.user);
+                //document.getElementById('login').style.display="none";
+                //document.getElementById('logout').style.display="block";
+                showUserDetails(res.user);
+            }).catch(e => {
+                console.log(e);
+            })
+        }
+
+        function requestUserData() {
+            if (window.blockedAds) {
+                unityInstance.SendMessage('GameManager', 'OnAdsBlocked');
+            }
+            if (typeof unityInstance !== 'undefined' && typeof window.loginData !== 'undefined') {
+                unityInstance.SendMessage('GameManager', 'OnLoggedInGoogle', window.loginData);
+            } else {
+                console.log("data undefined");
+            }
+        }
+
+        function showUserDetails(user) {
+            var loginData = user.displayName + "|" + user.email + "|" + user.photoURL + "|" + user.uid;
+            window.loginData = loginData;
+            if (typeof unityInstance !== 'undefined' && typeof window.loginData !== 'undefined') {
+                unityInstance.SendMessage('GameManager', 'OnLoggedInGoogle', window.loginData);
+            }
+        }
+
+        /*---------SET DATA---------*/
+        function setData(userpath, varName, value, reqID) {
+            let db = firebase.database();
+            db.ref(userpath).update({
+                [varName]: value,
+            }, (err) => {
+                unityInstance.SendMessage('FirebasePlayerPrefs2023', 'OnSetData', JSON.stringify({
+                    err
+                }) + "&" + reqID);
+            });
+        }
+        /*---------GET ALL USER DATA---------*/
+        function getUserData(uid, reqID) {
+            let db = firebase.database();
+            let ref = db.ref("users");
+            let userRef = ref.child(uid);
+            userRef.on('value', (snapshot) => {
+                let value = JSON.stringify(snapshot.val());
+                if (value === null) {
+                    value = "null";
+                } else {
+                    value = value.toString();
+                }
+                unityInstance.SendMessage('FirebasePlayerPrefs2023', 'OnGotData', value + "&" + reqID);
+            });
+        }
+        /*---------SET ALL USER DATA---------*/
+        function setUserData(uid, jsonString, reqID) {
+            let db = firebase.database();
+            let jsonObject = JSON.parse(jsonString);
+            db.ref("users/" + uid).set(jsonObject, (err) => {
+                console.log(JSON.stringify({
+                    err
+                }));
+                unityInstance.SendMessage('FirebasePlayerPrefs2023', 'OnSetData', JSON.stringify({
+                    err
+                }) + "&" + reqID);
+            });
+        }
+        /*---------GET DATA---------*/
+        function getData(path, reqID) {
+            let db = firebase.database();
+            let ref = db.ref(path);
+            ref.on('value', (snapshot) => {
+                let value = snapshot.val();
+                if (value === null) {
+                    value = "null";
+                } else {
+                    value = value.toString();
+                }
+                unityInstance.SendMessage('FirebasePlayerPrefs2023', 'OnGotData', value + "&" + reqID);
+
+            });
+        }
+
+        function FacebookLogin() {
+            var provider = new firebase.auth.FacebookAuthProvider();
+            firebase.auth().signInWithPopup(provider).then(res => {
+                console.log("Facebook Login Success!");
+                console.log(res.user);
+                showUserDetails(res.user);
+            }).catch(e => {
+                console.log("Facebook Login Error:");
+                console.log(e);
+            })
+        }
+
+        function TwitterLogin() {
+            var provider = new firebase.auth.TwitterAuthProvider();
+            firebase.auth().signInWithPopup(provider).then(res => {
+                console.log("Twitter Login Success!");
+                console.log(res.user);
+                showUserDetails(res.user);
+            }).catch(e => {
+                console.log("Twitter Login Error:");
+                console.log(e);
+            });
+        }
+
+        function AppleLogin() {
+            var provider = new firebase.auth.OAuthProvider('apple.com');
+            firebase.auth().signInWithPopup(provider).then(res => {
+                console.log("Apple Login Success!");
+                console.log(res.user);
+                showUserDetails(res.user);
+            }).catch(e => {
+                console.log("Apple Login Error:");
+                console.log(e);
+            });
+        }
+
+        function MicrosoftLogin() {
+            var provider = new firebase.auth.OAuthProvider('microsoft.com');
+            firebase.auth().signInWithPopup(provider).then(res => {
+                console.log("Microsoft Login Success!");
+                console.log(res.user);
+                showUserDetails(res.user);
+            }).catch(e => {
+                console.log("Microsoft Login Error:");
+                console.log(e);
+            });
+        }
+
+        function YahooLogin() {
+            var provider = new firebase.auth.OAuthProvider('yahoo.com');
+            firebase.auth().signInWithPopup(provider).then(res => {
+                console.log("Yahoo Login Success!");
+                console.log(res.user);
+                showUserDetails(res.user);
+            }).catch(e => {
+                console.log("Yahoo Login Error:");
+                console.log(e);
+            });
+        }
+        firebase.auth().onAuthStateChanged(user => {
+            if (user) {
+                console.log("onAuthStateChanged: logged IN!");
+
+                //document.getElementById('login').style.display="none";
+                //document.getElementById('logout').style.display="block";
+                showUserDetails(user);
+            } else {
+                console.log("onAuthStateChanged: logged OUT!");
+
+                //if (typeof unityInstance !== 'undefined')
+                //{
+                //  unityInstance.SendMessage('GameManager', 'OnLoggedOutGoogle');
+                //}
+                //document.getElementById('login').style.display="block";
+                //document.getElementById('logout').style.display="none";
+            }
+        })
+
+        function LogoutUser() {
+            console.log("LogoutUser called from JS");
+            firebase.auth().signOut().then(() => {
+                //console.log("sending to GameManager");
+                //unityInstance.SendMessage('GameManager', 'OnLoggedOutGoogle');
+                //document.getElementById('login').style.display="block";
+                //document.getElementById('logout').style.display="none";
+                ReloadGame();
+
+            }).catch((error) => {
+                // An error happened.
+                console.log("An error happened : " + error);
+
+            });
+        }
+    </script>
+
+</body>
+
+<script>
+    function SetLobby(x) {
+        document.getElementById('lobby').style.display = x;
+    }
+
+    function SetURL(add) {
+        var currentURL = window.location.protocol + "//" + window.location.host + window.location.pathname + add;
+        window.history.pushState({
+            path: currentURL
+        }, '', currentURL);
+    }
+
+    function LockCursor() {
+        canvas.requestPointerLock = canvas.requestPointerLock || canvas.mozRequestPointerLock;
+        canvas.requestPointerLock()
+    }
+
+    function ReloadGame() {
+        //auto-hide banners at start of load
+        hideBanners();
+        window.location.reload();
+    }
+
+    function toggleFullscreen() {
+        if (document.fullscreenElement === null) {
+            openFullscreen();
+            return;
+        }
+        exitFullscreen();
+    }
+
+    function openFullscreen() {
+        document.documentElement.requestFullscreen();
+    }
+
+    function exitFullscreen() {
+        document.exitFullscreen();
+
+    }
+    document.addEventListener('pointerlockchange', lockChangeAlert, false);
+    document.addEventListener('mozpointerlockchange', lockChangeAlert, false);
+
+    function lockChangeAlert() {
+        if (document.pointerLockElement === canvas || document.mozPointerLockElement === canvas) {
+
+        } else {
+            unityInstance.SendMessage('GameManager', 'OnEscape');
+        }
+    }
+    window.addEventListener('load', (event) => {
+        onWindowResize();
+    });
+</script>
+
+</html>
