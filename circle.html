@@ -2,127 +2,13 @@
 <html> 
 <head> 
   <body>
+        <link rel="stylesheet" href="/css/circle.css" />
     <div id="particles-js"></div>
 <script type="text/javascript" src="particles.js"></script>
 <script type="text/javascript" src="app.js"></script>
 <meta name="description" content="Best Games On The Internet! Play AD-Free Games On MathV2!">
 <meta name="keywords" content="Math, Games, Unblocked games, MathV2, MathV22, fun games, games for school, school games, unblocked, crazygames, cool games, html, open source">
   <title>Math V2</title>
-  <style>
-    /* Style for the canvas */
-    canvas { 
-      position: absolute; 
-      width: 100%; 
-      height: 100%; 
-    }
-    /* Style for the header */
-    .header { 
-      background-color: #1e1e1e;
-      color: white;
-      display: flex;
-      justify-content: space-between;
-      padding: 10px 20px;
-      position: fixed;
-      width: 100%;
-      top: 0;
-      z-index: +1;
-    }
-    /* Style for the links in the header */
-    .header a {
-      color: white;
-      text-decoration: none;
-      margin-left: 20px;
-      margin-right: 20px;
-    }
-    /* Style for the image in the header */
-    .header img {
-      position: absolute;
-      top: 10px;
-      left: 20px;
-      width: 20px;
-      height: 20px;
-    }
-    /* Style for the back arrow */
-    .back-arrow {
-      position: absolute;
-      top: 60px;
-      left: 20px;
-      width: 30px;
-      height: 30px;
-    }
-    /* Style for the circles */
-    .circle { 
-      width: 200px; 
-      height: 200px; 
-      border-radius: 50%; 
-      background-color: rgb(29, 29, 37); 
-      transition: all 0.5s ease; 
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: solid 1px white;
-      text-decoration: none;
-      visibility: visible;
-    } 
-    /* Style for the squares */
-    .square { 
-      width: 200px; 
-      height: 200px; 
-      background-color: rgb(23, 23, 28); 
-      transition: all 0.5s ease;     } 
-    /* Style for the images */
-.image { 
-  width: 190px; 
-  height: 190px; 
-  border-radius: 50%; /* this makes the images circles */
-  transition: all 0.5s ease; /* this allows for a smooth transition */
-}
-.image-container {
-  position: relative;
-}
-
-.image-text {
-  text-align: center;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  padding: 10px;
-  display: none;
-}
-
-
-.image-container:hover .image-text {
-  display: block;
-}
-.circle:hover .image { 
-  border-radius: 0%; /* this removes the border-radius, making the image square */
-}
-    /* Style for when the mouse hovers over the circles */
-    .circle:hover { 
-      width: 200px; 
-      height: 200px; 
-      border-radius: 50%;
-      background-color: rgb(21, 21, 29); 
-    } 
-    body {
-       background: linear-gradient(to right, #1e1e1e, #0a0a0a, #FFFFFF);
-       display: flex;
-       flex-wrap: wrap;
-       align-items: center;
-       justify-content: center;
-    }
-    #particles-js {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: -1;
-    }
-  </style>
 </head> 
     <div class="header">
         <img src="favicon.ico" alt="header-logo">
