@@ -15,20 +15,33 @@
       }
     </style>
   </head>
-  <body>
+  <body onload="readPackedImages()">
     <h1>Collection</h1>
     <div class="gallery" id="imageGallery"></div>
 
     <script>
       var imagesFolder = "https://mathv22.netlify.app/Toty/"; // Path to the images folder
-	  var images = ["VanDijk.png", "Hernandez.png", "Mbappe.png", "Messi.png", "Haaland.png", "Benzema.png", "Hakimi.png", "Courtois.png", "Modric.png", "Bellingham.png", "Eder.png", "KDB.png"]; // List of image filenames
+	  var packedImages = ["VanDijk.png", "Hernandez.png", "Mbappe.png", "Messi.png", "Haaland.png", "Benzema.png", "Hakimi.png", "Courtois.png", "Modric.png", "Bellingham.png", "Eder.png", "KDB.png"]; // List of image filenames
 
-      var galleryDiv = document.getElementById("imageGallery");
 
-      for (var i = 0; i < packedImages.length; i++) {
-        var image = document.createElement("img");
-        image.src = imagesFolder + packedImages[i];
-        galleryDiv.appendChild(image);
+      // Function to read the packed images from the cookie
+      function readPackedImages() {
+        var cookie = document.cookie.match(/(^|;) ?packedImages=([^;]*)(;|$)/);
+        if (cookie) {
+          packedImages = cookie[2].split(",");
+        }
+        populateGallery();
+      }
+
+      // Function to populate the image gallery with the packed images
+      function populateGallery() {
+        var gallery = document.getElementById("imageGallery");
+        for (var i = 0; i < packedImages.length; i++) {
+          var imageSrc = imagesFolder + packedImages[i]; // Construct the image source URL
+          var image = document.createElement("img"); // Create an <img> element
+          image.src = imageSrc; // Set the src attribute of the <img> element
+          gallery.appendChild(image); // Add the <img> element to the image gallery
+        }
       }
     </script>
   </body>
