@@ -1,42 +1,27 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Random Image Selector</title>
-	<style>
-		body {
-			text-align: center;
-			margin-top: 100px;
-			font-family: Arial, sans-serif;
-		}
-		img {
-			max-width: 500px;
-			max-height: 500px;
-		}
-		button {
-			padding: 10px 20px;
-			border: none;
-			background-color: #007bff;
-			color: #fff;
-			font-size: 16px;
-			border-radius: 5px;
-			cursor: pointer;
-		}
-	</style>
-</head>
-<body>
-	<h1>Random Image Selector</h1>
-	<img id="random-image" src="" alt="Random Image">
-	<br>
-	<button onclick="selectRandomImage()">Get Random Image</button>
-
-	<script>
-		function selectRandomImage() {
-			var imagesFolder = "https://mathv22.netlify.app/Toty/"; // Path to the images folder
-			var images = ["VanDijk.png", "Hernandez.png", "Mbappe.png", "Messi.png", "Haaland.png", "Benzema.png", "Hakimi.png", "Courtois.png", "Modric.png", "Bellingham.png", "Eder.png", "KDB.png"]; // List of image filenames
-			var randomIndex = Math.floor(Math.random() * images.length); // Generate random index
-			var randomImage = images[randomIndex]; // Get random image filename
-			document.getElementById("random-image").src = imagesFolder + randomImage; // Set image source
-		}
-	</script>
-</body>
+  <head>
+    <title>FIFA Pack Opener</title>
+  </head>
+  <body>
+    <h1>FIFA Pack Opener</h1>
+    <p>Click the button to open a pack:</p>
+    <button onclick="openPack()">Open Pack</button>
+    <br>
+    <br>
+    <a href="Collection.html"><button>Collection</button></a>
+    <script>
+      var imagesFolder = "https://mathv22.netlify.app/Toty/"; // Path to the images folder
+	  var images = ["VanDijk.png", "Hernandez.png", "Mbappe.png", "Messi.png", "Haaland.png", "Benzema.png", "Hakimi.png", "Courtois.png", "Modric.png", "Bellingham.png", "Eder.png", "KDB.png"]; // List of image filenames
+      function openPack() {
+        var randomImageIndex = Math.floor(Math.random() * images.length);
+        var randomImage = imagesFolder + images[randomImageIndex];
+        var img = new Image();
+        img.src = randomImage;
+        img.onload = function() {
+          document.body.appendChild(img);
+        };
+      }
+    </script>
+  </body>
 </html>

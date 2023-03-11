@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Collection - FIFA Pack Opener</title>
+    <style>
+      .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-gap: 10px;
+      }
+      .gallery img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Collection</h1>
+    <div class="gallery" id="imageGallery"></div>
+
+    <script>
+      var imagesFolder = "https://mathv22.netlify.app/Toty/"; // Path to the images folder
+	  var images = ["VanDijk.png", "Hernandez.png", "Mbappe.png", "Messi.png", "Haaland.png", "Benzema.png", "Hakimi.png", "Courtois.png", "Modric.png", "Bellingham.png", "Eder.png", "KDB.png"]; // List of image filenames
+
+      var galleryDiv = document.getElementById("imageGallery");
+
+      for (var i = 0; i < packedImages.length; i++) {
+        var image = document.createElement("img");
+        image.src = imagesFolder + packedImages[i];
+        galleryDiv.appendChild(image);
+      }
+    </script>
+  </body>
+</html>
