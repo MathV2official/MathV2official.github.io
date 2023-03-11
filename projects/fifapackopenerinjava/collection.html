@@ -34,15 +34,27 @@
       }
 
       // Function to populate the image gallery with the packed images
-      function populateGallery() {
-        var gallery = document.getElementById("imageGallery");
-        for (var i = 0; i < packedImages.length; i++) {
-          var imageSrc = imagesFolder + packedImages[i]; // Construct the image source URL
-          var image = document.createElement("img"); // Create an <img> element
-          image.src = imageSrc; // Set the src attribute of the <img> element
-          gallery.appendChild(image); // Add the <img> element to the image gallery
-        }
+function populateGallery() {
+  var gallery = document.getElementById("imageGallery");
+  for (var i = 0; i < packedImages.length; i++) {
+    var imageSrc = imagesFolder + packedImages[i]; // Construct the image source URL
+    // Check if the image has already been added to the gallery
+    var alreadyAdded = false;
+    for (var j = 0; j < gallery.children.length; j++) {
+      if (gallery.children[j].src === imageSrc) {
+        alreadyAdded = true;
+        break;
       }
+    }
+    // If the image has not been added yet, create and add an <img> element for it
+    if (!alreadyAdded) {
+      var image = document.createElement("img"); // Create an <img> element
+      image.src = imageSrc; // Set the src attribute of the <img> element
+      gallery.appendChild(image); // Add the <img> element to the image gallery
+    }
+  }
+}
+
     </script>
   </body>
 </html>
