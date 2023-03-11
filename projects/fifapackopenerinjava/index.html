@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Random Image Selector</title>
+	<style>
+		body {
+			text-align: center;
+			margin-top: 100px;
+			font-family: Arial, sans-serif;
+		}
+		img {
+			max-width: 500px;
+			max-height: 500px;
+		}
+		button {
+			padding: 10px 20px;
+			border: none;
+			background-color: #007bff;
+			color: #fff;
+			font-size: 16px;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<h1>Random Image Selector</h1>
+	<img id="random-image" src="" alt="Random Image">
+	<br>
+	<button onclick="selectRandomImage()">Get Random Image</button>
+
+	<script>
+		function selectRandomImage() {
+			var imagesFolder = "Toty/"; // Path to the images folder
+			var images = ["VanDijk.png", "Hernandez.png", "Mbappe.png", "Messi.png", "Haaland.png", "Benzema.png", "Hakimi.png", "Courtois.png", "Modric.png", "Bellingham.png", "Eder.png", "KDB.png"]; // List of image filenames
+			var randomIndex = Math.floor(Math.random() * images.length); // Generate random index
+			var randomImage = images[randomIndex]; // Get random image filename
+			document.getElementById("random-image").src = imagesFolder + randomImage; // Set image source
+		}
+	</script>
+</body>
+</html>
