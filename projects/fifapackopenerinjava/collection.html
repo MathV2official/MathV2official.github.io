@@ -1,105 +1,83 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Collection - FIFA Pack Opener</title>
-    <button onclick="goBack()">Back to Pack Opener</button>
-    <style>
-      .gallery {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        grid-gap: 10px;
-      }
-      .gallery img {
-        width: 100%;
-        height: auto;
-        object-fit: cover;
-      }
-      body {
-        text-align: center;
-        margin-top: 100px;
-        font-family: Arial, sans-serif;
-        background: linear-gradient(to right, #1e1e1e, #0a0a0a, #FFFFFF);
-    }
-    h1 {
-        font-size: 36px;
-        margin-top: 50px;
-        color: #4CAF50;
-    }
-    button {
-        padding: 10px 20px;
-        border: none;
-        background-color: #007bff;
-        color: #fff;
-        font-size: 16px;
-        border-radius: 5px;
-        cursor: pointer;
-    }
-    </style>
-  </head>
-  <body onload="readPackedImages()">
-    <h1>Collection</h1>
-    <div class="gallery" id="imageGallery"></div>
-
-    <script>
-      var imagesFolder = "https://mathv22.netlify.app/Toty/"; // Path to the images folder
+<head>
+	<title>Collection</title>
+	<style>
+		body {
+			text-align: center;
+			margin-top: 50px;
+			font-family: Arial, sans-serif;
+			background: linear-gradient(to right, #1e1e1e, #0a0a0a, #FFFFFF);
+		}
+		img {
+			max-width: 300px;
+			max-height: 300px;
+			margin: 10px;
+		}
+		h1 {
+			font-size: 36px;
+			margin-bottom: 50px;
+			color: #4CAF50;
+		}
+		button {
+			padding: 10px 20px;
+			border: none;
+			background-color: #007bff;
+			color: #fff;
+			font-size: 16px;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<h1>Collection</h1>
+	<div id="imageContainer"></div>
+	<button onclick="clearCollection()">Clear Collection</button>
+	<button onclick="goBack()">Back</button>
+	
+	<script>
+		var imagesFolder = "https://mathv22.netlify.app/Toty/"; // Path to the images folder
 	  var packedImages = ["VanDijk.png", "Hernandez.png", "Mbappe.png", "Messi.png", "Haaland.png", "Benzema.png", "Hakimi.png", "Courtois.png", "Modric.png", "Bellingham.png", "Eder.png", "KDB.png"]; // List of image filenames
-
-      function goBack() {
-  window.location.href = "index.html"; // Redirect to the index.html file
-}
-
-      // Function to read the packed images from the cookie
-      function readPackedImages() {
-        var cookie = document.cookie.match(/(^|;) ?packedImages=([^;]*)(;|$)/);
-        if (cookie) {
-          packedImages = cookie[2].split(",");
-        }
-        populateGallery();
-      }
-
-      // Function to populate the image gallery with the packed images
-      function populateGallery() {
-  // Get a reference to the gallery element
-  const gallery = document.getElementById("gallery");
-
-  // Clear the gallery
-  gallery.innerHTML = "";
-
-  // Display the packed image for 3 seconds
-  const packedImage = document.getElementById("packedImage");
-  packedImage.innerHTML = `<img src="${lastPackedImage}" alt="Packed Image">`;
-  setTimeout(() => {
-    packedImage.innerHTML = "";
-  }, 3000);
-
-  // Populate the gallery with the unpacked images
-  for (let i = 0; i < unpackedImages.length; i++) {
-    const imageSrc = `${imagesFolder}/${unpackedImages[i]}`;
-    const imageAlt = `Unpacked Image ${i+1}`;
-    const image = `<img src="${imageSrc}" alt="${imageAlt}">`;
-    gallery.insertAdjacentHTML("beforeend", image);
-  }
-}
-  var gallery = document.getElementById("imageGallery");
-  for (var i = 0; i < packedImages.length; i++) {
-    var imageSrc = imagesFolder + packedImages[i]; // Construct the image source URL
-    // Check if the image has already been added to the gallery
-    var alreadyAdded = false;
-    for (var j = 0; j < gallery.children.length; j++) {
-      if (gallery.children[j].src === imageSrc) {
-        alreadyAdded = true;
-        break;
-      }
-    }
-    // If the image has not been added yet, create and add an <img> element for it
-    if (!alreadyAdded) {
-      var image = document.createElement("img"); // Create an <img> element
-      image.src = imageSrc; // Set the src attribute of the <img> element
-      gallery.appendChild(image); // Add the <img> element to the image gallery
-    }
-  }
-
-
-    </script>
-  </body>
+		
+		// Function to read the packed images from the cookie
+		function readPackedImages() {
+			var cookie = document.cookie.match(/(^|;) ?packedImages=([^;]*)(;|$)/);
+			if (cookie) {
+				packedImages = cookie[2].split(",");
+			}
+		}
+		
+		// Function to display the packed images
+		function displayPackedImages() {
+			var imageContainer = document.getElementById("imageContainer");
+			for (var i = 0; i < packedImages.length; i++) {
+				if (document.getElementById(packedImages[i]) == null) {
+					var image = document.createElement("img");
+					image.src = imagesFolder + packedImages[i];
+					image.id = packedImages[i];
+					imageContainer.appendChild(image);
+				}
+			}
+		}
+		
+		// Function to clear the packed images from the cookie and the display
+		function clearCollection() {
+			document.cookie = "packedImages=; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
+			var imageContainer = document.getElementById("imageContainer");
+			while (imageContainer.firstChild) {
+				imageContainer.removeChild(imageContainer.firstChild);
+			}
+			packedImages = [];
+		}
+		
+		// Function to go back to the main page
+		function goBack() {
+			window.location.href = "index.html";
+		}
+		
+		readPackedImages();
+		displayPackedImages();
+	</script>
+</body>
 </html>
