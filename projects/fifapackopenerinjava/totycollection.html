@@ -34,7 +34,10 @@
 	<body>
 <h1>TOTY Collection</h1>
 <div id="imageContainer"></div>
-<button onclick="goBack()">Go Back to Pack Opener</button>
+<button onclick="goBack()">Go Back to Pack Opener</button><br>
+<button onclick="saveData()">Save Progress</button>
+<button onclick="loadData()">Go Back to Pack Opener</button>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
 
 <script>
 	var imagesFolder = "https://mathv22.netlify.app/Toty/"; // Path to the images folder
@@ -51,7 +54,30 @@
 			imageContainer.appendChild(image);
 		});
 	}
-
+// Function to save data to a file
+function saveData() {
+			var data = JSON.stringify(packedImages);
+			var filename = "packedImages.json";
+			var blob = new Blob([data], {type: "text/plain;charset=utf-8"});
+			saveAs(blob, filename);
+		}
+		
+		// Function to load data from a file
+		function loadData() {
+			var input = document.createElement("input");
+			input.type = "file";
+			input.accept = "application/json";
+			input.onchange = function(event) {
+				var file = event.target.files[0];
+				var reader = new FileReader();
+				reader.readAsText(file, "UTF-8");
+				reader.onload = function (event) {
+					packedImages = JSON.parse(event.target.result);
+					document.cookie = "packedImages=" + packedImages.join() + ";";
+				}
+			};
+			input.click();
+		}
 	// Function to go back to pack opener
 	function goBack() {
 		window.location.href = "toty.html";
