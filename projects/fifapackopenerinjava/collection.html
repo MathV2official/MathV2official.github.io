@@ -1,78 +1,76 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>TOTY Collection</title>
-	<style>
-		body {
-			text-align: center;
-			margin-top: 50px;
-			font-family: Arial, sans-serif;
-			background: linear-gradient(to right, #1e1e1e, #0a0a0a, #FFFFFF);
-		}
-		img {
-			max-width: 200px;
-			max-height: 300px;
-			margin: 10px;
-		}
-		h1 {
-			font-size: 36px;
-			margin-bottom: 50px;
-			color: #4CAF50;
-		}
-    button {
-			padding: 10px 20px;
-			border: none;
-			background-color: #007bff;
-			color: #fff;
-			font-size: 16px;
-			border-radius: 5px;
-			cursor: pointer;
-		}
-	</style>
-</head>
-<body>
-	<h1>TOTY Collection</h1>
-	<div id="imageContainer"></div>
-	<button onclick="clearCollection()">Clear Collection</button>
-  <button onclick="goBack()">Back To Pack Opener</button>
-	
-	<script>
-		var imagesFolder = "https://mathv22.netlify.app/Toty/"; // Path to the images folder
-		var packImages = ["VanDijk.png", "Hernandez.png", "Mbappe.png", "Messi.png", "Haaland.png", "Benzema.png", "Hakimi.png", "Courtois.png", "Modric.png", "Bellingham.png", "Eder.png", "KDB.png"]; // List of image filenames
-		
-		// Get the packed images from the cookie
-		function getCollectedImages() {
-			var collectedImages = [];
-			var cookie = document.cookie;
-			if (cookie.includes("collectedImages")) {
-				var cookieValue = cookie.split("collectedImages=")[1];
-				collectedImages = cookieValue.split(",");
-			}
-			return collectedImages;
-		}
-		
-		// Function to display the collected images
-		function displayCollectedImages() {
-			var imageContainer = document.getElementById("imageContainer");
-			imageContainer.innerHTML = "";
-			var collectedImages = getCollectedImages();
-			for (var i = 0; i < collectedImages.length; i++) {
-				var image = document.createElement("img");
-				image.src = imagesFolder + collectedImages[i];
-				imageContainer.appendChild(image);
-			}
-		}
-		
-		// Function to clear the collection and the cookie
-		function clearCollection() {
-			document.cookie = "collectedImages=; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
-			displayCollectedImages();
-		}
-		
-		displayCollectedImages();
-    function goBack() {
-			window.location.href = "index.html";
-		}
-	</script>
-</body>
+  <head>
+    <title>Collection - TOTY Pack Opener</title>
+    <style>
+      body {
+        text-align: center;
+        margin-top: 50px;
+        font-family: Arial, sans-serif;
+        background: linear-gradient(to right, #1e1e1e, #0a0a0a, #FFFFFF);
+      }
+      .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-gap: 20px;
+        margin: 50px;
+      }
+      .gallery img {
+        max-width: 300px;
+        max-height: 300px;
+        object-fit: contain;
+      }
+      h1 {
+        font-size: 36px;
+        margin-bottom: 50px;
+        color: #4CAF50;
+      }
+      button {
+        padding: 10px 20px;
+        border: none;
+        background-color: #007bff;
+        color: #fff;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body onload="readPackedImages()">
+    <h1>Collection</h1>
+    <div class="gallery" id="imageGallery"></div>
+    <button onclick="resetCollection()">Reset Collection</button>
+
+    <script>
+      var imagesFolder = "https://mathv22.netlify.app/Toty/"; // Path to the images folder
+      var packedImages = []; // List of packed images
+
+      // Function to read the packed images from the cookie
+      function readPackedImages() {
+        var cookie = document.cookie.match(/(^|;) ?packedImages=([^;]*)(;|$)/);
+        if (cookie) {
+          packedImages = cookie[2].split(",");
+        }
+        populateGallery();
+      }
+
+      // Function to populate the image gallery with the packed images
+      function populateGallery() {
+        var gallery = document.getElementById("imageGallery");
+        for (var i = 0; i < packedImages.length; i++) {
+          var imageSrc = imagesFolder + packedImages[i]; // Construct the image source URL
+          var image = document.createElement("img"); // Create an <img> element
+          image.src = imageSrc; // Set the src attribute of the <img> element
+          gallery.appendChild(image); // Add the <img> element to the image gallery
+        }
+      }
+
+      // Function to reset the collection
+      function resetCollection() {
+        packedImages = [];
+        document.cookie = "packedImages=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        document.getElementById("imageGallery").innerHTML = "";
+      }
+    </script>
+  </body>
 </html>
