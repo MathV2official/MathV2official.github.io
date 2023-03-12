@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>TOTY Pack Opener</title>
+	<style>
+		body {
+			text-align: center;
+			margin-top: 50px;
+			font-family: Arial, sans-serif;
+			background: linear-gradient(to right, #1e1e1e, #0a0a0a, #FFFFFF);
+		}
+		img {
+			max-width: 300px;
+			max-height: 300px;
+			margin: 10px;
+		}
+		h1 {
+			font-size: 36px;
+			margin-bottom: 50px;
+			color: #4CAF50;
+		}
+		button {
+			padding: 10px 20px;
+			border: none;
+			background-color: #007bff;
+			color: #fff;
+			font-size: 16px;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<h1>TOTY Pack Opener</h1>
+	<div id="imageContainer"></div>
+	<button onclick="openTOTYPack()">Open Pack</button>
+	<button onclick="viewCollection()">View Collection</button>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+	
+	<script>
+		var imagesFolder = "https://mathv22.netlify.app/projects/fifapackopenerinjava/futurestars/"; // Path to the images folder
+		var packImages = ["VanDijk.png", "Hernandez.png", "Mbappe.png", "Messi.png", "Haaland.png", "Benzema.png", "Hakimi.png", "Courtois.png", "Modric.png", "Bellingham.png", "Eder.png", "KDB.png"]; // List of image filenames
+		var packedImages = [];
+
+		// Function to open the pack
+		function openTOTYPack() {
+			var imageContainer = document.getElementById("imageContainer");
+			imageContainer.innerHTML = "";
+			var randomIndex = Math.floor(Math.random() * packImages.length);
+			var image = document.createElement("img");
+			image.src = imagesFolder + packImages[randomIndex];
+			image.id = packImages[randomIndex];
+			imageContainer.appendChild(image);
+			packedImages.push(packImages[randomIndex]);
+			document.cookie = "packedImages=" + packedImages.join() + ";";
+		}
+		
+		// Function to view the collection
+		function viewCollection() {
+			window.location.href = "totycollection.html";
+		}
+		
+		// Function to save data to a file
+		function saveData() {
+			var data = JSON.stringify(packedImages);
+			var filename = "packedImages.json";
+			var blob = new Blob([data], {type: "text/plain;charset=utf-8"});
+			saveAs(blob, filename);
+		}
+		
+		// Function to load data from a file
+		function loadData() {
+			var input = document.createElement("input");
+			input.type = "file";
+			input.accept = "application/json";
+			input.onchange = function(event) {
+				var file = event.target.files[0];
+				var reader = new FileReader();
+				reader.readAsText(file, "UTF-8");
+				reader.onload = function (event) {
+					packedImages = JSON.parse(event.target.result);
+					document.cookie = "packedImages=" + packedImages.join() + ";";
+				}
+			};
+			input.click();
+		}
+	</script>
+</body>
+</html>
