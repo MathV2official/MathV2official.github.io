@@ -44,7 +44,28 @@
       }
 
       // Function to populate the image gallery with the packed images
-function populateGallery() {
+      function populateGallery() {
+  // Get a reference to the gallery element
+  const gallery = document.getElementById("gallery");
+
+  // Clear the gallery
+  gallery.innerHTML = "";
+
+  // Display the packed image for 3 seconds
+  const packedImage = document.getElementById("packedImage");
+  packedImage.innerHTML = `<img src="${lastPackedImage}" alt="Packed Image">`;
+  setTimeout(() => {
+    packedImage.innerHTML = "";
+  }, 3000);
+
+  // Populate the gallery with the unpacked images
+  for (let i = 0; i < unpackedImages.length; i++) {
+    const imageSrc = `${imagesFolder}/${unpackedImages[i]}`;
+    const imageAlt = `Unpacked Image ${i+1}`;
+    const image = `<img src="${imageSrc}" alt="${imageAlt}">`;
+    gallery.insertAdjacentHTML("beforeend", image);
+  }
+}
   var gallery = document.getElementById("imageGallery");
   for (var i = 0; i < packedImages.length; i++) {
     var imageSrc = imagesFolder + packedImages[i]; // Construct the image source URL
@@ -63,7 +84,7 @@ function populateGallery() {
       gallery.appendChild(image); // Add the <img> element to the image gallery
     }
   }
-}
+
 
     </script>
   </body>
