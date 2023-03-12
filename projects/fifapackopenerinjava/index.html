@@ -9,6 +9,11 @@
 			font-family: Arial, sans-serif;
 			background: linear-gradient(to right, #1e1e1e, #0a0a0a, #FFFFFF);
 		}
+		img {
+			max-width: 300px;
+			max-height: 300px;
+			margin: 10px;
+		}
 		h1 {
 			font-size: 36px;
 			margin-bottom: 50px;
@@ -34,32 +39,20 @@
 	<script>
 		var imagesFolder = "https://mathv22.netlify.app/Toty/"; // Path to the images folder
 		var packImages = ["VanDijk.png", "Hernandez.png", "Mbappe.png", "Messi.png", "Haaland.png", "Benzema.png", "Hakimi.png", "Courtois.png", "Modric.png", "Bellingham.png", "Eder.png", "KDB.png"]; // List of image filenames
-		var isOpen = false; // Flag to keep track of pack open status
-
-		// Function to open or close the pack
+		
+		// Function to open the pack
 		function openTOTYPack() {
 			var imageContainer = document.getElementById("imageContainer");
 			imageContainer.innerHTML = "";
-			if (!isOpen) {
-				var packedImages = [];
-				for (var i = 0; i < 3; i++) {
-					var randomIndex = Math.floor(Math.random() * packImages.length);
-					var image = document.createElement("img");
-					image.src = imagesFolder + packImages[randomIndex];
-					image.id = packImages[randomIndex];
-					imageContainer.appendChild(image);
-					packedImages.push(packImages[randomIndex]);
-					packImages.splice(randomIndex, 1);
-				}
-				document.cookie = "packedImages=" + packedImages.join() + ";";
-				isOpen = true;
-			} else {
-				var openPackButton = document.createElement("button");
-				openPackButton.innerText = "Open Pack";
-				openPackButton.onclick = function() { openTOTYPack(); };
-				imageContainer.appendChild(openPackButton);
-				isOpen = false;
-			}
+			var packedImages = [];
+			var randomIndex = Math.floor(Math.random() * packImages.length);
+			var image = document.createElement("img");
+			image.src = imagesFolder + packImages[randomIndex];
+			image.id = packImages[randomIndex];
+			imageContainer.appendChild(image);
+			packedImages.push(packImages[randomIndex]);
+			packImages.splice(randomIndex, 1);
+			document.cookie = "packedImages=" + packedImages.join() + ";";
 		}
 		
 		// Function to view the collection

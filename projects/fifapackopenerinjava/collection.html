@@ -10,7 +10,7 @@
 			background: linear-gradient(to right, #1e1e1e, #0a0a0a, #FFFFFF);
 		}
 		img {
-			max-width: 300px;
+			max-width: 200px;
 			max-height: 300px;
 			margin: 10px;
 		}
@@ -24,25 +24,41 @@
 <body>
 	<h1>TOTY Collection</h1>
 	<div id="imageContainer"></div>
-	<button onclick="resetCollection()">Reset Collection</button>
-
+	<button onclick="clearCollection()">Clear Collection</button>
+	
 	<script>
 		var imagesFolder = "https://mathv22.netlify.app/Toty/"; // Path to the images folder
-		var packedImages = document.cookie.split("packedImages=")[1];
-		if (packedImages) {
-			packedImages = packedImages.split(",");
+		
+		// Get the packed images from the cookie
+		function getCollectedImages() {
+			var collectedImages = [];
+			var cookie = document.cookie;
+			if (cookie.includes("collectedImages")) {
+				var cookieValue = cookie.split("collectedImages=")[1];
+				collectedImages = cookieValue.split(",");
+			}
+			return collectedImages;
+		}
+		
+		// Function to display the collected images
+		function displayCollectedImages() {
 			var imageContainer = document.getElementById("imageContainer");
-			for (var i = 0; i < packedImages.length; i++) {
+			imageContainer.innerHTML = "";
+			var collectedImages = getCollectedImages();
+			for (var i = 0; i < collectedImages.length; i++) {
 				var image = document.createElement("img");
-				image.src = imagesFolder + packedImages[i];
+				image.src = imagesFolder + collectedImages[i];
 				imageContainer.appendChild(image);
 			}
 		}
-
-		function resetCollection() {
-			document.cookie = "packedImages=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-			location.reload();
+		
+		// Function to clear the collection and the cookie
+		function clearCollection() {
+			document.cookie = "collectedImages=; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
+			displayCollectedImages();
 		}
+		
+		displayCollectedImages();
 	</script>
 </body>
 </html>
