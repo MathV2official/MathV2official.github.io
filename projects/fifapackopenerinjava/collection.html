@@ -1,61 +1,78 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>TOTY Pack Collection</title>
-  <style>
-    body {
-      text-align: center;
-      margin-top: 50px;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(to right, #1e1e1e, #0a0a0a, #FFFFFF);
-    }
-    img {
-      max-width: 300px;
-      max-height: 300px;
-      margin: 10px;
-    }
-    h1 {
-      font-size: 36px;
-      margin-bottom: 50px;
-      color: #4CAF50;
-    }
-    button {
-      padding: 10px 20px;
-      border: none;
-      background-color: #007bff;
-      color: #fff;
-      font-size: 16px;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-  </style>
+	<title>TOTY Collection</title>
+	<style>
+		body {
+			text-align: center;
+			margin-top: 50px;
+			font-family: Arial, sans-serif;
+			background: linear-gradient(to right, #1e1e1e, #0a0a0a, #FFFFFF);
+		}
+		img {
+			max-width: 150px;
+			max-height: 150px;
+			margin: 10px;
+		}
+		h1 {
+			font-size: 36px;
+			margin-bottom: 50px;
+			color: #4CAF50;
+		}
+		button {
+			padding: 10px 20px;
+			border: none;
+			background-color: #007bff;
+			color: #fff;
+			font-size: 16px;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+	</style>
 </head>
 <body>
-  <h1>TOTY Pack Collection</h1>
-  <div id="imageContainer"></div>
-  <button onclick="goBack()">Go back</button>
-
-  <script>
-    var imagesFolder = "https://mathv22.netlify.app/Toty/"; // Path to the images folder
-    var packedImages = document.cookie.split(";").filter(function (item) {
-      return item.indexOf("packedImages=") >= 0;
-    });
-    if (packedImages.length > 0) {
-      packedImages = packedImages[0].replace("packedImages=", "").split(",");
-    } else {
-      packedImages = [];
-    }
-    var imageContainer = document.getElementById("imageContainer");
-    for (var i = 0; i < packedImages.length; i++) {
-      var image = document.createElement("img");
-      image.src = imagesFolder + packedImages[i];
-      image.id = packedImages[i];
-      imageContainer.appendChild(image);
-    }
-
-    function goBack() {
-      window.location.href = "index.html";
-    }
-  </script>
+	<h1>TOTY Collection</h1>
+	<div id="imageContainer"></div>
+	<button onclick="goToPackOpener()">Go Back to Pack Opener</button>
+	
+	<script>
+		var imagesFolder = "https://mathv22.netlify.app/Toty/"; // Path to the images folder
+		
+		// Function to get the packed images from the cookies
+		function getPackedImages() {
+			var cookies = document.cookie.split(";");
+			for (var i = 0; i < cookies.length; i++) {
+				var cookie = cookies[i].trim();
+				if (cookie.indexOf("packedImages=") == 0) {
+					return cookie.substring("packedImages=".length, cookie.length).split(",");
+				}
+			}
+			return [];
+		}
+		
+		// Function to display the packed images
+		function displayPackedImages() {
+			var imageContainer = document.getElementById("imageContainer");
+			var packedImages = getPackedImages();
+			var uniqueImages = [];
+			for (var i = 0; i < packedImages.length; i++) {
+				if (uniqueImages.indexOf(packedImages[i]) === -1) {
+					uniqueImages.push(packedImages[i]);
+				}
+			}
+			for (var i = 0; i < uniqueImages.length; i++) {
+				var image = document.createElement("img");
+				image.src = imagesFolder + uniqueImages[i];
+				imageContainer.appendChild(image);
+			}
+		}
+		
+		// Function to go back to the pack opener
+		function goToPackOpener() {
+			window.location.href = "index.html";
+		}
+		
+		displayPackedImages();
+	</script>
 </body>
 </html>
