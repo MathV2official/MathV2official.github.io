@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <title>TOTY Collection</title>
+	<title>Future Stars Collection</title>
 	<style>
 		body {
 			text-align: center;
@@ -11,8 +10,8 @@
 			background: linear-gradient(to right, #1e1e1e, #0a0a0a, #FFFFFF);
 		}
 		img {
-			max-width: 200px;
-			max-height: 200px;
+			max-width: 300px;
+			max-height: 300px;
 			margin: 10px;
 		}
 		h1 {
@@ -30,38 +29,53 @@
 			cursor: pointer;
 		}
 	</style>
-	</head>
-	<body>
-<h1>TOTY Collection</h1>
-<div id="imageContainer"></div>
-<button onclick="goBack()">Go Back to Pack Opener</button><br>
-<button onclick="saveData()">Save Progress</button>
-<button onclick="loadData()">Load Progress (Refresh The Page)</button>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
-
-<script>
-	var imagesFolder = "https://mathv22.netlify.app/projects/fifapackopenerinjava/futurestars/"; // Path to the images folder
-	var packedImages = document.cookie.split("packedImages=")[1] ? document.cookie.split("packedImages=")[1].split(",") : []; // Get packed images from cookies
-
-	// Function to display packed images
-	function displayPackedImages() {
-		var uniquePackedImages = [...new Set(packedImages)]; // Get unique packed images
-		var imageContainer = document.getElementById("imageContainer");
-		imageContainer.innerHTML = "";
-		uniquePackedImages.forEach(function(filename) {
-			var image = document.createElement("img");
-			image.src = imagesFolder + filename;
-			imageContainer.appendChild(image);
-		});
-	}
-// Function to save data to a file
-function saveData() {
+</head>
+<body>
+	<h1>Future Stars Collection</h1>
+	<div id="imageContainer"></div>
+	<button onclick="goBack()">Go Back to Pack Opener</button><br>
+    <button onclick="saveData()">Save Progress</button>
+    <button onclick="loadData()">Load Progress (Refresh The Page)</button>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+	
+	<script>
+		var imagesFolder = "https://mathv22.netlify.app/projects/fifapackopenerinjava/futurestars/"; // Path to the images folder
+		var packImages = ["Aaujo.png", "Adeyemi.png", "Alvarez.png", "Badiashile.png", "Burkardt.png", "Carvalho.png", "Diogo Costa.png", "Elanga.png", "Fagioli.png", "Fernandez.png", "Fran Garcia.png", "Gavi.png", "Guehi.png", "Gvardiol.png", "Iker Bravo.png", "Kalulu.png", "Kudus.png", "Kvaratskhelia.png", "Malacia.png", "Meslier.png", "Mudryk.png", "Musiala.png", "Nketiah.png", "Plata.png", "Singo.png", "Spence.png", "Tillman.png", "Timber.png", "Vinicius Souza.png", "Vitinha.png", "Willock.png"]; // List of image filenames
+		var packedImages = getCookie("packedImages") ? getCookie("packedImages").split(",") : [];
+		
+		// Function to display the collection
+		function displayCollection() {
+			var imageContainer = document.getElementById("imageContainer");
+			imageContainer.innerHTML = "";
+			for (var i = 0; i < collectionImages.length; i++) {
+				var image = document.createElement("img");
+				image.src = imagesFolder + collectionImages[i];
+				image.id = collectionImages[i];
+				if (packedImages.includes(collectionImages[i])) {
+					image.classList.add("packed");
+				}
+				imageContainer.appendChild(image);
+			}
+		}
+		
+		// Function to get a cookie by name
+		function getCookie(name) {
+			var cookies = document.cookie.split(";");
+			for (var i = 0; i < cookies.length; i++) {
+				var cookie = cookies[i].trim();
+				if (cookie.indexOf(name + "=") == 0) {
+					return cookie.substring(name.length + 1);
+				}
+			}
+			return "";
+		}
+		// Function to save data to a file
+		function saveData() {
 			var data = JSON.stringify(packedImages);
-			var filename = "packedImages.json";
+			var filename = "futurestarsPackedImages.json";
 			var blob = new Blob([data], {type: "text/plain;charset=utf-8"});
 			saveAs(blob, filename);
 		}
-		
 		// Function to load data from a file
 		function loadData() {
 			var input = document.createElement("input");
@@ -74,16 +88,13 @@ function saveData() {
 				reader.onload = function (event) {
 					packedImages = JSON.parse(event.target.result);
 					document.cookie = "packedImages=" + packedImages.join() + ";";
+					displayCollection();
 				}
 			};
 			input.click();
 		}
-	// Function to go back to pack opener
-	function goBack() {
-		window.location.href = "futurestars.html";
-	}
-
-	displayPackedImages();
-</script>
+		
+		displayCollection();
+	</script>
 </body>
 </html>

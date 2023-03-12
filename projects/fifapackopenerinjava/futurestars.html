@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>TOTY Pack Opener</title>
+	<title>Future Stars Pack Opener</title>
 	<style>
 		body {
 			text-align: center;
@@ -31,9 +31,9 @@
 	</style>
 </head>
 <body>
-	<h1>TOTY Pack Opener</h1>
+	<h1>Future Stars Pack Opener</h1>
 	<div id="imageContainer"></div>
-	<button onclick="openTOTYPack()">Open Pack</button>
+	<button onclick="openFutureStarsPack()">Open Pack</button>
 	<button onclick="viewCollection()">View Collection</button>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
 	
@@ -43,7 +43,7 @@
 		var packedImages = [];
 
 		// Function to open the pack
-		function openFSPack() {
+		function openFutureStarsPack() {
 			var imageContainer = document.getElementById("imageContainer");
 			imageContainer.innerHTML = "";
 			var randomIndex = Math.floor(Math.random() * packImages.length);
@@ -63,7 +63,7 @@
 		// Function to save data to a file
 		function saveData() {
 			var data = JSON.stringify(packedImages);
-			var filename = "packedImages.json";
+			var filename = "futurestarsPackedImages.json";
 			var blob = new Blob([data], {type: "text/plain;charset=utf-8"});
 			saveAs(blob, filename);
 		}
@@ -85,5 +85,6 @@
 			input.click();
 		}
 	</script>
-</body>
-</html>
+    </body>
+    </html>
+    
