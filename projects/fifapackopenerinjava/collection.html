@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Collection</title>
+	<title>TOTY Collection</title>
 	<style>
 		body {
 			text-align: center;
@@ -19,65 +19,30 @@
 			margin-bottom: 50px;
 			color: #4CAF50;
 		}
-		button {
-			padding: 10px 20px;
-			border: none;
-			background-color: #007bff;
-			color: #fff;
-			font-size: 16px;
-			border-radius: 5px;
-			cursor: pointer;
-		}
 	</style>
 </head>
 <body>
-	<h1>Collection</h1>
+	<h1>TOTY Collection</h1>
 	<div id="imageContainer"></div>
-	<button onclick="clearCollection()">Clear Collection</button>
-	<button onclick="goBack()">Back</button>
-	
+	<button onclick="resetCollection()">Reset Collection</button>
+
 	<script>
 		var imagesFolder = "https://mathv22.netlify.app/Toty/"; // Path to the images folder
-	  var packedImages = ["VanDijk.png", "Hernandez.png", "Mbappe.png", "Messi.png", "Haaland.png", "Benzema.png", "Hakimi.png", "Courtois.png", "Modric.png", "Bellingham.png", "Eder.png", "KDB.png"]; // List of image filenames
-		
-		// Function to read the packed images from the cookie
-		function readPackedImages() {
-			var cookie = document.cookie.match(/(^|;) ?packedImages=([^;]*)(;|$)/);
-			if (cookie) {
-				packedImages = cookie[2].split(",");
-			}
-		}
-		
-		// Function to display the packed images
-		function displayPackedImages() {
+		var packedImages = document.cookie.split("packedImages=")[1];
+		if (packedImages) {
+			packedImages = packedImages.split(",");
 			var imageContainer = document.getElementById("imageContainer");
 			for (var i = 0; i < packedImages.length; i++) {
-				if (document.getElementById(packedImages[i]) == null) {
-					var image = document.createElement("img");
-					image.src = imagesFolder + packedImages[i];
-					image.id = packedImages[i];
-					imageContainer.appendChild(image);
-				}
+				var image = document.createElement("img");
+				image.src = imagesFolder + packedImages[i];
+				imageContainer.appendChild(image);
 			}
 		}
-		
-		// Function to clear the packed images from the cookie and the display
-		function clearCollection() {
-			document.cookie = "packedImages=; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
-			var imageContainer = document.getElementById("imageContainer");
-			while (imageContainer.firstChild) {
-				imageContainer.removeChild(imageContainer.firstChild);
-			}
-			packedImages = [];
+
+		function resetCollection() {
+			document.cookie = "packedImages=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+			location.reload();
 		}
-		
-		// Function to go back to the main page
-		function goBack() {
-			window.location.href = "index.html";
-		}
-		
-		readPackedImages();
-		displayPackedImages();
 	</script>
 </body>
 </html>
