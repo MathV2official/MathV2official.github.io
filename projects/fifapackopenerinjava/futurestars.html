@@ -39,11 +39,11 @@
 	
 	<script>
 		var imagesFolder = "https://mathv22.netlify.app/projects/fifapackopenerinjava/futurestars/"; // Path to the images folder
-		var packImages = ["VanDijk.png", "Hernandez.png", "Mbappe.png", "Messi.png", "Haaland.png", "Benzema.png", "Hakimi.png", "Courtois.png", "Modric.png", "Bellingham.png", "Eder.png", "KDB.png"]; // List of image filenames
+		var packImages = ["Aaujo.png", "Adeyemi.png", "Alvarez.png", "Badiashile.png", "Burkardt.png", "Carvalho.png", "Diogo Costa.png", "Elanga.png", "Fagioli.png", "Fernandez.png", "Fran Garcia.png", "Gavi.png", "Guehi.png", "Gvardiol.png", "Iker Bravo.png", "Kalulu.png", "Kudus.png", "Kvaratskhelia.png", "Malacia.png", "Meslier.png", "Mudryk.png", "Musiala.png", "Nketiah.png", "Plata.png", "Singo.png", "Spence.png", "Tillman.png", "Timber.png", "Vinicius Souza.png", "Vitinha.png", "Willock.png"]; // List of image filenames
 		var packedImages = [];
 
 		// Function to open the pack
-		function openTOTYPack() {
+		function openFSPack() {
 			var imageContainer = document.getElementById("imageContainer");
 			imageContainer.innerHTML = "";
 			var randomIndex = Math.floor(Math.random() * packImages.length);
@@ -57,7 +57,7 @@
 		
 		// Function to view the collection
 		function viewCollection() {
-			window.location.href = "totycollection.html";
+			window.location.href = "futurestarscollection.html";
 		}
 		
 		// Function to save data to a file
