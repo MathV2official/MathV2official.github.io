@@ -48,14 +48,25 @@
   
         // Function to select a random image from the images folder and display it
         function openPack() {
-          var imageCount = 5; // Number of images in the folder
-          var imageIndex = Math.floor(Math.random() * imageCount) + 1; // Randomly select an image index
-          var imageSrc = imagesFolder + "image" + imageIndex + ".png"; // Construct the image source URL
-          var image = document.createElement("img"); // Create an <img> element
-          image.src = imageSrc; // Set the src attribute of the <img> element
-          document.getElementById("imageContainer").appendChild(image); // Add the <img> element to the image container
-          addPackedImage("image" + imageIndex + ".png"); // Add the packed image filename to the list and update the cookie
-        }
+  console.log("openPack() function called"); // Add this line
+  const packedImage = document.getElementById("packedImage");
+  const images = document.getElementsByClassName("packed");
+  if (images.length === imagesList.length) {
+    packedImage.innerHTML = "<p>You have already packed all the available images.</p>";
+    return;
+  }
+  let imageSrc;
+  do {
+    imageSrc = `${imagesFolder}/${getRandomImage()}`;
+  } while (images.includes(imageSrc));
+  images.push(imageSrc);
+  const image = `<img src="${imageSrc}" alt="Packed Image" class="packed">`;
+  packedImage.innerHTML = image;
+  setTimeout(function() {
+    packedImage.innerHTML = "";
+  }, 3000);
+}
+w
       </script>
     </head>
     <body>
