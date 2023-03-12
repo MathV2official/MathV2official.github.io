@@ -37,37 +37,26 @@
 	
 	<script>
 		var imagesFolder = "https://mathv22.netlify.app/Toty/"; // Path to the images folder
-		var packedImages = getCookie("packedImages"); // Get the packed images from the cookie
-		var uniqueImages = Array.from(new Set(packedImages)); // Remove duplicates from the packed images
-		var imageContainer = document.getElementById("imageContainer");
+		var packedImages = document.cookie.split("packedImages=")[1] ? document.cookie.split("packedImages=")[1].split(",") : []; // Get packed images from cookies
 		
-		// Display all the packed images except duplicates
-		for (var i = 0; i < uniqueImages.length; i++) {
-			var image = document.createElement("img");
-			image.src = imagesFolder + uniqueImages[i];
-			imageContainer.appendChild(image);
+		// Function to display packed images
+		function displayPackedImages() {
+			var uniquePackedImages = [...new Set(packedImages)]; // Get unique packed images
+			var imageContainer = document.getElementById("imageContainer");
+			imageContainer.innerHTML = "";
+			uniquePackedImages.forEach(function(filename) {
+				var image = document.createElement("img");
+				image.src = imagesFolder + filename;
+				imageContainer.appendChild(image);
+			});
 		}
 		
-		// Function to go back to the pack opener
+		// Function to go back to pack opener
 		function goBack() {
 			window.location.href = "index.html";
 		}
 		
-		// Function to get a cookie by name
-		function getCookie(name) {
-			var cookieValue = "";
-			if (document.cookie && document.cookie !== "") {
-				var cookies = document.cookie.split(";");
-				for (var i = 0; i < cookies.length; i++) {
-					var cookie = cookies[i].trim();
-					if (cookie.substring(0, name.length + 1) === (name + "=")) {
-						cookieValue = cookie.substring(name.length + 1);
-						break;
-					}
-				}
-			}
-			return cookieValue.split(",");
-		}
+		displayPackedImages();
 	</script>
 </body>
 </html>
