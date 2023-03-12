@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Collection - TOTY Pack Opener</title>
+    <title>Collection - FIFA Pack Opener</title>
     <style>
       .gallery {
         display: grid;
@@ -13,33 +13,11 @@
         height: auto;
         object-fit: cover;
       }
-      body {
-			text-align: center;
-			margin-top: 50px;
-			font-family: Arial, sans-serif;
-			background: linear-gradient(to right, #1e1e1e, #0a0a0a, #FFFFFF);
-		}
-		h1 {
-			font-size: 36px;
-			margin-bottom: 50px;
-			color: #4CAF50;
-		}
-		button {
-			padding: 10px 20px;
-			border: none;
-			background-color: #007bff;
-			color: #fff;
-			font-size: 16px;
-			border-radius: 5px;
-			cursor: pointer;
-		}
     </style>
   </head>
   <body onload="readPackedImages()">
     <h1>Collection</h1>
     <div class="gallery" id="imageGallery"></div>
-
-    <button onclick="goToPackOpener()">Go back to Pack Opener</button>
 
     <script>
       var imagesFolder = "https://mathv22.netlify.app/Toty/"; // Path to the images folder
@@ -55,8 +33,10 @@
         "Modric.png",
         "Bellingham.png",
         "Eder.png",
-        "KDB.png",
+        "KDB.png"
       ]; // List of image filenames
+
+      var packedImages = [];
 
       // Function to read the packed images from the cookie
       function readPackedImages() {
@@ -69,20 +49,20 @@
 
       // Function to populate the image gallery with the packed images
       function populateGallery() {
-  var gallery = document.getElementById("imageGallery");
-  gallery.innerHTML = ""; // clear the gallery container
-  var uniquePackedImages = Array.from(new Set(packedImages)); // remove duplicates
-  for (var i = 0; i < uniquePackedImages.length; i++) {
-    var imageSrc = imagesFolder + uniquePackedImages[i]; // Construct the image source URL
-    var image = document.createElement("img"); // Create an <img> element
-    image.src = imageSrc; // Set the src attribute of the <img> element
-    gallery.appendChild(image); // Add the <img> element to the image gallery
-  }
-}
+        var gallery = document.getElementById("imageGallery");
+        for (var i = 0; i < packedImages.length; i++) {
+          var imageSrc = imagesFolder + packedImages[i]; // Construct the image source URL
+          var image = document.createElement("img"); // Create an <img> element
+          image.src = imageSrc; // Set the src attribute of the <img> element
+          gallery.appendChild(image); // Add the <img> element to the image gallery
+        }
+      }
+    </script>
 
+    <button onclick="goBack()">Go Back</button>
 
-      // Function to go back to the pack opener page
-      function goToPackOpener() {
+    <script>
+      function goBack() {
         window.location.href = "index.html";
       }
     </script>
