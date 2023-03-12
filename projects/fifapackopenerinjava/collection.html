@@ -1,96 +1,61 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Collection - FIFA Pack Opener</title>
-    <style>
-      .gallery {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        grid-gap: 10px;
-      }
-      .gallery img {
-        width: 100%;
-        height: auto;
-        object-fit: cover;
-      }
-      body {
-			text-align: center;
-			margin-top: 50px;
-			font-family: Arial, sans-serif;
-			background: linear-gradient(to right, #1e1e1e, #0a0a0a, #FFFFFF);
-		}
-		h1 {
-			font-size: 36px;
-			margin-bottom: 50px;
-			color: #4CAF50;
-		}
-		button {
-			padding: 10px 20px;
-			border: none;
-			background-color: #007bff;
-			color: #fff;
-			font-size: 16px;
-			border-radius: 5px;
-			cursor: pointer;
-		}
-    </style>
-  </head>
-  <body onload="readPackedImages()">
-    <h1>Collection</h1>
-    <div class="gallery" id="imageGallery"></div>
-
-    <script>
-      var imagesFolder = "https://mathv22.netlify.app/Toty/"; // Path to the images folder
-      var packImages = [
-        "VanDijk.png",
-        "Hernandez.png",
-        "Mbappe.png",
-        "Messi.png",
-        "Haaland.png",
-        "Benzema.png",
-        "Hakimi.png",
-        "Courtois.png",
-        "Modric.png",
-        "Bellingham.png",
-        "Eder.png",
-        "KDB.png"
-      ]; // List of image filenames
-
-      var packedImages = [];
-
-      // Function to read the packed images from the cookie
-      function readPackedImages() {
-        var cookie = document.cookie.match(/(^|;) ?packedImages=([^;]*)(;|$)/);
-        if (cookie) {
-          packedImages = cookie[2].split(",");
-        }
-        populateGallery();
-      }
-
-      // Function to populate the image gallery with the packed images
-      // Function to populate the image gallery with the packed images
-function populateGallery() {
-  var gallery = document.getElementById("imageGallery");
-  var cookie = document.cookie.match(/(^|;) ?packedImages=([^;]*)(;|$)/);
-  if (cookie) {
-    var packedImages = cookie[2].split(","); // Split cookie value by comma
-    for (var i = 0; i < packedImages.length; i++) {
-      var imageSrc = imagesFolder + packedImages[i]; // Construct the image source URL
-      var image = document.createElement("img"); // Create an <img> element
-      image.src = imageSrc; // Set the src attribute of the <img> element
-      gallery.appendChild(image); // Add the <img> element to the image gallery
+<head>
+  <title>TOTY Pack Collection</title>
+  <style>
+    body {
+      text-align: center;
+      margin-top: 50px;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #1e1e1e, #0a0a0a, #FFFFFF);
     }
-  }
-}
+    img {
+      max-width: 300px;
+      max-height: 300px;
+      margin: 10px;
+    }
+    h1 {
+      font-size: 36px;
+      margin-bottom: 50px;
+      color: #4CAF50;
+    }
+    button {
+      padding: 10px 20px;
+      border: none;
+      background-color: #007bff;
+      color: #fff;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>TOTY Pack Collection</h1>
+  <div id="imageContainer"></div>
+  <button onclick="goBack()">Go back</button>
 
-    </script>
+  <script>
+    var imagesFolder = "https://mathv22.netlify.app/Toty/"; // Path to the images folder
+    var packedImages = document.cookie.split(";").filter(function (item) {
+      return item.indexOf("packedImages=") >= 0;
+    });
+    if (packedImages.length > 0) {
+      packedImages = packedImages[0].replace("packedImages=", "").split(",");
+    } else {
+      packedImages = [];
+    }
+    var imageContainer = document.getElementById("imageContainer");
+    for (var i = 0; i < packedImages.length; i++) {
+      var image = document.createElement("img");
+      image.src = imagesFolder + packedImages[i];
+      image.id = packedImages[i];
+      imageContainer.appendChild(image);
+    }
 
-    <button onclick="goBack()">Go Back</button>
-
-    <script>
-      function goBack() {
-        window.location.href = "index.html";
-      }
-    </script>
-  </body>
+    function goBack() {
+      window.location.href = "index.html";
+    }
+  </script>
+</body>
 </html>

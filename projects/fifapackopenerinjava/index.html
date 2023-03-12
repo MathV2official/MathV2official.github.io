@@ -42,23 +42,25 @@
 		
 		// Function to open the pack
 		function openTOTYPack() {
-			var imageContainer = document.getElementById("imageContainer");
-			imageContainer.innerHTML = "";
-			var packedImages = [];
-			var randomIndex = Math.floor(Math.random() * packImages.length);
-			var image = document.createElement("img");
-			image.src = imagesFolder + packImages[randomIndex];
-			image.id = packImages[randomIndex];
-			imageContainer.appendChild(image);
-			packedImages.push(packImages[randomIndex]);
-			packImages.splice(randomIndex, 1);
-			document.cookie = "packedImages=" + packedImages.join() + ";";
-		}
+  var imageContainer = document.getElementById("imageContainer");
+  var packedImages = [];
+  for (var i = 0; i < 5; i++) {
+    var randomIndex = Math.floor(Math.random() * packImages.length);
+    var image = document.createElement("img");
+    image.src = imagesFolder + packImages[randomIndex];
+    image.id = packImages[randomIndex];
+    imageContainer.appendChild(image);
+    packedImages.push(packImages[randomIndex]);
+  }
+  document.cookie = "packedImages=" + packedImages.join() + ";";
+}
+
 		
 		// Function to view the collection
 		function viewCollection() {
-			window.location.href = "collection.html";
-		}
+  window.location.href = "collection.html";
+}
+
 	</script>
 </body>
 </html>
