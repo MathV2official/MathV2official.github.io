@@ -34,6 +34,7 @@
 	<h1>TOTY Collection</h1>
 	<div id="imageContainer"></div>
 	<button onclick="clearCollection()">Clear Collection</button>
+  <button onclick="goBack()">Back To Pack Opener</button>
 	
 	<script>
 		var imagesFolder = "https://mathv22.netlify.app/Toty/"; // Path to the images folder
@@ -69,6 +70,9 @@
 		}
 		
 		displayCollectedImages();
+    function goBack() {
+			window.location.href = "index.html";
+		}
 	</script>
 </body>
 </html>
