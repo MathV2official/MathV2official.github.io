@@ -50,16 +50,17 @@
         function openPack() {
           var imageCount = 5; // Number of images in the folder
           var imageIndex = Math.floor(Math.random() * imageCount) + 1; // Randomly select an image index
-          var imageSrc = imagesFolder + "image" + imageIndex + ".jpg"; // Construct the image source URL
+          var imageSrc = imagesFolder + "image" + imageIndex + ".png"; // Construct the image source URL
           var image = document.createElement("img"); // Create an <img> element
           image.src = imageSrc; // Set the src attribute of the <img> element
           document.getElementById("imageContainer").appendChild(image); // Add the <img> element to the image container
-          addPackedImage("image" + imageIndex + ".jpg"); // Add the packed image filename to the list and update the cookie
+          addPackedImage("image" + imageIndex + ".png"); // Add the packed image filename to the list and update the cookie
         }
       </script>
     </head>
     <body>
       <h1>FIFA Pack Opener</h1>
+      <div id="packedImage"></div>
       <div id="imageContainer"></div>
       <button onclick="openPack()">Open Pack</button>
       <a href="Collection.html"><button>Collection</button></a>
