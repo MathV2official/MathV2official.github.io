@@ -35,6 +35,8 @@
 	<div id="imageContainer"></div>
 	<button onclick="openTOTYPack()">Open Pack</button>
 	<button onclick="viewCollection()">View Collection</button>
+	<button onclick="saveData()">Save Progress</button>
+	<button onclick="loadData()">Load Progress</button>
 	
 	<script>
 		var imagesFolder = "https://mathv22.netlify.app/Toty/"; // Path to the images folder
@@ -56,7 +58,32 @@
 		
 		// Function to view the collection
 		function viewCollection() {
-			window.location.href = "totycollection.html";
+			window.location.href = "collection.html";
+		}
+		
+		// Function to save data to a file
+		function saveData() {
+			var data = JSON.stringify(packedImages);
+			var filename = "packedImages.json";
+			var blob = new Blob([data], {type: "text/plain;charset=utf-8"});
+			saveAs(blob, filename);
+		}
+		
+		// Function to load data from a file
+		function loadData() {
+			var input = document.createElement("input");
+			input.type = "file";
+			input.accept = "application/json";
+			input.onchange = function(event) {
+				var file = event.target.files[0];
+				var reader = new FileReader();
+				reader.readAsText(file, "UTF-8");
+				reader.onload = function (event) {
+					packedImages = JSON.parse(event.target.result);
+					document.cookie = "packedImages=" + packedImages.join() + ";";
+				}
+			};
+			input.click();
 		}
 	</script>
 </body>

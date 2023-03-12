@@ -1,62 +1,49 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>TOTY Collection</title>
-	<style>
-		body {
-			text-align: center;
-			margin-top: 50px;
-			font-family: Arial, sans-serif;
-			background: linear-gradient(to right, #1e1e1e, #0a0a0a, #FFFFFF);
-		}
-		img {
-			max-width: 200px;
-			max-height: 200px;
-			margin: 10px;
-		}
-		h1 {
-			font-size: 36px;
-			margin-bottom: 50px;
-			color: #4CAF50;
-		}
-		button {
-			padding: 10px 20px;
-			border: none;
-			background-color: #007bff;
-			color: #fff;
-			font-size: 16px;
-			border-radius: 5px;
-			cursor: pointer;
-		}
-	</style>
+  <meta charset="UTF-8">
+  <title>Collection</title>
 </head>
 <body>
-	<h1>TOTY Collection</h1>
-	<div id="imageContainer"></div>
-	<button onclick="goBack()">Go Back to Pack Opener</button>
-	
-	<script>
-		var imagesFolder = "https://mathv22.netlify.app/Toty/"; // Path to the images folder
-		var packedImages = document.cookie.split("packedImages=")[1] ? document.cookie.split("packedImages=")[1].split(",") : []; // Get packed images from cookies
-		
-		// Function to display packed images
-		function displayPackedImages() {
-			var uniquePackedImages = [...new Set(packedImages)]; // Get unique packed images
-			var imageContainer = document.getElementById("imageContainer");
-			imageContainer.innerHTML = "";
-			uniquePackedImages.forEach(function(filename) {
-				var image = document.createElement("img");
-				image.src = imagesFolder + filename;
-				imageContainer.appendChild(image);
-			});
-		}
-		
-		// Function to go back to pack opener
-		function goBack() {
-			window.location.href = "toty.html";
-		}
-		
-		displayPackedImages();
-	</script>
+  <h1>Collection</h1>
+
+  <div id="collection"></div>
+
+  <button id="save-button">Save</button>
+  <button id="load-button">Load</button>
+
+  <script>
+    const collectionDiv = document.getElementById('collection');
+    const saveButton = document.getElementById('save-button');
+    const loadButton = document.getElementById('load-button');
+
+    // Get the saved collection from local storage or initialize a new empty array
+    let savedCollection = JSON.parse(localStorage.getItem('collection')) || [];
+
+    // Display all unique cards in the saved collection
+    const uniqueCards = Array.from(new Set(savedCollection));
+    uniqueCards.forEach(card => {
+      const cardImage = document.createElement('img');
+      cardImage.src = `cards/${card}.png`;
+      collectionDiv.appendChild(cardImage);
+    });
+
+    // Save the current collection to local storage
+    saveButton.addEventListener('click', () => {
+      localStorage.setItem('collection', JSON.stringify(savedCollection));
+    });
+
+    // Load the saved collection from local storage
+    loadButton.addEventListener('click', () => {
+      savedCollection = JSON.parse(localStorage.getItem('collection')) || [];
+      collectionDiv.innerHTML = '';
+      const uniqueCards = Array.from(new Set(savedCollection));
+      uniqueCards.forEach(card => {
+        const cardImage = document.createElement('img');
+        cardImage.src = `cards/${card}.png`;
+        collectionDiv.appendChild(cardImage);
+      });
+    });
+  </script>
 </body>
 </html>
