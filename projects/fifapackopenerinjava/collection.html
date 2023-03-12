@@ -10,8 +10,8 @@
 			background: linear-gradient(to right, #1e1e1e, #0a0a0a, #FFFFFF);
 		}
 		img {
-			max-width: 150px;
-			max-height: 150px;
+			max-width: 200px;
+			max-height: 200px;
 			margin: 10px;
 		}
 		h1 {
@@ -33,46 +33,41 @@
 <body>
 	<h1>TOTY Collection</h1>
 	<div id="imageContainer"></div>
-	<button onclick="goToPackOpener()">Go Back to Pack Opener</button>
+	<button onclick="goBack()">Go Back to Pack Opener</button>
 	
 	<script>
 		var imagesFolder = "https://mathv22.netlify.app/Toty/"; // Path to the images folder
+		var packedImages = getCookie("packedImages"); // Get the packed images from the cookie
+		var uniqueImages = Array.from(new Set(packedImages)); // Remove duplicates from the packed images
+		var imageContainer = document.getElementById("imageContainer");
 		
-		// Function to get the packed images from the cookies
-		function getPackedImages() {
-			var cookies = document.cookie.split(";");
-			for (var i = 0; i < cookies.length; i++) {
-				var cookie = cookies[i].trim();
-				if (cookie.indexOf("packedImages=") == 0) {
-					return cookie.substring("packedImages=".length, cookie.length).split(",");
-				}
-			}
-			return [];
-		}
-		
-		// Function to display the packed images
-		function displayPackedImages() {
-			var imageContainer = document.getElementById("imageContainer");
-			var packedImages = getPackedImages();
-			var uniqueImages = [];
-			for (var i = 0; i < packedImages.length; i++) {
-				if (uniqueImages.indexOf(packedImages[i]) === -1) {
-					uniqueImages.push(packedImages[i]);
-				}
-			}
-			for (var i = 0; i < uniqueImages.length; i++) {
-				var image = document.createElement("img");
-				image.src = imagesFolder + uniqueImages[i];
-				imageContainer.appendChild(image);
-			}
+		// Display all the packed images except duplicates
+		for (var i = 0; i < uniqueImages.length; i++) {
+			var image = document.createElement("img");
+			image.src = imagesFolder + uniqueImages[i];
+			imageContainer.appendChild(image);
 		}
 		
 		// Function to go back to the pack opener
-		function goToPackOpener() {
+		function goBack() {
 			window.location.href = "index.html";
 		}
 		
-		displayPackedImages();
+		// Function to get a cookie by name
+		function getCookie(name) {
+			var cookieValue = "";
+			if (document.cookie && document.cookie !== "") {
+				var cookies = document.cookie.split(";");
+				for (var i = 0; i < cookies.length; i++) {
+					var cookie = cookies[i].trim();
+					if (cookie.substring(0, name.length + 1) === (name + "=")) {
+						cookieValue = cookie.substring(name.length + 1);
+						break;
+					}
+				}
+			}
+			return cookieValue.split(",");
+		}
 	</script>
 </body>
 </html>
