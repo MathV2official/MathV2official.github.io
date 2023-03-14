@@ -46,6 +46,7 @@
 		function openRulebreakerPack() {
   var imageContainer = document.getElementById("imageContainer");
   imageContainer.innerHTML = "";
+  console.log(imagesFolder);
   fetch(imagesFolder)
     .then(response => response.text())
     .then(data => {
