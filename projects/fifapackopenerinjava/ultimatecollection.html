@@ -39,32 +39,38 @@
 	<button onclick="saveData()">Save Progress</button>
 	<button onclick="loadData()">Load Progress</button>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
-	
+
 	<script>
 		var packedRulebreakersImages = getCookie("packedRulebreakersImages").split(",");
 		var packedTotyImages = getCookie("packedTotyImages").split(",");
 		var packedFutureStarsImages = getCookie("packedFutureStarsImages").split(",");
-		var imagesFolder = "https://mathv2fifacards.netlify.app/";
 		var imageContainer = document.getElementById("imageContainer");
+
+		// Define the image directories for each collection
+		var imagesFolders = {
+			rulebreakers: "https://mathv2fifacards.netlify.app/rulebreakercards/",
+			toty: "https://mathv22.netlify.app/Toty/",
+			futurestars: "https://mathv22.netlify.app/projects/fifapackopenerinjava/futurestarcards/"
+		};
 
 		// Display the packed images from Rulebreakers on the page
 		packedRulebreakersImages.forEach(function(imageUrl) {
 			var image = document.createElement("img");
-			image.src = imagesFolder + imageUrl;
+			image.src = imagesFolders.rulebreakers + imageUrl;
 			imageContainer.appendChild(image);
 		});
-		
+
 		// Display the packed images from TOTY on the page
 		packedTotyImages.forEach(function(imageUrl) {
 			var image = document.createElement("img");
-			image.src = imagesFolder + imageUrl;
+			image.src = imagesFolders.toty + imageUrl;
 			imageContainer.appendChild(image);
 		});
-		
+
 		// Display the packed images from Future Stars on the page
 		packedFutureStarsImages.forEach(function(imageUrl) {
 			var image = document.createElement("img");
-			image.src = imagesFolder + imageUrl;
+			image.src = imagesFolders.futurestars + imageUrl;
 			imageContainer.appendChild(image);
 		});
 
@@ -74,11 +80,12 @@
 		    var parts = value.split("; " + name + "=");
 		    if (parts.length == 2) return parts.pop().split(";").shift();
 		}
-		
+
 		// Function to go back to the Rulebreakers collection
 		function viewRulebreakers() {
 			window.location.href = "rulebreakerscollection.html";
 		}
+
 
 		// Function to go back to the TOTY collection
 		function viewToty() {
