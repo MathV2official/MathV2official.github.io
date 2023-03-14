@@ -52,7 +52,7 @@
     .then(data => {
       var parser = new DOMParser();
       var htmlDoc = parser.parseFromString(data, "text/html");
-      var images = Array.from(htmlDoc.querySelectorAll("img")).map(img => img.src).filter(src => src.endsWith(".png") || src.endsWith(".jpg"));
+	  var images = Array.from(htmlDoc.querySelectorAll("a")).map(a => a.href).filter(href => href.endsWith(".png") || href.endsWith(".jpg"));
       var randomIndex = Math.floor(Math.random() * images.length);
       var image = document.createElement("img");
       image.src = images[randomIndex];
