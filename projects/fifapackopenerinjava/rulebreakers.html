@@ -46,19 +46,32 @@
 		function openRulebreakerPack() {
   var imageContainer = document.getElementById("imageContainer");
   imageContainer.innerHTML = "";
-  fetch(imagesFolder + "get_images.php")
-    .then(response => response.json())
+  
+  // Fetch the directory listing for the images folder
+  fetch(imagesFolder)
+    .then(response => response.text())
     .then(data => {
-      var randomIndex = Math.floor(Math.random() * data.length);
+      // Parse the directory listing HTML into a DOM object
+      var parser = new DOMParser();
+      var htmlDoc = parser.parseFromString(data, "text/html");
+      
+      // Find all the image files and choose a random one
+      var images = Array.from(htmlDoc.querySelectorAll("a")).filter(a => a.href.endsWith(".png") || a.href.endsWith(".jpg"));
+      var randomIndex = Math.floor(Math.random() * images.length);
       var image = document.createElement("img");
-      image.src = imagesFolder + data[randomIndex];
-      image.id = data[randomIndex];
+      
+      // Set the image source to the randomly chosen file
+      image.src = images[randomIndex].href;
+      image.id = images[randomIndex].href;
       imageContainer.appendChild(image);
-      packedImages.push(data[randomIndex]);
+      
+      // Add the image filename to the list of packed images
+      packedImages.push(images[randomIndex].href);
       document.cookie = "packedImages=" + packedImages.join() + ";";
     })
     .catch(error => console.error(error));
 }
+
 
 
 		
