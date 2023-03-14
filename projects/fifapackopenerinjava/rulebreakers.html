@@ -38,39 +38,42 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
 	
 	<script>
-		var imagesFolder = "https://mathv22.netlify.app/projects/fifapackopenerinjava/rulebreakers/"; // Path to the images folder
-        var packImages = []; // Empty array to store image filenames
+		var packImages = []; // Empty array to store image filenames
         var packedImages = []; // Empty array to store packed images
 
-// Fetch all the images in the folder
-fetch(imagesFolder)
-  .then(response => response.text())
-  .then(data => {
-    // Create a temporary HTML element to parse the response data
-    var temp = document.createElement("div");
-    temp.innerHTML = data;
-    // Get all the image filenames and add them to the packImages array
-    var images = temp.getElementsByTagName("a");
-    for (var i = 0; i < images.length; i++) {
-      var imageName = images[i].getAttribute("href");
-      if (imageName.endsWith(".png")) {
-        packImages.push(imageName);
-      }
+        // Load all image files from a directory using AJAX
+        var imagesFolder = "https://mathv22.netlify.app/projects/fifapackopenerinjava/rulebreakers/";
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+        packImages = JSON.parse(this.responseText);
     }
-  });
+    };
+    xmlhttp.open("GET", imagesFolder + "filenames.json", true);
+    xmlhttp.send();
+
 
 		// Function to open the pack
-		function openRulebreakersPack() {
-			var imageContainer = document.getElementById("imageContainer");
-			imageContainer.innerHTML = "";
-			var randomIndex = Math.floor(Math.random() * packImages.length);
-			var image = document.createElement("img");
-			image.src = imagesFolder + packImages[randomIndex];
-			image.id = packImages[randomIndex];
-			imageContainer.appendChild(image);
-			packedImages.push(packImages[randomIndex]);
-			document.cookie = "packedImages=" + packedImages.join() + ";";
-		}
+		function openRulebreakerPack() {
+    var imageContainer = document.getElementById("imageContainer");
+    imageContainer.innerHTML = "";
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function() {
+        if (this.readyState === 4 && this.status === 200) {
+            var images = JSON.parse(this.responseText);
+            var randomIndex = Math.floor(Math.random() * images.length);
+            var image = document.createElement("img");
+            image.src = imagesFolder + images[randomIndex];
+            image.id = images[randomIndex];
+            imageContainer.appendChild(image);
+            packedImages.push(images[randomIndex]);
+            document.cookie = "packedImages=" + packedImages.join() + ";";
+        }
+    };
+    xhr.open("GET", imagesFolder, true);
+    xhr.send();
+}
+
 		
 		// Function to view the collection
 		function viewCollection() {
