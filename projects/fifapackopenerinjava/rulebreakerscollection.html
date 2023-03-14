@@ -45,20 +45,14 @@
 
 		// Display the packed images on the page
 		function displayCollection() {
-  imageContainer.innerHTML = ""; // clear previous images
-
-  packedImages.forEach(function(imageUrl) {
-    // check if the image is already displayed
-    if (imageContainer.querySelector(`[src="${imageUrl}"]`)) {
-      return; // skip the image if already displayed
-    }
-
+  var uniqueImageUrls = new Set(packedImages); // only keeps unique image URLs
+  imageContainer.innerHTML = ""; // clear the container
+  uniqueImageUrls.forEach(function(imageUrl) {
     var image = document.createElement("img");
     image.src = imageUrl;
     imageContainer.appendChild(image);
   });
 }
-
 		
 		// Retrieve a cookie value by name
 		function getCookie(name) {
