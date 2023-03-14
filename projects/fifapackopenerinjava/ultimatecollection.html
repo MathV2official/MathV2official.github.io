@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>All Collections</title>
+	<title>Ultimate Collection</title>
 	<style>
 		body {
 			text-align: center;
@@ -31,39 +31,43 @@
 	</style>
 </head>
 <body>
-	<h1>All Collections</h1>
-	<div id="rulebreakersContainer"></div>
-	<div id="totyContainer"></div>
-	<div id="futurestarsContainer"></div>
+	<h1>Ultimate Collection</h1>
+	<div id="imageContainer"></div>
+	<button onclick="viewRulebreakers()">View Rulebreakers Collection</button>
+	<button onclick="viewToty()">View TOTY Collection</button>
+	<button onclick="viewFutureStars()">View Future Stars Collection</button>
 	<button onclick="saveData()">Save Progress</button>
 	<button onclick="loadData()">Load Progress</button>
-    <button onclick="displayAllCollections()">Display All Collections</button>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+	
 	<script>
-		var rulebreakersPackedImages = getCookie("rulebreakersPackedImages").split(",");
-		var totyPackedImages = getCookie("totyPackedImages").split(",");
-        var futureStarsPackedImages = getCookie("futureStarsPackedImages").split(",");
+		var packedRulebreakersImages = getCookie("packedRulebreakersImages").split(",");
+		var packedTotyImages = getCookie("packedTotyImages").split(",");
+		var packedFutureStarsImages = getCookie("packedFutureStarsImages").split(",");
 		var imagesFolder = "https://mathv2fifacards.netlify.app/";
-		var rulebreakersContainer = document.getElementById("rulebreakersContainer");
-		var totyContainer = document.getElementById("totyContainer");
-        var futureStarsContainer = document.getElementById("futurestarsContainer");
-		// Display the packed images on the page
-		rulebreakersPackedImages.forEach(function(imageUrl) {
+		var imageContainer = document.getElementById("imageContainer");
+
+		// Display the packed images from Rulebreakers on the page
+		packedRulebreakersImages.forEach(function(imageUrl) {
 			var image = document.createElement("img");
-			image.src = imageUrl;
-			rulebreakersContainer.appendChild(image);
-		});
-		totyPackedImages.forEach(function(imageUrl) {
-			var image = document.createElement("img");
-			image.src = imageUrl;
-			totyContainer.appendChild(image);
-		});
-		futurestarsPackedImages.forEach(function(imageUrl) {
-			var image = document.createElement("img");
-			image.src = imageUrl;
-			futurestarsContainer.appendChild(image);
+			image.src = imagesFolder + imageUrl;
+			imageContainer.appendChild(image);
 		});
 		
+		// Display the packed images from TOTY on the page
+		packedTotyImages.forEach(function(imageUrl) {
+			var image = document.createElement("img");
+			image.src = imagesFolder + imageUrl;
+			imageContainer.appendChild(image);
+		});
+		
+		// Display the packed images from Future Stars on the page
+		packedFutureStarsImages.forEach(function(imageUrl) {
+			var image = document.createElement("img");
+			image.src = imagesFolder + imageUrl;
+			imageContainer.appendChild(image);
+		});
+
 		// Retrieve a cookie value by name
 		function getCookie(name) {
 		    var value = "; " + document.cookie;
@@ -71,115 +75,54 @@
 		    if (parts.length == 2) return parts.pop().split(";").shift();
 		}
 		
+		// Function to go back to the Rulebreakers collection
+		function viewRulebreakers() {
+			window.location.href = "rulebreakerscollection.html";
+		}
+
+		// Function to go back to the TOTY collection
+		function viewToty() {
+			window.location.href = "totycollection.html";
+		}
+		
+				// Function to go back to the Future Stars collection
+                function viewFutureStars() {
+			window.location.href = "futurestarscollection.html";
+		}
+		
 		// Function to save data to a file
 		function saveData() {
 			var data = JSON.stringify({
-				rulebreakers: rulebreakersPackedImages,
-				toty: totyPackedImages,
-				futurestars: futurestarsPackedImages
+				"packedRulebreakersImages": packedRulebreakersImages,
+				"packedTotyImages": packedTotyImages,
+				"packedFutureStarsImages": packedFutureStarsImages
 			});
 			var filename = "packedImages.json";
 			var blob = new Blob([data], {type: "text/plain;charset=utf-8"});
 			saveAs(blob, filename);
 		}
 		
+		// Function to load data from a file
+		function loadData() {
+			var input = document.createElement("input");
+			input.type = "file";
+			input.accept = "application/json";
+			input.onchange = function(event) {
+				var file = event.target.files[0];
+				var reader = new FileReader();
+				reader.readAsText(file, "UTF-8");
+				reader.onload = function (event) {
+					var data = JSON.parse(event.target.result);
+					packedRulebreakersImages = data.packedRulebreakersImages;
+					packedTotyImages = data.packedTotyImages;
+					packedFutureStarsImages = data.packedFutureStarsImages;
+					displayCollection();
+				}
+			};
+            input.click();
+        }
 		
-// Function to load data from a file
-function loadData() {
-  var input = document.createElement("input");
-  input.type = "file";
-  input.accept = "application/json";
-  input.onchange = function(event) {
-    var file = event.target.files[0];
-    var reader = new FileReader();
-    reader.readAsText(file, "UTF-8");
-    reader.onload = function (event) {
-      packedImages = JSON.parse(event.target.result);
-      window.localStorage.setItem("packedImages", JSON.stringify(packedImages));
-      displayAllCollections();
-    }
-  };
-  input.click();
-}
-
-// Function to display all collections
-function displayAllCollections() {
-	// Get the packed images from each collection
-	var rulebreakersPackedImages = localStorage.getItem("rulebreakersPackedImages");
-	var totyPackedImages = localStorage.getItem("totyPackedImages");
-	var futureStarsPackedImages = localStorage.getItem("futureStarsPackedImages");
-	
-	// Parse the packed images from JSON to an array
-	var rulebreakersImagesArray = JSON.parse(rulebreakersPackedImages);
-	var totyImagesArray = JSON.parse(totyPackedImages);
-	var futureStarsImagesArray = JSON.parse(futureStarsPackedImages);
-	
-	// Display the packed images from each collection
-	displayCollection("Rulebreakers Collection", rulebreakersImagesArray);
-	displayCollection("TOTY Collection", totyImagesArray);
-	displayCollection("Future Stars Collection", futureStarsImagesArray);
-}
-
-// Function to display a collection
-function displayCollection(collectionName, imagesArray) {
-	// Create a container for the collection
-	var collectionContainer = document.createElement("div");
-	collectionContainer.classList.add("collection");
-	
-	// Create a heading for the collection
-	var collectionHeading = document.createElement("h2");
-	collectionHeading.textContent = collectionName;
-	
-	// Create a container for the images in the collection
-	var imageContainer = document.createElement("div");
-	imageContainer.classList.add("image-container");
-	
-	// Display the packed images in the collection
-	imagesArray.forEach(function(imageUrl) {
-		var image = document.createElement("img");
-		image.src = imageUrl;
-		imageContainer.appendChild(image);
-	});
-	
-	// Add the heading and image container to the collection container
-	collectionContainer.appendChild(collectionHeading);
-	collectionContainer.appendChild(imageContainer);
-	
-// Add the collection container to the page
-document.body.appendChild(collectionsContainer);
-
-// Array of collection names and their associated images
-var collections = [
-  {name: "Rulebreakers", images: rulebreakers},
-  {name: "TOTY", images: toty},
-  {name: "Future Stars", images: futureStars}
-];
-
-// Loop through each collection and add the images to their respective container
-collections.forEach(function(collection) {
-  var collectionContainer = document.getElementById(collection.name + "Collection");
-  collection.images.forEach(function(imageUrl) {
-    var image = document.createElement("img");
-    image.src = imageUrl;
-    collectionContainer.appendChild(image);
-  });
-});
-
-		// Loop through each collection and add the images to their respective container
-		Object.keys(collections).forEach(function(collectionName) {
-			var collection = collections[collectionName];
-			var collectionContainer = document.createElement("div");
-			collectionContainer.id = collectionName + "Container";
-			collectionContainer.className = "collectionContainer";
-			document.body.appendChild(collectionContainer);
-
-			collection.forEach(function(imageUrl) {
-				var image = document.createElement("img");
-				image.src = imageUrl;
-				collectionContainer.appendChild(image);
-			});
-		});
-
-		// Close the collectionContainer div and the body and html tags
-		document.write("</div></body></html>");
-	}
+		displayCollection();
+	</script>
+</body>
+</html>
