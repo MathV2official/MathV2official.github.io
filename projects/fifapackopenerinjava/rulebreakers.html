@@ -39,16 +39,7 @@
 	
 	<script>
 		var imagesFolder = "https://mathv2fifacards.netlify.app/rulebreakercards/";
-		var packImages = []; // Empty array to store image filenames
-        var packedImages = []; // Empty array to store packed images
-
-		// Function to open the pack
-		function openRulebreakerPack() {
-  var imageContainer = document.getElementById("imageContainer");
-  imageContainer.innerHTML = "";
-
-  // Hardcoded array of image URLs
-var images = [
+		var packImages = [
     "https://mathv2fifacards.netlify.app/rulebreakercards/Aurelio Buta.png",
     "https://mathv2fifacards.netlify.app/rulebreakercards/Avila.png",
     "https://mathv2fifacards.netlify.app/rulebreakercards/Bailey.png",
@@ -78,17 +69,22 @@ var images = [
     "https://mathv2fifacards.netlify.app/rulebreakercards/Thiago.png",
     "https://mathv2fifacards.netlify.app/rulebreakercards/Toney.png",
     "https://mathv2fifacards.netlify.app/rulebreakercards/Zaha.png"
-  ];
+  ];		
+  var packedImages = [];
 
-
-  var randomIndex = Math.floor(Math.random() * images.length);
+		// Function to open the pack
+		function openRulebreakerPack() {
+  var imageContainer = document.getElementById("imageContainer");
+  imageContainer.innerHTML = "";
+  var randomIndex = Math.floor(Math.random() * packImages.length);
   var image = document.createElement("img");
-  image.src = images[randomIndex];
-  image.id = images[randomIndex];
+  image.src = packImages[randomIndex];
+  image.id = packImages[randomIndex];
   imageContainer.appendChild(image);
-  packedImages.push(images[randomIndex]);
+  packedImages.push(packImages[randomIndex]);
   document.cookie = "packedImages=" + packedImages.join() + ";";
 }
+
 
 		
 		// Function to view the collection
