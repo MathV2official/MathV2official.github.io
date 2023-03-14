@@ -44,27 +44,27 @@
 
 		// Function to open the pack
 		function openRulebreakerPack() {
-  var imageContainer = document.getElementById("imageContainer");
-  imageContainer.innerHTML = "";
-  var xhr = new XMLHttpRequest();
-  xhr.onreadystatechange = function() {
-    if (this.readyState === 4 && this.status === 200) {
-      var images = JSON.parse(this.responseText);
-      var randomIndex = Math.floor(Math.random() * images.length);
-      var image = document.createElement("img");
-      image.src = imagesFolder + images[randomIndex];
-      image.id = images[randomIndex];
-      imageContainer.appendChild(image);
-      packedImages.push(images[randomIndex]);
-      document.cookie = "packedImages=" + packedImages.join() + ";";
-    }
-  };
-  xhr.open("GET", imagesFolder, true);
-  xhr.send();
-}
-
-
-
+            console.log("Opening Rulebreakers pack...");
+            var imageContainer = document.getElementById("imageContainer");
+            imageContainer.innerHTML = "";
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function() {
+                if (this.readyState === 4 && this.status === 200) {
+                    var images = JSON.parse(this.responseText);
+                    console.log("Loaded images:", images);
+                    var randomIndex = Math.floor(Math.random() * images.length);
+                    var image = document.createElement("img");
+                    image.src = imagesFolder + images[randomIndex];
+                    image.id = images[randomIndex];
+                    imageContainer.appendChild(image);
+                    packedImages.push(images[randomIndex]);
+                    document.cookie = "packedImages=" + packedImages.join() + ";";
+                    console.log("Packed image:", images[randomIndex]);
+                }
+            };
+            xhr.open("GET", imagesFolder, true);
+            xhr.send();
+        }
 		
 		// Function to view the collection
 		function viewCollection() {
@@ -73,5 +73,5 @@
 		
 		 		
 	</script>
-    </body>
-    </html>
+</body>
+</html>
