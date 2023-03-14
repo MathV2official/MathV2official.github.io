@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Rulebreakers Collection</title>
+	<style>
+		body {
+			text-align: center;
+			margin-top: 50px;
+			font-family: Arial, sans-serif;
+			background: linear-gradient(to right, #1e1e1e, #0a0a0a, #FFFFFF);
+		}
+		img {
+			max-width: 300px;
+			max-height: 300px;
+			margin: 10px;
+		}
+		h1 {
+			font-size: 36px;
+			margin-bottom: 50px;
+			color: #FFA500;
+		}
+		button {
+			padding: 10px 20px;
+			border: none;
+			background-color: #FFA500;
+			color: #fff;
+			font-size: 16px;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<h1>Rulebreakers Collection</h1>
+	<div id="imageContainer"></div>
+	<button onclick="viewPack()">Back to Rulebreakers Pack</button>
+	<button onclick="saveData()">Save Progress</button>
+	<button onclick="loadData()">Load Progress</button>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+	
+	<script>
+		var imagesFolder = "https://mathv22.netlify.app/projects/fifapackopenerinjava/rulebreakers/"; // Path to the images folder
+		var packedImages = [];
+
+		// Load packed images from cookies or local storage
+		if (document.cookie.indexOf("packedImages=") >= 0) {
+			packedImages = document.cookie
+				.split("; ")
+				.find(row => row.startsWith("packedImages="))
+				.split("=")[1]
+				.split(",");
+		} else if (window.localStorage.getItem("packedImages") !== null) {
+			packedImages = JSON.parse(window.localStorage.getItem("packedImages"));
+		}
+		
+		// Function to display the collection
+		function displayCollection() {
+			var imageContainer = document.getElementById("imageContainer");
+			imageContainer.innerHTML = "";
+			for (var i = 0; i < packedImages.length; i++) {
+				var image = document.createElement("img");
+				image.src = imagesFolder + packedImages[i];
+				image.id = packedImages[i];
+				imageContainer.appendChild(image);
+			}
+		}
+		
+		// Function to go back to the pack opener
+		function viewPack() {
+			window.location.href = "rulebreakers.html";
+		}
+		
+		// Function to save data to a file
+		function saveData() {
+			var data = JSON.stringify(packedImages);
+			var filename = "packedImages.json";
+			var blob = new Blob([data], {type: "text/plain;charset=utf-8"});
+			saveAs(blob, filename);
+		}
+		
+		// Function to load data from a file
+		function loadData() {
+			var input = document.createElement("input");
+			input.type = "file";
+			input.accept = "application/json";
+			input.onchange = function(event) {
+				var file = event.target.files[0];
+				var reader = new FileReader();
+				reader.readAsText(file, "UTF-8");
+				reader.onload = function (event) {
+					packedImages = JSON.parse(event.target.result);
+					displayCollection();
+					window.localStorage.setItem("packedImages", JSON.stringify(packedImages));
+				}
+			};
+            input.click();
+        }
+    
+        displayPackedImages();
+    </script>
+    </body>
+    </html>		
