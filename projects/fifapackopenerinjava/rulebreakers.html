@@ -46,26 +46,49 @@
 		function openRulebreakerPack() {
   var imageContainer = document.getElementById("imageContainer");
   imageContainer.innerHTML = "";
-  console.log(imagesFolder);
-  fetch(imagesFolder)
-    .then(response => response.text())
-    .then(data => {
-      var parser = new DOMParser();
-      var htmlDoc = parser.parseFromString(data, "text/html");
-	  var images = Array.from(htmlDoc.querySelectorAll("a")).map(a => a.href).filter(href => href.endsWith(".png") || href.endsWith(".jpg"));
-      var randomIndex = Math.floor(Math.random() * images.length);
-      var image = document.createElement("img");
-      image.src = images[randomIndex];
-      image.id = images[randomIndex];
-      imageContainer.appendChild(image);
-      packedImages.push(images[randomIndex]);
-      document.cookie = "packedImages=" + packedImages.join() + ";";
-    })
-    .catch(error => console.error(error));
+
+  // Hardcoded array of image URLs
+var images = [
+    "https://mathv2fifacards.netlify.app/rulebreakercards/Aurelio Buta.png",
+    "https://mathv2fifacards.netlify.app/rulebreakercards/Avila.png",
+    "https://mathv2fifacards.netlify.app/rulebreakercards/Bailey.png",
+    "https://mathv2fifacards.netlify.app/rulebreakercards/Chicharito.png",
+    "https://mathv2fifacards.netlify.app/rulebreakercards/Cristiano Ronaldo.png",
+    "https://mathv2fifacards.netlify.app/rulebreakercards/Dzeko.png",
+    "https://mathv2fifacards.netlify.app/rulebreakercards/Estupinan.png",
+    "https://mathv2fifacards.netlify.app/rulebreakercards/Fekir.png",
+    "https://mathv2fifacards.netlify.app/rulebreakercards/Frankowski.png",
+    "https://mathv2fifacards.netlify.app/rulebreakercards/Godfrey.png",
+    "https://mathv2fifacards.netlify.app/rulebreakercards/Havertz.png",
+    "https://mathv2fifacards.netlify.app/rulebreakercards/Herrera.png",
+    "https://mathv2fifacards.netlify.app/rulebreakercards/Jesus Navas.png",
+    "https://mathv2fifacards.netlify.app/rulebreakercards/Lacroix.png",
+    "https://mathv2fifacards.netlify.app/rulebreakercards/Merino.png",
+    "https://mathv2fifacards.netlify.app/rulebreakercards/Meunier.png",
+    "https://mathv2fifacards.netlify.app/rulebreakercards/Payet.png",
+    "https://mathv2fifacards.netlify.app/rulebreakercards/Philips.png",
+    "https://mathv2fifacards.netlify.app/rulebreakercards/Pique.png",
+    "https://mathv2fifacards.netlify.app/rulebreakercards/Ribery.png",
+    "https://mathv2fifacards.netlify.app/rulebreakercards/Robertone.png",
+    "https://mathv2fifacards.netlify.app/rulebreakercards/Roldan.png",
+    "https://mathv2fifacards.netlify.app/rulebreakercards/Sanchez.png",
+    "https://mathv2fifacards.netlify.app/rulebreakercards/Sergio Ramos.png",
+    "https://mathv2fifacards.netlify.app/rulebreakercards/Sissoko.png",
+    "https://mathv2fifacards.netlify.app/rulebreakercards/Smith Rowe.png",
+    "https://mathv2fifacards.netlify.app/rulebreakercards/Thiago.png",
+    "https://mathv2fifacards.netlify.app/rulebreakercards/Toney.png",
+    "https://mathv2fifacards.netlify.app/rulebreakercards/Zaha.png"
+  ];
+
+
+  var randomIndex = Math.floor(Math.random() * images.length);
+  var image = document.createElement("img");
+  image.src = images[randomIndex];
+  image.id = images[randomIndex];
+  imageContainer.appendChild(image);
+  packedImages.push(images[randomIndex]);
+  document.cookie = "packedImages=" + packedImages.join() + ";";
 }
-
-
-
 
 		
 		// Function to view the collection
