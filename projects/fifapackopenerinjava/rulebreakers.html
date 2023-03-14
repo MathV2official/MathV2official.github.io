@@ -46,22 +46,20 @@
 		function openRulebreakerPack() {
   var imageContainer = document.getElementById("imageContainer");
   imageContainer.innerHTML = "";
-  fetch(imagesFolder)
-    .then(response => response.text())
+  fetch(imagesFolder + "get_images.php")
+    .then(response => response.json())
     .then(data => {
-      var parser = new DOMParser();
-      var htmlDoc = parser.parseFromString(data, "text/html");
-      var images = Array.from(htmlDoc.querySelectorAll("a")).map(a => a.href).filter(href => href.endsWith(".png") || href.endsWith(".jpg"));
-      var randomIndex = Math.floor(Math.random() * images.length);
+      var randomIndex = Math.floor(Math.random() * data.length);
       var image = document.createElement("img");
-      image.src = images[randomIndex];
-      image.id = images[randomIndex];
+      image.src = imagesFolder + data[randomIndex];
+      image.id = data[randomIndex];
       imageContainer.appendChild(image);
-      packedImages.push(images[randomIndex]);
+      packedImages.push(data[randomIndex]);
       document.cookie = "packedImages=" + packedImages.join() + ";";
     })
     .catch(error => console.error(error));
 }
+
 
 		
 		// Function to view the collection
