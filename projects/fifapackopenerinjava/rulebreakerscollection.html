@@ -39,19 +39,17 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
 	
 	<script>
-		var imagesFolder = "https://mathv2fifacards.netlify.app/rulebreakercards/"; // Path to the images folder
-		var packedImages = [];
+		var imagesFolder = "https://mathv2fifacards.netlify.app/rulebreakercards/";
+		var packedImages = getCookie("packedImages") ? getCookie("packedImages").split(",") : [];
 
-		// Load packed images from cookies or local storage
-		if (document.cookie.indexOf("packedImages=") >= 0) {
-			packedImages = document.cookie
-				.split("; ")
-				.find(row => row.startsWith("packedImages="))
-				.split("=")[1]
-				.split(",");
-		} else if (window.localStorage.getItem("packedImages") !== null) {
-			packedImages = JSON.parse(window.localStorage.getItem("packedImages"));
-		}
+		var imageContainer = document.getElementById("imageContainer");
+
+		// Loop through packedImages array and display each image
+		packedImages.forEach(function(image) {
+			var img = document.createElement("img");
+			img.src = imagesFolder + image;
+			imageContainer.appendChild(img);
+		});
 		
 		// Function to display the collection
 		function displayCollection() {
