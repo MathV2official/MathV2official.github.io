@@ -33,39 +33,57 @@ function displayPackedImages() {
 
 // Function to open the pack
 function openTOTYPack() {
-  var imageContainer = document.getElementById("imageContainer");
-  imageContainer.innerHTML = "";
-
-  // Select a random pack image
-  var randomIndex = Math.floor(Math.random() * packImages.length);
-  var packImage = packImages[randomIndex];
-
-  // Create the image element
-  var image = document.createElement("img");
-  image.src = imagesFolder + packImage.image;
-  image.id = packImage.name;
-  imageContainer.appendChild(image);
-
-  // Create the counter element
-  var counter = document.createElement("div");
-  counter.id = "counter";
-  counter.innerText = "0";
-  imageContainer.appendChild(counter);
-
-  // Start the counter
-  var interval = setInterval(function() {
-    var currentCounter = parseInt(counter.innerText);
-    if (currentCounter < packImage.ovr) {
-      currentCounter++;
-      counter.innerText = currentCounter.toString();
-    } else {
-      clearInterval(interval);
-      // Add the packed image to the list
-      packedImages.push(packImage);
-      setCookie("packedImages", JSON.stringify(packedImages));
-    }
-  }, 10);
-}
+    var imageContainer = document.getElementById("imageContainer");
+    imageContainer.innerHTML = "";
+  
+    // Select a random pack image
+    var randomIndex = Math.floor(Math.random() * packImages.length);
+    var packImage = packImages[randomIndex];
+  
+    // Create the image element
+    var image = document.createElement("img");
+    image.src = imagesFolder + packImage.image;
+    image.id = packImage.name;
+    imageContainer.appendChild(image);
+  
+    // Create the counter element
+    var counter = document.createElement("div");
+    counter.id = "counter";
+    counter.innerText = "0";
+    imageContainer.appendChild(counter);
+  
+    // Start the counter
+    var interval = setInterval(function() {
+      var currentCounter = parseInt(counter.innerText);
+      if (currentCounter < packImage.ovr) {
+        currentCounter++;
+        counter.innerText = currentCounter.toString();
+      } else {
+        clearInterval(interval);
+        // Add the packed image to the list
+        packedImages.push(packImage);
+        var queryString = "?packedImages=" + encodeURIComponent(JSON.stringify(packedImages));
+        
+        // Remove the image and counter elements after 3 seconds
+        setTimeout(function() {
+          imageContainer.removeChild(image);
+          imageContainer.removeChild(counter);
+        }, 3000);
+  
+        // Create a new image element for the chosen card
+        var chosenImage = document.createElement("img");
+        chosenImage.src = imagesFolder + packImage.image;
+        chosenImage.id = packImage.name;
+        imageContainer.appendChild(chosenImage);
+  
+        // Redirect to the collection page after 3 seconds
+        setTimeout(function() {
+          window.location.href = "totycollection.html" + queryString;
+        }, 3000);
+      }
+    }, 10);
+  }
+  
 
 // Function to view the collection
 function viewCollection() {
