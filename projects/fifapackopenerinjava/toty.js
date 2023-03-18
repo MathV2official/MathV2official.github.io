@@ -38,6 +38,7 @@ function displayPackedImages() {
 }
 
 // Function to open the pack
+// Function to open the pack
 function openTOTYPack() {
   var imageContainer = document.getElementById("imageContainer");
   imageContainer.innerHTML = "";
@@ -53,7 +54,6 @@ function openTOTYPack() {
   // Create the image element
   var image = document.createElement("img");
   image.src = imagesFolder + chosenImage;
-  image.id = packImage.name;
   imageContainer.appendChild(image);
 
   // Create the counter element
@@ -71,12 +71,16 @@ function openTOTYPack() {
     } else {
       clearInterval(interval);
       // Add the packed image to the list
-      packedImages.push(packImage);
-      setCookie("packedImages", JSON.stringify(packedImages), 365);
-      imageContainer.innerHTML = "";
-      displayPackedImages();
-      imageContainer.appendChild(image);
-      imageContainer.appendChild(counter);
+      if (packImage) {
+        packedImages.push(packImage);
+        var queryString = "?packedImages=" + encodeURIComponent(JSON.stringify(packedImages));
+        setTimeout(function() {
+          imageContainer.innerHTML = "";
+          displayPackedImages();
+        }, 3000);
+      } else {
+        console.error("Chosen image not found in packImages list");
+      }
     }
   }, 10);
 }
