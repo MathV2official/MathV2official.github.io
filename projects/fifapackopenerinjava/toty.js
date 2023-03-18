@@ -31,6 +31,14 @@ function displayPackedImages() {
   }
 }
 
+function getCookie(name) {
+  var value = "; " + document.cookie;
+  var parts = value.split("; " + name + "=");
+  if (parts.length == 2) {
+    return parts.pop().split(";").shift();
+  }
+}
+
 // Function to open the pack
 function openTOTYPack() {
   var imageContainer = document.getElementById("imageContainer");
@@ -43,6 +51,11 @@ function openTOTYPack() {
   var packImage = packImages.find(function(image) {
     return image.image === chosenImage;
   });
+
+  if (!packImage) {
+    console.log("Error: Pack image not found.");
+    return;
+  }
 
   // Create the image element
   var image = document.createElement("img");
@@ -59,24 +72,18 @@ function openTOTYPack() {
   // Start the counter
   var interval = setInterval(function() {
     var currentCounter = parseInt(counter.innerText);
-    if (packImage && currentCounter < packImage.ovr) {
+    if (!isNaN(currentCounter) && currentCounter < packImage.ovr) {
       currentCounter++;
       counter.innerText = currentCounter.toString();
     } else {
       clearInterval(interval);
-      if (packImage) {
-        // Add the packed image to the list
-        packedImages.push(packImage);
-        setCookie("packedImages", JSON.stringify(packedImages));
-      }
-      imageContainer.removeChild(counter);
+      // Add the packed image to the list
+      packedImages.push(packImage);
+      var queryString = "?packedImages=" + encodeURIComponent(JSON.stringify(packedImages));
+      setTimeout(function() {
+        imageContainer.innerHTML = "";
+        displayPackedImages();
+      }, 3000);
     }
   }, 10);
 }
-
-// Function to view the collection
-function viewCollection() {
-  window.location.href = "totycollection.html";
-}
-
-displayPackedImages();
