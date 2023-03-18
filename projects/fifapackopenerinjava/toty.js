@@ -45,7 +45,7 @@ function openTOTYPack() {
   imageContainer.innerHTML = "";
 
   // Choose a pack image
-  var chosenImage = "Courtois.png"; // Change this to the name of the image you want to use
+  var chosenImage = "TOTY.png"; // Change this to the name of the image you want to use
 
   // Find the corresponding object from the packImages list
   var packImage = packImages.find(function(image) {
