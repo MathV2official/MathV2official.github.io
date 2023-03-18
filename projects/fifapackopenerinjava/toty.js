@@ -39,9 +39,16 @@ function getCookie(name) {
   }
 }
 
+function setCookie(name, value) {
+  var expires = "";
+  var date = new Date();
+  date.setTime(date.getTime() + (365 * 24 * 60 * 60 * 1000)); // Set cookie to expire in 1 year
+  expires = "; expires=" + date.toUTCString();
+  document.cookie = name + "=" + value + expires + "; path=/";
+}
+
 // Function to open the pack
 function openTOTYPack() {
-  document.cookie = "packedImages=[]"; // Add this line to reset the packed images list
   var imageContainer = document.getElementById("imageContainer");
   imageContainer.innerHTML = "";
 
@@ -88,6 +95,7 @@ function openTOTYPack() {
     }
   }, 10);
 }
+
 
 
 function viewCollection() {
