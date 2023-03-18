@@ -74,6 +74,7 @@ function saveData() {
 				reader.onload = function (event) {
 					packedImages = JSON.parse(event.target.result);
 					document.cookie = "packedImages=" + packedImages.join() + ";";
+					displayPackedImages(); // update image container after loading data
 				}
 			};
 			input.click();
