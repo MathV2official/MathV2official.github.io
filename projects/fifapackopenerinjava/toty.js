@@ -14,7 +14,7 @@ var packImages = [
   {name: "KDB", ovr: 97, image: "KDB.png"}
 ]; // List of image filenames and their corresponding OVRs
 
-var packedImages = JSON.parse(getCookie("packedImages") || "[]");
+var packedImages = JSON.parse(getCookie("packedImages") || "[]") || [];
 
 function displayPackedImages() {
   var imageContainer = document.getElementById("imageContainer");
