@@ -16,6 +16,12 @@ var packImages = [
 
 var packedImages = JSON.parse(getCookie("packedImages") || "[]");
 
+function getCookie(name) {
+  var value = "; " + document.cookie;
+  var parts = value.split("; " + name + "=");
+  if (parts.length == 2) return parts.pop().split(";").shift();
+}
+
 function displayPackedImages() {
   var imageContainer = document.getElementById("imageContainer");
   imageContainer.innerHTML = "";
@@ -66,20 +72,11 @@ function openTOTYPack() {
       clearInterval(interval);
       // Add the packed image to the list
       packedImages.push(packImage);
-      var queryString = "?packedImages=" + encodeURIComponent(JSON.stringify(packedImages));
-      setTimeout(function() {
-        imageContainer.innerHTML = "";
-        window.location.href = "totycollection.html" + queryString;
-      }, 3000);
+      setCookie("packedImages", JSON.stringify(packedImages), 365);
+      imageContainer.innerHTML = "";
+      displayPackedImages();
+      imageContainer.appendChild(image);
+      imageContainer.appendChild(counter);
     }
   }, 10);
 }
-
-  
-
-// Function to view the collection
-function viewCollection() {
-  window.location.href = "totycollection.html";
-}
-
-displayPackedImages();
