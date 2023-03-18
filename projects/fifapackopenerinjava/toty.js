@@ -45,29 +45,30 @@ function openTOTYPack() {
   imageContainer.innerHTML = "";
 
   // Choose a pack image
-  var chosenImage = "TOTY.png"; // Change this to the name of the image you want to use
+  var chosenImage = "Courtois.png"; // Change this to the name of the image you want to use
 
   // Find the corresponding object from the packImages list
   var packImage = packImages.find(function(image) {
     return image.image === chosenImage;
-  });
+});
 
-  if (!packImage) {
-    console.log("Error: Pack image not found.");
-    return;
-  }
+if (!packImage) {
+  console.log("Error: Pack image not found.");
+  return;
+}
 
-  // Create the image element
-  var image = document.createElement("img");
-  image.src = imagesFolder + chosenImage;
-  image.id = packImage.name;
-  imageContainer.appendChild(image);
+// Create the image element
+var image = document.createElement("img");
+image.src = imagesFolder + chosenImage;
+image.id = packImage.name;
+imageContainer.appendChild(image);
 
-  // Create the counter element
-  var counter = document.createElement("div");
-  counter.id = "counter";
-  counter.innerText = "0";
-  imageContainer.appendChild(counter);
+// Create the counter element
+var counter = document.createElement("div");
+counter.id = "counter";
+counter.innerText = "0";
+imageContainer.appendChild(counter);
+
 
   // Start the counter
   var interval = setInterval(function() {
