@@ -16,12 +16,6 @@ var packImages = [
 
 var packedImages = JSON.parse(getCookie("packedImages") || "[]");
 
-function getCookie(name) {
-  var value = "; " + document.cookie;
-  var parts = value.split("; " + name + "=");
-  if (parts.length == 2) return parts.pop().split(";").shift();
-}
-
 function displayPackedImages() {
   var imageContainer = document.getElementById("imageContainer");
   imageContainer.innerHTML = "";
@@ -38,7 +32,6 @@ function displayPackedImages() {
 }
 
 // Function to open the pack
-// Function to open the pack
 function openTOTYPack() {
   var imageContainer = document.getElementById("imageContainer");
   imageContainer.innerHTML = "";
@@ -54,6 +47,7 @@ function openTOTYPack() {
   // Create the image element
   var image = document.createElement("img");
   image.src = imagesFolder + chosenImage;
+  image.id = packImage.name;
   imageContainer.appendChild(image);
 
   // Create the counter element
@@ -65,22 +59,24 @@ function openTOTYPack() {
   // Start the counter
   var interval = setInterval(function() {
     var currentCounter = parseInt(counter.innerText);
-    if (currentCounter < packImage.ovr) {
+    if (packImage && currentCounter < packImage.ovr) {
       currentCounter++;
       counter.innerText = currentCounter.toString();
     } else {
       clearInterval(interval);
-      // Add the packed image to the list
       if (packImage) {
+        // Add the packed image to the list
         packedImages.push(packImage);
-        var queryString = "?packedImages=" + encodeURIComponent(JSON.stringify(packedImages));
-        setTimeout(function() {
-          imageContainer.innerHTML = "";
-          displayPackedImages();
-        }, 3000);
-      } else {
-        console.error("Chosen image not found in packImages list");
+        setCookie("packedImages", JSON.stringify(packedImages));
       }
+      imageContainer.removeChild(counter);
     }
   }, 10);
 }
+
+// Function to view the collection
+function viewCollection() {
+  window.location.href = "totycollection.html";
+}
+
+displayPackedImages();
