@@ -88,3 +88,7 @@ imageContainer.appendChild(counter);
     }
   }, 10);
 }
+
+function viewCollection() {
+  window.location.href = "totycollection.html";
+}
