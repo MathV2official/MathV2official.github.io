@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Fut Birthday Collection</title>
+	<style>
+		body {
+			text-align: center;
+			margin-top: 50px;
+			font-family: Arial, sans-serif;
+			background: linear-gradient(to right, #1e1e1e, #0a0a0a, #FFFFFF);
+		}
+		img {
+			max-width: 300px;
+			max-height: 300px;
+			margin: 10px;
+		}
+		h1 {
+			font-size: 36px;
+			margin-bottom: 50px;
+			color: #4CAF50;
+		}
+		button {
+			padding: 10px 20px;
+			border: none;
+			background-color: #007bff;
+			color: #fff;
+			font-size: 16px;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<h1>Fut Birthday Collection</h1>
+	<div id="imageContainer"></div>
+	<button onclick="goBack()">Go Back to Pack Opener</button><br>
+    <button onclick="saveData()">Save Progress</button>
+    <button onclick="loadData()">Load Progress (Refresh The Page)</button>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+	
+	<script>
+        var imagesFolder = "https://mathv2fifacards.netlify.app/Futbirthdaycards/"; // Path to the images folder
+        var packedImages = document.cookie.split("packedImages=")[1] ? document.cookie.split("packedImages=")[1].split(",") : []; // Get packed images from cookies
+    
+        // Function to display packed images
+        function displayPackedImages() {
+            var uniquePackedImages = [...new Set(packedImages)]; // Get unique packed images
+            var imageContainer = document.getElementById("imageContainer");
+            imageContainer.innerHTML = "";
+            uniquePackedImages.forEach(function(filename) {
+                var image = document.createElement("img");
+                image.src = imagesFolder + filename;
+                imageContainer.appendChild(image);
+            });
+        }
+            // Function to save data to a file
+		function saveData() {
+			var data = JSON.stringify(packedImages);
+			var filename = "futbirthdayPackedImages.json";
+			var blob = new Blob([data], {type: "text/plain;charset=utf-8"});
+			saveAs(blob, filename);
+		}
+		
+		// Function to load data from a file
+		function loadData() {
+			var input = document.createElement("input");
+			input.type = "file";
+			input.accept = "application/json";
+			input.onchange = function(event) {
+				var file = event.target.files[0];
+				var reader = new FileReader();
+				reader.readAsText(file, "UTF-8");
+				reader.onload = function (event) {
+					packedImages = JSON.parse(event.target.result);
+					document.cookie = "packedImages=" + packedImages.join() + ";";
+				}
+			};
+			input.click();
+        }
+        // Function to go back to pack opener
+        function goBack() {
+            window.location.href = "futbirthday.html";
+        }
+    
+        displayPackedImages();
+    </script>
+    </body>
+    </html>
