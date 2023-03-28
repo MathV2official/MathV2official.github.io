@@ -45,15 +45,15 @@
 
 		// Function to open the pack
 		function openTOTYPack() {
-			var imageContainer = document.getElementById("imageContainer");
-			imageContainer.innerHTML = "";
-			var randomIndex = Math.floor(Math.random() * packImages.length);
-			var image = document.createElement("img");
-			image.src = imagesFolder + packImages[randomIndex];
-			image.id = packImages[randomIndex];
-			imageContainer.appendChild(image);
-			packedImages.push(packImages[randomIndex]);
-			document.cookie = "packedImages=" + packedImages.join() + ";";
+  			var imageContainer = document.getElementById("imageContainer");
+ 			 imageContainer.innerHTML = "";
+ 			 var randomIndex = Math.floor(Math.random() * packImages.length);
+  			 var image = document.createElement("img");
+  			 image.src = imagesFolder + packImages[randomIndex];
+ 			 image.id = packImages[randomIndex];
+ 			 imageContainer.appendChild(image);
+ 			 packedImages.push(packImages[randomIndex]);
+ 			 document.cookie = "packedImages=" + packedImages.join() + ";";
 		}
 		
 		// Function to view the collection
