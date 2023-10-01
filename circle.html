@@ -31,20 +31,26 @@
       
           // Loop through each circle and check if it matches the search text
           for (const circle of circles) {
-            const imageText = circle.querySelector(".image-text").textContent.toLowerCase();
-            if (imageText.includes(searchText)) {
-              // If the circle's text contains the search text, show it
-              circle.style.display = "block";
+            const imageTextElement = circle.querySelector(".image-text");
+            
+            if (imageTextElement) {
+              // If an image-text element is found within the circle
+              const imageText = imageTextElement.textContent.toLowerCase();
+              if (imageText.includes(searchText)) {
+                // If the circle's text contains the search text, show it
+                circle.style.display = "block";
+              } else {
+                // Otherwise, hide it
+                circle.style.display = "none";
+              }
             } else {
-              // Otherwise, hide it
-              circle.style.display = "none";
+              // Handle the case where there's no .image-text element within the circle
+              circle.style.display = "block"; // Display the circle
             }
           }
         });
       </script>
       
-
-  </script>
     
       <!-- Back arrow -->
 <a href="index.html">
