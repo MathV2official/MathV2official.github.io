@@ -17,29 +17,32 @@
         <input type="text" id="searchBar" placeholder="Search...">
       </div>
     
-    <script>
-  // Get references to the search bar and circle container
-  const searchBar = document.getElementById("searchBar");
-  const circleContainer = document.getElementById("circleContainer");
-
-  // Add an event listener to the search bar
-  searchBar.addEventListener("input", function () {
-    const searchText = searchBar.value.toLowerCase(); // Convert the input to lowercase for case-insensitive matching
-
-    // Loop through each circle and check if it matches the search text
-    const circles = circleContainer.getElementsByClassName("circle");
-    for (const circle of circles) {
-      const imageText = circle.querySelector(".image-text").textContent.toLowerCase();
-      if (imageText.includes(searchText)) {
-        // If the circle's text contains the search text, show it
-        circle.style.display = "block";
-      } else {
-        // Otherwise, hide it
-        circle.style.display = "none";
-      }
-    }
-  });
-</script>
+      <script>
+        // Get references to the search bar and circle container
+        const searchBar = document.getElementById("searchBar");
+        const circleContainer = document.getElementById("circleContainer");
+      
+        // Get all circle elements
+        const circles = document.getElementsByClassName("circle");
+      
+        // Add an event listener to the search bar
+        searchBar.addEventListener("input", function () {
+          const searchText = searchBar.value.toLowerCase(); // Convert the input to lowercase for case-insensitive matching
+      
+          // Loop through each circle and check if it matches the search text
+          for (const circle of circles) {
+            const imageText = circle.querySelector(".image-text").textContent.toLowerCase();
+            if (imageText.includes(searchText)) {
+              // If the circle's text contains the search text, show it
+              circle.style.display = "block";
+            } else {
+              // Otherwise, hide it
+              circle.style.display = "none";
+            }
+          }
+        });
+      </script>
+      
 
   </script>
     
