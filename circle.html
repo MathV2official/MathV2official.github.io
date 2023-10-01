@@ -13,32 +13,8 @@
     <div class="header">
         <img src="favicon.ico" alt="header-logo">
         <a href="https://cfisd.schoology.com/">EMERGENCY EXIT</a>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfKoI9zmua1SanZrZF8O6oTLyXKNvCGYY27wYXB_Daxgyn5VA/viewform">Add A Game</a>
-        <div class="search-container">
-          <input type="text" id="myInput" onkeyup="filterCircles()" placeholder="Search...">
-        </div>        
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfKoI9zmua1SanZrZF8O6oTLyXKNvCGYY27wYXB_Daxgyn5VA/viewform">Add A Game</a>       
     </div>
-    
-    <script>
-    function filterCircles() {
-      // Get the input value
-      var input = document.getElementById("myInput").value.toLowerCase();
-      
-      // Get all the circle elements
-      var circles = document.getElementsByClassName("circle");
-      
-      // Loop through all the circle elements, and hide those that don't match the search query
-      for (var i = 0; i < circles.length; i++) {
-        var alt = circles[i].getElementsByTagName("img")[0].getAttribute("alt").toLowerCase();
-        if (alt.indexOf(input) > -1) {
-          circles[i].style.display = "";
-        } else {
-          circles[i].style.display = "none";
-        }
-      }
-    }
-  </script>
-    
       <!-- Back arrow -->
 <a href="index.html">
   <img src="arrow.png" class="back-arrow" alt="back-arrow">
